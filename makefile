@@ -6,6 +6,9 @@
 #   make            build Src/spin
 #   make check      build, then run the golden suite and the library tests
 #   make sanitize   rebuild with ASan+UBSan and run both under them
+#   make globals    regenerate the globals reset (Src/spin_reset_*.inc) after
+#                   adding or removing a file-scope variable; tools/globals.py
+#   make globals-check  fail if the generated reset is out of date (CI, unix legs)
 #   make parser     regenerate Src/y.tab.[ch] with bison 3.8 (see Src/makefile)
 #   make install    install spin and its man page (upstream target)
 #   make clean
@@ -30,25 +33,38 @@ install:
 tests/lib/once: tests/lib/once.c Src/libspin.a Src/spin_lib.h
 	$(CC) $(CFLAGS) -ISrc -o $@ tests/lib/once.c Src/libspin.a $(LDFLAGS)
 
-check: all tests/lib/once
+tests/lib/multi: tests/lib/multi.c Src/libspin.a Src/spin_lib.h
+	$(CC) $(CFLAGS) -ISrc -o $@ tests/lib/multi.c Src/libspin.a $(LDFLAGS)
+
+LIBTESTS = tests/lib/once tests/lib/multi
+
+check: all $(LIBTESTS)
 	sh tests/run.sh Src/spin
 	sh tests/lib/run.sh tests/lib/once
+	sh tests/lib/multi.sh tests/lib/multi tests/lib/once
+
+globals:
+	CC="$(CC)" python3 tools/globals.py
+
+globals-check:
+	CC="$(CC)" python3 tools/globals.py --check
 
 sanitize:
 	$(MAKE) -C Src clean
-	rm -f tests/lib/once
+	rm -f $(LIBTESTS)
 	$(MAKE) -C Src CC="$(CC)" CFLAGS="$(SAN_CFLAGS)" LDFLAGS="$(SAN_LDFLAGS)"
-	$(MAKE) tests/lib/once CC="$(CC)" CFLAGS="$(SAN_CFLAGS)" LDFLAGS="$(SAN_LDFLAGS)"
+	$(MAKE) $(LIBTESTS) CC="$(CC)" CFLAGS="$(SAN_CFLAGS)" LDFLAGS="$(SAN_LDFLAGS)"
 	$(SAN_ENV) sh tests/run.sh Src/spin
 	$(SAN_ENV) sh tests/lib/run.sh tests/lib/once
+	$(SAN_ENV) sh tests/lib/multi.sh tests/lib/multi tests/lib/once
 	$(MAKE) -C Src clean
-	rm -f tests/lib/once
+	rm -f $(LIBTESTS)
 
 parser:
 	$(MAKE) -C Src parser
 
 clean:
 	$(MAKE) -C Src clean
-	rm -f tests/lib/once
+	rm -f $(LIBTESTS)
 
-.PHONY: all install check sanitize parser clean
+.PHONY: all install check sanitize parser globals globals-check clean

@@ -1,0 +1,20 @@
+mtype 	a0	5	<:global:>	<constant>	{scope _}
+mtype 	a1	4	<:global:>	<constant>	{scope _}
+mtype 	b0	3	<:global:>	<constant>	{scope _}
+mtype 	b1	2	<:global:>	<constant>	{scope _}
+mtype 	err	1	<:global:>	<constant>	{scope _}
+chan  	a2b	0	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	b2a	0	<:global:>	<variable>	1	mtype 	{scope _}
+proctype	A	1	<:global:>	<variable>	{scope _}
+proctype	B	1	<:global:>	<variable>	{scope _}
+label	S5	15	<B>	{scope _5_}
+label	S4	13	<B>	{scope _5_}
+label	S3	11	<B>	{scope _5_}
+label	S2	9	<B>	{scope _5_}
+label	S1	2	<B>	{scope _5_}
+label	S5	14	<A>	{scope _4_}
+label	S4	12	<A>	{scope _4_}
+label	S3	10	<A>	{scope _4_}
+label	S2	8	<A>	{scope _4_}
+label	S1	1	<A>	{scope _4_}
+exit: 0

@@ -1,0 +1,17 @@
+mtype 	one	3	<:global:>	<constant>	{scope _}
+mtype 	two	2	<:global:>	<constant>	{scope _}
+mtype 	winner	1	<:global:>	<constant>	{scope _}
+chan  	q[5]	10	<:global:>	<array>	2	mtype 	byte  	{scope _}
+byte  	nr_leaders	0	<:global:>	<variable>	{scope _}
+proctype	node	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<node>	<parameter 1>	0		{scope _}
+chan  	out	0	<node>	<parameter 2>	0		{scope _}
+byte  	mynumber	0	<node>	<parameter 3>	{scope _}
+bit   	Active	1	<node>	<variable>	{scope _3_}
+bit   	know_winner	0	<node>	<variable>	{scope _3_}
+byte  	nr	0	<node>	<variable>	{scope _3_}
+byte  	maximum	0	<node>	<variable>	{scope _3_}
+byte  	neighbourR	0	<node>	<variable>	{scope _3_}
+byte  	proc	0	<:init:>	<variable>	{scope _4_}
+label	end	46	<node>	{scope _3_}
+exit: 0

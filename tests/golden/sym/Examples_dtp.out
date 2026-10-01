@@ -1,0 +1,93 @@
+dtp.pml:107:17: warning: '/*' within block comment [-Wcomment]
+  107 | /*              :: goto s5              /* channel disconnected */
+      |                                         ^
+dtp.pml:242:34: warning: '/*' within block comment [-Wcomment]
+  242 |         /*      :: rtype == rvnak -> goto s4    /* too soon */
+      |                                                 ^
+2 warnings generated.
+mtype 	ack	9	<:global:>	<constant>	{scope _}
+mtype 	can	8	<:global:>	<constant>	{scope _}
+mtype 	crcck	7	<:global:>	<constant>	{scope _}
+mtype 	data8	6	<:global:>	<constant>	{scope _}
+mtype 	last8	5	<:global:>	<constant>	{scope _}
+mtype 	nak	4	<:global:>	<constant>	{scope _}
+mtype 	query8	3	<:global:>	<constant>	{scope _}
+mtype 	rvnak	2	<:global:>	<constant>	{scope _}
+mtype 	zak	1	<:global:>	<constant>	{scope _}
+chan  	StoC	2	<:global:>	<variable>	2	short 	short 	{scope _}
+chan  	CtoR	2	<:global:>	<variable>	2	short 	short 	{scope _}
+chan  	RtoC	2	<:global:>	<variable>	2	short 	short 	{scope _}
+chan  	RtoS	2	<:global:>	<variable>	2	short 	short 	{scope _}
+proctype	channel	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<channel>	<parameter 1>	0		{scope _}
+chan  	out	0	<channel>	<parameter 2>	0		{scope _}
+short 	a	0	<channel>	<variable>	{scope _7_}
+short 	b	0	<channel>	<variable>	{scope _7_}
+byte  	cnt	0	<channel>	<variable>	{scope _7_}
+proctype	sender	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<sender>	<parameter 1>	0		{scope _}
+chan  	out	0	<sender>	<parameter 2>	0		{scope _}
+bit   	rcvrrdy	0	<sender>	<variable>	{scope _8_}
+short 	state	0	<sender>	<variable>	{scope _8_}
+short 	queryt	0	<sender>	<variable>	{scope _8_}
+short 	datat	0	<sender>	<variable>	{scope _8_}
+short 	lastt	0	<sender>	<variable>	{scope _8_}
+short 	t	0	<sender>	<variable>	{scope _8_}
+short 	type	0	<sender>	<variable>	{scope _8_}
+short 	seqno	0	<sender>	<variable>	{scope _8_}
+short 	toff	0	<sender>	<variable>	{scope _8_}
+short 	offset	0	<sender>	<variable>	{scope _8_}
+short 	cnt	0	<sender>	<variable>	{scope _8_}
+short 	retries	0	<sender>	<variable>	{scope _8_}
+short 	maxretries	0	<sender>	<variable>	{scope _8_}
+proctype	receiver	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<receiver>	<parameter 1>	0		{scope _}
+chan  	out	0	<receiver>	<parameter 2>	0		{scope _}
+short 	state	0	<receiver>	<variable>	{scope _9_}
+short 	lasttyp	0	<receiver>	<variable>	{scope _9_}
+short 	offset	0	<receiver>	<variable>	{scope _9_}
+short 	retries	0	<receiver>	<variable>	{scope _9_}
+short 	lastack	0	<receiver>	<variable>	{scope _9_}
+short 	readStat	0	<receiver>	<variable>	{scope _9_}
+short 	cnt	0	<receiver>	<variable>	{scope _9_}
+short 	seqno	0	<receiver>	<variable>	{scope _9_}
+short 	rtype	0	<receiver>	<variable>	{scope _9_}
+short 	type	0	<receiver>	<variable>	{scope _9_}
+short 	respreq	0	<receiver>	<variable>	{scope _9_}
+short 	typ	0	<receiver>	<variable>	{scope _9_}
+label	end	140	<receiver>	{scope _9_}
+label	S	138	<receiver>	{scope _9_}
+label	F	137	<receiver>	{scope _9_}
+label	s14	134	<receiver>	{scope _9_}
+label	s13	132	<receiver>	{scope _9_}
+label	s12	131	<receiver>	{scope _9_}
+label	s11	114	<receiver>	{scope _9_}
+label	s10	97	<receiver>	{scope _9_}
+label	s9	80	<receiver>	{scope _9_}
+label	s8	76	<receiver>	{scope _9_}
+label	s7	71	<receiver>	{scope _9_}
+label	s6	70	<receiver>	{scope _9_}
+label	s5	48	<receiver>	{scope _9_}
+label	s4	46	<receiver>	{scope _9_}
+label	s3	22	<receiver>	{scope _9_}
+label	s2	16	<receiver>	{scope _9_}
+label	start	9	<receiver>	{scope _9_}
+label	end	128	<sender>	{scope _8_}
+label	S	126	<sender>	{scope _8_}
+label	F	125	<sender>	{scope _8_}
+label	s13	124	<sender>	{scope _8_}
+label	s12	111	<sender>	{scope _8_}
+label	s11	96	<sender>	{scope _8_}
+label	s10	85	<sender>	{scope _8_}
+label	s9	75	<sender>	{scope _8_}
+label	s8	72	<sender>	{scope _8_}
+label	s7	71	<sender>	{scope _8_}
+label	s6	53	<sender>	{scope _8_}
+label	s5	44	<sender>	{scope _8_}
+label	s4	41	<sender>	{scope _8_}
+label	s3	27	<sender>	{scope _8_}
+label	s2	25	<sender>	{scope _8_}
+label	s1	14	<sender>	{scope _8_}
+label	start	10	<sender>	{scope _8_}
+label	end	8	<channel>	{scope _7_}
+exit: 0

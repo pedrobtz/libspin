@@ -1,0 +1,8 @@
+ltl p: [] ((! (client_busy[1])) || (<> (! (client_busy[1]))))
+exit: 0
+sha256 pan.b c4d83f96cc4b1bb59d62d77d3b7bca876c8f10ac4d9dae83f09f854f658a7346
+sha256 pan.c ff379044d701022491a185ed235acc017ac888e1cba564dbd67ba067a9ec8ae5
+sha256 pan.h 2a2a6105c0ccbb0ac294da9d0bf9c747006adab4d7421fa589db113817c92856
+sha256 pan.m 1a3c09282709b323bfebc081acfd9f37eb05c835144d309b2f8af6e66c9a2a7a
+sha256 pan.p 2b7918fb7f8bc2f82a94c76c89e812fdf3eef405c4b643a410cd2e33d27ddbe1
+sha256 pan.t c6921cb2f40ebe85dbc6097db2c10e9ba3de1f8076ec5878928c410b5e1af4c5

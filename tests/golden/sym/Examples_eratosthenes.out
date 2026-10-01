@@ -1,0 +1,12 @@
+mtype 	number	2	<:global:>	<constant>	{scope _}
+mtype 	eof	1	<:global:>	<constant>	{scope _}
+chan  	root	0	<:global:>	<variable>	2	mtype 	int   	{scope _}
+proctype	sieve	0	<:global:>	<variable>	{scope _}
+chan  	c	0	<sieve>	<parameter 1>	0		{scope _}
+int   	prime	0	<sieve>	<parameter 2>	{scope _}
+chan  	child	0	<sieve>	<variable>	2	mtype 	int   	{scope _3_}
+bit   	haschild	0	<sieve>	<variable>	{scope _3_}
+int   	n	0	<sieve>	<variable>	{scope _3_}
+int   	n	2	<:init:>	<variable>	{scope _4_}
+label	end	17	<sieve>	{scope _3_}
+exit: 0

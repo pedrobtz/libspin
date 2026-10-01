@@ -1,0 +1,8 @@
+spin: bad_never_io.pml:4, Error: never claim contains i/o stmnts	saw 'keyword: od' near 'od'
+exit: 1
+sha256 pan.b f14449c45a3dfcb8a4e64b6c723f201ad4bcac9bc2dfee578b85454c314cda0f
+sha256 pan.c 58f549d67db5be53a64e0406a0a34223a47d259dcdefc5acf0dbd61ced065c2b
+sha256 pan.h 3e856ff97e4c68678b02fb2f205dce16f20c38f2162194506880a6d5b2043ff3
+sha256 pan.m d487f153289b2617fd7de0f550f48b78ed8538d92e7a7a86f0439cb97ad0a494
+sha256 pan.p 2b7918fb7f8bc2f82a94c76c89e812fdf3eef405c4b643a410cd2e33d27ddbe1
+sha256 pan.t 10072a7fe9965000b65c17fe8f301405e564ee7f08734e59f579d2be43a08d86

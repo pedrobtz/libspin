@@ -1,0 +1,611 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting station with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (station)
+  1:	proc  0 (:init::1) hajek.pml:65 (state 1)	[(run station(q0,q1))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+Starting station with pid 2
+  2:	proc  0 (:init::1) creates proc  2 (station)
+  2:	proc  0 (:init::1) hajek.pml:66 (state 2)	[(run station(q1,q0))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+  3:	proc  2 (station:1) hajek.pml:17 (state 1)	[(empty(inp))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+  4:	proc  1 (station:1) hajek.pml:17 (state 1)	[(empty(inp))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+  5:	proc  2 (station:1) hajek.pml:18 (state 2)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+  6:	proc  2 (station:1) hajek.pml:19 (state 3)	[c = 1]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		station(2):c = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+  7:	proc  1 (station:1) hajek.pml:18 (state 2)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+  8:	proc  1 (station:1) hajek.pml:19 (state 3)	[c = 1]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		station(1):c = 1
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+  9:	proc  1 (station:1) hajek.pml:20 (state 4)	[goto pr]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 10:	proc  2 (station:1) hajek.pml:20 (state 4)	[goto pr]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 11:	proc  2 (station:1) hajek.pml:44 (state 26)	[((c!=0))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 12:	proc  1 (station:1) hajek.pml:44 (state 26)	[((c!=0))]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 13:	proc  2 (station:1) hajek.pml:45 (state 27)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 14:	proc  2 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 15:	proc  1 (station:1) hajek.pml:45 (state 27)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 16:	proc  1 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 17:	proc  2 (station:1) hajek.pml:48 (state 30)	[(gotack)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 18:	proc  2 (station:1) hajek.pml:53 (state 34)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 19:	proc  2 (station:1) hajek.pml:55 (state 36)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 20:	proc  2 (station:1) hajek.pml:55 (state 37)	[everfetched = 1]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		station(2):everfetched = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 21:	proc  1 (station:1) hajek.pml:48 (state 30)	[(gotack)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 22:	proc  2 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): 
+ 23:	proc  1 (station:1) hajek.pml:53 (state 34)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 24:	proc  1 (station:1) hajek.pml:55 (state 36)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): 
+ 25:	proc  2 (station:1) hajek.pml:58 Send 0,1	-> queue 1 (out)
+ 25:	proc  2 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 26:	proc  2 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		station(2):gotack = 0
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 27:	proc  2 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 28:	proc  1 (station:1) hajek.pml:55 (state 37)	[everfetched = 1]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		station(1):everfetched = 1
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): [0,1]
+ 29:	proc  2 (station:1) hajek.pml:17 (state 1)	[(empty(inp))]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 30:	proc  2 (station:1) hajek.pml:18 (state 2)	[(1)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 31:	proc  1 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): [0,1]
+ 32:	proc  2 (station:1) hajek.pml:19 (state 3)	[c = 1]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		station(2):c = 1
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 33:	proc  1 (station:1) hajek.pml:58 Send 0,1	-> queue 2 (out)
+ 33:	proc  1 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 34:	proc  1 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		station(1):gotack = 0
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 35:	proc  1 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 36:	proc  2 (station:1) hajek.pml:20 (state 4)	[goto pr]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): [0,1]
+ 37:	proc  1 (station:1) hajek.pml:21 Recv 0,1	<- queue 1 (inp)
+ 37:	proc  1 (station:1) hajek.pml:21 (state 5)	[inp?v,din]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		station(1):din = 1
+		station(1):v = 0
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 38:	proc  1 (station:1) hajek.pml:23 (state 6)	[c = 0]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		station(1):c = 0
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 39:	proc  2 (station:1) hajek.pml:44 (state 26)	[((c!=0))]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [0,1]
+ 40:	proc  1 (station:1) hajek.pml:26 (state 9)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 41:	proc  2 (station:1) hajek.pml:45 (state 27)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [0,1]
+ 42:	proc  2 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [0,1]
+ 43:	proc  1 (station:1) hajek.pml:27 (state 10)	[((c==0))]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 44:	proc  1 (station:1) hajek.pml:31 (state 13)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 45:	proc  1 (station:1) hajek.pml:33 (state 15)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 46:	proc  2 (station:1) hajek.pml:56 (state 38)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [0,1]
+ 47:	proc  1 (station:1) hajek.pml:34 (state 16)	[(((v!=phased)||!(everaccepted)))]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 48:	proc  1 (station:1) hajek.pml:35 (state 17)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 49:	proc  1 (station:1) hajek.pml:36 (state 18)	[assert((din==((prev_din+1)%8)))]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 50:	proc  1 (station:1) hajek.pml:37 (state 19)	[prev_din = din]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		station(1):prev_din = 1
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): 
+ 51:	proc  2 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [0,1]
+ 52:	proc  2 (station:1) hajek.pml:58 Send 0,1	-> queue 1 (out)
+ 52:	proc  2 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): [0,1]
+ 53:	proc  2 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		station(2):gotack = 0
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): [0,1]
+ 54:	proc  1 (station:1) hajek.pml:38 (state 20)	[everaccepted = 1]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		station(1):everaccepted = 1
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 55:	proc  2 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): [0,1]
+ 56:	proc  1 (station:1) hajek.pml:39 (state 21)	[phased = v]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		station(1):phased = 0
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 57:	proc  1 (station:1) hajek.pml:40 (state 22)	[phase = (1-phase)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		station(1):phase = 1
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 58:	proc  1 (station:1) hajek.pml:44 (state 25)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 59:	proc  1 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [0,1]
+		queue 2 (station(1):out): [0,1]
+		queue 1 (station(1):inp): [0,1]
+ 60:	proc  2 (station:1) hajek.pml:21 Recv 0,1	<- queue 2 (inp)
+ 60:	proc  2 (station:1) hajek.pml:21 (state 5)	[inp?v,din]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		station(2):din = 1
+		station(2):v = 0
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 61:	proc  1 (station:1) hajek.pml:56 (state 38)	[else]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): [0,1]
+ 62:	proc  2 (station:1) hajek.pml:23 (state 6)	[c = 0]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		station(2):c = 0
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 63:	proc  2 (station:1) hajek.pml:26 (state 9)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 64:	proc  1 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 2 (station(1):out): 
+		queue 1 (station(1):inp): [0,1]
+ 65:	proc  2 (station:1) hajek.pml:27 (state 10)	[((c==0))]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 66:	proc  2 (station:1) hajek.pml:31 (state 13)	[else]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 67:	proc  2 (station:1) hajek.pml:33 (state 15)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 68:	proc  2 (station:1) hajek.pml:34 (state 16)	[(((v!=phased)||!(everaccepted)))]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): 
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): 
+ 69:	proc  1 (station:1) hajek.pml:58 Send 1,1	-> queue 2 (out)
+ 69:	proc  1 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [0,1]
+ 70:	proc  1 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [1,1]
+		station(1):gotack = 0
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [0,1]
+ 71:	proc  1 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [0,1]
+ 72:	proc  2 (station:1) hajek.pml:35 (state 17)	[(1)]
+		queue 1 (q0): [0,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [0,1]
+		queue 2 (station(2):inp): [1,1]
+ 73:	proc  1 (station:1) hajek.pml:21 Recv 0,1	<- queue 1 (inp)
+ 73:	proc  1 (station:1) hajek.pml:21 (state 5)	[inp?v,din]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(1):din = 1
+		station(1):v = 0
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 74:	proc  2 (station:1) hajek.pml:36 (state 18)	[assert((din==((prev_din+1)%8)))]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 75:	proc  2 (station:1) hajek.pml:37 (state 19)	[prev_din = din]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(2):prev_din = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 76:	proc  2 (station:1) hajek.pml:38 (state 20)	[everaccepted = 1]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(2):everaccepted = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 77:	proc  1 (station:1) hajek.pml:24 (state 7)	[c = 1]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(1):c = 1
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 78:	proc  1 (station:1) hajek.pml:26 (state 9)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 79:	proc  2 (station:1) hajek.pml:39 (state 21)	[phased = v]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(2):phased = 0
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 80:	proc  1 (station:1) hajek.pml:44 (state 26)	[((c!=0))]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 81:	proc  1 (station:1) hajek.pml:45 (state 27)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 82:	proc  2 (station:1) hajek.pml:40 (state 22)	[phase = (1-phase)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(2):phase = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 83:	proc  1 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 84:	proc  2 (station:1) hajek.pml:44 (state 25)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 85:	proc  2 (station:1) hajek.pml:47 (state 29)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 86:	proc  2 (station:1) hajek.pml:56 (state 38)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 87:	proc  2 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+ 88:	proc  1 (station:1) hajek.pml:56 (state 38)	[else]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+ 89:	proc  2 (station:1) hajek.pml:58 Send 1,1	-> queue 1 (out)
+ 89:	proc  2 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 90:	proc  2 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		station(2):gotack = 0
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 91:	proc  1 (station:1) hajek.pml:58 (state 40)	[.(goto)]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [1,1]
+ 92:	proc  2 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 93:	proc  2 (station:1) hajek.pml:21 Recv 1,1	<- queue 2 (inp)
+ 93:	proc  2 (station:1) hajek.pml:21 (state 5)	[inp?v,din]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): 
+		station(2):din = 1
+		station(2):v = 1
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): 
+ 94:	proc  1 (station:1) hajek.pml:58 Send 1,1	-> queue 2 (out)
+ 94:	proc  1 (station:1) hajek.pml:58 (state 41)	[out!phase,dout]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [1,1]
+ 95:	proc  2 (station:1) hajek.pml:23 (state 6)	[c = 0]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		station(2):c = 0
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 96:	proc  2 (station:1) hajek.pml:26 (state 9)	[.(goto)]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 97:	proc  2 (station:1) hajek.pml:27 (state 10)	[((c==0))]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 98:	proc  2 (station:1) hajek.pml:29 (state 11)	[(((!(everaccepted)&&v)||(v!=phased)))]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): [1,1]
+		queue 2 (station(2):inp): [1,1]
+ 99:	proc  1 (station:1) hajek.pml:59 (state 42)	[gotack = 0]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		station(1):gotack = 0
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [1,1]
+100:	proc  1 (station:1) hajek.pml:61 (state 44)	[.(goto)]
+		queue 1 (q0): [1,1]
+		queue 2 (q1): [1,1]
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): [1,1]
+101:	proc  1 (station:1) hajek.pml:21 Recv 1,1	<- queue 1 (inp)
+101:	proc  1 (station:1) hajek.pml:21 (state 5)	[inp?v,din]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(1):din = 1
+		station(1):v = 1
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+102:	proc  2 (station:1) hajek.pml:30 (state 12)	[gotack = 1]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(2):gotack = 1
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+103:	proc  2 (station:1) hajek.pml:33 (state 15)	[.(goto)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+104:	proc  2 (station:1) hajek.pml:34 (state 16)	[(((v!=phased)||!(everaccepted)))]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+105:	proc  1 (station:1) hajek.pml:23 (state 6)	[c = 0]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		station(1):c = 0
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+106:	proc  2 (station:1) hajek.pml:35 (state 17)	[(1)]
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+spin: hajek.pml:36, Error: assertion violated
+spin: text of failed assertion: assert((din==((prev_din+1)%8)))
+#processes: 3
+		queue 1 (q0): 
+		queue 2 (q1): [1,1]
+107:	proc  2 (station:1) hajek.pml:36 (state 18)
+		station(2):dout = 1
+		station(2):prev_din = 1
+		station(2):din = 1
+		station(2):gotack = 1
+		station(2):v = 1
+		station(2):c = 0
+		station(2):everfetched = 1
+		station(2):everaccepted = 1
+		station(2):phase = 1
+		station(2):phased = 0
+		queue 1 (station(2):out): 
+		queue 2 (station(2):inp): [1,1]
+107:	proc  1 (station:1) hajek.pml:26 (state 9)
+		station(1):dout = 1
+		station(1):prev_din = 1
+		station(1):din = 1
+		station(1):gotack = 0
+		station(1):v = 1
+		station(1):c = 0
+		station(1):everfetched = 1
+		station(1):everaccepted = 1
+		station(1):phase = 1
+		station(1):phased = 0
+		queue 2 (station(1):out): [1,1]
+		queue 1 (station(1):inp): 
+107:	proc  0 (:init::1) hajek.pml:68 (state 4) <valid end state>
+3 processes created
+exit: 1

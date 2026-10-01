@@ -1,0 +1,135 @@
+  0:	proc  - (:root:) creates proc  0 (cr)
+  1:	proc  0 (cr:1) welfare.pml:20 (state 1)	[a[0] = 1]
+		a[0] = 1
+		a[1] = 0
+		a[2] = 0
+		a[3] = 0
+		a[4] = 0
+  2:	proc  0 (cr:1) welfare.pml:20 (state 2)	[a[1] = 3]
+		a[0] = 1
+		a[1] = 3
+		a[2] = 0
+		a[3] = 0
+		a[4] = 0
+  3:	proc  0 (cr:1) welfare.pml:20 (state 3)	[a[2] = 4]
+		a[0] = 1
+		a[1] = 3
+		a[2] = 4
+		a[3] = 0
+		a[4] = 0
+  4:	proc  0 (cr:1) welfare.pml:20 (state 4)	[a[3] = 13]
+		a[0] = 1
+		a[1] = 3
+		a[2] = 4
+		a[3] = 13
+		a[4] = 0
+  5:	proc  0 (cr:1) welfare.pml:20 (state 5)	[a[4] = 18]
+		a[0] = 1
+		a[1] = 3
+		a[2] = 4
+		a[3] = 13
+		a[4] = 18
+  6:	proc  0 (cr:1) welfare.pml:21 (state 6)	[b[0] = 1]
+		b[0] = 1
+		b[1] = 0
+		b[2] = 0
+		b[3] = 0
+		b[4] = 0
+  7:	proc  0 (cr:1) welfare.pml:21 (state 7)	[b[1] = 4]
+		b[0] = 1
+		b[1] = 4
+		b[2] = 0
+		b[3] = 0
+		b[4] = 0
+  8:	proc  0 (cr:1) welfare.pml:21 (state 8)	[b[2] = 18]
+		b[0] = 1
+		b[1] = 4
+		b[2] = 18
+		b[3] = 0
+		b[4] = 0
+  9:	proc  0 (cr:1) welfare.pml:21 (state 9)	[b[3] = 20]
+		b[0] = 1
+		b[1] = 4
+		b[2] = 18
+		b[3] = 20
+		b[4] = 0
+ 10:	proc  0 (cr:1) welfare.pml:21 (state 10)	[b[4] = 25]
+		b[0] = 1
+		b[1] = 4
+		b[2] = 18
+		b[3] = 20
+		b[4] = 25
+ 11:	proc  0 (cr:1) welfare.pml:22 (state 11)	[c[0] = 5]
+		c[0] = 5
+		c[1] = 0
+		c[2] = 0
+		c[3] = 0
+		c[4] = 0
+ 12:	proc  0 (cr:1) welfare.pml:22 (state 12)	[c[1] = 8]
+		c[0] = 5
+		c[1] = 8
+		c[2] = 0
+		c[3] = 0
+		c[4] = 0
+ 13:	proc  0 (cr:1) welfare.pml:22 (state 13)	[c[2] = 12]
+		c[0] = 5
+		c[1] = 8
+		c[2] = 12
+		c[3] = 0
+		c[4] = 0
+ 14:	proc  0 (cr:1) welfare.pml:22 (state 14)	[c[3] = 18]
+		c[0] = 5
+		c[1] = 8
+		c[2] = 12
+		c[3] = 18
+		c[4] = 0
+ 15:	proc  0 (cr:1) welfare.pml:22 (state 15)	[c[4] = 24]
+		c[0] = 5
+		c[1] = 8
+		c[2] = 12
+		c[3] = 18
+		c[4] = 24
+ 16:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 17:	proc  0 (cr:1) welfare.pml:26 (state 18)	[((b[j]<c[k]))]
+ 18:	proc  0 (cr:1) welfare.pml:26 (state 19)	[j = (j+1)]
+		cr(0):j = 1
+ 19:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 20:	proc  0 (cr:1) welfare.pml:26 (state 18)	[((b[j]<c[k]))]
+ 21:	proc  0 (cr:1) welfare.pml:26 (state 19)	[j = (j+1)]
+		cr(0):j = 2
+ 22:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 23:	proc  0 (cr:1) welfare.pml:25 (state 16)	[((a[i]<b[j]))]
+ 24:	proc  0 (cr:1) welfare.pml:25 (state 17)	[i = (i+1)]
+		cr(0):i = 1
+ 25:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 26:	proc  0 (cr:1) welfare.pml:25 (state 16)	[((a[i]<b[j]))]
+ 27:	proc  0 (cr:1) welfare.pml:25 (state 17)	[i = (i+1)]
+		cr(0):i = 2
+ 28:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 29:	proc  0 (cr:1) welfare.pml:25 (state 16)	[((a[i]<b[j]))]
+ 30:	proc  0 (cr:1) welfare.pml:25 (state 17)	[i = (i+1)]
+		cr(0):i = 3
+ 31:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 32:	proc  0 (cr:1) welfare.pml:25 (state 16)	[((a[i]<b[j]))]
+ 33:	proc  0 (cr:1) welfare.pml:25 (state 17)	[i = (i+1)]
+		cr(0):i = 4
+ 34:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 35:	proc  0 (cr:1) welfare.pml:27 (state 20)	[((c[k]<a[i]))]
+ 36:	proc  0 (cr:1) welfare.pml:27 (state 21)	[k = (k+1)]
+		cr(0):k = 1
+ 37:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 38:	proc  0 (cr:1) welfare.pml:27 (state 20)	[((c[k]<a[i]))]
+ 39:	proc  0 (cr:1) welfare.pml:27 (state 21)	[k = (k+1)]
+		cr(0):k = 2
+ 40:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 41:	proc  0 (cr:1) welfare.pml:27 (state 20)	[((c[k]<a[i]))]
+ 42:	proc  0 (cr:1) welfare.pml:27 (state 21)	[k = (k+1)]
+		cr(0):k = 3
+ 43:	proc  0 (cr:1) welfare.pml:30 (state 25)	[.(goto)]
+ 44:	proc  0 (cr:1) welfare.pml:28 (state 22)	[else]
+ 45:	proc  0 (cr:1) welfare.pml:28 (state 23)	[goto :b0]
+ 46:	proc  0 (cr:1) welfare.pml:30 (state 27)	[assert(((a[i]==b[j])&&(b[j]==c[k])))]
+ 47:	proc  0 (cr:1) welfare.pml:31 (state 28)	[assert((((i<5)&&(j<5))&&(k<5)))]
+ 47:	proc  0 (cr:1)       terminates
+1 process created
+exit: 0

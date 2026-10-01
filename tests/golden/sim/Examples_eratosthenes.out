@@ -1,0 +1,429 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting sieve with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (sieve)
+  1:	proc  0 (:init::1) eratosthenes.pml:44 (state 1)	[(run sieve(root,n))]
+          MSC: 2 is prime
+  2:	proc  1 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+  3:	proc  0 (:init::1) eratosthenes.pml:49 (state 9)	[.(goto)]
+  4:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+  5:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+  6:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 3
+  7:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+  7:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+  7:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,3	-> queue 1 (root)
+  7:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,3	<- queue 1 (c)
+		sieve(1):n = 3
+  8:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+  9:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 10:	proc  1 (sieve:1) eratosthenes.pml:24 (state 6)	[(!(haschild))]
+ 11:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 4
+ 12:	proc  1 (sieve:1) eratosthenes.pml:25 (state 7)	[haschild = 1]
+		sieve(1):haschild = 1
+Starting sieve with pid 2
+ 13:	proc  1 (sieve:1) creates proc  2 (sieve)
+ 13:	proc  1 (sieve:1) eratosthenes.pml:26 (state 8)	[(run sieve(child,n))]
+              MSC: 3 is prime
+ 14:	proc  2 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+ 15:	proc  1 (sieve:1) eratosthenes.pml:30 (state 12)	[.(goto)]
+ 16:	proc  2 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 17:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 18:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 19:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 19:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 19:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,4	-> queue 1 (root)
+ 19:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,4	<- queue 1 (c)
+		sieve(1):n = 4
+ 20:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 21:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+ 22:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 5
+          MSC: 4 = 2*2
+ 23:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+ 24:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 24:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 24:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,5	-> queue 1 (root)
+ 24:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,5	<- queue 1 (c)
+		sieve(1):n = 5
+ 25:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 26:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 6
+ 27:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 28:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 29:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 29:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 29:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,5	-> queue 2 (child)
+ 29:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,5	<- queue 2 (c)
+		sieve(2):n = 5
+ 30:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 30:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 30:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,6	-> queue 1 (root)
+ 30:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,6	<- queue 1 (c)
+		sieve(1):n = 6
+ 31:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 32:	proc  2 (sieve:1) eratosthenes.pml:24 (state 6)	[(!(haschild))]
+ 33:	proc  2 (sieve:1) eratosthenes.pml:25 (state 7)	[haschild = 1]
+		sieve(2):haschild = 1
+Starting sieve with pid 3
+ 34:	proc  2 (sieve:1) creates proc  3 (sieve)
+ 34:	proc  2 (sieve:1) eratosthenes.pml:26 (state 8)	[(run sieve(child,n))]
+ 35:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+          MSC: 6 = 2*3
+ 36:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+ 37:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+                  MSC: 5 is prime
+ 38:	proc  3 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+ 39:	proc  2 (sieve:1) eratosthenes.pml:30 (state 12)	[.(goto)]
+ 40:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 7
+ 41:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 41:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 41:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,7	-> queue 1 (root)
+ 41:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,7	<- queue 1 (c)
+		sieve(1):n = 7
+ 42:	proc  2 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 43:	proc  3 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 44:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 45:	proc  2 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 46:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 47:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 48:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 8
+ 49:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 49:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 49:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,7	-> queue 2 (child)
+ 49:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,7	<- queue 2 (c)
+		sieve(2):n = 7
+ 50:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 50:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 50:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,8	-> queue 1 (root)
+ 50:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,8	<- queue 1 (c)
+		sieve(1):n = 8
+ 51:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+ 52:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 53:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 54:	proc  2 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 55:	proc  2 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 55:	proc  3 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 55:	proc  2 (sieve:1) eratosthenes.pml:28 Sent number,7	-> queue 3 (child)
+ 55:	proc  3 (sieve:1) eratosthenes.pml:18 Recv number,7	<- queue 3 (c)
+		sieve(3):n = 7
+          MSC: 8 = 2*4
+ 56:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+ 57:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 58:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 59:	proc  3 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 60:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 9
+ 61:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 61:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 61:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,9	-> queue 1 (root)
+ 61:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,9	<- queue 1 (c)
+		sieve(1):n = 9
+ 62:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 63:	proc  3 (sieve:1) eratosthenes.pml:24 (state 6)	[(!(haschild))]
+ 64:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 65:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 10
+ 66:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 67:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 67:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 67:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,9	-> queue 2 (child)
+ 67:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,9	<- queue 2 (c)
+		sieve(2):n = 9
+ 68:	proc  3 (sieve:1) eratosthenes.pml:25 (state 7)	[haschild = 1]
+		sieve(3):haschild = 1
+ 69:	proc  2 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+              MSC: 9 = 3*3
+ 70:	proc  2 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+Starting sieve with pid 4
+ 71:	proc  3 (sieve:1) creates proc  4 (sieve)
+ 71:	proc  3 (sieve:1) eratosthenes.pml:26 (state 8)	[(run sieve(child,n))]
+ 72:	proc  2 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+                      MSC: 7 is prime
+ 73:	proc  4 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+ 74:	proc  2 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 75:	proc  4 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 76:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 76:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 76:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,10	-> queue 1 (root)
+ 76:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,10	<- queue 1 (c)
+		sieve(1):n = 10
+ 77:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+ 78:	proc  3 (sieve:1) eratosthenes.pml:30 (state 12)	[.(goto)]
+          MSC: 10 = 2*5
+ 79:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+ 80:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 81:	proc  3 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 82:	proc  3 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 83:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 84:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 11
+ 85:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+ 86:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 86:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 86:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,11	-> queue 1 (root)
+ 86:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,11	<- queue 1 (c)
+		sieve(1):n = 11
+ 87:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+ 88:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 12
+ 89:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 90:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 91:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 91:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 91:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,11	-> queue 2 (child)
+ 91:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,11	<- queue 2 (c)
+		sieve(2):n = 11
+ 92:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+ 93:	proc  2 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+ 94:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+ 94:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 94:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,12	-> queue 1 (root)
+ 94:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,12	<- queue 1 (c)
+		sieve(1):n = 12
+ 95:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+ 96:	proc  2 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+ 96:	proc  3 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+ 96:	proc  2 (sieve:1) eratosthenes.pml:28 Sent number,11	-> queue 3 (child)
+ 96:	proc  3 (sieve:1) eratosthenes.pml:18 Recv number,11	<- queue 3 (c)
+		sieve(3):n = 11
+          MSC: 12 = 2*6
+ 97:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+ 98:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+ 99:	proc  3 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+100:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+101:	proc  3 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+102:	proc  3 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+102:	proc  4 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+102:	proc  3 (sieve:1) eratosthenes.pml:28 Sent number,11	-> queue 4 (child)
+102:	proc  4 (sieve:1) eratosthenes.pml:18 Recv number,11	<- queue 4 (c)
+		sieve(4):n = 11
+103:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+104:	proc  4 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+105:	proc  4 (sieve:1) eratosthenes.pml:24 (state 6)	[(!(haschild))]
+106:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 13
+107:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+107:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+107:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,13	-> queue 1 (root)
+107:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,13	<- queue 1 (c)
+		sieve(1):n = 13
+108:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+109:	proc  4 (sieve:1) eratosthenes.pml:25 (state 7)	[haschild = 1]
+		sieve(4):haschild = 1
+Starting sieve with pid 5
+110:	proc  4 (sieve:1) creates proc  5 (sieve)
+110:	proc  4 (sieve:1) eratosthenes.pml:26 (state 8)	[(run sieve(child,n))]
+                          MSC: 11 is prime
+111:	proc  5 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+112:	proc  5 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+113:	proc  4 (sieve:1) eratosthenes.pml:30 (state 12)	[.(goto)]
+114:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+115:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 14
+116:	proc  4 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+117:	proc  4 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+118:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+119:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+119:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+119:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,13	-> queue 2 (child)
+119:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,13	<- queue 2 (c)
+		sieve(2):n = 13
+120:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+121:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+121:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+121:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,14	-> queue 1 (root)
+121:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,14	<- queue 1 (c)
+		sieve(1):n = 14
+122:	proc  2 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+123:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+124:	proc  2 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+124:	proc  3 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+124:	proc  2 (sieve:1) eratosthenes.pml:28 Sent number,13	-> queue 3 (child)
+124:	proc  3 (sieve:1) eratosthenes.pml:18 Recv number,13	<- queue 3 (c)
+		sieve(3):n = 13
+125:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+126:	proc  3 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+          MSC: 14 = 2*7
+127:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+128:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+129:	proc  3 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+130:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 15
+131:	proc  3 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+131:	proc  4 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+131:	proc  3 (sieve:1) eratosthenes.pml:28 Sent number,13	-> queue 4 (child)
+131:	proc  4 (sieve:1) eratosthenes.pml:18 Recv number,13	<- queue 4 (c)
+		sieve(4):n = 13
+132:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+133:	proc  4 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+134:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+134:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+134:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,15	-> queue 1 (root)
+134:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,15	<- queue 1 (c)
+		sieve(1):n = 15
+135:	proc  4 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+136:	proc  4 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+136:	proc  5 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+136:	proc  4 (sieve:1) eratosthenes.pml:28 Sent number,13	-> queue 5 (child)
+136:	proc  5 (sieve:1) eratosthenes.pml:18 Recv number,13	<- queue 5 (c)
+		sieve(5):n = 13
+137:	proc  5 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+138:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+139:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+140:	proc  5 (sieve:1) eratosthenes.pml:24 (state 6)	[(!(haschild))]
+141:	proc  5 (sieve:1) eratosthenes.pml:25 (state 7)	[haschild = 1]
+		sieve(5):haschild = 1
+142:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+143:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 16
+144:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+144:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+144:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,15	-> queue 2 (child)
+144:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,15	<- queue 2 (c)
+		sieve(2):n = 15
+Starting sieve with pid 6
+145:	proc  5 (sieve:1) creates proc  6 (sieve)
+145:	proc  5 (sieve:1) eratosthenes.pml:26 (state 8)	[(run sieve(child,n))]
+                              MSC: 13 is prime
+146:	proc  6 (sieve:1) eratosthenes.pml:16 (state 1)	[printf('MSC: %d is prime\\n',prime)]
+147:	proc  6 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+148:	proc  2 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+149:	proc  5 (sieve:1) eratosthenes.pml:30 (state 12)	[.(goto)]
+150:	proc  5 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+              MSC: 15 = 3*5
+151:	proc  2 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+152:	proc  5 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+153:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+153:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+153:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,16	-> queue 1 (root)
+153:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,16	<- queue 1 (c)
+		sieve(1):n = 16
+154:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+155:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+          MSC: 16 = 2*8
+156:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+157:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 17
+158:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+159:	proc  2 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+160:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+161:	proc  2 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+162:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+162:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+162:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,17	-> queue 1 (root)
+162:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,17	<- queue 1 (c)
+		sieve(1):n = 17
+163:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+164:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 18
+165:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+166:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+167:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+167:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+167:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,17	-> queue 2 (child)
+167:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,17	<- queue 2 (c)
+		sieve(2):n = 17
+168:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+168:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+168:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,18	-> queue 1 (root)
+168:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,18	<- queue 1 (c)
+		sieve(1):n = 18
+169:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+          MSC: 18 = 2*9
+170:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+171:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+172:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+173:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+174:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+175:	proc  2 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+176:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 19
+177:	proc  2 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+177:	proc  3 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+177:	proc  2 (sieve:1) eratosthenes.pml:28 Sent number,17	-> queue 3 (child)
+177:	proc  3 (sieve:1) eratosthenes.pml:18 Recv number,17	<- queue 3 (c)
+		sieve(3):n = 17
+178:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+178:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+178:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,19	-> queue 1 (root)
+178:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,19	<- queue 1 (c)
+		sieve(1):n = 19
+179:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+180:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 20
+181:	proc  1 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+182:	proc  1 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+183:	proc  1 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+183:	proc  2 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+183:	proc  1 (sieve:1) eratosthenes.pml:28 Sent number,19	-> queue 2 (child)
+183:	proc  2 (sieve:1) eratosthenes.pml:18 Recv number,19	<- queue 2 (c)
+		sieve(2):n = 19
+184:	proc  2 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+185:	proc  2 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+186:	proc  3 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+187:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+187:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+187:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,20	-> queue 1 (root)
+187:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,20	<- queue 1 (c)
+		sieve(1):n = 20
+188:	proc  1 (sieve:1) eratosthenes.pml:20 (state 3)	[(((n%prime)==0))]
+189:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+          MSC: 20 = 2*10
+190:	proc  1 (sieve:1) eratosthenes.pml:21 (state 4)	[printf('MSC: %d = %d*%d\\n',n,prime,(n/prime))]
+191:	proc  1 (sieve:1) eratosthenes.pml:31 (state 14)	[.(goto)]
+192:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)	[n = (n+1)]
+		:init:(0):n = 21
+193:	proc  1 (sieve:1) eratosthenes.pml:34 (state 18)	[.(goto)]
+194:	proc  3 (sieve:1) eratosthenes.pml:27 (state 9)	[else]
+195:	proc  3 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+195:	proc  4 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+195:	proc  3 (sieve:1) eratosthenes.pml:28 Sent number,17	-> queue 4 (child)
+195:	proc  4 (sieve:1) eratosthenes.pml:18 Recv number,17	<- queue 4 (c)
+		sieve(4):n = 17
+196:	proc  2 (sieve:1) eratosthenes.pml:28 (state 10)	[child!number,n]
+196:	proc  3 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+196:	proc  2 (sieve:1) eratosthenes.pml:28 Sent number,19	-> queue 3 (child)
+196:	proc  3 (sieve:1) eratosthenes.pml:18 Recv number,19	<- queue 3 (c)
+		sieve(3):n = 19
+197:	proc  4 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+198:	proc  0 (:init::1) eratosthenes.pml:46 (state 4)	[root!number,n]
+198:	proc  1 (sieve:1) eratosthenes.pml:18 (state 2)	[c?number,n]
+198:	proc  0 (:init::1) eratosthenes.pml:46 Sent number,21	-> queue 1 (root)
+198:	proc  1 (sieve:1) eratosthenes.pml:18 Recv number,21	<- queue 1 (c)
+		sieve(1):n = 21
+199:	proc  3 (sieve:1) eratosthenes.pml:22 (state 5)	[else]
+200:	proc  0 (:init::1) eratosthenes.pml:46 (state 2)	[((n<25))]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 7
+200:	proc  6 (sieve:1) eratosthenes.pml:17 (state 17) <valid end state>
+		sieve(6):n = 0
+		sieve(6):haschild = 0
+		sieve(6):prime = 13
+200:	proc  5 (sieve:1) eratosthenes.pml:17 (state 17) <valid end state>
+		sieve(5):n = 13
+		sieve(5):haschild = 1
+		sieve(5):prime = 11
+200:	proc  4 (sieve:1) eratosthenes.pml:23 (state 11)
+		sieve(4):n = 17
+		sieve(4):haschild = 1
+		sieve(4):prime = 7
+200:	proc  3 (sieve:1) eratosthenes.pml:23 (state 11)
+		sieve(3):n = 19
+		sieve(3):haschild = 1
+		sieve(3):prime = 5
+200:	proc  2 (sieve:1) eratosthenes.pml:17 (state 17) <valid end state>
+		sieve(2):n = 19
+		sieve(2):haschild = 1
+		sieve(2):prime = 3
+200:	proc  1 (sieve:1) eratosthenes.pml:19 (state 13)
+		sieve(1):n = 21
+		sieve(1):haschild = 1
+		sieve(1):prime = 2
+200:	proc  0 (:init::1) eratosthenes.pml:46 (state 3)
+		:init:(0):n = 21
+7 processes created
+exit: 0

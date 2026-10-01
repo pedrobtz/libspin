@@ -1,0 +1,710 @@
+  0:	proc  - (:root:) creates proc  0 (Sender)
+  0:	proc  - (:root:) creates proc  1 (Receiver)
+  1:	proc  0 (Sender:1) cambridge.pml:69 (state 21)	[goto reset]
+  2:	proc  1 (Receiver:1) cambridge.pml:172 (state 23)	[(empty(recv))]
+		queue 1 (recv): 
+  3:	proc  1 (Receiver:1) cambridge.pml:172 Send RDY,0	-> queue 2 (sender)
+  3:	proc  1 (Receiver:1) cambridge.pml:172 (state 24)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+  4:	proc  1 (Receiver:1) cambridge.pml:172 (state 25)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+  5:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+  6:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+  6:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): [RESET,0]
+          MSC: RTO
+  7:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): [RESET,0]
+  8:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+  8:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): [RESET,0]
+  9:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): [RESET,0]
+ 10:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 10:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): [RESET,0]
+ 11:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): [RESET,0]
+ 12:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): [RESET,0]
+ 13:	proc  1 (Receiver:1) cambridge.pml:182 Recv RESET,0	<- queue 1 (recv)
+ 13:	proc  1 (Receiver:1) cambridge.pml:182 (state 32)	[recv?RESET,0]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 14:	proc  1 (Receiver:1) cambridge.pml:183 (state 33)	[goto ackreset]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 15:	proc  1 (Receiver:1) cambridge.pml:150 Send RESET,0	-> queue 2 (sender)
+ 15:	proc  1 (Receiver:1) cambridge.pml:150 (state 4)	[sender!RESET,0]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+ 16:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+ 17:	proc  1 (Receiver:1) cambridge.pml:151 (state 5)	[n = 0]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+		Receiver(1):n = 0
+ 18:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 18:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 19:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 20:	proc  1 (Receiver:1) cambridge.pml:151 (state 6)	[Nexp = 0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+		Receiver(1):Nexp = 0
+ 21:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 22:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+ 22:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 23:	proc  1 (Receiver:1) cambridge.pml:152 (state 7)	[goto I]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 24:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 25:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 26:	proc  1 (Receiver:1) cambridge.pml:172 (state 23)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 27:	proc  1 (Receiver:1) cambridge.pml:172 Send RDY,0	-> queue 2 (sender)
+ 27:	proc  1 (Receiver:1) cambridge.pml:172 (state 24)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 28:	proc  1 (Receiver:1) cambridge.pml:172 (state 25)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 29:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 29:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 30:	proc  1 (Receiver:1) cambridge.pml:204 (state 50)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 31:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+ 31:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 32:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 33:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 34:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 35:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+ 35:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 36:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 37:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+ 38:	proc  0 (Sender:1) cambridge.pml:133 (state 68)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 39:	proc  0 (Sender:1) cambridge.pml:134 (state 69)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 40:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+ 40:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+ 41:	proc  1 (Receiver:1) cambridge.pml:236 Recv RESET,0	<- queue 1 (recv)
+ 41:	proc  1 (Receiver:1) cambridge.pml:236 (state 71)	[recv?t,m]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):m = 0
+		Receiver(1):t = 1
+ 42:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 43:	proc  1 (Receiver:1) cambridge.pml:238 (state 72)	[((t==RESET))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 44:	proc  1 (Receiver:1) cambridge.pml:238 (state 73)	[n = 0]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):n = 0
+ 45:	proc  1 (Receiver:1) cambridge.pml:238 (state 74)	[Nexp = 0]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):Nexp = 0
+ 46:	proc  1 (Receiver:1) cambridge.pml:238 (state 75)	[goto I]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 47:	proc  1 (Receiver:1) cambridge.pml:172 (state 23)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 48:	proc  1 (Receiver:1) cambridge.pml:172 Send RDY,0	-> queue 2 (sender)
+ 48:	proc  1 (Receiver:1) cambridge.pml:172 (state 24)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 49:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 49:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 50:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 51:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 52:	proc  1 (Receiver:1) cambridge.pml:172 (state 25)	[goto E]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 53:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+ 54:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 55:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+ 55:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 56:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 57:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 58:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 58:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 59:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+ 60:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 61:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 62:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+ 62:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 63:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 64:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 65:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 65:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 66:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+ 67:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 68:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 69:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+ 69:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+ 70:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+ 70:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 71:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 72:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 73:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 74:	proc  1 (Receiver:1) cambridge.pml:204 (state 50)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 75:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+ 75:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 76:	proc  0 (Sender:1) cambridge.pml:128 Recv RESET,0	<- queue 2 (sender)
+ 76:	proc  0 (Sender:1) cambridge.pml:128 (state 61)	[sender?t,m]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Sender(0):m = 0
+		Sender(0):t = 1
+ 77:	proc  0 (Sender:1) cambridge.pml:130 (state 62)	[((t==RESET))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 78:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 79:	proc  0 (Sender:1) cambridge.pml:130 (state 63)	[n = -(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Sender(0):n = -1
+ 80:	proc  0 (Sender:1) cambridge.pml:130 (state 64)	[goto I]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 81:	proc  0 (Sender:1) cambridge.pml:69 (state 21)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 82:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+ 82:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+ 83:	proc  1 (Receiver:1) cambridge.pml:234 Recv RESET,0	<- queue 1 (recv)
+ 83:	proc  1 (Receiver:1) cambridge.pml:234 (state 69)	[recv?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 84:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 85:	proc  1 (Receiver:1) cambridge.pml:234 (state 70)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 86:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+ 87:	proc  1 (Receiver:1) cambridge.pml:241 (state 79)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 88:	proc  1 (Receiver:1) cambridge.pml:242 (state 80)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 89:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+ 89:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 90:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+ 90:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 91:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 92:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 93:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+ 94:	proc  1 (Receiver:1) cambridge.pml:241 (state 79)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 95:	proc  1 (Receiver:1) cambridge.pml:242 (state 80)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 96:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+ 96:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+ 97:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+ 97:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 98:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+ 99:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+100:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+101:	proc  1 (Receiver:1) cambridge.pml:241 (state 79)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+102:	proc  1 (Receiver:1) cambridge.pml:242 (state 80)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+103:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+103:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+104:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+105:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+105:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+106:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+107:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+108:	proc  1 (Receiver:1) cambridge.pml:241 (state 79)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+109:	proc  1 (Receiver:1) cambridge.pml:242 (state 80)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+110:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+110:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+111:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+112:	proc  0 (Sender:1) cambridge.pml:126 Recv RESET,0	<- queue 2 (sender)
+112:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+113:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+114:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+115:	proc  0 (Sender:1) cambridge.pml:133 (state 68)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+116:	proc  0 (Sender:1) cambridge.pml:134 (state 69)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+117:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+117:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+118:	proc  1 (Receiver:1) cambridge.pml:234 Recv RESET,0	<- queue 1 (recv)
+118:	proc  1 (Receiver:1) cambridge.pml:234 (state 69)	[recv?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+119:	proc  1 (Receiver:1) cambridge.pml:234 (state 70)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+120:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+121:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+122:	proc  0 (Sender:1) cambridge.pml:133 (state 68)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+123:	proc  0 (Sender:1) cambridge.pml:134 (state 69)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+124:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+124:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+125:	proc  1 (Receiver:1) cambridge.pml:234 Recv RESET,0	<- queue 1 (recv)
+125:	proc  1 (Receiver:1) cambridge.pml:234 (state 69)	[recv?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+126:	proc  1 (Receiver:1) cambridge.pml:234 (state 70)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+127:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+128:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+129:	proc  0 (Sender:1) cambridge.pml:133 (state 68)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+130:	proc  0 (Sender:1) cambridge.pml:134 (state 69)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+131:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+131:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+132:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+133:	proc  1 (Receiver:1) cambridge.pml:236 Recv RESET,0	<- queue 1 (recv)
+133:	proc  1 (Receiver:1) cambridge.pml:236 (state 71)	[recv?t,m]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):m = 0
+		Receiver(1):t = 1
+134:	proc  1 (Receiver:1) cambridge.pml:238 (state 72)	[((t==RESET))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+135:	proc  1 (Receiver:1) cambridge.pml:238 (state 73)	[n = 0]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):n = 0
+136:	proc  1 (Receiver:1) cambridge.pml:238 (state 74)	[Nexp = 0]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Receiver(1):Nexp = 0
+137:	proc  1 (Receiver:1) cambridge.pml:238 (state 75)	[goto I]
+		queue 2 (sender): 
+		queue 1 (recv): 
+138:	proc  1 (Receiver:1) cambridge.pml:172 (state 23)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+139:	proc  1 (Receiver:1) cambridge.pml:172 Send RDY,0	-> queue 2 (sender)
+139:	proc  1 (Receiver:1) cambridge.pml:172 (state 24)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+140:	proc  1 (Receiver:1) cambridge.pml:172 (state 25)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+141:	proc  0 (Sender:1) cambridge.pml:128 Recv RDY,0	<- queue 2 (sender)
+141:	proc  0 (Sender:1) cambridge.pml:128 (state 61)	[sender?t,m]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Sender(0):m = 0
+		Sender(0):t = 5
+142:	proc  0 (Sender:1) cambridge.pml:131 (state 65)	[else]
+		queue 2 (sender): 
+		queue 1 (recv): 
+143:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+144:	proc  0 (Sender:1) cambridge.pml:133 (state 67)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+145:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+146:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+147:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+147:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+148:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+149:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+149:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+150:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+151:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+152:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+153:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+154:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+154:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+155:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+156:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+156:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+157:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+158:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+159:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+          MSC: RTO
+160:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): 
+		queue 1 (recv): 
+161:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+161:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+162:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+163:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+          MSC: RTO
+164:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+165:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+165:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+166:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+167:	proc  1 (Receiver:1) cambridge.pml:199 (state 46)	[(empty(recv))]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+168:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+168:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+          MSC: RTO
+169:	proc  1 (Receiver:1) cambridge.pml:200 (state 47)	[printf('MSC: RTO\\n')]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+170:	proc  1 (Receiver:1) cambridge.pml:201 Send RDY,0	-> queue 2 (sender)
+170:	proc  1 (Receiver:1) cambridge.pml:201 (state 48)	[sender!RDY,n]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+171:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+172:	proc  1 (Receiver:1) cambridge.pml:202 (state 49)	[goto E]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+173:	proc  1 (Receiver:1) cambridge.pml:204 (state 50)	[goto reset]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+174:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RDY,0][RDY,0]
+		queue 1 (recv): 
+175:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+175:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): [RDY,0]
+		queue 1 (recv): 
+176:	proc  1 (Receiver:1) cambridge.pml:231 Send RESET,0	-> queue 2 (sender)
+176:	proc  1 (Receiver:1) cambridge.pml:231 (state 68)	[sender!RESET,0]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+177:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+178:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RDY,0][RESET,0]
+		queue 1 (recv): 
+179:	proc  0 (Sender:1) cambridge.pml:126 Recv RDY,0	<- queue 2 (sender)
+179:	proc  0 (Sender:1) cambridge.pml:126 (state 59)	[sender?_,_]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+180:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+181:	proc  0 (Sender:1) cambridge.pml:126 (state 60)	[(1)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+182:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): [RESET,0]
+		queue 1 (recv): 
+183:	proc  0 (Sender:1) cambridge.pml:128 Recv RESET,0	<- queue 2 (sender)
+183:	proc  0 (Sender:1) cambridge.pml:128 (state 61)	[sender?t,m]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Sender(0):m = 0
+		Sender(0):t = 1
+184:	proc  0 (Sender:1) cambridge.pml:130 (state 62)	[((t==RESET))]
+		queue 2 (sender): 
+		queue 1 (recv): 
+185:	proc  0 (Sender:1) cambridge.pml:130 (state 63)	[n = -(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+		Sender(0):n = -1
+186:	proc  0 (Sender:1) cambridge.pml:130 (state 64)	[goto I]
+		queue 2 (sender): 
+		queue 1 (recv): 
+187:	proc  0 (Sender:1) cambridge.pml:69 (state 21)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+188:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+188:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+189:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+190:	proc  1 (Receiver:1) cambridge.pml:234 Recv RESET,0	<- queue 1 (recv)
+190:	proc  1 (Receiver:1) cambridge.pml:234 (state 69)	[recv?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+191:	proc  1 (Receiver:1) cambridge.pml:234 (state 70)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+192:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+193:	proc  0 (Sender:1) cambridge.pml:133 (state 68)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+194:	proc  0 (Sender:1) cambridge.pml:134 (state 69)	[goto reset]
+		queue 2 (sender): 
+		queue 1 (recv): 
+195:	proc  0 (Sender:1) cambridge.pml:123 Send RESET,0	-> queue 1 (recv)
+195:	proc  0 (Sender:1) cambridge.pml:123 (state 58)	[recv!RESET,0]
+		queue 2 (sender): 
+		queue 1 (recv): [RESET,0]
+196:	proc  1 (Receiver:1) cambridge.pml:234 Recv RESET,0	<- queue 1 (recv)
+196:	proc  1 (Receiver:1) cambridge.pml:234 (state 69)	[recv?_,_]
+		queue 2 (sender): 
+		queue 1 (recv): 
+197:	proc  1 (Receiver:1) cambridge.pml:234 (state 70)	[(1)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+198:	proc  1 (Receiver:1) cambridge.pml:244 (state 82)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+199:	proc  0 (Sender:1) cambridge.pml:136 (state 71)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+      timeout
+200:	proc  1 (Receiver:1) cambridge.pml:241 (state 79)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (recv): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		queue 2 (sender): 
+		queue 1 (recv): 
+200:	proc  1 (Receiver:1) cambridge.pml:242 (state 80)
+		Receiver(1):Nexp = 0
+		Receiver(1):m = 0
+		Receiver(1):n = 0
+		Receiver(1):t = 1
+200:	proc  0 (Sender:1) cambridge.pml:124 (state 70)
+		Sender(0):m = 0
+		Sender(0):t = 1
+		Sender(0):n = -1
+2 processes created
+exit: 0

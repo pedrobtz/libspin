@@ -1,0 +1,22 @@
+  0:	proc  - (:root:) creates proc  0 (medium) priority 5
+  0:	proc  - (:root:) creates proc  1 (high) priority 10
+  0:	proc  - (:root:) creates proc  2 (low)
+  1:	proc  1 (high:9) rtos1.pml:18 (state 1)	[_priority = 9]
+          high 9
+  2:	proc  1 (high:9) rtos1.pml:19 (state 2)	[printf('high %d\\n',_priority)]
+  3:	proc  1 (high:9) rtos1.pml:20 (state 3)	[cnt = (cnt+1)]
+		cnt = 1
+  4: setting priority of proc 0 (medium) to 8
+  4:	proc  0 (medium:8) rtos1.pml:11 (state 1)	[set_priority(0, 8)]
+      medium 8 - pid 0 pr 8 pr1 8
+  5:	proc  0 (medium:8) rtos1.pml:12 (state 2)	[printf('medium %d - pid %d pr %d pr1 %d\\n',_priority,_pid,get_priority(_pid),get_priority(0))]
+  6:	proc  0 (medium:8) rtos1.pml:13 (state 3)	[cnt = (cnt+1)]
+		cnt = 2
+  7:	proc  2 (low:1) rtos1.pml:30 (state 1)	[assert(((_priority==1)&&(cnt==2)))]
+              low 1
+  8:	proc  2 (low:1) rtos1.pml:31 (state 2)	[printf('low %d\\n',_priority)]
+  8:	proc  2 (low:1)               terminates
+  8:	proc  1 (high:9)           terminates
+  8:	proc  0 (medium:8)       terminates
+3 processes created
+exit: 0

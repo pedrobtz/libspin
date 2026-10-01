@@ -1,0 +1,14 @@
+ltl bounded_bypass: (! ((user[1]@again))) || (<> ((user[1]@cs)))
+byte  	turn[5]	0	<:global:>	<array>	{scope _}
+byte  	flag[5]	0	<:global:>	<array>	{scope _}
+byte  	ncrit	0	<:global:>	<variable>	{scope _}
+proctype	user	5	<:global:>	<variable>	{scope _}
+byte  	j	0	<user>	<variable>	{scope _1_}
+byte  	k	0	<user>	<variable>	{scope _1_}
+label	accept_S3	8	<bounded_bypass>	{scope _3_}
+label	T0_S3	8	<bounded_bypass>	{scope _3_}
+label	accept_init	3	<bounded_bypass>	{scope _3_}
+label	T0_init	3	<bounded_bypass>	{scope _3_}
+label	cs	26	<user>	{scope _1_}
+label	again	1	<user>	{scope _1_}
+exit: 0

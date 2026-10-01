@@ -1,0 +1,17 @@
+chan  	q[7]	10	<:global:>	<array>	1	byte  	{scope _}
+proctype	left	0	<:global:>	<variable>	{scope _}
+chan  	out	0	<left>	<parameter 1>	0		{scope _}
+byte  	counter	0	<left>	<variable>	{scope _2_}
+byte  	seed	0	<left>	<variable>	{scope _2_}
+proctype	middle	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<middle>	<parameter 1>	0		{scope _}
+chan  	out	0	<middle>	<parameter 2>	0		{scope _}
+byte  	procnum	0	<middle>	<parameter 3>	{scope _}
+byte  	counter	0	<middle>	<variable>	{scope _3_}
+byte  	myval	0	<middle>	<variable>	{scope _3_}
+byte  	nextval	0	<middle>	<variable>	{scope _3_}
+proctype	right	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<right>	<parameter 1>	0		{scope _}
+byte  	biggest	0	<right>	<variable>	{scope _4_}
+byte  	proc	1	<:init:>	<variable>	{scope _5_}
+exit: 0

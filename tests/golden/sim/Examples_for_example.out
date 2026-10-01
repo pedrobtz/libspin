@@ -1,0 +1,175 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) for_example.pml:12 (state 1)	[foo.b = 1]
+		queue 1 (:init:(0):x): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 0
+  2:	proc  0 (:init::1) for_example.pml:13 (state 2)	[foo.i = 12]
+		queue 1 (:init:(0):x): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+  3:	proc  0 (:init::1) for_example.pml:14 (state 3)	[foo.c = x]
+		queue 1 (:init:(0):x): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): 
+  4:	proc  0 (:init::1) for_example.pml:15 Send 1,12,1	-> queue 1 (x)
+  4:	proc  0 (:init::1) for_example.pml:15 (state 4)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [1,12,1]
+  5:	proc  0 (:init::1) for_example.pml:17 (state 5)	[foo.b = 0]
+		queue 1 (:init:(0):x): [1,12,1]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [1,12,1]
+  6:	proc  0 (:init::1) for_example.pml:18 (state 6)	[foo.i = 10]
+		queue 1 (:init:(0):x): [1,12,1]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+		queue 1 (:init:(0):c): [1,12,1]
+  7:	proc  0 (:init::1) for_example.pml:19 (state 7)	[foo.c = 0]
+		queue 1 (:init:(0):x): [1,12,1]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+  8:	proc  0 (:init::1) for_example.pml:20 Send 0,10,0	-> queue 1 (x)
+  8:	proc  0 (:init::1) for_example.pml:20 (state 8)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+  9:	proc  0 (:init::1) for_example.pml:20 Send 0,10,0	-> queue 1 (x)
+  9:	proc  0 (:init::1) for_example.pml:20 (state 9)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 10:	proc  0 (:init::1) for_example.pml:22 (state 10)	[i = 1]
+		:init:(0):i = 1
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 11:	proc  0 (:init::1) for_example.pml:23 (state 11)	[f0r_t3mp_2_ = 0]
+		:init:(0):_f0r_t3mp_2_ = 0
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 12:	proc  0 (:init::1) for_example.pml:28 (state 21)	[.(goto)]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 13:	proc  0 (:init::1) for_example.pml:23 (state 12)	[((f0r_t3mp_2_<len(x)))]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 14:	proc  0 (:init::1) for_example.pml:23 Recv 1,12,1	<- queue 1 (x)
+ 14:	proc  0 (:init::1) for_example.pml:23 (state 13)	[x?foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [0,10,0][0,10,0]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0]
+ 15:	proc  0 (:init::1) for_example.pml:23 Send 1,12,1	-> queue 1 (x)
+ 15:	proc  0 (:init::1) for_example.pml:23 (state 14)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+      1: 1 12 1 (len(x)=3)
+ 16:	proc  0 (:init::1) for_example.pml:24 (state 15)	[printf('%d: %d %d %d (len(x)=%d)\\n',i,foo.b,foo.i,foo.c,len(x))]
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+ 17:	proc  0 (:init::1) for_example.pml:26 (state 16)	[i = (i+1)]
+		:init:(0):i = 2
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+ 18:	proc  0 (:init::1) for_example.pml:23 (state 17)	[f0r_t3mp_2_ = (f0r_t3mp_2_+1)]
+		:init:(0):_f0r_t3mp_2_ = 1
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+ 19:	proc  0 (:init::1) for_example.pml:28 (state 21)	[.(goto)]
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+ 20:	proc  0 (:init::1) for_example.pml:23 (state 12)	[((f0r_t3mp_2_<len(x)))]
+		queue 1 (:init:(0):x): [0,10,0][0,10,0][1,12,1]
+		:init:(0):foo.b = 1
+		:init:(0):foo.i = 12
+		queue 1 (:init:(0):c): [0,10,0][0,10,0][1,12,1]
+ 21:	proc  0 (:init::1) for_example.pml:23 Recv 0,10,0	<- queue 1 (x)
+ 21:	proc  0 (:init::1) for_example.pml:23 (state 13)	[x?foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [0,10,0][1,12,1]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 22:	proc  0 (:init::1) for_example.pml:23 Send 0,10,0	-> queue 1 (x)
+ 22:	proc  0 (:init::1) for_example.pml:23 (state 14)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+      2: 0 10 0 (len(x)=3)
+ 23:	proc  0 (:init::1) for_example.pml:24 (state 15)	[printf('%d: %d %d %d (len(x)=%d)\\n',i,foo.b,foo.i,foo.c,len(x))]
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 24:	proc  0 (:init::1) for_example.pml:26 (state 16)	[i = (i+1)]
+		:init:(0):i = 3
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 25:	proc  0 (:init::1) for_example.pml:23 (state 17)	[f0r_t3mp_2_ = (f0r_t3mp_2_+1)]
+		:init:(0):_f0r_t3mp_2_ = 2
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 26:	proc  0 (:init::1) for_example.pml:28 (state 21)	[.(goto)]
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 27:	proc  0 (:init::1) for_example.pml:23 (state 12)	[((f0r_t3mp_2_<len(x)))]
+		queue 1 (:init:(0):x): [0,10,0][1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 28:	proc  0 (:init::1) for_example.pml:23 Recv 0,10,0	<- queue 1 (x)
+ 28:	proc  0 (:init::1) for_example.pml:23 (state 13)	[x?foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 29:	proc  0 (:init::1) for_example.pml:23 Send 0,10,0	-> queue 1 (x)
+ 29:	proc  0 (:init::1) for_example.pml:23 (state 14)	[x!foo.b,foo.i,foo.c]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+      3: 0 10 0 (len(x)=3)
+ 30:	proc  0 (:init::1) for_example.pml:24 (state 15)	[printf('%d: %d %d %d (len(x)=%d)\\n',i,foo.b,foo.i,foo.c,len(x))]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 31:	proc  0 (:init::1) for_example.pml:26 (state 16)	[i = (i+1)]
+		:init:(0):i = 4
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 32:	proc  0 (:init::1) for_example.pml:23 (state 17)	[f0r_t3mp_2_ = (f0r_t3mp_2_+1)]
+		:init:(0):_f0r_t3mp_2_ = 3
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 33:	proc  0 (:init::1) for_example.pml:28 (state 21)	[.(goto)]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 34:	proc  0 (:init::1) for_example.pml:27 (state 18)	[else]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 35:	proc  0 (:init::1) for_example.pml:27 (state 19)	[goto :b0]
+		queue 1 (:init:(0):x): [1,12,1][0,10,0][0,10,0]
+		:init:(0):foo.b = 0
+		:init:(0):foo.i = 10
+ 35:	proc  0 (:init::1)       terminates
+1 process created
+exit: 0

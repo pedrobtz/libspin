@@ -1,0 +1,13 @@
+ltl invariant: [] ((! ((p[0]@CS))) || (! ((p[1]@CS))))
+bit   	b[2]	0	<:global:>	<array>	{scope _}
+proctype	p	2	<:global:>	<variable>	{scope _}
+byte  	k	0	<p>	<variable>	{scope _1_}
+byte  	i	0	<p>	<variable>	{scope _1_}
+byte  	j	1	<p>	<variable>	{scope _1_}
+label	accept_all	9	<invariant>	{scope _3_}
+label	T0_init	6	<invariant>	{scope _3_}
+label	C1	12	<p>	{scope _1_}
+label	CS	11	<p>	{scope _1_}
+label	C2	8	<p>	{scope _1_}
+label	C0	1	<p>	{scope _1_}
+exit: 0

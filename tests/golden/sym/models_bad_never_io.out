@@ -1,0 +1,4 @@
+spin: bad_never_io.pml:4, Error: never claim contains i/o stmnts	saw 'keyword: od' near 'od'
+chan  	c	1	<:global:>	<variable>	1	byte  	{scope _}
+proctype	p	1	<:global:>	<variable>	{scope _}
+exit: 1

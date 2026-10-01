@@ -1,0 +1,6 @@
+ltl c6: [] ((! ((len(q)<2))) || ((len(q)>0)))
+chan  	q	0	<:global:>	<variable>	0		{scope _}
+int   	a	0	<:global:>	<variable>	{scope _}
+label	accept_all	9	<c6>	{scope _3_}
+label	T0_init	6	<c6>	{scope _3_}
+exit: 0

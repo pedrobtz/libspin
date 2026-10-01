@@ -1,0 +1,53 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting recipient with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (recipient)
+  1:	proc  0 (:init::1) test_mtype.pml:42 (state 1)	[(run recipient(two,two))]
+          z:   2:	proc  1 (recipient:1) test_mtype.pml:15 (state 1)	[printf('z: ')]
+          pear  3:	proc  1 (recipient:1) test_mtype.pml:15 (state 2)	[printm(z, "fruit")]
+          
+  4:	proc  1 (recipient:1) test_mtype.pml:15 (state 3)	[printf('\\n')]
+          y:   5:	proc  1 (recipient:1) test_mtype.pml:16 (state 4)	[printf('y: ')]
+          two  6:	proc  1 (recipient:1) test_mtype.pml:16 (state 5)	[printm(y, 0)]
+          
+  7:	proc  1 (recipient:1) test_mtype.pml:16 (state 6)	[printf('\\n')]
+  8:	proc  0 (:init::1) test_mtype.pml:47 (state 2)	[numbers = one]
+		:init:(0):numbers = one
+  9:	proc  0 (:init::1) test_mtype.pml:48 (state 3)	[snack = two]
+		:init:(0):snack = two
+ 10:	proc  0 (:init::1) test_mtype.pml:49 (state 4)	[package = three]
+		:init:(0):package = three
+      one 11:	proc  0 (:init::1) test_mtype.pml:52 (state 5)	[printm(numbers, "_unnamed_")]
+      pear 12:	proc  0 (:init::1) test_mtype.pml:53 (state 6)	[printm(snack, "fruit")]
+      large 13:	proc  0 (:init::1) test_mtype.pml:54 (state 7)	[printm(package, "sizes")]
+      
+ 14:	proc  0 (:init::1) test_mtype.pml:55 (state 8)	[printf('\\n')]
+ 15:	proc  0 (:init::1) test_mtype.pml:57 (state 9)	[q!numbers,snack,three,9]
+ 15:	proc  1 (recipient:1) test_mtype.pml:19 (state 8)	[q?a,b,c,_]
+ 15:	proc  0 (:init::1) test_mtype.pml:57 Sent one,pear,large,9	-> queue 1 (q)
+ 15:	proc  1 (recipient:1) test_mtype.pml:19 Recv one,pear,large,0	<- queue 1 (q)
+		recipient(1):c = three
+		recipient(1):b = two
+		recipient(1):a = one
+          one 16:	proc  1 (recipient:1) test_mtype.pml:22 (state 9)	[printm(a, 0)]
+          pear 17:	proc  1 (recipient:1) test_mtype.pml:23 (state 10)	[printm(b, "fruit")]
+          large 18:	proc  1 (recipient:1) test_mtype.pml:24 (state 11)	[printm(c, "sizes")]
+          
+ 19:	proc  1 (recipient:1) test_mtype.pml:25 (state 12)	[printf('\\n')]
+spin: test_mtype.pml:60, Error: assertion violated
+spin: text of failed assertion: assert(0)
+#processes: 2
+ 20:	proc  1 (recipient:1) test_mtype.pml:27 (state 14)
+		recipient(1):c = three
+		recipient(1):b = two
+		recipient(1):a = one
+		recipient(1):y = two
+		recipient(1):z = two
+ 20:	proc  0 (:init::1) test_mtype.pml:60 (state 10)
+		:init:(0):pp = 0
+		:init:(0):package = three
+		:init:(0):ss = 0
+		:init:(0):snack = two
+		:init:(0):nn = 0
+		:init:(0):numbers = one
+2 processes created
+exit: 1

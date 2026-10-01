@@ -1,0 +1,2094 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting left with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (left)
+  1:	proc  0 (:init::1) sort.pml:66 (state 1)	[(run left(q[0]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+  2:	proc  0 (:init::1) sort.pml:73 (state 8)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+  3:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 2
+  4:	proc  0 (:init::1) creates proc  2 (middle)
+  4:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+  5:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 2
+  6:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 3
+  7:	proc  0 (:init::1) creates proc  3 (middle)
+  7:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+  8:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 3
+  9:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 4
+ 10:	proc  0 (:init::1) creates proc  4 (middle)
+ 10:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 11:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 4
+ 12:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 5
+ 13:	proc  0 (:init::1) creates proc  5 (middle)
+ 13:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 14:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 5
+ 15:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 6
+ 16:	proc  0 (:init::1) creates proc  6 (middle)
+ 16:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 17:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 6
+ 18:	proc  0 (:init::1) sort.pml:68 (state 2)	[((proc<7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting middle with pid 7
+ 19:	proc  0 (:init::1) creates proc  7 (middle)
+ 19:	proc  0 (:init::1) sort.pml:69 (state 3)	[(run middle(q[(proc-1)],q[proc],proc))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 20:	proc  0 (:init::1) sort.pml:70 (state 4)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		:init:(0):proc = 7
+ 21:	proc  0 (:init::1) sort.pml:71 (state 5)	[((proc==7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 22:	proc  0 (:init::1) sort.pml:67 (state 9)	[break]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+Starting right with pid 8
+ 23:	proc  0 (:init::1) creates proc  8 (right)
+ 23:	proc  0 (:init::1) sort.pml:73 (state 10)	[(run right(q[(7-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+ 24:	proc  1 (left:1) sort.pml:20 (state 1)	[counter = 0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 0
+		queue 1 (left(1):out): 
+ 25:	proc  2 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 6
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 26:	proc  1 (left:1) sort.pml:20 (state 2)	[seed = 15]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 15
+		queue 1 (left(1):out): 
+ 27:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 28:	proc  5 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):counter = 3
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+ 29:	proc  6 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(6):counter = 2
+		queue 6 (middle(6):out): 
+		queue 5 (middle(6):inp): 
+ 30:	proc  4 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):counter = 4
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+ 31:	proc  1 (left:1) sort.pml:22 Send 15	-> queue 1 (out)
+ 31:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [15]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [15]
+ 32:	proc  3 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): [15]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):counter = 5
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 33:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [15]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 1
+		queue 1 (left(1):out): [15]
+ 34:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): [15]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [15]
+ 35:	proc  2 (middle:1) sort.pml:39 Recv 15	<- queue 1 (inp)
+ 35:	proc  2 (middle:1) sort.pml:39 (state 2)	[inp?myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):myval = 15
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 36:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 37:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 38:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 39:	proc  7 (middle:1) sort.pml:38 (state 1)	[counter = (7-procnum)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(7):counter = 1
+		queue 7 (middle(7):out): 
+		queue 6 (middle(7):inp): 
+ 40:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 41:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 59
+		queue 1 (left(1):out): 
+ 42:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 43:	proc  1 (left:1) sort.pml:22 Send 59	-> queue 1 (out)
+ 43:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [59]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [59]
+ 44:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [59]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 2
+		queue 1 (left(1):out): [59]
+ 45:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): [59]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [59]
+ 46:	proc  2 (middle:1) sort.pml:42 Recv 59	<- queue 1 (inp)
+ 46:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 59
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 47:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 48:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 49:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 91
+		queue 1 (left(1):out): 
+ 50:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 51:	proc  2 (middle:1) sort.pml:44 Send 59	-> queue 2 (out)
+ 51:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [59]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [59]
+		queue 1 (middle(2):inp): 
+ 52:	proc  3 (middle:1) sort.pml:39 Recv 59	<- queue 2 (inp)
+ 52:	proc  3 (middle:1) sort.pml:39 (state 2)	[inp?myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):myval = 59
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 53:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 54:	proc  3 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 55:	proc  1 (left:1) sort.pml:22 Send 91	-> queue 1 (out)
+ 55:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [91]
+ 56:	proc  3 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 57:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [91]
+ 58:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 3
+		queue 1 (left(1):out): [91]
+ 59:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 5
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [91]
+ 60:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [91]
+ 61:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [91]
+ 62:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [91]
+ 63:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): [91]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [91]
+ 64:	proc  2 (middle:1) sort.pml:42 Recv 91	<- queue 1 (inp)
+ 64:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 91
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 65:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 66:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 67:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 87
+		queue 1 (left(1):out): 
+ 68:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 69:	proc  1 (left:1) sort.pml:22 Send 87	-> queue 1 (out)
+ 69:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [87]
+ 70:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 4
+		queue 1 (left(1):out): [87]
+ 71:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [87]
+ 72:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [87]
+ 73:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [87]
+ 74:	proc  2 (middle:1) sort.pml:44 Send 91	-> queue 2 (out)
+ 74:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): [91]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [91]
+		queue 1 (middle(2):inp): [87]
+ 75:	proc  3 (middle:1) sort.pml:42 Recv 91	<- queue 2 (inp)
+ 75:	proc  3 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):nextval = 91
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 76:	proc  3 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 77:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [87]
+ 78:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 4
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [87]
+ 79:	proc  3 (middle:1) sort.pml:44 Send 91	-> queue 3 (out)
+ 79:	proc  3 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [91]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [91]
+		queue 2 (middle(3):inp): 
+ 80:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [91]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [87]
+ 81:	proc  4 (middle:1) sort.pml:39 Recv 91	<- queue 3 (inp)
+ 81:	proc  4 (middle:1) sort.pml:39 (state 2)	[inp?myval]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):myval = 91
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+ 82:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [87]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [87]
+ 83:	proc  2 (middle:1) sort.pml:42 Recv 87	<- queue 1 (inp)
+ 83:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 87
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 84:	proc  3 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+ 85:	proc  4 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+ 86:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+ 87:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 75
+		queue 1 (left(1):out): 
+ 88:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+ 89:	proc  1 (left:1) sort.pml:22 Send 75	-> queue 1 (out)
+ 89:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [75]
+ 90:	proc  4 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+ 91:	proc  2 (middle:1) sort.pml:44 Send 87	-> queue 2 (out)
+ 91:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): [75]
+ 92:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): [75]
+ 93:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 3
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): [75]
+ 94:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): [75]
+ 95:	proc  3 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):counter = 4
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [87]
+ 96:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [75]
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): [75]
+ 97:	proc  2 (middle:1) sort.pml:42 Recv 75	<- queue 1 (inp)
+ 97:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 75
+		queue 2 (middle(2):out): [87]
+		queue 1 (middle(2):inp): 
+ 98:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 5
+		queue 1 (left(1):out): 
+ 99:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+100:	proc  3 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [87]
+101:	proc  3 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [87]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [87]
+102:	proc  3 (middle:1) sort.pml:42 Recv 87	<- queue 2 (inp)
+102:	proc  3 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):nextval = 87
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+103:	proc  3 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+104:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+105:	proc  3 (middle:1) sort.pml:44 Send 87	-> queue 3 (out)
+105:	proc  3 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [87]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [87]
+		queue 2 (middle(3):inp): 
+106:	proc  3 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [87]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [87]
+		queue 2 (middle(3):inp): 
+107:	proc  3 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [87]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):counter = 3
+		queue 3 (middle(3):out): [87]
+		queue 2 (middle(3):inp): 
+108:	proc  4 (middle:1) sort.pml:42 Recv 87	<- queue 3 (inp)
+108:	proc  4 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):nextval = 87
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+109:	proc  4 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+110:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+111:	proc  3 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+112:	proc  2 (middle:1) sort.pml:44 Send 75	-> queue 2 (out)
+112:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [75]
+		queue 1 (middle(2):inp): 
+113:	proc  3 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [75]
+114:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+115:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [75]
+		queue 1 (middle(2):inp): 
+116:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 2
+		queue 2 (middle(2):out): [75]
+		queue 1 (middle(2):inp): 
+117:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 39
+		queue 1 (left(1):out): 
+118:	proc  4 (middle:1) sort.pml:46 Send 91	-> queue 4 (out)
+118:	proc  4 (middle:1) sort.pml:46 (state 8)	[out!myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): [91]
+		queue 3 (middle(4):inp): 
+119:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+120:	proc  1 (left:1) sort.pml:22 Send 39	-> queue 1 (out)
+120:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [39]
+121:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): [75]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 6
+		queue 1 (left(1):out): [39]
+122:	proc  3 (middle:1) sort.pml:42 Recv 75	<- queue 2 (inp)
+122:	proc  3 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):nextval = 75
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+123:	proc  3 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+124:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [39]
+125:	proc  3 (middle:1) sort.pml:44 Send 75	-> queue 3 (out)
+125:	proc  3 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): [91]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [75]
+		queue 2 (middle(3):inp): 
+126:	proc  5 (middle:1) sort.pml:39 Recv 91	<- queue 4 (inp)
+126:	proc  5 (middle:1) sort.pml:39 (state 2)	[inp?myval]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):myval = 91
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+127:	proc  3 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [75]
+		queue 2 (middle(3):inp): 
+128:	proc  4 (middle:1) sort.pml:47 (state 9)	[myval = nextval]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):myval = 87
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): [75]
+129:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): [39]
+130:	proc  4 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): [75]
+131:	proc  1 (left:1) sort.pml:26 (state 7)	[((counter!=7))]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [39]
+132:	proc  1 (left:1) sort.pml:26 (state 8)	[(1)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [39]
+133:	proc  1 (left:1) sort.pml:28 (state 10)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [39]
+134:	proc  4 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):counter = 3
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): [75]
+135:	proc  5 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+136:	proc  4 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): [75]
+137:	proc  1 (left:1) sort.pml:28 (state 11)	[seed = (((seed*3)+14)%100)]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):seed = 31
+		queue 1 (left(1):out): [39]
+138:	proc  5 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+139:	proc  4 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [75]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): [75]
+140:	proc  4 (middle:1) sort.pml:42 Recv 75	<- queue 3 (inp)
+140:	proc  4 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): [39]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):nextval = 75
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+141:	proc  2 (middle:1) sort.pml:42 Recv 39	<- queue 1 (inp)
+141:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 39
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+142:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+143:	proc  4 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+144:	proc  2 (middle:1) sort.pml:44 Send 39	-> queue 2 (out)
+144:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): 
+145:	proc  3 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):counter = 2
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [39]
+146:	proc  4 (middle:1) sort.pml:46 Send 87	-> queue 4 (out)
+146:	proc  4 (middle:1) sort.pml:46 (state 8)	[out!myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): [87]
+		queue 3 (middle(4):inp): 
+147:	proc  4 (middle:1) sort.pml:47 (state 9)	[myval = nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):myval = 75
+		queue 4 (middle(4):out): [87]
+		queue 3 (middle(4):inp): 
+148:	proc  1 (left:1) sort.pml:30 (state 13)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+149:	proc  3 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [39]
+150:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): 
+151:	proc  1 (left:1) sort.pml:22 Send 31	-> queue 1 (out)
+151:	proc  1 (left:1) sort.pml:22 (state 3)	[out!seed]
+		queue 1 (q[0]): [31]
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): [31]
+152:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): [31]
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 1
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): [31]
+153:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): [31]
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): [31]
+154:	proc  1 (left:1) sort.pml:23 (state 4)	[counter = (counter+1)]
+		queue 1 (q[0]): [31]
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		left(1):counter = 7
+		queue 1 (left(1):out): [31]
+155:	proc  2 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): [31]
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): [31]
+156:	proc  2 (middle:1) sort.pml:42 Recv 31	<- queue 1 (inp)
+156:	proc  2 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):nextval = 31
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): 
+157:	proc  4 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): [87]
+		queue 3 (middle(4):inp): 
+158:	proc  1 (left:1) sort.pml:25 (state 5)	[((counter==7))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [87]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+159:	proc  5 (middle:1) sort.pml:42 Recv 87	<- queue 4 (inp)
+159:	proc  5 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):nextval = 87
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+160:	proc  1 (left:1) sort.pml:25 (state 6)	[goto :b0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 1 (left(1):out): 
+161:	proc  2 (middle:1) sort.pml:44 (state 5)	[((nextval>=myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [39]
+		queue 1 (middle(2):inp): 
+162:	proc  3 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [39]
+163:	proc  4 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [39]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):counter = 2
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+164:	proc  3 (middle:1) sort.pml:42 Recv 39	<- queue 2 (inp)
+164:	proc  3 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):nextval = 39
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+165:	proc  4 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+166:	proc  5 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+167:	proc  2 (middle:1) sort.pml:44 Send 31	-> queue 2 (out)
+167:	proc  2 (middle:1) sort.pml:44 (state 6)	[out!nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+168:	proc  4 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+169:	proc  5 (middle:1) sort.pml:46 Send 91	-> queue 5 (out)
+169:	proc  5 (middle:1) sort.pml:46 (state 8)	[out!myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [91]
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): [91]
+		queue 4 (middle(5):inp): 
+170:	proc  2 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [91]
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+171:	proc  3 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [91]
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+172:	proc  5 (middle:1) sort.pml:47 (state 9)	[myval = nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [91]
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):myval = 87
+		queue 5 (middle(5):out): [91]
+		queue 4 (middle(5):inp): 
+173:	proc  6 (middle:1) sort.pml:39 Recv 91	<- queue 5 (inp)
+173:	proc  6 (middle:1) sort.pml:39 (state 2)	[inp?myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(6):myval = 91
+		queue 6 (middle(6):out): 
+		queue 5 (middle(6):inp): 
+174:	proc  5 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+175:	proc  6 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 6 (middle(6):out): 
+		queue 5 (middle(6):inp): 
+176:	proc  6 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 6 (middle(6):out): 
+		queue 5 (middle(6):inp): 
+177:	proc  2 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(2):counter = 0
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+178:	proc  3 (middle:1) sort.pml:46 Send 59	-> queue 3 (out)
+178:	proc  3 (middle:1) sort.pml:46 (state 8)	[out!myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): [59]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): [59]
+		queue 2 (middle(3):inp): [31]
+179:	proc  5 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): [59]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):counter = 2
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+180:	proc  4 (middle:1) sort.pml:42 Recv 59	<- queue 3 (inp)
+180:	proc  4 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):nextval = 59
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+181:	proc  2 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+182:	proc  3 (middle:1) sort.pml:47 (state 9)	[myval = nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):myval = 39
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+183:	proc  4 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+184:	proc  4 (middle:1) sort.pml:46 Send 75	-> queue 4 (out)
+184:	proc  4 (middle:1) sort.pml:46 (state 8)	[out!myval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): [75]
+		queue 3 (middle(4):inp): 
+185:	proc  3 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+186:	proc  2 (middle:1) sort.pml:50 (state 13)	[((counter==0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+187:	proc  3 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):counter = 1
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+188:	proc  5 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): [75]
+189:	proc  2 (middle:1) sort.pml:50 (state 14)	[goto :b1]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 2 (middle(2):out): [31]
+		queue 1 (middle(2):inp): 
+190:	proc  3 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+191:	proc  4 (middle:1) sort.pml:47 (state 9)	[myval = nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):myval = 59
+		queue 4 (middle(4):out): [75]
+		queue 3 (middle(4):inp): 
+192:	proc  5 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): [75]
+193:	proc  4 (middle:1) sort.pml:49 (state 11)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): [75]
+		queue 3 (middle(4):inp): 
+194:	proc  3 (middle:1) sort.pml:41 (state 3)	[((counter>0))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [75]
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): [31]
+195:	proc  5 (middle:1) sort.pml:42 Recv 75	<- queue 4 (inp)
+195:	proc  5 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(5):nextval = 75
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+196:	proc  4 (middle:1) sort.pml:49 (state 12)	[counter = (counter-1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [31]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(4):counter = 1
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+197:	proc  3 (middle:1) sort.pml:42 Recv 31	<- queue 2 (inp)
+197:	proc  3 (middle:1) sort.pml:42 (state 4)	[inp?nextval]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		middle(3):nextval = 31
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+198:	proc  5 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+199:	proc  3 (middle:1) sort.pml:45 (state 7)	[((nextval<myval))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+200:	proc  4 (middle:1) sort.pml:52 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 9
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 6 (q[5]): 
+		queue 7 (q[6]): 
+200:	proc  8 (right:1) sort.pml:59 (state 1)
+		right(8):biggest = 0
+		queue 7 (right(8):inp): 
+200:	proc  7 (middle:1) sort.pml:39 (state 2)
+		middle(7):nextval = 0
+		middle(7):myval = 0
+		middle(7):counter = 1
+		middle(7):procnum = 6
+		queue 7 (middle(7):out): 
+		queue 6 (middle(7):inp): 
+200:	proc  6 (middle:1) sort.pml:42 (state 4)
+		middle(6):nextval = 0
+		middle(6):myval = 91
+		middle(6):counter = 2
+		middle(6):procnum = 5
+		queue 6 (middle(6):out): 
+		queue 5 (middle(6):inp): 
+200:	proc  5 (middle:1) sort.pml:46 (state 8)
+		middle(5):nextval = 75
+		middle(5):myval = 87
+		middle(5):counter = 2
+		middle(5):procnum = 4
+		queue 5 (middle(5):out): 
+		queue 4 (middle(5):inp): 
+200:	proc  4 (middle:1) sort.pml:40 (state 15)
+		middle(4):nextval = 59
+		middle(4):myval = 59
+		middle(4):counter = 1
+		middle(4):procnum = 3
+		queue 4 (middle(4):out): 
+		queue 3 (middle(4):inp): 
+200:	proc  3 (middle:1) sort.pml:46 (state 8)
+		middle(3):nextval = 31
+		middle(3):myval = 39
+		middle(3):counter = 1
+		middle(3):procnum = 2
+		queue 3 (middle(3):out): 
+		queue 2 (middle(3):inp): 
+200:	proc  2 (middle:1) sort.pml:52 (state 18) <valid end state>
+		middle(2):nextval = 31
+		middle(2):myval = 15
+		middle(2):counter = 0
+		middle(2):procnum = 1
+		queue 2 (middle(2):out): 
+		queue 1 (middle(2):inp): 
+200:	proc  1 (left:1) sort.pml:30 (state 15) <valid end state>
+		left(1):seed = 31
+		left(1):counter = 7
+		queue 1 (left(1):out): 
+200:	proc  0 (:init::1) sort.pml:75 (state 12) <valid end state>
+		:init:(0):proc = 7
+9 processes created
+exit: 0

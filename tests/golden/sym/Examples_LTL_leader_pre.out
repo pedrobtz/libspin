@@ -1,0 +1,32 @@
+ltl p0: <> ((nr_leaders>0))
+ltl p1: <> ([] ((nr_leaders==1)))
+ltl p2: [] (((nr_leaders==0)) U ((nr_leaders==1)))
+ltl p3: ! ([] ((nr_leaders==0)))
+byte  	nr_leaders	0	<:global:>	<variable>	{scope _}
+byte  	I	0	<:global:>	<variable>	{scope _}
+mtype 	one	3	<:global:>	<constant>	{scope _}
+mtype 	two	2	<:global:>	<constant>	{scope _}
+mtype 	winner	1	<:global:>	<constant>	{scope _}
+chan  	q[5]	10	<:global:>	<array>	2	mtype 	byte  	{scope _}
+proctype	nnode	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<nnode>	<parameter 1>	0		{scope _}
+chan  	out	0	<nnode>	<parameter 2>	0		{scope _}
+byte  	mynumber	0	<nnode>	<parameter 3>	{scope _}
+bit   	Active	1	<nnode>	<variable>	{scope _3_}
+bit   	know_winner	0	<nnode>	<variable>	{scope _3_}
+byte  	nr	0	<nnode>	<variable>	{scope _3_}
+byte  	maximum	0	<nnode>	<variable>	{scope _3_}
+byte  	neighbourR	0	<nnode>	<variable>	{scope _3_}
+byte  	proc	0	<:init:>	<variable>	{scope _4_}
+byte  	Ini[6]	0	<:init:>	<array>	{scope _4_}
+label	accept_init	3	<p3>	{scope _12_}
+label	T0_init	3	<p3>	{scope _12_}
+label	accept_all	19	<p2>	{scope _11_}
+label	accept_S4	16	<p2>	{scope _11_}
+label	T0_init	8	<p2>	{scope _11_}
+label	accept_S9	10	<p1>	{scope _10_}
+label	T0_init	5	<p1>	{scope _10_}
+label	accept_init	3	<p0>	{scope _9_}
+label	T0_init	3	<p0>	{scope _9_}
+label	end	45	<nnode>	{scope _3_}
+exit: 0

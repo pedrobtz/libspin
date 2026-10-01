@@ -1,0 +1,41 @@
+mtype 	RDY	5	<:global:>	<constant>	{scope _}
+mtype 	NOTRDY	4	<:global:>	<constant>	{scope _}
+mtype 	DATA	3	<:global:>	<constant>	{scope _}
+mtype 	NODATA	2	<:global:>	<constant>	{scope _}
+mtype 	RESET	1	<:global:>	<constant>	{scope _}
+chan  	sender	6	<:global:>	<variable>	2	mtype 	byte  	{scope _}
+chan  	recv	6	<:global:>	<variable>	2	mtype 	byte  	{scope _}
+proctype	Sender	1	<:global:>	<variable>	{scope _}
+short 	n	-1	<Sender>	<variable>	{scope _4_}
+byte  	t	0	<Sender>	<variable>	{scope _4_}
+byte  	m	0	<Sender>	<variable>	{scope _4_}
+proctype	Receiver	1	<:global:>	<variable>	{scope _}
+byte  	t	0	<Receiver>	<variable>	{scope _5_}
+byte  	n	0	<Receiver>	<variable>	{scope _5_}
+byte  	m	0	<Receiver>	<variable>	{scope _5_}
+byte  	Nexp	0	<Receiver>	<variable>	{scope _5_}
+label	progress3	70	<Receiver>	{scope _5_}
+label	progress	68	<Receiver>	{scope _5_}
+label	reset	68	<Receiver>	{scope _5_}
+label	N	65	<Receiver>	{scope _5_}
+label	progress0	55	<Receiver>	{scope _5_}
+label	E	51	<Receiver>	{scope _5_}
+label	retrans	48	<Receiver>	{scope _5_}
+label	progress1	31	<Receiver>	{scope _5_}
+label	I	27	<Receiver>	{scope _5_}
+label	advance	10	<Receiver>	{scope _5_2_}
+label	ackreset	4	<Receiver>	{scope _5_}
+label	progress2	2	<Receiver>	{scope _5_}
+label	progress3	60	<Sender>	{scope _4_}
+label	reset	58	<Sender>	{scope _4_}
+label	N	55	<Sender>	{scope _4_}
+label	progress1	46	<Sender>	{scope _4_}
+label	E	42	<Sender>	{scope _4_}
+label	retrans	40	<Sender>	{scope _4_}
+label	progress0	26	<Sender>	{scope _4_}
+label	I	22	<Sender>	{scope _4_}
+label	expected	19	<Sender>	{scope _4_}
+label	advance	9	<Sender>	{scope _4_}
+label	ackreset	4	<Sender>	{scope _4_}
+label	progress2	2	<Sender>	{scope _4_}
+exit: 0

@@ -1,0 +1,10 @@
+ltl p: [] (((seen<4)) || ((tour>97)))
+byte  	distance[16]	0	<:global:>	<array>	{scope _}
+byte  	city	0	<:global:>	<variable>	{scope _}
+byte  	dest	0	<:global:>	<variable>	{scope _}
+byte  	tour	0	<:global:>	<variable>	{scope _}
+byte  	seen	0	<:global:>	<variable>	{scope _}
+byte  	visited[4]	0	<:global:>	<array>	{scope _}
+label	accept_all	9	<p>	{scope _3_}
+label	T0_init	6	<p>	{scope _3_}
+exit: 0

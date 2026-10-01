@@ -1,0 +1,23 @@
+mtype 	one	3	<:global:>	<constant>	{scope _}
+mtype 	two	2	<:global:>	<constant>	{scope _}
+mtype 	three	1	<:global:>	<constant>	{scope _}
+mtype 	appel	3	<:global:>	<constant>	{scope _}
+mtype 	pear	2	<:global:>	<constant>	{scope _}
+mtype 	banana	1	<:global:>	<constant>	{scope _}
+mtype 	small	3	<:global:>	<constant>	{scope _}
+mtype 	medium	2	<:global:>	<constant>	{scope _}
+mtype 	large	1	<:global:>	<constant>	{scope _}
+chan  	q	0	<:global:>	<variable>	4	mtype 	mtype 	mtype 	int   	{scope _}
+proctype	recipient	0	<:global:>	<variable>	{scope _}
+mtype 	z	0	<recipient>	<parameter 1>	{scope _}
+mtype 	y	0	<recipient>	<parameter 2>	{scope _}
+mtype 	a	0	<recipient>	<constant>	{scope _5_}
+mtype 	b	0	<recipient>	<constant>	{scope _5_}
+mtype 	c	0	<recipient>	<constant>	{scope _5_}
+mtype 	numbers	0	<:init:>	<constant>	{scope _6_}
+mtype 	nn	0	<:init:>	<constant>	{scope _6_}
+mtype 	snack	0	<:init:>	<constant>	{scope _6_}
+mtype 	ss	0	<:init:>	<constant>	{scope _6_}
+mtype 	package	0	<:init:>	<constant>	{scope _6_}
+mtype 	pp	0	<:init:>	<constant>	{scope _6_}
+exit: 0

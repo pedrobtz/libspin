@@ -1,0 +1,6 @@
+bit   	turn	0	<:global:>	<variable>	{scope _}
+bit   	flag[2]	0	<:global:>	<array>	{scope _}
+byte  	ncrit	0	<:global:>	<variable>	{scope _}
+proctype	user	2	<:global:>	<variable>	{scope _}
+label	again	2	<user>	{scope _1_}
+exit: 0

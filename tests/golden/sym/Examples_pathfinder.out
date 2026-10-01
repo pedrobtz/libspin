@@ -1,0 +1,13 @@
+mtype 	free	5	<:global:>	<constant>	{scope _}
+mtype 	busy	4	<:global:>	<constant>	{scope _}
+mtype 	idle	3	<:global:>	<constant>	{scope _}
+mtype 	waiting	2	<:global:>	<constant>	{scope _}
+mtype 	running	1	<:global:>	<constant>	{scope _}
+mtype 	h_state	3	<:global:>	<constant>	{scope _}
+mtype 	l_state	3	<:global:>	<constant>	{scope _}
+mtype 	mutex	5	<:global:>	<constant>	{scope _}
+proctype	high	1	<:global:>	<variable>	{scope _}
+proctype	low	1	<:global:>	<variable>	{scope _}
+label	end	9	<low>	{scope _3_}
+label	end	9	<high>	{scope _2_}
+exit: 0

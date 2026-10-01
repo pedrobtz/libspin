@@ -1,0 +1,18 @@
+never  {    /* !([] <> p -> [] <> q) */
+T0_init:
+	do
+	:: (! ((q)) && (p)) -> goto accept_S69
+	:: (! ((q))) -> goto T0_S69
+	:: (1) -> goto T0_init
+	od;
+accept_S69:
+	do
+	:: (! ((q))) -> goto T0_S69
+	od;
+T0_S69:
+	do
+	:: (! ((q)) && (p)) -> goto accept_S69
+	:: (! ((q))) -> goto T0_S69
+	od;
+}
+exit: 0

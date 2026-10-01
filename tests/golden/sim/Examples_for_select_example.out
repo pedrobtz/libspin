@@ -1,0 +1,3878 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) for_select_example.pml:17 (state 8)	[i = 15]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 0
+		:init:(0):foo.x = 0
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 15
+  2:	proc  0 (:init::1) for_select_example.pml:18 (state 16)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 0
+		:init:(0):foo.x = 0
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i=15
+  3:	proc  0 (:init::1) for_select_example.pml:18 (state 17)	[printf('i=%d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 0
+		:init:(0):foo.x = 0
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  4:	proc  0 (:init::1) for_select_example.pml:19 (state 18)	[assert((i!=21))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 0
+		:init:(0):foo.x = 0
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  5:	proc  0 (:init::1) for_select_example.pml:21 (state 19)	[foo.b = 1]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 0
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  6:	proc  0 (:init::1) for_select_example.pml:22 (state 20)	[foo.x = 3]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  7:	proc  0 (:init::1) for_select_example.pml:23 (state 21)	[foo.c = a[3]]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): 
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): 
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  8:	proc  0 (:init::1) for_select_example.pml:24 Send 1,3,4	-> queue 4 (a[3])
+  8:	proc  0 (:init::1) for_select_example.pml:24 (state 22)	[a[3]!foo.b,foo.x,foo.c]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+  9:	proc  0 (:init::1) for_select_example.pml:26 (state 23)	[bar.b = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 0
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 10:	proc  0 (:init::1) for_select_example.pml:27 (state 24)	[bar.x = 978]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 11:	proc  0 (:init::1) for_select_example.pml:28 (state 25)	[bar.c = a[6]]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 12:	proc  0 (:init::1) for_select_example.pml:29 Send 0,978,7	-> queue 4 (a[3])
+ 12:	proc  0 (:init::1) for_select_example.pml:29 (state 26)	[a[3]!bar.b,bar.x,bar.c]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 13:	proc  0 (:init::1) for_select_example.pml:34 (state 27)	[i = 1]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 1
+ 14:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 15:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 1
+ 16:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 17:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 2
+ 18:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 19:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 2
+ 20:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 21:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 3
+ 22:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 23:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 3
+ 24:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 25:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 4
+ 26:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 27:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 4
+ 28:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 29:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 5
+ 30:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 31:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 5
+ 32:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 33:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 6
+ 34:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 35:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 6
+ 36:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 37:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 7
+ 38:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 39:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 7
+ 40:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 41:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 8
+ 42:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 43:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 8
+ 44:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 45:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 9
+ 46:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 47:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 9
+ 48:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 49:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 10
+ 50:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 51:	proc  0 (:init::1) for_select_example.pml:34 (state 28)	[((i<=10))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      i = 10
+ 52:	proc  0 (:init::1) for_select_example.pml:35 (state 29)	[printf('i = %d\\n',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 53:	proc  0 (:init::1) for_select_example.pml:34 (state 30)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 11
+ 54:	proc  0 (:init::1) for_select_example.pml:37 (state 34)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 55:	proc  0 (:init::1) for_select_example.pml:36 (state 31)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 56:	proc  0 (:init::1) for_select_example.pml:36 (state 32)	[goto :b0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 57:	proc  0 (:init::1) for_select_example.pml:37 (state 36)	[i = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 0
+ 58:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 59:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[0]	 60:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 61:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+ 62:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 63:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0],  64:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 65:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+ 66:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 67:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1],  68:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 69:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+ 70:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 71:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2],  72:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 73:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+ 74:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 75:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[3],  76:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 77:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 4
+ 78:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 79:	proc  0 (:init::1) for_select_example.pml:41 (state 43)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 80:	proc  0 (:init::1) for_select_example.pml:41 (state 44)	[goto :b2]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      
+ 81:	proc  0 (:init::1) for_select_example.pml:42 (state 48)	[printf('\\n')]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 82:	proc  0 (:init::1) for_select_example.pml:37 (state 49)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 1
+ 83:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 84:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[1]	 85:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 86:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+ 87:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 88:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0],  89:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 90:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+ 91:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 92:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1],  93:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 94:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+ 95:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 96:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2],  97:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+ 98:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+ 99:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+100:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[3], 101:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+102:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 4
+103:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+104:	proc  0 (:init::1) for_select_example.pml:41 (state 43)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+105:	proc  0 (:init::1) for_select_example.pml:41 (state 44)	[goto :b2]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      
+106:	proc  0 (:init::1) for_select_example.pml:42 (state 48)	[printf('\\n')]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+107:	proc  0 (:init::1) for_select_example.pml:37 (state 49)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 2
+108:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+109:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[2]	110:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+111:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+112:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+113:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0], 114:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+115:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+116:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+117:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1], 118:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+119:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+120:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+121:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2], 122:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+123:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+124:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+125:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[3], 126:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+127:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 4
+128:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+129:	proc  0 (:init::1) for_select_example.pml:41 (state 43)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+130:	proc  0 (:init::1) for_select_example.pml:41 (state 44)	[goto :b2]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      
+131:	proc  0 (:init::1) for_select_example.pml:42 (state 48)	[printf('\\n')]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+132:	proc  0 (:init::1) for_select_example.pml:37 (state 49)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 3
+133:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+134:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[3]	135:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+136:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+137:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+138:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0], 139:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+140:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+141:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+142:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1], 143:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+144:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+145:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+146:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2], 147:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+148:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+149:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+150:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[3], 151:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+152:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 4
+153:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+154:	proc  0 (:init::1) for_select_example.pml:41 (state 43)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+155:	proc  0 (:init::1) for_select_example.pml:41 (state 44)	[goto :b2]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      
+156:	proc  0 (:init::1) for_select_example.pml:42 (state 48)	[printf('\\n')]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+157:	proc  0 (:init::1) for_select_example.pml:37 (state 49)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 4
+158:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+159:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[4]	160:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+161:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+162:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+163:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0], 164:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+165:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+166:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+167:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1], 168:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+169:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+170:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+171:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2], 172:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+173:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+174:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+175:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[3], 176:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+177:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 4
+178:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+179:	proc  0 (:init::1) for_select_example.pml:41 (state 43)	[else]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+180:	proc  0 (:init::1) for_select_example.pml:41 (state 44)	[goto :b2]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      
+181:	proc  0 (:init::1) for_select_example.pml:42 (state 48)	[printf('\\n')]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+182:	proc  0 (:init::1) for_select_example.pml:37 (state 49)	[i = (i+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):i = 5
+183:	proc  0 (:init::1) for_select_example.pml:45 (state 53)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+184:	proc  0 (:init::1) for_select_example.pml:37 (state 37)	[((i<=9))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      a[5]	185:	proc  0 (:init::1) for_select_example.pml:38 (state 38)	[printf('a[%d]\\t',i)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+186:	proc  0 (:init::1) for_select_example.pml:39 (state 39)	[j = 0]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 0
+187:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+188:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[0], 189:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+190:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 1
+191:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+192:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[1], 193:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+194:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 2
+195:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+196:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+      b[2], 197:	proc  0 (:init::1) for_select_example.pml:40 (state 41)	[printf('b[%d], ',j)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+198:	proc  0 (:init::1) for_select_example.pml:39 (state 42)	[j = (j+1)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+199:	proc  0 (:init::1) for_select_example.pml:42 (state 46)	[.(goto)]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+200:	proc  0 (:init::1) for_select_example.pml:39 (state 40)	[((j<=3))]
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 1
+200:	proc  0 (:init::1) for_select_example.pml:40 (state 41)
+		:init:(0):_f0r_t3mp_2_4_ = 0
+		:init:(0):_f0r_t3mp_2_ = 0
+		:init:(0):goo.b = 0
+		:init:(0):goo.x = 0
+		:init:(0):bar.b = 0
+		:init:(0):bar.x = 978
+		queue 7 (:init:(0):c): 
+		:init:(0):foo.b = 1
+		:init:(0):foo.x = 3
+		queue 4 (:init:(0):c): [1,3,4][0,978,7]
+		queue 1 (:init:(0):a[0]): 
+		queue 2 (:init:(0):a[1]): 
+		queue 3 (:init:(0):a[2]): 
+		queue 4 (:init:(0):a[3]): [1,3,4][0,978,7]
+		queue 5 (:init:(0):a[4]): 
+		queue 6 (:init:(0):a[5]): 
+		queue 7 (:init:(0):a[6]): 
+		queue 8 (:init:(0):a[7]): 
+		queue 9 (:init:(0):a[8]): 
+		queue 10 (:init:(0):a[9]): 
+		:init:(0):j = 3
+		:init:(0):i = 5
+1 process created
+exit: 0

@@ -1,0 +1,5 @@
+proctype	P	1	<:global:>	<variable>	{scope _}
+bit   	a	0	<P>	<variable>	{scope _1_}
+bit   	b	0	<P>	<variable>	{scope _1_}
+bit   	c	0	<P>	<variable>	{scope _1_}
+exit: 0

@@ -1,0 +1,693 @@
+  0:	proc  - (:root:) creates proc  0 (Sender)
+  0:	proc  - (:root:) creates proc  1 (Receiver)
+  1:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+  2:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+      timeout
+  3:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+  4:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+  4:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+  5:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+  5:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+  6:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+  7:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+  7:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+  8:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+  9:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 10:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 11:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+ 11:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 12:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 13:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 14:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 15:	proc  0 (Sender:1) abp.pml:20 (state 18)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 16:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 17:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 18:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 19:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+ 19:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 20:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 21:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 22:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+ 22:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 23:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+ 23:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 24:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+ 24:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 25:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 26:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 27:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 28:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 29:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 30:	proc  0 (Sender:1) abp.pml:20 (state 6)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 31:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 32:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 33:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 34:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+ 34:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 35:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+ 35:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 36:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+ 36:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 37:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 38:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 39:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 40:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 41:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+ 41:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 42:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 43:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 44:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 45:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+ 45:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 46:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+ 46:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 47:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 48:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 49:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+ 49:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 50:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+ 50:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 51:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 52:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 53:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 54:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 55:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 56:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+ 56:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 57:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 58:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 59:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+ 59:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 60:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+ 60:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 61:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+ 61:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 62:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 63:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 64:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 65:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 66:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 67:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+ 67:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 68:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+ 68:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 69:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 70:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+ 70:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 71:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 72:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 73:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+ 73:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 74:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 75:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 76:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 77:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 78:	proc  0 (Sender:1) abp.pml:20 (state 6)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 79:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 80:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 81:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 82:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+ 82:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 83:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 84:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+ 85:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+ 85:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 86:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+ 86:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 87:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 88:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+ 89:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+ 89:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 90:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 91:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+ 92:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 93:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+ 93:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 94:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 95:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+ 96:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+ 96:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+ 97:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+ 97:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 98:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+ 99:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+100:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+100:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+101:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+102:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+103:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+104:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+104:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+105:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+106:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+107:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+107:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+108:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+108:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+109:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+109:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+110:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+111:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+112:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+113:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+114:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+115:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+115:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+116:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+117:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+118:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+118:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+119:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+119:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+120:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+120:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+121:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+122:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+123:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+124:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+125:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+126:	proc  0 (Sender:1) abp.pml:20 (state 6)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+127:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+128:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+129:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+130:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+130:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+131:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+131:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+132:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+132:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+133:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+134:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+135:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+136:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+137:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+137:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+138:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+139:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+140:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+141:	proc  0 (Sender:1) abp.pml:20 (state 18)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+142:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+143:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+144:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+145:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+145:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+146:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+147:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+148:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+148:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+149:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+149:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+150:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+150:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+151:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+152:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+153:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+154:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+155:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+156:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+156:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+157:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+157:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+158:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+159:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+159:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+160:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+161:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+162:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+163:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+163:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+164:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+165:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+166:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+167:	proc  0 (Sender:1) abp.pml:20 (state 18)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+168:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+169:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+170:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+171:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+171:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+172:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+172:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+173:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+174:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+174:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+175:	proc  0 (Sender:1) abp.pml:23 (state 22)	[.(goto)]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+176:	proc  1 (Receiver:1) abp.pml:28 (state 12)	[goto :b5]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+177:	proc  1 (Receiver:1) abp.pml:43 (state 19)	[DO]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+178:	proc  0 (Sender:1) abp.pml:15 Recv ack0	<- queue 2 (sender)
+178:	proc  0 (Sender:1) abp.pml:15 (state 13)	[sender?2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+179:	proc  0 (Sender:1) abp.pml:15 (state 14)	[goto :b2]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+180:	proc  0 (Sender:1) abp.pml:35 (state 25)	[DO]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+181:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+182:	proc  0 (Sender:1) abp.pml:20 (state 6)	[(1)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+183:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+184:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+185:	proc  0 (Sender:1) abp.pml:17 (state 4)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+186:	proc  0 (Sender:1) abp.pml:19 Send msg1	-> queue 1 (receiver)
+186:	proc  0 (Sender:1) abp.pml:19 (state 5)	[receiver!3]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+187:	proc  0 (Sender:1) abp.pml:22 (state 8)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg1]
+188:	proc  1 (Receiver:1) abp.pml:28 Recv msg1	<- queue 1 (receiver)
+188:	proc  1 (Receiver:1) abp.pml:28 (state 1)	[receiver?3]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+189:	proc  0 (Sender:1) abp.pml:23 (state 10)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+190:	proc  1 (Receiver:1) abp.pml:28 Send ack1	-> queue 2 (sender)
+190:	proc  1 (Receiver:1) abp.pml:28 (state 2)	[sender!1]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+191:	proc  1 (Receiver:1) abp.pml:28 (state 3)	[goto :b4]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+192:	proc  1 (Receiver:1) abp.pml:26 (state 18)	[sub-sequence]
+		queue 2 (sender): [ack1]
+		queue 1 (receiver): 
+193:	proc  0 (Sender:1) abp.pml:15 Recv ack1	<- queue 2 (sender)
+193:	proc  0 (Sender:1) abp.pml:15 (state 1)	[sender?1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+194:	proc  0 (Sender:1) abp.pml:15 (state 2)	[goto :b1]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+195:	proc  0 (Sender:1) abp.pml:13 (state 24)	[sub-sequence]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+      timeout
+196:	proc  0 (Sender:1) abp.pml:17 (state 16)	[(timeout)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+197:	proc  0 (Sender:1) abp.pml:19 Send msg0	-> queue 1 (receiver)
+197:	proc  0 (Sender:1) abp.pml:19 (state 17)	[receiver!4]
+		queue 2 (sender): 
+		queue 1 (receiver): [msg0]
+198:	proc  1 (Receiver:1) abp.pml:28 Recv msg0	<- queue 1 (receiver)
+198:	proc  1 (Receiver:1) abp.pml:28 (state 10)	[receiver?4]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+199:	proc  0 (Sender:1) abp.pml:22 (state 20)	[.(goto)]
+		queue 2 (sender): 
+		queue 1 (receiver): 
+200:	proc  1 (Receiver:1) abp.pml:28 Send ack0	-> queue 2 (sender)
+200:	proc  1 (Receiver:1) abp.pml:28 (state 11)	[sender!2]
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		queue 2 (sender): [ack0]
+		queue 1 (receiver): 
+200:	proc  1 (Receiver:1) abp.pml:28 (state 12)
+200:	proc  0 (Sender:1) abp.pml:23 (state 22)
+2 processes created
+exit: 0

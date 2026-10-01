@@ -1,0 +1,575 @@
+  0:	proc  - (:root:) creates proc  0 (disk_sched)
+ltl p: [] ((! (client_busy[1])) || (<> (! (client_busy[1]))))
+  1:	proc  0 (disk_sched:1) diskhead.pml:38 (state 1)	[(!(client_busy[0]))]
+		queue 1 (disk_sched(0):req_q): 
+  2:	proc  0 (disk_sched:1) diskhead.pml:15 (state 2)	[client_busy[0] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 0
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+  3:	proc  0 (disk_sched:1) diskhead.pml:16 (state 3)	[curproc = (0+1)]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): 
+  4:	proc  0 (disk_sched:1) diskhead.pml:18 (state 4)	[(!(disk_busy))]
+		queue 1 (disk_sched(0):req_q): 
+  5:	proc  0 (disk_sched:1) diskhead.pml:8 (state 5)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 1
+		queue 1 (disk_sched(0):req_q): 
+  6:	proc  0 (disk_sched:1) diskhead.pml:9 (state 6)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+  7:	proc  0 (disk_sched:1) diskhead.pml:10 (state 7)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+  8:	proc  0 (disk_sched:1) diskhead.pml:21 (state 12)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+  9:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 10:	proc  0 (disk_sched:1) diskhead.pml:39 (state 14)	[(!(client_busy[1]))]
+		queue 1 (disk_sched(0):req_q): 
+ 11:	proc  0 (disk_sched:1) diskhead.pml:15 (state 15)	[client_busy[1] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+ 12:	proc  0 (disk_sched:1) diskhead.pml:16 (state 16)	[curproc = (1+1)]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): 
+ 13:	proc  0 (disk_sched:1) diskhead.pml:19 (state 22)	[else]
+		queue 1 (disk_sched(0):req_q): 
+ 14:	proc  0 (disk_sched:1) diskhead.pml:19 Send 2	-> queue 1 (req_q)
+ 14:	proc  0 (disk_sched:1) diskhead.pml:19 (state 23)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2]
+ 15:	proc  0 (disk_sched:1) diskhead.pml:21 (state 25)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 16:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 17:	proc  0 (disk_sched:1) diskhead.pml:40 (state 27)	[(!(client_busy[2]))]
+		queue 1 (disk_sched(0):req_q): [2]
+ 18:	proc  0 (disk_sched:1) diskhead.pml:15 (state 28)	[client_busy[2] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2]
+ 19:	proc  0 (disk_sched:1) diskhead.pml:16 (state 29)	[curproc = (2+1)]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): [2]
+ 20:	proc  0 (disk_sched:1) diskhead.pml:19 (state 35)	[else]
+		queue 1 (disk_sched(0):req_q): [2]
+ 21:	proc  0 (disk_sched:1) diskhead.pml:19 Send 3	-> queue 1 (req_q)
+ 21:	proc  0 (disk_sched:1) diskhead.pml:19 (state 36)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 22:	proc  0 (disk_sched:1) diskhead.pml:21 (state 38)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 23:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 24:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 25:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 26:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2][3]
+ 27:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 2	<- queue 1 (req_q)
+ 27:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): [3]
+ 28:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 2
+		queue 1 (disk_sched(0):req_q): [3]
+ 29:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [3]
+ 30:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [3]
+ 31:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+ 32:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+ 33:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [3]
+ 34:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [3]
+ 35:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 0
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [3]
+ 36:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 3	<- queue 1 (req_q)
+ 36:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): 
+ 37:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 3
+		queue 1 (disk_sched(0):req_q): 
+ 38:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+ 39:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+ 40:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 41:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 42:	proc  0 (disk_sched:1) diskhead.pml:38 (state 1)	[(!(client_busy[0]))]
+		queue 1 (disk_sched(0):req_q): 
+ 43:	proc  0 (disk_sched:1) diskhead.pml:15 (state 2)	[client_busy[0] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 0
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): 
+ 44:	proc  0 (disk_sched:1) diskhead.pml:16 (state 3)	[curproc = (0+1)]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): 
+ 45:	proc  0 (disk_sched:1) diskhead.pml:19 (state 9)	[else]
+		queue 1 (disk_sched(0):req_q): 
+ 46:	proc  0 (disk_sched:1) diskhead.pml:19 Send 1	-> queue 1 (req_q)
+ 46:	proc  0 (disk_sched:1) diskhead.pml:19 (state 10)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [1]
+ 47:	proc  0 (disk_sched:1) diskhead.pml:21 (state 12)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+ 48:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+ 49:	proc  0 (disk_sched:1) diskhead.pml:39 (state 14)	[(!(client_busy[1]))]
+		queue 1 (disk_sched(0):req_q): [1]
+ 50:	proc  0 (disk_sched:1) diskhead.pml:15 (state 15)	[client_busy[1] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [1]
+ 51:	proc  0 (disk_sched:1) diskhead.pml:16 (state 16)	[curproc = (1+1)]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): [1]
+ 52:	proc  0 (disk_sched:1) diskhead.pml:19 (state 22)	[else]
+		queue 1 (disk_sched(0):req_q): [1]
+ 53:	proc  0 (disk_sched:1) diskhead.pml:19 Send 2	-> queue 1 (req_q)
+ 53:	proc  0 (disk_sched:1) diskhead.pml:19 (state 23)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 54:	proc  0 (disk_sched:1) diskhead.pml:21 (state 25)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 55:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 56:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 57:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 58:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): [1][2]
+ 59:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 1	<- queue 1 (req_q)
+ 59:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): [2]
+ 60:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 1
+		queue 1 (disk_sched(0):req_q): [2]
+ 61:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [2]
+ 62:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [2]
+ 63:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 64:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 65:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 66:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [2]
+ 67:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): [2]
+ 68:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 2	<- queue 1 (req_q)
+ 68:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): 
+ 69:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 2
+		queue 1 (disk_sched(0):req_q): 
+ 70:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+ 71:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+ 72:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 73:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 74:	proc  0 (disk_sched:1) diskhead.pml:38 (state 1)	[(!(client_busy[0]))]
+		queue 1 (disk_sched(0):req_q): 
+ 75:	proc  0 (disk_sched:1) diskhead.pml:15 (state 2)	[client_busy[0] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+ 76:	proc  0 (disk_sched:1) diskhead.pml:16 (state 3)	[curproc = (0+1)]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): 
+ 77:	proc  0 (disk_sched:1) diskhead.pml:19 (state 9)	[else]
+		queue 1 (disk_sched(0):req_q): 
+ 78:	proc  0 (disk_sched:1) diskhead.pml:19 Send 1	-> queue 1 (req_q)
+ 78:	proc  0 (disk_sched:1) diskhead.pml:19 (state 10)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [1]
+ 79:	proc  0 (disk_sched:1) diskhead.pml:21 (state 12)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+ 80:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+ 81:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [1]
+ 82:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [1]
+ 83:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 1
+		client_busy[1] = 0
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): [1]
+ 84:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 1	<- queue 1 (req_q)
+ 84:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): 
+ 85:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 1
+		queue 1 (disk_sched(0):req_q): 
+ 86:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+ 87:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+ 88:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 89:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+ 90:	proc  0 (disk_sched:1) diskhead.pml:39 (state 14)	[(!(client_busy[1]))]
+		queue 1 (disk_sched(0):req_q): 
+ 91:	proc  0 (disk_sched:1) diskhead.pml:15 (state 15)	[client_busy[1] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+ 92:	proc  0 (disk_sched:1) diskhead.pml:16 (state 16)	[curproc = (1+1)]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): 
+ 93:	proc  0 (disk_sched:1) diskhead.pml:19 (state 22)	[else]
+		queue 1 (disk_sched(0):req_q): 
+ 94:	proc  0 (disk_sched:1) diskhead.pml:19 Send 2	-> queue 1 (req_q)
+ 94:	proc  0 (disk_sched:1) diskhead.pml:19 (state 23)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2]
+ 95:	proc  0 (disk_sched:1) diskhead.pml:21 (state 25)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 96:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+ 97:	proc  0 (disk_sched:1) diskhead.pml:40 (state 27)	[(!(client_busy[2]))]
+		queue 1 (disk_sched(0):req_q): [2]
+ 98:	proc  0 (disk_sched:1) diskhead.pml:15 (state 28)	[client_busy[2] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2]
+ 99:	proc  0 (disk_sched:1) diskhead.pml:16 (state 29)	[curproc = (2+1)]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): [2]
+100:	proc  0 (disk_sched:1) diskhead.pml:19 (state 35)	[else]
+		queue 1 (disk_sched(0):req_q): [2]
+101:	proc  0 (disk_sched:1) diskhead.pml:19 Send 3	-> queue 1 (req_q)
+101:	proc  0 (disk_sched:1) diskhead.pml:19 (state 36)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2][3]
+102:	proc  0 (disk_sched:1) diskhead.pml:21 (state 38)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+103:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+104:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+105:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [2][3]
+106:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2][3]
+107:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 2	<- queue 1 (req_q)
+107:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): [3]
+108:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 2
+		queue 1 (disk_sched(0):req_q): [3]
+109:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [3]
+110:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [3]
+111:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+112:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+113:	proc  0 (disk_sched:1) diskhead.pml:38 (state 1)	[(!(client_busy[0]))]
+		queue 1 (disk_sched(0):req_q): [3]
+114:	proc  0 (disk_sched:1) diskhead.pml:15 (state 2)	[client_busy[0] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [3]
+115:	proc  0 (disk_sched:1) diskhead.pml:16 (state 3)	[curproc = (0+1)]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): [3]
+116:	proc  0 (disk_sched:1) diskhead.pml:19 (state 9)	[else]
+		queue 1 (disk_sched(0):req_q): [3]
+117:	proc  0 (disk_sched:1) diskhead.pml:19 Send 1	-> queue 1 (req_q)
+117:	proc  0 (disk_sched:1) diskhead.pml:19 (state 10)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [3][1]
+118:	proc  0 (disk_sched:1) diskhead.pml:21 (state 12)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3][1]
+119:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3][1]
+120:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [3][1]
+121:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [3][1]
+122:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 1
+		client_busy[1] = 0
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [3][1]
+123:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 3	<- queue 1 (req_q)
+123:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): [1]
+124:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 3
+		queue 1 (disk_sched(0):req_q): [1]
+125:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [1]
+126:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [1]
+127:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+128:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1]
+129:	proc  0 (disk_sched:1) diskhead.pml:39 (state 14)	[(!(client_busy[1]))]
+		queue 1 (disk_sched(0):req_q): [1]
+130:	proc  0 (disk_sched:1) diskhead.pml:15 (state 15)	[client_busy[1] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [1]
+131:	proc  0 (disk_sched:1) diskhead.pml:16 (state 16)	[curproc = (1+1)]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): [1]
+132:	proc  0 (disk_sched:1) diskhead.pml:19 (state 22)	[else]
+		queue 1 (disk_sched(0):req_q): [1]
+133:	proc  0 (disk_sched:1) diskhead.pml:19 Send 2	-> queue 1 (req_q)
+133:	proc  0 (disk_sched:1) diskhead.pml:19 (state 23)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [1][2]
+134:	proc  0 (disk_sched:1) diskhead.pml:21 (state 25)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+135:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+136:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [1][2]
+137:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [1][2]
+138:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): [1][2]
+139:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 1	<- queue 1 (req_q)
+139:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): [2]
+140:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 1
+		queue 1 (disk_sched(0):req_q): [2]
+141:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [2]
+142:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [2]
+143:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+144:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+145:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [2]
+146:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [2]
+147:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): [2]
+148:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 2	<- queue 1 (req_q)
+148:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): 
+149:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 2
+		queue 1 (disk_sched(0):req_q): 
+150:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+151:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+152:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+153:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+154:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): 
+155:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): 
+156:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 0
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+157:	proc  0 (disk_sched:1) diskhead.pml:29 (state 48)	[(empty(req_q))]
+		queue 1 (disk_sched(0):req_q): 
+158:	proc  0 (disk_sched:1) diskhead.pml:29 (state 49)	[disk_busy = 0]
+		disk_sched(0):disk_busy = 0
+		queue 1 (disk_sched(0):req_q): 
+159:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+160:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+161:	proc  0 (disk_sched:1) diskhead.pml:38 (state 1)	[(!(client_busy[0]))]
+		queue 1 (disk_sched(0):req_q): 
+162:	proc  0 (disk_sched:1) diskhead.pml:15 (state 2)	[client_busy[0] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 0
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+163:	proc  0 (disk_sched:1) diskhead.pml:16 (state 3)	[curproc = (0+1)]
+		disk_sched(0):curproc = 1
+		queue 1 (disk_sched(0):req_q): 
+164:	proc  0 (disk_sched:1) diskhead.pml:18 (state 4)	[(!(disk_busy))]
+		queue 1 (disk_sched(0):req_q): 
+165:	proc  0 (disk_sched:1) diskhead.pml:8 (state 5)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 1
+		queue 1 (disk_sched(0):req_q): 
+166:	proc  0 (disk_sched:1) diskhead.pml:9 (state 6)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+167:	proc  0 (disk_sched:1) diskhead.pml:10 (state 7)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+168:	proc  0 (disk_sched:1) diskhead.pml:21 (state 12)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+169:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+170:	proc  0 (disk_sched:1) diskhead.pml:39 (state 14)	[(!(client_busy[1]))]
+		queue 1 (disk_sched(0):req_q): 
+171:	proc  0 (disk_sched:1) diskhead.pml:15 (state 15)	[client_busy[1] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 0
+		queue 1 (disk_sched(0):req_q): 
+172:	proc  0 (disk_sched:1) diskhead.pml:16 (state 16)	[curproc = (1+1)]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): 
+173:	proc  0 (disk_sched:1) diskhead.pml:19 (state 22)	[else]
+		queue 1 (disk_sched(0):req_q): 
+174:	proc  0 (disk_sched:1) diskhead.pml:19 Send 2	-> queue 1 (req_q)
+174:	proc  0 (disk_sched:1) diskhead.pml:19 (state 23)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2]
+175:	proc  0 (disk_sched:1) diskhead.pml:21 (state 25)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+176:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2]
+177:	proc  0 (disk_sched:1) diskhead.pml:40 (state 27)	[(!(client_busy[2]))]
+		queue 1 (disk_sched(0):req_q): [2]
+178:	proc  0 (disk_sched:1) diskhead.pml:15 (state 28)	[client_busy[2] = 1]
+		client_busy[0] = 1
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2]
+179:	proc  0 (disk_sched:1) diskhead.pml:16 (state 29)	[curproc = (2+1)]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): [2]
+180:	proc  0 (disk_sched:1) diskhead.pml:19 (state 35)	[else]
+		queue 1 (disk_sched(0):req_q): [2]
+181:	proc  0 (disk_sched:1) diskhead.pml:19 Send 3	-> queue 1 (req_q)
+181:	proc  0 (disk_sched:1) diskhead.pml:19 (state 36)	[req_q!curproc]
+		queue 1 (disk_sched(0):req_q): [2][3]
+182:	proc  0 (disk_sched:1) diskhead.pml:21 (state 38)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+183:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+184:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [2][3]
+185:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [2][3]
+186:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 1
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [2][3]
+187:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 2	<- queue 1 (req_q)
+187:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 2
+		queue 1 (disk_sched(0):req_q): [3]
+188:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 2
+		queue 1 (disk_sched(0):req_q): [3]
+189:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): [3]
+190:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): [3]
+191:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+192:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): [3]
+193:	proc  0 (disk_sched:1) diskhead.pml:41 (state 40)	[(Interrupt_set)]
+		queue 1 (disk_sched(0):req_q): [3]
+194:	proc  0 (disk_sched:1) diskhead.pml:25 (state 41)	[Interrupt_set = 0]
+		Interrupt_set = 0
+		queue 1 (disk_sched(0):req_q): [3]
+195:	proc  0 (disk_sched:1) diskhead.pml:26 (state 42)	[client_busy[(disk_busy-1)] = 0]
+		client_busy[0] = 0
+		client_busy[1] = 0
+		client_busy[2] = 1
+		queue 1 (disk_sched(0):req_q): [3]
+196:	proc  0 (disk_sched:1) diskhead.pml:28 Recv 3	<- queue 1 (req_q)
+196:	proc  0 (disk_sched:1) diskhead.pml:28 (state 43)	[req_q?curproc]
+		disk_sched(0):curproc = 3
+		queue 1 (disk_sched(0):req_q): 
+197:	proc  0 (disk_sched:1) diskhead.pml:8 (state 44)	[disk_busy = curproc]
+		disk_sched(0):disk_busy = 3
+		queue 1 (disk_sched(0):req_q): 
+198:	proc  0 (disk_sched:1) diskhead.pml:9 (state 45)	[assert((Interrupt_set==0))]
+		queue 1 (disk_sched(0):req_q): 
+199:	proc  0 (disk_sched:1) diskhead.pml:10 (state 46)	[Interrupt_set = 1]
+		Interrupt_set = 1
+		queue 1 (disk_sched(0):req_q): 
+200:	proc  0 (disk_sched:1) diskhead.pml:31 (state 51)	[.(goto)]
+		queue 1 (disk_sched(0):req_q): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 1
+		client_busy[0] = 0
+		client_busy[1] = 0
+		client_busy[2] = 1
+		Interrupt_set = 1
+200:	proc  0 (disk_sched:1) diskhead.pml:43 (state 54)
+		disk_sched(0):curproc = 3
+		disk_sched(0):disk_busy = 3
+		queue 1 (disk_sched(0):req_q): 
+1 process created
+exit: 0

@@ -1,0 +1,281 @@
+  0:	proc  - (:root:) creates proc  0 (client)
+  0:	proc  - (:root:) creates proc  1 (server)
+  1:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+  2:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+  3:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+  4:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+  5:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+  6:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+  7:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+  8:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+  9:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+ 10:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+ 11:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 12:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+ 13:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+ 14:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+ 15:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+ 16:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 17:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+ 18:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+ 19:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+ 20:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+ 21:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+ 22:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+ 23:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+ 24:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+ 25:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 26:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+ 27:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+ 28:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 29:	proc  0 (client:1) ex_5.pml:15 (state 4)	[((r_lock==1))]
+ 30:	proc  0 (client:1) ex_5.pml:16 (state 5)	[r_want = 1]
+		r_want = 1
+ 31:	proc  1 (server:1) ex_5.pml:36 (state 3)	[(r_want)]
+ 32:	proc  0 (client:1) ex_5.pml:17 (state 6)	[State = Wakeme]
+		State = Wakeme
+ 33:	proc  1 (server:1) ex_5.pml:38 (state 4)	[((sleep_q==0))]
+ 34:	proc  1 (server:1) ex_5.pml:38 (state 5)	[sleep_q = 1]
+		sleep_q = 1
+ 35:	proc  0 (client:1) ex_5.pml:18 (state 7)	[lk = 0]
+		lk = 0
+ 36:	proc  1 (server:1) ex_5.pml:40 (state 7)	[r_want = 0]
+		r_want = 0
+ 37:	proc  1 (server:1) ex_5.pml:45 (state 8)	[((State==Wakeme))]
+ 38:	proc  1 (server:1) ex_5.pml:46 (state 9)	[State = Running]
+		State = Running
+ 39:	proc  0 (client:1) ex_5.pml:19 (state 8)	[((State==Running))]
+ 40:	proc  1 (server:1) ex_5.pml:49 (state 12)	[.(goto)]
+ 41:	proc  1 (server:1) ex_5.pml:49 (state 13)	[sleep_q = 0]
+		sleep_q = 0
+ 42:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 43:	proc  0 (client:1) ex_5.pml:15 (state 4)	[((r_lock==1))]
+ 44:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+ 45:	proc  0 (client:1) ex_5.pml:16 (state 5)	[r_want = 1]
+		r_want = 1
+ 46:	proc  0 (client:1) ex_5.pml:17 (state 6)	[State = Wakeme]
+		State = Wakeme
+ 47:	proc  0 (client:1) ex_5.pml:18 (state 7)	[lk = 0]
+ 48:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+ 49:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+ 50:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 51:	proc  1 (server:1) ex_5.pml:36 (state 3)	[(r_want)]
+ 52:	proc  1 (server:1) ex_5.pml:38 (state 4)	[((sleep_q==0))]
+ 53:	proc  1 (server:1) ex_5.pml:38 (state 5)	[sleep_q = 1]
+		sleep_q = 1
+ 54:	proc  1 (server:1) ex_5.pml:40 (state 7)	[r_want = 0]
+		r_want = 0
+ 55:	proc  1 (server:1) ex_5.pml:45 (state 8)	[((State==Wakeme))]
+ 56:	proc  1 (server:1) ex_5.pml:46 (state 9)	[State = Running]
+		State = Running
+ 57:	proc  1 (server:1) ex_5.pml:49 (state 12)	[.(goto)]
+ 58:	proc  0 (client:1) ex_5.pml:19 (state 8)	[((State==Running))]
+ 59:	proc  1 (server:1) ex_5.pml:49 (state 13)	[sleep_q = 0]
+		sleep_q = 0
+ 60:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 61:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+ 62:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+ 63:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+ 64:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+ 65:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+ 66:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+ 67:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+ 68:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 69:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+ 70:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+ 71:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+ 72:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+ 73:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+ 74:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 75:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+ 76:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+ 77:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+ 78:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+ 79:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+ 80:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+ 81:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+ 82:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+ 83:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+ 84:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 85:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+ 86:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+ 87:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+ 88:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+ 89:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+ 90:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+ 91:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+ 92:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+ 93:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+ 94:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+ 95:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+ 96:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+ 97:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+ 98:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+ 99:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+100:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+101:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+102:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+103:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+104:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+105:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+106:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+107:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+108:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+109:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+110:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+111:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+112:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+113:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+114:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+115:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+116:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+117:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+118:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+119:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+120:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+121:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+122:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+123:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+124:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+125:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+126:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+127:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+128:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+129:	proc  0 (client:1) ex_5.pml:15 (state 4)	[((r_lock==1))]
+130:	proc  0 (client:1) ex_5.pml:16 (state 5)	[r_want = 1]
+		r_want = 1
+131:	proc  0 (client:1) ex_5.pml:17 (state 6)	[State = Wakeme]
+		State = Wakeme
+132:	proc  0 (client:1) ex_5.pml:18 (state 7)	[lk = 0]
+		lk = 0
+133:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+134:	proc  1 (server:1) ex_5.pml:36 (state 3)	[(r_want)]
+135:	proc  1 (server:1) ex_5.pml:38 (state 4)	[((sleep_q==0))]
+136:	proc  1 (server:1) ex_5.pml:38 (state 5)	[sleep_q = 1]
+		sleep_q = 1
+137:	proc  1 (server:1) ex_5.pml:40 (state 7)	[r_want = 0]
+		r_want = 0
+138:	proc  1 (server:1) ex_5.pml:45 (state 8)	[((State==Wakeme))]
+139:	proc  1 (server:1) ex_5.pml:46 (state 9)	[State = Running]
+		State = Running
+140:	proc  0 (client:1) ex_5.pml:19 (state 8)	[((State==Running))]
+141:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+142:	proc  0 (client:1) ex_5.pml:15 (state 4)	[((r_lock==1))]
+143:	proc  1 (server:1) ex_5.pml:49 (state 12)	[.(goto)]
+144:	proc  1 (server:1) ex_5.pml:49 (state 13)	[sleep_q = 0]
+		sleep_q = 0
+145:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+146:	proc  0 (client:1) ex_5.pml:16 (state 5)	[r_want = 1]
+		r_want = 1
+147:	proc  0 (client:1) ex_5.pml:17 (state 6)	[State = Wakeme]
+		State = Wakeme
+148:	proc  0 (client:1) ex_5.pml:18 (state 7)	[lk = 0]
+149:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+150:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+151:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+152:	proc  1 (server:1) ex_5.pml:36 (state 3)	[(r_want)]
+153:	proc  1 (server:1) ex_5.pml:38 (state 4)	[((sleep_q==0))]
+154:	proc  1 (server:1) ex_5.pml:38 (state 5)	[sleep_q = 1]
+		sleep_q = 1
+155:	proc  1 (server:1) ex_5.pml:40 (state 7)	[r_want = 0]
+		r_want = 0
+156:	proc  1 (server:1) ex_5.pml:45 (state 8)	[((State==Wakeme))]
+157:	proc  1 (server:1) ex_5.pml:46 (state 9)	[State = Running]
+		State = Running
+158:	proc  1 (server:1) ex_5.pml:49 (state 12)	[.(goto)]
+159:	proc  0 (client:1) ex_5.pml:19 (state 8)	[((State==Running))]
+160:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+161:	proc  1 (server:1) ex_5.pml:49 (state 13)	[sleep_q = 0]
+		sleep_q = 0
+162:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+163:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+164:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+165:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+166:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+167:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+168:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+169:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+170:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+171:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+172:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+173:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+174:	proc  0 (client:1) ex_5.pml:20 (state 9)	[else]
+175:	proc  0 (client:1) ex_5.pml:21 (state 10)	[goto :b0]
+176:	proc  0 (client:1) ex_5.pml:24 (state 14)	[assert((r_lock==0))]
+177:	proc  0 (client:1) ex_5.pml:25 (state 15)	[r_lock = 1]
+		r_lock = 1
+178:	proc  0 (client:1) ex_5.pml:26 (state 16)	[lk = 0]
+		lk = 0
+179:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+180:	proc  0 (client:1) ex_5.pml:27 (state 17)	[goto sleep]
+181:	proc  1 (server:1) ex_5.pml:50 (state 14)	[else]
+182:	proc  0 (client:1) ex_5.pml:13 (state 1)	[((lk==0))]
+183:	proc  0 (client:1) ex_5.pml:13 (state 2)	[lk = 1]
+		lk = 1
+184:	proc  0 (client:1) ex_5.pml:23 (state 12)	[.(goto)]
+185:	proc  1 (server:1) ex_5.pml:52 (state 16)	[.(goto)]
+186:	proc  0 (client:1) ex_5.pml:15 (state 4)	[((r_lock==1))]
+187:	proc  0 (client:1) ex_5.pml:16 (state 5)	[r_want = 1]
+		r_want = 1
+188:	proc  1 (server:1) ex_5.pml:52 (state 17)	[goto wakeup]
+189:	proc  0 (client:1) ex_5.pml:17 (state 6)	[State = Wakeme]
+		State = Wakeme
+190:	proc  0 (client:1) ex_5.pml:18 (state 7)	[lk = 0]
+		lk = 0
+191:	proc  1 (server:1) ex_5.pml:33 (state 1)	[r_lock = 0]
+		r_lock = 0
+192:	proc  1 (server:1) ex_5.pml:34 (state 2)	[((lk==0))]
+193:	proc  1 (server:1) ex_5.pml:36 (state 3)	[(r_want)]
+194:	proc  1 (server:1) ex_5.pml:38 (state 4)	[((sleep_q==0))]
+195:	proc  1 (server:1) ex_5.pml:38 (state 5)	[sleep_q = 1]
+		sleep_q = 1
+196:	proc  1 (server:1) ex_5.pml:40 (state 7)	[r_want = 0]
+		r_want = 0
+197:	proc  1 (server:1) ex_5.pml:45 (state 8)	[((State==Wakeme))]
+198:	proc  1 (server:1) ex_5.pml:46 (state 9)	[State = Running]
+		State = Running
+199:	proc  1 (server:1) ex_5.pml:49 (state 12)	[.(goto)]
+200:	proc  0 (client:1) ex_5.pml:19 (state 8)	[((State==Running))]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		lk = 0
+		sleep_q = 1
+		r_lock = 0
+		r_want = 0
+		State = Running
+200:	proc  1 (server:1) ex_5.pml:49 (state 13)
+200:	proc  0 (client:1) ex_5.pml:23 (state 12)
+2 processes created
+exit: 0

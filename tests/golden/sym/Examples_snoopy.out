@@ -1,0 +1,43 @@
+mtype 	r	14	<:global:>	<constant>	{scope _}
+mtype 	w	13	<:global:>	<constant>	{scope _}
+mtype 	raw	12	<:global:>	<constant>	{scope _}
+mtype 	RD	11	<:global:>	<constant>	{scope _}
+mtype 	WR	10	<:global:>	<constant>	{scope _}
+mtype 	RX	9	<:global:>	<constant>	{scope _}
+mtype 	MX	8	<:global:>	<constant>	{scope _}
+mtype 	MXdone	7	<:global:>	<constant>	{scope _}
+mtype 	req0	6	<:global:>	<constant>	{scope _}
+mtype 	req1	5	<:global:>	<constant>	{scope _}
+mtype 	CtoB	4	<:global:>	<constant>	{scope _}
+mtype 	BtoC	3	<:global:>	<constant>	{scope _}
+mtype 	grant	2	<:global:>	<constant>	{scope _}
+mtype 	done	1	<:global:>	<constant>	{scope _}
+chan  	tocpu0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	fromcpu0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	tobus0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	frombus0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	grant0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	tocpu1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	fromcpu1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	tobus1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	frombus1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	grant1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	claim0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	claim1	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	release0	2	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	release1	2	<:global:>	<variable>	1	mtype 	{scope _}
+proctype	cpu0	0	<:global:>	<variable>	{scope _}
+proctype	cpu1	0	<:global:>	<variable>	{scope _}
+proctype	cache0	0	<:global:>	<variable>	{scope _}
+byte  	state	3	<cache0>	<variable>	{scope _18_}
+byte  	which	0	<cache0>	<variable>	{scope _18_}
+proctype	cache1	0	<:global:>	<variable>	{scope _}
+byte  	state	3	<cache1>	<variable>	{scope _19_}
+byte  	which	0	<cache1>	<variable>	{scope _19_}
+proctype	busarbiter	0	<:global:>	<variable>	{scope _}
+proctype	bus	0	<:global:>	<variable>	{scope _}
+label	buscycle	50	<cache1>	{scope _19_}
+label	resume	47	<cache1>	{scope _19_}
+label	buscycle	50	<cache0>	{scope _18_}
+label	resume	47	<cache0>	{scope _18_}
+exit: 0

@@ -1,0 +1,15 @@
+never  {    /* (p && !q) U (q || X r) */
+T0_init:
+	do
+	:: atomic { ((q)) -> assert(!((q))) }
+	:: (1) -> goto accept_S2
+	:: ((p && !q)) -> goto T0_init
+	od;
+accept_S2:
+	do
+	:: atomic { ((r)) -> assert(!((r))) }
+	od;
+accept_all:
+	skip
+}
+exit: 0

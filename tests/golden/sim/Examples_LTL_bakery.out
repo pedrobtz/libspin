@@ -1,0 +1,431 @@
+  0:	proc  - (:root:) creates proc  0 (P)
+  0:	proc  - (:root:) creates proc  1 (P)
+ltl invariant: [] ((! ((P@CS))) || ((mutex==1)))
+  1:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 0
+  2:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+  3:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 1
+		turn[1] = 2
+  4:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 3
+		turn[1] = 2
+  5:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+  6:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+  7:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+  8:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 3
+		turn[1] = 0
+  9:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 10:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 11:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 12:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 13:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 0
+ 14:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 0
+		turn[1] = 1
+ 15:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+ 16:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 17:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 18:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 19:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 20:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+ 21:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 2
+		turn[1] = 1
+ 22:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 2
+		turn[1] = 0
+ 23:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 24:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 25:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 2
+		turn[1] = 1
+ 26:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 27:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 2
+		turn[1] = 3
+ 28:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 29:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 3
+ 30:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 31:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 32:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 33:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 34:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 0
+ 35:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 0
+ 36:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 37:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+ 38:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+ 39:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 1
+		turn[1] = 2
+ 40:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 41:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 42:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 43:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 2
+ 44:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 45:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 46:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 2
+ 47:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 48:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 49:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 3
+		turn[1] = 2
+ 50:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 3
+		turn[1] = 0
+ 51:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 52:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 53:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 3
+		turn[1] = 1
+ 54:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 3
+		turn[1] = 4
+ 55:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 56:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 57:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 4
+ 58:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 59:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 60:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 61:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 4
+ 62:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 5
+		turn[1] = 4
+ 63:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 64:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 5
+		turn[1] = 0
+ 65:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 66:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 67:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 5
+		turn[1] = 1
+ 68:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 5
+		turn[1] = 6
+ 69:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 70:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 71:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 6
+ 72:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 73:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 74:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 75:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 76:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 6
+ 77:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 1
+		turn[1] = 0
+ 78:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+ 79:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 80:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 81:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 82:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 83:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+ 84:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 1
+ 85:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 86:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+ 87:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 2
+		turn[1] = 1
+ 88:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 2
+		turn[1] = 3
+ 89:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 90:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 91:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 92:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 3
+ 93:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+ 94:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+ 95:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 3
+ 96:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 4
+		turn[1] = 3
+ 97:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+ 98:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+ 99:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 4
+		turn[1] = 0
+100:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+101:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+102:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+103:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 0
+104:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+105:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+106:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 0
+107:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+108:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+109:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 1
+		turn[1] = 2
+110:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+111:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+112:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+113:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 2
+114:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+115:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 2
+116:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 3
+		turn[1] = 2
+117:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+118:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+119:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+120:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 3
+		turn[1] = 0
+121:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+122:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+123:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 3
+		turn[1] = 1
+124:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+125:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 3
+		turn[1] = 4
+126:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+127:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 4
+128:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+129:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+130:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 4
+131:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 5
+		turn[1] = 4
+132:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+133:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+134:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 5
+		turn[1] = 0
+135:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+136:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+137:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 5
+		turn[1] = 1
+138:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 5
+		turn[1] = 6
+139:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+140:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+141:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 6
+142:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+143:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+144:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 6
+145:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+146:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 7
+		turn[1] = 6
+147:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+148:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 7
+		turn[1] = 0
+149:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+150:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 7
+		turn[1] = 1
+151:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 7
+		turn[1] = 8
+152:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+153:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+154:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+155:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 8
+156:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+157:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+158:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 8
+159:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 9
+		turn[1] = 8
+160:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+161:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+162:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 9
+		turn[1] = 0
+163:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+164:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 9
+		turn[1] = 1
+165:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 9
+		turn[1] = 10
+166:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+167:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+168:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+169:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 10
+170:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+171:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+172:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+173:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+174:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 0
+175:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 0
+176:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+177:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+178:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+179:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+180:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+181:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+182:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 1
+183:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+184:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+185:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+186:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+187:	proc  0 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 1
+		turn[1] = 1
+188:	proc  1 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+189:	proc  0 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+		turn[0] = 2
+		turn[1] = 1
+190:	proc  1 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 2
+		turn[1] = 0
+191:	proc  0 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+192:	proc  1 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+193:	proc  0 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+194:	proc  0 (P:1) bakery.pml:14 (state 5)	[mutex = (mutex-1)]
+		mutex = 0
+195:	proc  0 (P:1) bakery.pml:15 (state 6)	[turn[i] = 0]
+		turn[0] = 0
+		turn[1] = 0
+196:	proc  0 (P:1) bakery.pml:17 (state 8)	[.(goto)]
+197:	proc  1 (P:1) bakery.pml:9 (state 1)	[turn[i] = 1]
+		turn[0] = 0
+		turn[1] = 1
+198:	proc  1 (P:1) bakery.pml:10 (state 2)	[turn[i] = (turn[(1-i)]+1)]
+199:	proc  1 (P:1) bakery.pml:11 (state 3)	[(((turn[(1-i)]==0)||(turn[i]<turn[(1-i)])))]
+200:	proc  1 (P:1) bakery.pml:12 (state 4)	[mutex = (mutex+1)]
+		mutex = 1
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		turn[0] = 0
+		turn[1] = 1
+		mutex = 1
+		CS = 0
+200:	proc  1 (P:1) bakery.pml:14 (state 5)
+		P(1):i = 1
+200:	proc  0 (P:1) bakery.pml:8 (state 7)
+		P(0):i = 0
+2 processes created
+exit: 0

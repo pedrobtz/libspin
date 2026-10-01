@@ -1,0 +1,15 @@
+  0:	proc  - (:root:) creates proc  0 (inc)
+  0:	proc  - (:root:) creates proc  1 (inc)
+  1:	proc  0 (inc:1) assert_fail.pml:6 (state 1)	[t = n]
+		inc(0):t = 0
+  2:	proc  1 (inc:1) assert_fail.pml:6 (state 1)	[t = n]
+		inc(1):t = 0
+  3:	proc  0 (inc:1) assert_fail.pml:6 (state 2)	[n = (t+1)]
+		n = 1
+  4:	proc  0 (inc:1) assert_fail.pml:7 (state 3)	[assert((n<=1))]
+  5:	proc  1 (inc:1) assert_fail.pml:6 (state 2)	[n = (t+1)]
+  6:	proc  1 (inc:1) assert_fail.pml:7 (state 3)	[assert((n<=1))]
+  6:	proc  1 (inc:1)           terminates
+  6:	proc  0 (inc:1)       terminates
+2 processes created
+exit: 0

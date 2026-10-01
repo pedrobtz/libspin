@@ -1,0 +1,809 @@
+  0:	proc  - (:root:) creates proc  0 (A)
+  0:	proc  - (:root:) creates proc  1 (B)
+  1:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+  1:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+  1:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+  1:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+  2:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+  2:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+  2:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+  2:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+  3:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+  3:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+  3:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+  3:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+  4:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+  4:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+  4:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+  4:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+  5:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+  5:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+  5:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+  5:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+  6:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+  6:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+  6:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+  6:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+  7:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+  7:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+  7:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+  7:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+  8:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+  8:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+  8:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+  8:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+  9:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+  9:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+  9:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+  9:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 10:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 10:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 10:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 10:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 11:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 11:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 11:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 11:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 12:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 12:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 12:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 12:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 13:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 13:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 13:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 13:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 14:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 14:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 14:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 14:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 15:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 15:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 15:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 15:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 16:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 16:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 16:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 16:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 17:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 17:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 17:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 17:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 18:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 18:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 18:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 18:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 19:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 19:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 19:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 19:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 20:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 20:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 20:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 20:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 21:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 21:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 21:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 21:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 22:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 22:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 22:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 22:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 23:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 23:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 23:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 23:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 24:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 24:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 24:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 24:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 25:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 25:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 25:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 25:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 26:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 26:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 26:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 26:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 27:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 27:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 27:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 27:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 28:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 28:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 28:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 28:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 29:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 29:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 29:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 29:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 30:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 30:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 30:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 30:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 31:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 31:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 31:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 31:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 32:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 32:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 32:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 32:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 33:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 33:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 33:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 33:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 34:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 34:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 34:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 34:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 35:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 35:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 35:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 35:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 36:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 36:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 36:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 36:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 37:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 37:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 37:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 37:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 38:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 38:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 38:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 38:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 39:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 39:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 39:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 39:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 40:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 40:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 40:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 40:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 41:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 41:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 41:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 41:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 42:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 42:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 42:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 42:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 43:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 43:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 43:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 43:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 44:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 44:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 44:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 44:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 45:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 45:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 45:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 45:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 46:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 46:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 46:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 46:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 47:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 47:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 47:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 47:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 48:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 48:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 48:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 48:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 49:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 49:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 49:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 49:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 50:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 50:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 50:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 50:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 51:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 51:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 51:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 51:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 52:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 52:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 52:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 52:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 53:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 53:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 53:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 53:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 54:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 54:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 54:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 54:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 55:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 55:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 55:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 55:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 56:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 56:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 56:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 56:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 57:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 57:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 57:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 57:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 58:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 58:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 58:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 58:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 59:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 59:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 59:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 59:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 60:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 60:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 60:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 60:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 61:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 61:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 61:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 61:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 62:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 62:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 62:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 62:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 63:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 63:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 63:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 63:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 64:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 64:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 64:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 64:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 65:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 65:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 65:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 65:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 66:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 66:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 66:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 66:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 67:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 67:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 67:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 67:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 68:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 68:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 68:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 68:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 69:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 69:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 69:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 69:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 70:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 70:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 70:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 70:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 71:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 71:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 71:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 71:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 72:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 72:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 72:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 72:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 73:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 73:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 73:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 73:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 74:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 74:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 74:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 74:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 75:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 75:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 75:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 75:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 76:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 76:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 76:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 76:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 77:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 77:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 77:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 77:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 78:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 78:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 78:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 78:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 79:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 79:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 79:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 79:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 80:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 80:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 80:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 80:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 81:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 81:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 81:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 81:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 82:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 82:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 82:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 82:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 83:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 83:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 83:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 83:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 84:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 84:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 84:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 84:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 85:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 85:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 85:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 85:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 86:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 86:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 86:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 86:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 87:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 87:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 87:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 87:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 88:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 88:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 88:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 88:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 89:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 89:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 89:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 89:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 90:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 90:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 90:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 90:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 91:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 91:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 91:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 91:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 92:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 92:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 92:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 92:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 93:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 93:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 93:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 93:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 94:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 94:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 94:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 94:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 95:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 95:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 95:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 95:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 96:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 96:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 96:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 96:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 97:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 97:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 97:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 97:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+ 98:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+ 98:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+ 98:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+ 98:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+ 99:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+ 99:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+ 99:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+ 99:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+100:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+100:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+100:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+100:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+101:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+101:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+101:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+101:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+102:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+102:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+102:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+102:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+103:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+103:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+103:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+103:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+104:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+104:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+104:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+104:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+105:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+105:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+105:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+105:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+106:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+106:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+106:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+106:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+107:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+107:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+107:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+107:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+108:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+108:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+108:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+108:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+109:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+109:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+109:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+109:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+110:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+110:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+110:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+110:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+111:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+111:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+111:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+111:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+112:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+112:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+112:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+112:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+113:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+113:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+113:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+113:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+114:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+114:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+114:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+114:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+115:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+115:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+115:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+115:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+116:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+116:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+116:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+116:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+117:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+117:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+117:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+117:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+118:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+118:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+118:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+118:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+119:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+119:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+119:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+119:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+120:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+120:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+120:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+120:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+121:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+121:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+121:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+121:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+122:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+122:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+122:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+122:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+123:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+123:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+123:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+123:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+124:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+124:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+124:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+124:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+125:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+125:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+125:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+125:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+126:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+126:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+126:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+126:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+127:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+127:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+127:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+127:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+128:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+128:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+128:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+128:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+129:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+129:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+129:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+129:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+130:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+130:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+130:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+130:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+131:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+131:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+131:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+131:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+132:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+132:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+132:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+132:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+133:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+133:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+133:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+133:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+134:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+134:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+134:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+134:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+135:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+135:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+135:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+135:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+136:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+136:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+136:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+136:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+137:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+137:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+137:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+137:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+138:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+138:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+138:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+138:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+139:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+139:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+139:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+139:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+140:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+140:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+140:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+140:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+141:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+141:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+141:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+141:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+142:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+142:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+142:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+142:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+143:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+143:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+143:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+143:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+144:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+144:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+144:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+144:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+145:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+145:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+145:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+145:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+146:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+146:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+146:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+146:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+147:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+147:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+147:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+147:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+148:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+148:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+148:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+148:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+149:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+149:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+149:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+149:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+150:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+150:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+150:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+150:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+151:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+151:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+151:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+151:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+152:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+152:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+152:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+152:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+153:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+153:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+153:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+153:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+154:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+154:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+154:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+154:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+155:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+155:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+155:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+155:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+156:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+156:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+156:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+156:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+157:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+157:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+157:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+157:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+158:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+158:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+158:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+158:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+159:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+159:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+159:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+159:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+160:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+160:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+160:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+160:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+161:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+161:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+161:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+161:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+162:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+162:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+162:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+162:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+163:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+163:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+163:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+163:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+164:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+164:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+164:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+164:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+165:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+165:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+165:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+165:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+166:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+166:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+166:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+166:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+167:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+167:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+167:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+167:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+168:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+168:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+168:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+168:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+169:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+169:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+169:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+169:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+170:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+170:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+170:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+170:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+171:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+171:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+171:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+171:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+172:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+172:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+172:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+172:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+173:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+173:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+173:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+173:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+174:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+174:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+174:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+174:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+175:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+175:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+175:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+175:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+176:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+176:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+176:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+176:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+177:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+177:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+177:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+177:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+178:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+178:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+178:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+178:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+179:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+179:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+179:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+179:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+180:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+180:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+180:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+180:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+181:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+181:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+181:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+181:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+182:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+182:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+182:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+182:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+183:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+183:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+183:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+183:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+184:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+184:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+184:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+184:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+185:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+185:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+185:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+185:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+186:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+186:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+186:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+186:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+187:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+187:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+187:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+187:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+188:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+188:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+188:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+188:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+189:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+189:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+189:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+189:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+190:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+190:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+190:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+190:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+191:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+191:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+191:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+191:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+192:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+192:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+192:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+192:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+193:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+193:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+193:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+193:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+194:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+194:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+194:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+194:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+195:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+195:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+195:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+195:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+196:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+196:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+196:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+196:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+197:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+197:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+197:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+197:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+198:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+198:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+198:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+198:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+199:	proc  0 (A:1) ex_2.pml:10 (state 1)	[a2b!a1]
+199:	proc  1 (B:1) ex_2.pml:27 (state 5)	[a2b?a1]
+199:	proc  0 (A:1) ex_2.pml:10 Sent a1	-> queue 1 (a2b)
+199:	proc  1 (B:1) ex_2.pml:27 Recv a1	<- queue 1 (a2b)
+200:	proc  1 (B:1) ex_2.pml:24 (state 2)	[b2a!b1]
+200:	proc  0 (A:1) ex_2.pml:12 (state 2)	[b2a?b1]
+200:	proc  1 (B:1) ex_2.pml:24 Sent b1	-> queue 2 (b2a)
+200:	proc  0 (A:1) ex_2.pml:12 Recv b1	<- queue 2 (b2a)
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+200:	proc  1 (B:1) ex_2.pml:25 (state 9)
+200:	proc  0 (A:1) ex_2.pml:10 (state 1)
+2 processes created
+exit: 0

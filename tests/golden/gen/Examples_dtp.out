@@ -1,0 +1,14 @@
+dtp.pml:107:17: warning: '/*' within block comment [-Wcomment]
+  107 | /*              :: goto s5              /* channel disconnected */
+      |                                         ^
+dtp.pml:242:34: warning: '/*' within block comment [-Wcomment]
+  242 |         /*      :: rtype == rvnak -> goto s4    /* too soon */
+      |                                                 ^
+2 warnings generated.
+exit: 0
+sha256 pan.b f8b8602094521d4f5b0678ae5b40eb971fa8098eee15013dbc49b22401abe27b
+sha256 pan.c 0a0bb5c00239956d81d314bcee9f4f74644175e4bc7608b9db0e1e98d72f2784
+sha256 pan.h c64bcc38822384c4189e3b93ce30503c13645d13421a7a891499454ce518a946
+sha256 pan.m d5772fde177e3802d97276e845caa3c88c692d6a727cd3717ab7a140fa9e43f8
+sha256 pan.p 2b7918fb7f8bc2f82a94c76c89e812fdf3eef405c4b643a410cd2e33d27ddbe1
+sha256 pan.t 8cfb4651c0da830a91bb0636de2229bbcba8e27c3c6d3db126d68b8277b251bf

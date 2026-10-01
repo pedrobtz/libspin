@@ -1,0 +1,308 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 1
+  2:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+  3:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 2
+  4:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+  5:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 3
+  6:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+  7:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 4
+  8:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+  9:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 5
+ 10:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 11:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 6
+ 12:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 13:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 7
+ 14:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 15:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 8
+ 16:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 17:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 9
+ 18:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 19:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 10
+ 20:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 21:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 11
+ 22:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 23:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 12
+ 24:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 25:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 13
+ 26:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 27:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 14
+ 28:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 29:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 15
+ 30:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 31:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 16
+ 32:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 33:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 17
+ 34:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 35:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 18
+ 36:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 37:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 19
+ 38:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 39:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 20
+ 40:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 41:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 21
+ 42:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 43:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 22
+ 44:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 45:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 23
+ 46:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 47:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 24
+ 48:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 49:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 25
+ 50:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 51:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 26
+ 52:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 53:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 27
+ 54:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 55:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 28
+ 56:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 57:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 29
+ 58:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 59:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 30
+ 60:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 61:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 31
+ 62:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 63:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 32
+ 64:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 65:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 33
+ 66:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 67:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 34
+ 68:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 69:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 35
+ 70:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 71:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 36
+ 72:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 73:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 37
+ 74:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 75:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 38
+ 76:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 77:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 39
+ 78:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 79:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 40
+ 80:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 81:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 41
+ 82:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 83:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 42
+ 84:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 85:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 43
+ 86:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 87:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 44
+ 88:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 89:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 45
+ 90:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 91:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 46
+ 92:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 93:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 47
+ 94:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 95:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 48
+ 96:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 97:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 49
+ 98:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+ 99:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 50
+100:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+101:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 51
+102:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+103:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 52
+104:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+105:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 53
+106:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+107:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 54
+108:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+109:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 55
+110:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+111:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 56
+112:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+113:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 57
+114:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+115:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 58
+116:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+117:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 59
+118:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+119:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 60
+120:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+121:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 61
+122:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+123:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 62
+124:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+125:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 63
+126:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+127:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 64
+128:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+129:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 65
+130:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+131:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 66
+132:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+133:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 67
+134:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+135:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 68
+136:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+137:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 69
+138:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+139:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 70
+140:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+141:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 71
+142:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+143:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 72
+144:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+145:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 73
+146:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+147:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 74
+148:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+149:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 75
+150:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+151:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 76
+152:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+153:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 77
+154:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+155:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 78
+156:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+157:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 79
+158:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+159:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 80
+160:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+161:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 81
+162:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+163:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 82
+164:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+165:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 83
+166:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+167:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 84
+168:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+169:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 85
+170:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+171:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 86
+172:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+173:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 87
+174:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+175:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 88
+176:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+177:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 89
+178:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+179:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 90
+180:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+181:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 91
+182:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+183:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 92
+184:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+185:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 93
+186:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+187:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 94
+188:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+189:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 95
+190:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+191:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 96
+192:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+193:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 97
+194:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+195:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 98
+196:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+197:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 99
+198:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+199:	proc  0 (:init::1) ex_1a.pml:6 (state 1)	[i = (i+1)]
+		:init:(0):i = 100
+200:	proc  0 (:init::1) ex_1a.pml:8 (state 3)	[.(goto)]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 1
+200:	proc  0 (:init::1) ex_1a.pml:5 (state 2)
+		:init:(0):i = 100
+1 process created
+exit: 0

@@ -1,0 +1,28 @@
+ltl p1: (! (<> (sent_r))) || (<> ((received_r) && (! (received_b))))
+mtype 	none	4	<:global:>	<constant>	{scope _}
+mtype 	red	3	<:global:>	<constant>	{scope _}
+mtype 	white	2	<:global:>	<constant>	{scope _}
+mtype 	blue	1	<:global:>	<constant>	{scope _}
+bit   	sent_r	0	<:global:>	<variable>	{scope _}
+bit   	sent_b	0	<:global:>	<variable>	{scope _}
+bit   	received_r	0	<:global:>	<variable>	{scope _}
+bit   	received_b	0	<:global:>	<variable>	{scope _}
+chan  	q[2]	3	<:global:>	<array>	3	mtype 	byte  	byte  	{scope _}
+chan  	source	0	<:global:>	<variable>	1	mtype 	{scope _}
+proctype	p5	2	<:global:>	<variable>	{scope _}
+byte  	NextFrame	0	<p5>	<variable>	{scope _4_}
+byte  	AckExp	0	<p5>	<variable>	{scope _4_}
+byte  	FrameExp	0	<p5>	<variable>	{scope _4_}
+byte  	r	0	<p5>	<variable>	{scope _4_}
+byte  	s	0	<p5>	<variable>	{scope _4_}
+byte  	nbuf	0	<p5>	<variable>	{scope _4_}
+byte  	i	0	<p5>	<variable>	{scope _4_}
+byte  	frames[4]	0	<p5>	<array>	{scope _4_}
+mtype 	ball	4	<p5>	<constant>	{scope _4_}
+chan  	inp	0	<p5>	<variable>	0		{scope _4_}
+chan  	out	0	<p5>	<variable>	0		{scope _4_}
+proctype	Source	1	<:global:>	<variable>	{scope _}
+label	accept_S4	10	<p1>	{scope _7_}
+label	T0_init	5	<p1>	{scope _7_}
+label	end	16	<Source>	{scope _5_}
+exit: 0

@@ -1,0 +1,12 @@
+mtype 	operator	2	<:global:>	<constant>	{scope _}
+mtype 	value	1	<:global:>	<constant>	{scope _}
+chan  	f	12	<:global:>	<variable>	2	mtype 	int   	{scope _}
+proctype	calc	0	<:global:>	<variable>	{scope _}
+chan  	you	0	<calc>	<parameter 1>	0		{scope _}
+int   	s	0	<calc>	<variable>	{scope _3_}
+int   	lft	0	<calc>	<variable>	{scope _3_}
+int   	rgt	0	<calc>	<variable>	{scope _3_}
+chan  	me	0	<calc>	<variable>	1	int   	{scope _3_}
+chan  	me	0	<:init:>	<variable>	1	int   	{scope _4_}
+int   	result	0	<:init:>	<variable>	{scope _4_}
+exit: 0

@@ -1,0 +1,4 @@
+byte  	n	0	<:global:>	<variable>	{scope _}
+proctype	inc	2	<:global:>	<variable>	{scope _}
+byte  	t	0	<inc>	<variable>	{scope _1_}
+exit: 0

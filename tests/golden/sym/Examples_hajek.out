@@ -1,0 +1,18 @@
+chan  	q0	1	<:global:>	<variable>	2	bit   	byte  	{scope _}
+chan  	q1	1	<:global:>	<variable>	2	bit   	byte  	{scope _}
+proctype	station	0	<:global:>	<variable>	{scope _}
+chan  	inp	0	<station>	<parameter 1>	0		{scope _}
+chan  	out	0	<station>	<parameter 2>	0		{scope _}
+bit   	phased	0	<station>	<variable>	{scope _3_}
+bit   	phase	0	<station>	<variable>	{scope _3_}
+bit   	everaccepted	0	<station>	<variable>	{scope _3_}
+bit   	everfetched	0	<station>	<variable>	{scope _3_}
+bit   	c	0	<station>	<variable>	{scope _3_}
+bit   	v	0	<station>	<variable>	{scope _3_}
+bit   	gotack	1	<station>	<variable>	{scope _3_}
+byte  	din	0	<station>	<variable>	{scope _3_}
+byte  	prev_din	0	<station>	<variable>	{scope _3_}
+byte  	dout	1	<station>	<variable>	{scope _3_}
+label	progress	32	<station>	{scope _3_}
+label	pr	28	<station>	{scope _3_}
+exit: 0

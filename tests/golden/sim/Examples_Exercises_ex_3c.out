@@ -1,0 +1,253 @@
+  0:	proc  - (:root:) creates proc  0 (user)
+  0:	proc  - (:root:) creates proc  1 (user)
+  1:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+  2:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+  3:	proc  0 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+  4:	proc  0 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+  5:	proc  0 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 1
+  6:	proc  0 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+  7:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+  8:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+  9:	proc  0 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 10:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 11:	proc  0 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 12:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 2
+ 13:	proc  0 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 14:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 15:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 16:	proc  0 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 1
+ 17:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+ 18:	proc  0 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 19:	proc  0 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 20:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 21:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 22:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 2
+ 23:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 24:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 25:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 26:	proc  0 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 27:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+ 28:	proc  0 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 29:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 30:	proc  0 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 1
+ 31:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 32:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+		z = 2
+ 33:	proc  0 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 34:	proc  1 (user:1) ex_3c.pml:18 (state 10)	[((x==me))]
+ 35:	proc  1 (user:1) ex_3c.pml:20 (state 12)	[.(goto)]
+ 36:	proc  0 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 37:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 38:	proc  1 (user:1) ex_3c.pml:20 (state 13)	[y = me]
+		y = 2
+ 39:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 40:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 41:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 42:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 43:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 44:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 45:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 46:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 47:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 48:	proc  1 (user:1) ex_3c.pml:23 (state 16)	[((z==me))]
+ 49:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 50:	proc  1 (user:1) ex_3c.pml:25 (state 18)	[.(goto)]
+ 51:	proc  1 (user:1) ex_3c.pml:25 (state 19)	[cnt = (cnt+1)]
+		cnt = 1
+ 52:	proc  1 (user:1) ex_3c.pml:26 (state 20)	[assert((cnt==1))]
+ 53:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 54:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 55:	proc  1 (user:1) ex_3c.pml:27 (state 21)	[cnt = (cnt-1)]
+		cnt = 0
+ 56:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 57:	proc  1 (user:1) ex_3c.pml:28 (state 22)	[goto L1]
+ 58:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+ 59:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 60:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 61:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 62:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 63:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 64:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 65:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+ 66:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 67:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 68:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 69:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 70:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 71:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 72:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 73:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 74:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 75:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+ 76:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 77:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 78:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 79:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+ 80:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 81:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 82:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+ 83:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+ 84:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+ 85:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 86:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+ 87:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 88:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+ 89:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 90:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 91:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 92:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 93:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 94:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+ 95:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+ 96:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+ 97:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+ 98:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+ 99:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+100:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+101:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+102:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+103:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+104:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+105:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+106:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+107:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+108:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+109:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+110:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+111:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+112:	proc  1 (user:1) ex_3c.pml:18 (state 10)	[((x==me))]
+113:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+114:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+115:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+116:	proc  1 (user:1) ex_3c.pml:20 (state 12)	[.(goto)]
+117:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+118:	proc  1 (user:1) ex_3c.pml:20 (state 13)	[y = me]
+119:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+120:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+121:	proc  1 (user:1) ex_3c.pml:23 (state 16)	[((z==me))]
+122:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+123:	proc  1 (user:1) ex_3c.pml:25 (state 18)	[.(goto)]
+124:	proc  1 (user:1) ex_3c.pml:25 (state 19)	[cnt = (cnt+1)]
+		cnt = 1
+125:	proc  1 (user:1) ex_3c.pml:26 (state 20)	[assert((cnt==1))]
+126:	proc  1 (user:1) ex_3c.pml:27 (state 21)	[cnt = (cnt-1)]
+		cnt = 0
+127:	proc  1 (user:1) ex_3c.pml:28 (state 22)	[goto L1]
+128:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+129:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+130:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+131:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+132:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+133:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+134:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+135:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+136:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+137:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+138:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+139:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+140:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+141:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+142:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+143:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+144:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+145:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+146:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+147:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+148:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+149:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+150:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+151:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+152:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+153:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+154:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+155:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+156:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+157:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+158:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+159:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+160:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+161:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+162:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+163:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+164:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+165:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+166:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+167:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+168:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+169:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+170:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+171:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+172:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+173:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+174:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+175:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+176:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+177:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+178:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+179:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+180:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+181:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+182:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+183:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+184:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+185:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+186:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+187:	proc  1 (user:1) ex_3c.pml:17 (state 8)	[((x!=me))]
+188:	proc  1 (user:1) ex_3c.pml:17 (state 9)	[goto L1]
+189:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+190:	proc  1 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 2
+191:	proc  1 (user:1) ex_3c.pml:13 (state 4)	[(((y==0)||(y==me)))]
+192:	proc  1 (user:1) ex_3c.pml:15 (state 6)	[.(goto)]
+193:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+194:	proc  1 (user:1) ex_3c.pml:15 (state 7)	[z = me]
+195:	proc  0 (user:1) ex_3c.pml:12 (state 3)	[goto L1]
+196:	proc  1 (user:1) ex_3c.pml:18 (state 10)	[((x==me))]
+197:	proc  1 (user:1) ex_3c.pml:20 (state 12)	[.(goto)]
+198:	proc  0 (user:1) ex_3c.pml:10 (state 1)	[x = me]
+		x = 1
+199:	proc  1 (user:1) ex_3c.pml:20 (state 13)	[y = me]
+200:	proc  0 (user:1) ex_3c.pml:12 (state 2)	[(((y!=0)&&(y!=me)))]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		cnt = 0
+		x = 1
+		y = 2
+		z = 2
+200:	proc  1 (user:1) ex_3c.pml:21 (state 17)
+		user(1):me = 2
+200:	proc  0 (user:1) ex_3c.pml:12 (state 3)
+		user(0):me = 1
+2 processes created
+exit: 0

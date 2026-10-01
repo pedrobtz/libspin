@@ -1,0 +1,7 @@
+byte  	p1	1	<:global:>	<variable>	{scope _}
+byte  	p2	0	<:global:>	<variable>	{scope _}
+byte  	p3	0	<:global:>	<variable>	{scope _}
+byte  	p4	1	<:global:>	<variable>	{scope _}
+byte  	p5	0	<:global:>	<variable>	{scope _}
+byte  	p6	0	<:global:>	<variable>	{scope _}
+exit: 0

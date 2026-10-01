@@ -1,0 +1,271 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 116
+  2:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+  3:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 1
+  4:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+  5:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+  6:	proc  0 (:init::1) wordcount.pml:25 (state 14)	[(!(inword))]
+  7:	proc  0 (:init::1) wordcount.pml:26 (state 15)	[nw = (nw+1)]
+		nw = 1
+  8:	proc  0 (:init::1) wordcount.pml:26 (state 16)	[inword = 1]
+		:init:(0):inword = 1
+  9:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 10:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 11:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 12:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 104
+ 13:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 14:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 2
+ 15:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 16:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 17:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 18:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 19:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 20:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 21:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 101
+ 22:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 23:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 3
+ 24:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 25:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 26:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 27:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 28:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 29:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 30:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 32
+ 31:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 32:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 4
+ 33:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 34:	proc  0 (:init::1) wordcount.pml:21 (state 11)	[((((c==32)||(c==9))||(c==10)))]
+ 35:	proc  0 (:init::1) wordcount.pml:22 (state 12)	[inword = 0]
+		:init:(0):inword = 0
+ 36:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 37:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 38:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 113
+ 39:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 40:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 5
+ 41:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 42:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 43:	proc  0 (:init::1) wordcount.pml:25 (state 14)	[(!(inword))]
+ 44:	proc  0 (:init::1) wordcount.pml:26 (state 15)	[nw = (nw+1)]
+		nw = 2
+ 45:	proc  0 (:init::1) wordcount.pml:26 (state 16)	[inword = 1]
+		:init:(0):inword = 1
+ 46:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 47:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 48:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 49:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 117
+ 50:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 51:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 6
+ 52:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 53:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 54:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 55:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 56:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 57:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 58:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 105
+ 59:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 60:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 7
+ 61:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 62:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 63:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 64:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 65:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 66:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 67:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 99
+ 68:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 69:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 8
+ 70:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 71:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 72:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 73:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 74:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 75:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 76:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 107
+ 77:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 78:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 9
+ 79:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 80:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 81:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+ 82:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+ 83:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 84:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 85:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 32
+ 86:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 87:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 10
+ 88:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 89:	proc  0 (:init::1) wordcount.pml:21 (state 11)	[((((c==32)||(c==9))||(c==10)))]
+ 90:	proc  0 (:init::1) wordcount.pml:22 (state 12)	[inword = 0]
+		:init:(0):inword = 0
+ 91:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+ 92:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+ 93:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 98
+ 94:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+ 95:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 11
+ 96:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+ 97:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+ 98:	proc  0 (:init::1) wordcount.pml:25 (state 14)	[(!(inword))]
+ 99:	proc  0 (:init::1) wordcount.pml:26 (state 15)	[nw = (nw+1)]
+		nw = 3
+100:	proc  0 (:init::1) wordcount.pml:26 (state 16)	[inword = 1]
+		:init:(0):inword = 1
+101:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+102:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+103:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+104:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 114
+105:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+106:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 12
+107:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+108:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+109:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+110:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+111:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+112:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+113:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 111
+114:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+115:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 13
+116:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+117:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+118:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+119:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+120:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+121:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+122:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 119
+123:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+124:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 14
+125:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+126:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+127:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+128:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+129:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+130:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+131:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 110
+132:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+133:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 15
+134:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+135:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+136:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+137:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+138:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+139:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+140:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 32
+141:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+142:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 16
+143:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+144:	proc  0 (:init::1) wordcount.pml:21 (state 11)	[((((c==32)||(c==9))||(c==10)))]
+145:	proc  0 (:init::1) wordcount.pml:22 (state 12)	[inword = 0]
+		:init:(0):inword = 0
+146:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+147:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+148:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 102
+149:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+150:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 17
+151:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+152:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+153:	proc  0 (:init::1) wordcount.pml:25 (state 14)	[(!(inword))]
+154:	proc  0 (:init::1) wordcount.pml:26 (state 15)	[nw = (nw+1)]
+		nw = 4
+155:	proc  0 (:init::1) wordcount.pml:26 (state 16)	[inword = 1]
+		:init:(0):inword = 1
+156:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+157:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+158:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+159:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 111
+160:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+161:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 18
+162:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+163:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+164:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+165:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+166:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+167:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+168:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 120
+169:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+170:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 19
+171:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+172:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+173:	proc  0 (:init::1) wordcount.pml:27 (state 17)	[else]
+174:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+175:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+176:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+177:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 10
+178:	proc  0 (:init::1) wordcount.pml:17 (state 4)	[((c==10))]
+179:	proc  0 (:init::1) wordcount.pml:17 (state 5)	[nc = (nc+1)]
+		nc = 20
+180:	proc  0 (:init::1) wordcount.pml:17 (state 6)	[nl = (nl+1)]
+		nl = 1
+181:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+182:	proc  0 (:init::1) wordcount.pml:21 (state 11)	[((((c==32)||(c==9))||(c==10)))]
+183:	proc  0 (:init::1) wordcount.pml:22 (state 12)	[inword = 0]
+		:init:(0):inword = 0
+184:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+185:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+186:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 106
+187:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+188:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 21
+189:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+190:	proc  0 (:init::1) wordcount.pml:23 (state 13)	[else]
+191:	proc  0 (:init::1) wordcount.pml:25 (state 14)	[(!(inword))]
+192:	proc  0 (:init::1) wordcount.pml:26 (state 15)	[nw = (nw+1)]
+		nw = 5
+193:	proc  0 (:init::1) wordcount.pml:26 (state 16)	[inword = 1]
+		:init:(0):inword = 1
+194:	proc  0 (:init::1) wordcount.pml:29 (state 19)	[.(goto)]
+195:	proc  0 (:init::1) wordcount.pml:30 (state 21)	[.(goto)]
+196:	proc  0 (:init::1) wordcount.pml:31 (state 23)	[.(goto)]
+197:	proc  0 (:init::1) wordcount.pml:14 (state 1)	[STDIN?c]
+		c = 117
+198:	proc  0 (:init::1) wordcount.pml:18 (state 7)	[else]
+199:	proc  0 (:init::1) wordcount.pml:18 (state 8)	[nc = (nc+1)]
+		nc = 22
+200:	proc  0 (:init::1) wordcount.pml:20 (state 10)	[.(goto)]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 1
+		c = 117
+		nl = 1
+		nw = 5
+		nc = 22
+200:	proc  0 (:init::1) wordcount.pml:20 (state 20)
+		:init:(0):inword = 1
+1 process created
+exit: 0

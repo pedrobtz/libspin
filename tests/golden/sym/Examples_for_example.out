@@ -1,0 +1,8 @@
+bit   	m.b	0	<:struct-field:>	<variable>	{scope _}
+int   	m.i	0	<:struct-field:>	<variable>	{scope _}
+chan  	m.c	0	<:struct-field:>	<variable>	0		{scope _}
+struct	foo	m	<:init:>	<variable>	{scope _2_}
+chan  	x	8	<:init:>	<variable>	1	struct m	{scope _2_}
+int   	i	0	<:init:>	<variable>	{scope _2_}
+byte  	_f0r_t3mp_2_	0	<:init:>	<variable>	{scope _2_}
+exit: 0

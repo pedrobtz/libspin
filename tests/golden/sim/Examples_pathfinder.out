@@ -1,0 +1,57 @@
+  0:	proc  - (:root:) creates proc  0 (high)
+  0:	proc  - (:root:) creates proc  1 (low)
+  1:	proc  0 (high:1) pathfinder.pml:27 (state 1)	[h_state = waiting]
+		h_state = waiting
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  2:	proc  0 (high:1) pathfinder.pml:28 (state 2)	[((mutex==free))]
+  3:	proc  0 (high:1) pathfinder.pml:28 (state 3)	[mutex = busy]
+		mutex = busy
+  4:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  4:	proc  1 (low:1) pathfinder.pml:39 (state 9) <valid end state>	<<Not Enabled>>
+  4:	proc  0 (high:1) pathfinder.pml:29 (state 5)	[h_state = running]
+		h_state = running
+  5:	proc  0 (high:1) pathfinder.pml:33 (state 6)	[h_state = idle]
+		h_state = idle
+  6:	proc  0 (high:1) pathfinder.pml:33 (state 7)	[mutex = free]
+		mutex = free
+  7:	proc  0 (high:1) pathfinder.pml:35 (state 10)	[.(goto)]
+  8:	proc  1 (low:1) pathfinder.pml:40 (state 1)	[l_state = waiting]
+		l_state = waiting
+  9:	proc  0 (high:1) pathfinder.pml:27 (state 1)	[h_state = waiting]
+		h_state = waiting
+ 10:	proc  0 (high:1) pathfinder.pml:28 (state 2)	[((mutex==free))]
+ 11:	proc  0 (high:1) pathfinder.pml:28 (state 3)	[mutex = busy]
+		mutex = busy
+ 12:	proc  0 (high:1) pathfinder.pml:29 (state 5)	[h_state = running]
+		h_state = running
+ 13:	proc  1 (low:1) pathfinder.pml:41 (state 4)	<<Not Enabled>>
+ 13:	proc  0 (high:1) pathfinder.pml:33 (state 6)	[h_state = idle]
+		h_state = idle
+ 14:	proc  0 (high:1) pathfinder.pml:33 (state 7)	[mutex = free]
+		mutex = free
+ 15:	proc  1 (low:1) pathfinder.pml:41 (state 2)	[((mutex==free))]
+ 16:	proc  1 (low:1) pathfinder.pml:41 (state 3)	[mutex = busy]
+		mutex = busy
+ 17:	proc  0 (high:1) pathfinder.pml:35 (state 10)	[.(goto)]
+ 18:	proc  0 (high:1) pathfinder.pml:27 (state 1)	[h_state = waiting]
+		h_state = waiting
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+      timeout
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+ 19:	proc  1 (low:1) pathfinder.pml:42 (state 5)	<<Not Enabled>>
+#processes: 2
+		h_state = waiting
+		l_state = waiting
+		mutex = busy
+ 18:	proc  1 (low:1) pathfinder.pml:42 (state 5)
+ 18:	proc  0 (high:1) pathfinder.pml:28 (state 4)
+2 processes created
+exit: 0

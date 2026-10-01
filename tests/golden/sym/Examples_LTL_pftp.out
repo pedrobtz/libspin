@@ -1,0 +1,62 @@
+ltl p1: ((! ((len(flow_to_ses[1])>0))) || (flow_to_ses[1]?[white])) U (flow_to_ses[1]?[red])
+ltl p2: (! (flow_to_ses[1]?[blue])) U (flow_to_ses[1]?[red])
+ltl p3: <> (flow_to_ses[1]?[blue])
+mtype 	red	19	<:global:>	<constant>	{scope _}
+mtype 	white	18	<:global:>	<constant>	{scope _}
+mtype 	blue	17	<:global:>	<constant>	{scope _}
+mtype 	abort	16	<:global:>	<constant>	{scope _}
+mtype 	accept	15	<:global:>	<constant>	{scope _}
+mtype 	ack	14	<:global:>	<constant>	{scope _}
+mtype 	sync_ack	13	<:global:>	<constant>	{scope _}
+mtype 	close	12	<:global:>	<constant>	{scope _}
+mtype 	connect	11	<:global:>	<constant>	{scope _}
+mtype 	create	10	<:global:>	<constant>	{scope _}
+mtype 	data	9	<:global:>	<constant>	{scope _}
+mtype 	eof	8	<:global:>	<constant>	{scope _}
+mtype 	open	7	<:global:>	<constant>	{scope _}
+mtype 	reject	6	<:global:>	<constant>	{scope _}
+mtype 	sync	5	<:global:>	<constant>	{scope _}
+mtype 	transfer	4	<:global:>	<constant>	{scope _}
+mtype 	FATAL	3	<:global:>	<constant>	{scope _}
+mtype 	NON_FATAL	2	<:global:>	<constant>	{scope _}
+mtype 	COMPLETE	1	<:global:>	<constant>	{scope _}
+chan  	ses_to_flow[2]	2	<:global:>	<array>	2	byte  	byte  	{scope _}
+chan  	flow_to_ses[2]	2	<:global:>	<array>	2	byte  	byte  	{scope _}
+chan  	dll_to_flow[2]	2	<:global:>	<array>	2	byte  	byte  	{scope _}
+proctype	fc	0	<:global:>	<variable>	{scope _}
+chan  	s2f	0	<fc>	<parameter 1>	0		{scope _}
+chan  	f2d	0	<fc>	<parameter 2>	0		{scope _}
+chan  	f2s	0	<fc>	<parameter 3>	0		{scope _}
+chan  	d2f	0	<fc>	<parameter 4>	0		{scope _}
+bit   	busy[4]	0	<fc>	<array>	{scope _5_}
+byte  	q	0	<fc>	<variable>	{scope _5_}
+byte  	m	0	<fc>	<variable>	{scope _5_}
+byte  	s	0	<fc>	<variable>	{scope _5_}
+byte  	window	0	<fc>	<variable>	{scope _5_}
+byte  	type	0	<fc>	<variable>	{scope _5_}
+bit   	received[4]	0	<fc>	<array>	{scope _5_}
+bit   	x	0	<fc>	<variable>	{scope _5_}
+byte  	p	0	<fc>	<variable>	{scope _5_}
+byte  	I_buf[4]	0	<fc>	<array>	{scope _5_}
+byte  	O_buf[4]	0	<fc>	<array>	{scope _5_}
+proctype	upper_s	0	<:global:>	<variable>	{scope _}
+chan  	s2f	0	<upper_s>	<parameter 1>	0		{scope _}
+chan  	f2s0	0	<upper_s>	<parameter 2>	0		{scope _}
+byte  	s_state	0	<upper_s>	<variable>	{scope _6_}
+byte  	type	0	<upper_s>	<variable>	{scope _6_}
+byte  	toggle	0	<upper_s>	<variable>	{scope _6_}
+proctype	upper_r	0	<:global:>	<variable>	{scope _}
+chan  	f2s1	0	<upper_r>	<parameter 1>	0		{scope _}
+byte  	r_state	0	<upper_r>	<variable>	{scope _7_}
+label	accept_init	3	<p3>	{scope _14_}
+label	T0_init	3	<p3>	{scope _14_}
+label	accept_all	9	<p2>	{scope _13_}
+label	accept_init	6	<p2>	{scope _13_}
+label	T0_init	6	<p2>	{scope _13_}
+label	accept_all	9	<p1>	{scope _12_}
+label	accept_init	6	<p1>	{scope _12_}
+label	T0_init	6	<p1>	{scope _12_}
+label	end	22	<upper_r>	{scope _7_}
+label	end	23	<upper_s>	{scope _6_}
+label	end	71	<fc>	{scope _5_}
+exit: 0

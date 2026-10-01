@@ -1,0 +1,330 @@
+  0:	proc  - (:root:) creates proc  0 (p)
+  0:	proc  - (:root:) creates proc  1 (p)
+ltl invariant: [] ((! ((p[0]@CS))) || (! ((p[1]@CS))))
+  1:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+  2:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+  3:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+  4:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+  5:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+  6:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+  7:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+  8:	proc  1 (p:1) ex_3a.pml:8 (state 2)	[((k!=i))]
+  9:	proc  1 (p:1) ex_3a.pml:11 (state 5)	[else]
+ 10:	proc  1 (p:1) ex_3a.pml:11 (state 6)	[k = i]
+		p(1):k = 1
+ 11:	proc  1 (p:1) ex_3a.pml:11 (state 7)	[goto C1]
+ 12:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 13:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 14:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 15:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 16:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 17:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 18:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 19:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 20:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+ 21:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+ 22:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 23:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 24:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 1
+ 25:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 26:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 27:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 28:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 29:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 30:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 31:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 32:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+ 33:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 34:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 35:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 36:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 37:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+ 38:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 1
+ 39:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 40:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 41:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 42:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 43:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 44:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 45:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 46:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 47:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+ 48:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 49:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 50:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 51:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 52:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+ 53:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 54:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 55:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 56:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 57:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 58:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 59:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 60:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+ 61:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 62:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 63:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 64:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 65:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 66:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+ 67:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 68:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 69:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 70:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 71:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 72:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 73:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 74:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 75:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 76:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+ 77:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 78:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 79:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+ 80:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 1
+		b[1] = 0
+ 81:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 82:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 83:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 84:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 85:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 86:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 87:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+ 88:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 89:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 90:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 91:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+ 92:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 93:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+ 94:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+ 95:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+ 96:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+ 97:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+ 98:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+ 99:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+100:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+101:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+102:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+103:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+104:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+105:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+106:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+107:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+108:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+109:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+110:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 1
+		b[1] = 0
+111:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+112:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+113:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+114:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+115:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+116:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+117:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+118:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+119:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+120:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+121:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+122:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+123:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+124:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+125:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+126:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+127:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+128:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+129:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+130:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+131:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+132:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+133:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+134:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+135:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+136:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+137:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 1
+138:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+139:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+140:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+141:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+142:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+143:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+144:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+145:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+146:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+147:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+148:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+149:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+150:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+151:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 0
+152:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+153:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+154:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+155:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+156:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+157:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+158:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+159:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+160:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+161:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+162:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+163:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+164:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 1
+		b[1] = 0
+165:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+166:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+167:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+168:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+169:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+170:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+171:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+172:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+173:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+174:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+175:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+176:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+177:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+178:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+179:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 1
+		b[1] = 0
+180:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+181:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+182:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+183:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+184:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+185:	proc  0 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+186:	proc  0 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+187:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+188:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+189:	proc  0 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 1
+		b[1] = 1
+190:	proc  1 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+191:	proc  0 (p:1) ex_3a.pml:17 (state 15)	[(1)]
+192:	proc  1 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+193:	proc  1 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 1
+		b[1] = 0
+194:	proc  0 (p:1) ex_3a.pml:18 (state 16)	[goto C0]
+195:	proc  0 (p:1) ex_3a.pml:6 (state 1)	[b[i] = 0]
+		b[0] = 0
+		b[1] = 0
+196:	proc  1 (p:1) ex_3a.pml:13 (state 10)	[else]
+197:	proc  1 (p:1) ex_3a.pml:14 (state 11)	[(1)]
+198:	proc  0 (p:1) ex_3a.pml:13 (state 10)	[else]
+199:	proc  1 (p:1) ex_3a.pml:16 (state 13)	[.(goto)]
+200:	proc  1 (p:1) ex_3a.pml:16 (state 14)	[b[i] = 1]
+		b[0] = 0
+		b[1] = 1
+-------------
+depth-limit (-u200 steps) reached
+#processes: 2
+		b[0] = 0
+		b[1] = 1
+		CS = 0
+200:	proc  1 (p:1) ex_3a.pml:17 (state 15)
+		p(1):j = 0
+		p(1):i = 1
+		p(1):k = 1
+200:	proc  0 (p:1) ex_3a.pml:14 (state 11)
+		p(0):j = 1
+		p(0):i = 0
+		p(0):k = 0
+2 processes created
+exit: 0

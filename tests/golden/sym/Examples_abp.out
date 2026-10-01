@@ -1,0 +1,9 @@
+mtype 	msg0	4	<:global:>	<constant>	{scope _}
+mtype 	msg1	3	<:global:>	<constant>	{scope _}
+mtype 	ack0	2	<:global:>	<constant>	{scope _}
+mtype 	ack1	1	<:global:>	<constant>	{scope _}
+chan  	sender	1	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	receiver	1	<:global:>	<variable>	1	mtype 	{scope _}
+proctype	Sender	1	<:global:>	<variable>	{scope _}
+proctype	Receiver	1	<:global:>	<variable>	{scope _}
+exit: 0

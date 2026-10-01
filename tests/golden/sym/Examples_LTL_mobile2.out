@@ -1,0 +1,47 @@
+ltl ltl_0: (! (! ([] (<> (((BS[a_id]@progress)) || ((BS[p_id]@progress))))))) || ([] (<> ((! (inp?[red])) || (<> (out?[red])))))
+mtype 	data	9	<:global:>	<constant>	{scope _}
+mtype 	ho_cmd	8	<:global:>	<constant>	{scope _}
+mtype 	ho_com	7	<:global:>	<constant>	{scope _}
+mtype 	ho_acc	6	<:global:>	<constant>	{scope _}
+mtype 	ho_fail	5	<:global:>	<constant>	{scope _}
+mtype 	ch_rel	4	<:global:>	<constant>	{scope _}
+mtype 	white	3	<:global:>	<constant>	{scope _}
+mtype 	red	2	<:global:>	<constant>	{scope _}
+mtype 	blue	1	<:global:>	<constant>	{scope _}
+chan  	inp	1	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	out	1	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	fa	0	<:global:>	<variable>	1	chan  	{scope _}
+chan  	fp	0	<:global:>	<variable>	1	chan  	{scope _}
+chan  	m1	0	<:global:>	<variable>	1	chan  	{scope _}
+chan  	m2	0	<:global:>	<variable>	1	chan  	{scope _}
+chan  	l	0	<:global:>	<variable>	1	chan  	{scope _}
+byte  	a_id	0	<:global:>	<variable>	{scope _}
+byte  	p_id	0	<:global:>	<variable>	{scope _}
+proctype	CC	0	<:global:>	<variable>	{scope _}
+chan  	m_old	0	<CC>	<variable>	0		{scope _9_}
+chan  	m_new	0	<CC>	<variable>	0		{scope _9_}
+chan  	x	0	<CC>	<variable>	0		{scope _9_}
+mtype 	v	0	<CC>	<constant>	{scope _9_}
+proctype	HC	0	<:global:>	<variable>	{scope _}
+chan  	m	0	<HC>	<parameter 1>	0		{scope _}
+proctype	BS	0	<:global:>	<variable>	{scope _}
+chan  	f	0	<BS>	<parameter 1>	0		{scope _}
+chan  	m	0	<BS>	<parameter 2>	0		{scope _}
+bit   	how	0	<BS>	<parameter 3>	{scope _}
+chan  	v	0	<BS>	<variable>	0		{scope _11_}
+proctype	MS	0	<:global:>	<variable>	{scope _}
+chan  	m	0	<MS>	<parameter 1>	0		{scope _}
+chan  	m_new	0	<MS>	<variable>	0		{scope _12_}
+mtype 	v	0	<MS>	<constant>	{scope _12_}
+proctype	System	1	<:global:>	<variable>	{scope _}
+proctype	Out	1	<:global:>	<variable>	{scope _}
+label	T0_S81	28	<ltl_0>	{scope _16_}
+label	T0_S46	21	<ltl_0>	{scope _16_}
+label	accept_S88	14	<ltl_0>	{scope _16_}
+label	T0_init	9	<ltl_0>	{scope _16_}
+label	end	4	<Out>	{scope _14_}
+label	end	10	<System>	{scope _13_}
+label	Passive	27	<BS>	{scope _11_}
+label	progress	13	<BS>	{scope _11_}
+label	Active	7	<BS>	{scope _11_}
+exit: 0

@@ -1,0 +1,56 @@
+ltl c1: [] (<> ((gate@Occupied)))
+ltl c2: [] (<> ((train[0]@Crossed)))
+ltl c3: [] (<> (((train[0]@Crossed)) && ((train[1]@Stopped))))
+ltl c4: [] (<> (((((train[0]@Crossed)) && ((train[1]@Stopped))) && ((train[2]@Stopped))) && ((train[3]@Stopped))))
+ltl c5: [] ((((((train[0]@Crossed)+(train[1]@Crossed))+(train[2]@Crossed))+(train[3]@Crossed))<=1))
+ltl c6: [] ((len(list)<4))
+ltl c7: [] ((! (((gate@Add1)) || ((gate@Add2)))) || ((len(list)<4)))
+ltl c8: (! ([] ((train[0]@Approaching)))) || (<> ((train[0]@Crossed)))
+mtype 	appr	9	<:global:>	<constant>	{scope _}
+mtype 	leave	8	<:global:>	<constant>	{scope _}
+mtype 	go	7	<:global:>	<constant>	{scope _}
+mtype 	stop	6	<:global:>	<constant>	{scope _}
+mtype 	Empty	5	<:global:>	<constant>	{scope _}
+mtype 	Notempty	4	<:global:>	<constant>	{scope _}
+mtype 	add	3	<:global:>	<constant>	{scope _}
+mtype 	rem	2	<:global:>	<constant>	{scope _}
+mtype 	hd	1	<:global:>	<constant>	{scope _}
+chan  	g	4	<:global:>	<variable>	2	mtype 	byte  	{scope _}
+chan  	qg	0	<:global:>	<variable>	2	mtype 	byte  	{scope _}
+chan  	q	0	<:global:>	<variable>	2	mtype 	byte  	{scope _}
+chan  	t[4]	0	<:global:>	<array>	1	mtype 	{scope _}
+proctype	train	4	<:global:>	<variable>	{scope _}
+proctype	gate	1	<:global:>	<variable>	{scope _}
+byte  	who	0	<gate>	<variable>	{scope _7_}
+chan  	list	4	<:global:>	<variable>	1	byte  	{scope _}
+proctype	queue	1	<:global:>	<variable>	{scope _}
+byte  	who	0	<queue>	<variable>	{scope _9_}
+byte  	x	0	<queue>	<variable>	{scope _9_}
+label	accept_init	3	<c8>	{scope _25_}
+label	T0_init	3	<c8>	{scope _25_}
+label	accept_all	9	<c7>	{scope _24_}
+label	T0_init	6	<c7>	{scope _24_}
+label	accept_all	9	<c6>	{scope _23_}
+label	T0_init	6	<c6>	{scope _23_}
+label	accept_all	9	<c5>	{scope _22_}
+label	T0_init	6	<c5>	{scope _22_}
+label	accept_S4	10	<c4>	{scope _21_}
+label	T0_init	5	<c4>	{scope _21_}
+label	accept_S4	10	<c3>	{scope _20_}
+label	T0_init	5	<c3>	{scope _20_}
+label	accept_S4	10	<c2>	{scope _19_}
+label	T0_init	5	<c2>	{scope _19_}
+label	accept_S4	10	<c1>	{scope _18_}
+label	T0_init	5	<c1>	{scope _18_}
+label	Shiftdown	11	<queue>	{scope _9_}
+label	Start	6	<queue>	{scope _9_}
+label	Occupied	14	<gate>	{scope _7_}
+label	Add2	10	<gate>	{scope _7_}
+label	Free	5	<gate>	{scope _7_}
+label	Add1	3	<gate>	{scope _7_}
+label	Safe	11	<train>	{scope _6_}
+label	Crossed	10	<train>	{scope _6_}
+label	Start	9	<train>	{scope _6_}
+label	Stopped	8	<train>	{scope _6_}
+label	Approaching	6	<train>	{scope _6_}
+exit: 0

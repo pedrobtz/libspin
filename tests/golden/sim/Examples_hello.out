@@ -1,0 +1,6 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+      passed first test!
+  1:	proc  0 (:init::1) hello.pml:2 (state 1)	[printf('passed first test!\\n')]
+  1:	proc  0 (:init::1)       terminates
+1 process created
+exit: 0

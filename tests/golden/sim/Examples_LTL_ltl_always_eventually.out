@@ -1,0 +1,7 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+ltl name: [] (<> ((p>5)))
+      hello world
+  1:	proc  0 (:init::1) ltl_always_eventually.pml:4 (state 1)	[printf('hello world\\n')]
+  1:	proc  0 (:init::1)       terminates
+1 process created
+exit: 0

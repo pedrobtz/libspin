@@ -1,0 +1,6 @@
+proctype	loop	1	<:global:>	<variable>	{scope _}
+byte  	a	0	<loop>	<variable>	{scope _1_}
+byte  	b	0	<loop>	<variable>	{scope _1_}
+label	progress	8	<loop>	{scope _1_}
+label	accept	5	<loop>	{scope _1_}
+exit: 0

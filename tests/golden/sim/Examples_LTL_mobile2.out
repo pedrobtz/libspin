@@ -1,0 +1,1010 @@
+  0:	proc  - (:root:) creates proc  0 (System)
+  0:	proc  - (:root:) creates proc  1 (Out)
+ltl ltl_0: (! (! ([] (<> (((BS[a_id]@progress)) || ((BS[p_id]@progress))))))) || ([] (<> ((! (inp?[red])) || (<> (out?[red])))))
+Starting HC with pid 2
+  1:	proc  0 (System:1) creates proc  2 (HC)
+  1:	proc  0 (System:1) mobile2.pml:110 (state 1)	[(run HC(m1))]
+Starting CC with pid 3
+  2:	proc  0 (System:1) creates proc  3 (CC)
+  2:	proc  0 (System:1) mobile2.pml:111 (state 2)	[(run CC())]
+Starting BS with pid 4
+  3:	proc  0 (System:1) creates proc  4 (BS)
+  3:	proc  0 (System:1) mobile2.pml:112 (state 3)	[p_id = run BS(fp,m1,0)]
+		p_id = 4
+Starting BS with pid 5
+  4:	proc  0 (System:1) creates proc  5 (BS)
+  4:	proc  0 (System:1) mobile2.pml:113 (state 4)	[a_id = run BS(fa,m2,1)]
+		a_id = 5
+Starting MS with pid 6
+  5:	proc  0 (System:1) creates proc  6 (MS)
+  5:	proc  0 (System:1) mobile2.pml:114 (state 5)	[(run MS(m2))]
+  6:	proc  0 (System:1) mobile2.pml:120 (state 11)	[.(goto)]
+  7:	proc  5 (BS:1) mobile2.pml:67 (state 1)	[(how)]
+  8:	proc  4 (BS:1) mobile2.pml:68 (state 3)	[else]
+  9:	proc  4 (BS:1) mobile2.pml:68 (state 4)	[goto Passive]
+		queue 6 (inp): 
+ 10:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+ 10:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+ 10:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+ 10:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): 
+                      MSC: PASSIVE
+ 11:	proc  4 (BS:1) mobile2.pml:88 (state 27)	[printf('MSC: PASSIVE\\n')]
+		queue 6 (inp): 
+		queue 7 (out): 
+ 12:	proc  5 (BS:1) mobile2.pml:67 (state 2)	[goto Active]
+		queue 6 (inp): 
+		queue 7 (out): 
+ 13:	proc  0 (System:1) mobile2.pml:118 Send red	-> queue 6 (inp)
+ 13:	proc  0 (System:1) mobile2.pml:118 (state 7)	[inp!red]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                          MSC: ACTIVE
+ 14:	proc  5 (BS:1) mobile2.pml:72 (state 7)	[printf('MSC: ACTIVE\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 15:	proc  5 (BS:1) mobile2.pml:87 (state 25)	[.(goto)]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 16:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+ 16:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+ 16:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+ 16:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 17:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+ 17:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+ 17:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+ 17:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+ 18:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 19:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+ 19:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+ 19:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+ 19:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 20:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+ 20:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+ 20:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+ 20:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 21:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+ 21:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+ 21:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+ 21:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                          MSC: FAILURE
+ 22:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 23:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+ 23:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+ 23:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+ 23:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                  MSC: FAIL
+ 24:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 25:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+ 25:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+ 25:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+ 25:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+ 26:	proc  3 (CC:1) mobile2.pml:37 Recv red	<- queue 6 (inp)
+ 26:	proc  3 (CC:1) mobile2.pml:37 (state 1)	[inp?v]
+		queue 6 (inp): 
+		queue 7 (out): 
+		CC(3):v = red
+ 27:	proc  0 (System:1) mobile2.pml:118 Send white	-> queue 6 (inp)
+ 27:	proc  0 (System:1) mobile2.pml:118 (state 8)	[inp!white]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: DATA
+ 28:	proc  3 (CC:1) mobile2.pml:38 (state 2)	[printf('MSC: DATA\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 29:	proc  3 (CC:1) mobile2.pml:39 (state 3)	[fa!data]
+ 29:	proc  5 (BS:1) mobile2.pml:74 (state 8)	[f?data]
+ 29:	proc  3 (CC:1) mobile2.pml:39 Sent 9	-> queue 3 (fa)
+ 29:	proc  5 (BS:1) mobile2.pml:74 Recv 9	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 30:	proc  3 (CC:1) mobile2.pml:39 (state 4)	[fa!v]
+ 30:	proc  5 (BS:1) mobile2.pml:74 (state 9)	[f?v]
+ 30:	proc  3 (CC:1) mobile2.pml:39 Sent 2	-> queue 3 (fa)
+ 30:	proc  5 (BS:1) mobile2.pml:74 Recv 2	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 31:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+ 31:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+ 31:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+ 31:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 32:	proc  5 (BS:1) mobile2.pml:74 (state 10)	[m!data]
+ 32:	proc  6 (MS:1) mobile2.pml:98 (state 1)	[m?data]
+ 32:	proc  5 (BS:1) mobile2.pml:74 Sent 9	-> queue 4 (m)
+ 32:	proc  6 (MS:1) mobile2.pml:98 Recv 9	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 33:	proc  5 (BS:1) mobile2.pml:74 (state 11)	[m!v]
+ 33:	proc  6 (MS:1) mobile2.pml:98 (state 2)	[m?v]
+ 33:	proc  5 (BS:1) mobile2.pml:74 Sent 2	-> queue 4 (m)
+ 33:	proc  6 (MS:1) mobile2.pml:98 Recv 2	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+		MS(6):v = red
+ 34:	proc  6 (MS:1) mobile2.pml:98 Send red	-> queue 7 (out)
+ 34:	proc  6 (MS:1) mobile2.pml:98 (state 3)	[out!v]
+		queue 6 (inp): [white]
+		queue 7 (out): [red]
+ 35:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): [red]
+ 36:	proc  1 (Out:1) mobile2.pml:125 Recv red	<- queue 7 (out)
+ 36:	proc  1 (Out:1) mobile2.pml:125 (state 1)	[out?red]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 37:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+ 37:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+ 37:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+ 37:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 38:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+ 38:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+ 38:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+ 38:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 39:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+ 39:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+ 39:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+ 39:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+ 40:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 41:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+ 41:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+ 41:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+ 41:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 42:	proc  6 (MS:1) mobile2.pml:101 (state 6)	[m_new!ho_acc]
+ 42:	proc  4 (BS:1) mobile2.pml:89 (state 28)	[m?ho_acc]
+ 42:	proc  6 (MS:1) mobile2.pml:101 Sent 6	-> queue 1 (m_new)
+ 42:	proc  4 (BS:1) mobile2.pml:89 Recv 6	<- queue 1 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 43:	proc  6 (MS:1) mobile2.pml:101 (state 7)	[m = m_new]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 44:	proc  4 (BS:1) mobile2.pml:89 (state 29)	[f!ho_com]
+ 44:	proc  3 (CC:1) mobile2.pml:44 (state 9)	[fp?ho_com]
+ 44:	proc  4 (BS:1) mobile2.pml:89 Sent 7	-> queue 2 (f)
+ 44:	proc  3 (CC:1) mobile2.pml:44 Recv 7	<- queue 2 (fp)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: CH_REL
+ 45:	proc  3 (CC:1) mobile2.pml:45 (state 10)	[printf('MSC: CH_REL\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 46:	proc  3 (CC:1) mobile2.pml:46 (state 11)	[fa!ch_rel]
+ 46:	proc  5 (BS:1) mobile2.pml:78 (state 16)	[f?ch_rel]
+ 46:	proc  3 (CC:1) mobile2.pml:46 Sent 4	-> queue 3 (fa)
+ 46:	proc  5 (BS:1) mobile2.pml:78 Recv 4	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                      MSC: ACTIVE
+ 47:	proc  4 (BS:1) mobile2.pml:72 (state 7)	[printf('MSC: ACTIVE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 48:	proc  4 (BS:1) mobile2.pml:87 (state 25)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 49:	proc  5 (BS:1) mobile2.pml:79 (state 17)	[f!m]
+ 49:	proc  3 (CC:1) mobile2.pml:46 (state 12)	[fa?m_old]
+ 49:	proc  5 (BS:1) mobile2.pml:79 Sent 4	-> queue 3 (f)
+ 49:	proc  3 (CC:1) mobile2.pml:46 Recv 4	<- queue 3 (fa)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 50:	proc  3 (CC:1) mobile2.pml:47 (state 13)	[l!m_old]
+ 50:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+ 50:	proc  3 (CC:1) mobile2.pml:47 Sent 4	-> queue 5 (l)
+ 50:	proc  2 (HC:1) mobile2.pml:59 Recv 4	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 51:	proc  6 (MS:1) mobile2.pml:104 (state 10)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 52:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 53:	proc  3 (CC:1) mobile2.pml:48 (state 14)	[x = fa]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 54:	proc  3 (CC:1) mobile2.pml:48 (state 15)	[fa = fp]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 55:	proc  3 (CC:1) mobile2.pml:48 (state 16)	[fp = x]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                          MSC: PASSIVE
+ 56:	proc  5 (BS:1) mobile2.pml:88 (state 27)	[printf('MSC: PASSIVE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 57:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+ 57:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+ 57:	proc  2 (HC:1) mobile2.pml:59 Sent 4	-> queue 5 (l)
+ 57:	proc  3 (CC:1) mobile2.pml:40 Recv 4	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 58:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+ 58:	proc  4 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+ 58:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 2 (fa)
+ 58:	proc  4 (BS:1) mobile2.pml:75 Recv 8	<- queue 2 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 59:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+ 59:	proc  4 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+ 59:	proc  3 (CC:1) mobile2.pml:41 Sent 4	-> queue 2 (fa)
+ 59:	proc  4 (BS:1) mobile2.pml:76 Recv 4	<- queue 2 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 60:	proc  4 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+ 60:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+ 60:	proc  4 (BS:1) mobile2.pml:76 Sent 8	-> queue 1 (m)
+ 60:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 1 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 61:	proc  4 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+ 61:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+ 61:	proc  4 (BS:1) mobile2.pml:76 Sent 4	-> queue 1 (m)
+ 61:	proc  6 (MS:1) mobile2.pml:99 Recv 4	<- queue 1 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+ 62:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 63:	proc  6 (MS:1) mobile2.pml:101 (state 6)	[m_new!ho_acc]
+ 63:	proc  5 (BS:1) mobile2.pml:89 (state 28)	[m?ho_acc]
+ 63:	proc  6 (MS:1) mobile2.pml:101 Sent 6	-> queue 4 (m_new)
+ 63:	proc  5 (BS:1) mobile2.pml:89 Recv 6	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 64:	proc  5 (BS:1) mobile2.pml:89 (state 29)	[f!ho_com]
+ 64:	proc  3 (CC:1) mobile2.pml:44 (state 9)	[fp?ho_com]
+ 64:	proc  5 (BS:1) mobile2.pml:89 Sent 7	-> queue 3 (f)
+ 64:	proc  3 (CC:1) mobile2.pml:44 Recv 7	<- queue 3 (fp)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                          MSC: ACTIVE
+ 65:	proc  5 (BS:1) mobile2.pml:72 (state 7)	[printf('MSC: ACTIVE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: CH_REL
+ 66:	proc  3 (CC:1) mobile2.pml:45 (state 10)	[printf('MSC: CH_REL\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 67:	proc  3 (CC:1) mobile2.pml:46 (state 11)	[fa!ch_rel]
+ 67:	proc  4 (BS:1) mobile2.pml:78 (state 16)	[f?ch_rel]
+ 67:	proc  3 (CC:1) mobile2.pml:46 Sent 4	-> queue 2 (fa)
+ 67:	proc  4 (BS:1) mobile2.pml:78 Recv 4	<- queue 2 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 68:	proc  6 (MS:1) mobile2.pml:101 (state 7)	[m = m_new]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 69:	proc  6 (MS:1) mobile2.pml:104 (state 10)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 70:	proc  5 (BS:1) mobile2.pml:87 (state 25)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 71:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 72:	proc  4 (BS:1) mobile2.pml:79 (state 17)	[f!m]
+ 72:	proc  3 (CC:1) mobile2.pml:46 (state 12)	[fa?m_old]
+ 72:	proc  4 (BS:1) mobile2.pml:79 Sent 1	-> queue 2 (f)
+ 72:	proc  3 (CC:1) mobile2.pml:46 Recv 1	<- queue 2 (fa)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                      MSC: PASSIVE
+ 73:	proc  4 (BS:1) mobile2.pml:88 (state 27)	[printf('MSC: PASSIVE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 74:	proc  3 (CC:1) mobile2.pml:47 (state 13)	[l!m_old]
+ 74:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+ 74:	proc  3 (CC:1) mobile2.pml:47 Sent 1	-> queue 5 (l)
+ 74:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 75:	proc  3 (CC:1) mobile2.pml:48 (state 14)	[x = fa]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 76:	proc  3 (CC:1) mobile2.pml:48 (state 15)	[fa = fp]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 77:	proc  3 (CC:1) mobile2.pml:48 (state 16)	[fp = x]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 78:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+ 78:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+ 78:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+ 78:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 79:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+ 79:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+ 79:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+ 79:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 80:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+ 80:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+ 80:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+ 80:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+ 81:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 82:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+ 82:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+ 82:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+ 82:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 83:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+ 83:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+ 83:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+ 83:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 84:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+ 84:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+ 84:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+ 84:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                          MSC: FAILURE
+ 85:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 86:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+ 86:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+ 86:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+ 86:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: FAIL
+ 87:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 88:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+ 88:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+ 88:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+ 88:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 89:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+ 89:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+ 89:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+ 89:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 90:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+ 90:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+ 90:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+ 90:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 91:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+ 91:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+ 91:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+ 91:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+ 92:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 93:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+ 93:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+ 93:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+ 93:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 94:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+ 94:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+ 94:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+ 94:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 95:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+ 95:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+ 95:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+ 95:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                          MSC: FAILURE
+ 96:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 97:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+ 97:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+ 97:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+ 97:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: FAIL
+ 98:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+ 99:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+ 99:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+ 99:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+ 99:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+100:	proc  3 (CC:1) mobile2.pml:37 Recv white	<- queue 6 (inp)
+100:	proc  3 (CC:1) mobile2.pml:37 (state 1)	[inp?v]
+		queue 6 (inp): 
+		queue 7 (out): 
+		CC(3):v = white
+101:	proc  0 (System:1) mobile2.pml:118 Send blue	-> queue 6 (inp)
+101:	proc  0 (System:1) mobile2.pml:118 (state 9)	[inp!blue]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+102:	proc  0 (System:1) mobile2.pml:120 (state 11)	[.(goto)]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: DATA
+103:	proc  3 (CC:1) mobile2.pml:38 (state 2)	[printf('MSC: DATA\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+104:	proc  3 (CC:1) mobile2.pml:39 (state 3)	[fa!data]
+104:	proc  5 (BS:1) mobile2.pml:74 (state 8)	[f?data]
+104:	proc  3 (CC:1) mobile2.pml:39 Sent 9	-> queue 3 (fa)
+104:	proc  5 (BS:1) mobile2.pml:74 Recv 9	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+105:	proc  3 (CC:1) mobile2.pml:39 (state 4)	[fa!v]
+105:	proc  5 (BS:1) mobile2.pml:74 (state 9)	[f?v]
+105:	proc  3 (CC:1) mobile2.pml:39 Sent 3	-> queue 3 (fa)
+105:	proc  5 (BS:1) mobile2.pml:74 Recv 3	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+106:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+106:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+106:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+106:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+107:	proc  5 (BS:1) mobile2.pml:74 (state 10)	[m!data]
+107:	proc  6 (MS:1) mobile2.pml:98 (state 1)	[m?data]
+107:	proc  5 (BS:1) mobile2.pml:74 Sent 9	-> queue 4 (m)
+107:	proc  6 (MS:1) mobile2.pml:98 Recv 9	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+108:	proc  5 (BS:1) mobile2.pml:74 (state 11)	[m!v]
+108:	proc  6 (MS:1) mobile2.pml:98 (state 2)	[m?v]
+108:	proc  5 (BS:1) mobile2.pml:74 Sent 3	-> queue 4 (m)
+108:	proc  6 (MS:1) mobile2.pml:98 Recv 3	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+		MS(6):v = white
+109:	proc  6 (MS:1) mobile2.pml:98 Send white	-> queue 7 (out)
+109:	proc  6 (MS:1) mobile2.pml:98 (state 3)	[out!v]
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+110:	proc  1 (Out:1) mobile2.pml:125 Recv white	<- queue 7 (out)
+110:	proc  1 (Out:1) mobile2.pml:125 (state 2)	[out?white]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+111:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+112:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+112:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+112:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+112:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+113:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+113:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+113:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+113:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+114:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+115:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+115:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+115:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+115:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+116:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+116:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+116:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+116:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+117:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+117:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+117:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+117:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                          MSC: FAILURE
+118:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+119:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+119:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+119:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+119:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: FAIL
+120:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+121:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+121:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+121:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+121:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+122:	proc  3 (CC:1) mobile2.pml:37 Recv blue	<- queue 6 (inp)
+122:	proc  3 (CC:1) mobile2.pml:37 (state 1)	[inp?v]
+		queue 6 (inp): 
+		queue 7 (out): 
+		CC(3):v = blue
+123:	proc  0 (System:1) mobile2.pml:118 Send red	-> queue 6 (inp)
+123:	proc  0 (System:1) mobile2.pml:118 (state 7)	[inp!red]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                  MSC: DATA
+124:	proc  3 (CC:1) mobile2.pml:38 (state 2)	[printf('MSC: DATA\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+125:	proc  3 (CC:1) mobile2.pml:39 (state 3)	[fa!data]
+125:	proc  5 (BS:1) mobile2.pml:74 (state 8)	[f?data]
+125:	proc  3 (CC:1) mobile2.pml:39 Sent 9	-> queue 3 (fa)
+125:	proc  5 (BS:1) mobile2.pml:74 Recv 9	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+126:	proc  3 (CC:1) mobile2.pml:39 (state 4)	[fa!v]
+126:	proc  5 (BS:1) mobile2.pml:74 (state 9)	[f?v]
+126:	proc  3 (CC:1) mobile2.pml:39 Sent 1	-> queue 3 (fa)
+126:	proc  5 (BS:1) mobile2.pml:74 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+127:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+127:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+127:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+127:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+128:	proc  5 (BS:1) mobile2.pml:74 (state 10)	[m!data]
+128:	proc  6 (MS:1) mobile2.pml:98 (state 1)	[m?data]
+128:	proc  5 (BS:1) mobile2.pml:74 Sent 9	-> queue 4 (m)
+128:	proc  6 (MS:1) mobile2.pml:98 Recv 9	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+129:	proc  5 (BS:1) mobile2.pml:74 (state 11)	[m!v]
+129:	proc  6 (MS:1) mobile2.pml:98 (state 2)	[m?v]
+129:	proc  5 (BS:1) mobile2.pml:74 Sent 1	-> queue 4 (m)
+129:	proc  6 (MS:1) mobile2.pml:98 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+		MS(6):v = blue
+130:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+130:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+130:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+130:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+131:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+131:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+131:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+131:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+132:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+133:	proc  6 (MS:1) mobile2.pml:98 Send blue	-> queue 7 (out)
+133:	proc  6 (MS:1) mobile2.pml:98 (state 3)	[out!v]
+		queue 6 (inp): [red]
+		queue 7 (out): [blue]
+134:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [red]
+		queue 7 (out): [blue]
+135:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+135:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+135:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+135:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): [blue]
+136:	proc  1 (Out:1) mobile2.pml:125 Recv blue	<- queue 7 (out)
+136:	proc  1 (Out:1) mobile2.pml:125 (state 3)	[out?blue]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+137:	proc  1 (Out:1) mobile2.pml:127 (state 5)	[.(goto)]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+138:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+138:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+138:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+138:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+139:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+139:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+139:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+139:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                          MSC: FAILURE
+140:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+141:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+141:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+141:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+141:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+                  MSC: FAIL
+142:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [red]
+		queue 7 (out): 
+143:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+143:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+143:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+143:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [red]
+		queue 7 (out): 
+144:	proc  3 (CC:1) mobile2.pml:37 Recv red	<- queue 6 (inp)
+144:	proc  3 (CC:1) mobile2.pml:37 (state 1)	[inp?v]
+		queue 6 (inp): 
+		queue 7 (out): 
+		CC(3):v = red
+                  MSC: DATA
+145:	proc  3 (CC:1) mobile2.pml:38 (state 2)	[printf('MSC: DATA\\n')]
+		queue 6 (inp): 
+		queue 7 (out): 
+146:	proc  0 (System:1) mobile2.pml:118 Send white	-> queue 6 (inp)
+146:	proc  0 (System:1) mobile2.pml:118 (state 8)	[inp!white]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+147:	proc  3 (CC:1) mobile2.pml:39 (state 3)	[fa!data]
+147:	proc  5 (BS:1) mobile2.pml:74 (state 8)	[f?data]
+147:	proc  3 (CC:1) mobile2.pml:39 Sent 9	-> queue 3 (fa)
+147:	proc  5 (BS:1) mobile2.pml:74 Recv 9	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+148:	proc  3 (CC:1) mobile2.pml:39 (state 4)	[fa!v]
+148:	proc  5 (BS:1) mobile2.pml:74 (state 9)	[f?v]
+148:	proc  3 (CC:1) mobile2.pml:39 Sent 2	-> queue 3 (fa)
+148:	proc  5 (BS:1) mobile2.pml:74 Recv 2	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+149:	proc  5 (BS:1) mobile2.pml:74 (state 10)	[m!data]
+149:	proc  6 (MS:1) mobile2.pml:98 (state 1)	[m?data]
+149:	proc  5 (BS:1) mobile2.pml:74 Sent 9	-> queue 4 (m)
+149:	proc  6 (MS:1) mobile2.pml:98 Recv 9	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+150:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+150:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+150:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+150:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+151:	proc  5 (BS:1) mobile2.pml:74 (state 11)	[m!v]
+151:	proc  6 (MS:1) mobile2.pml:98 (state 2)	[m?v]
+151:	proc  5 (BS:1) mobile2.pml:74 Sent 2	-> queue 4 (m)
+151:	proc  6 (MS:1) mobile2.pml:98 Recv 2	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+		MS(6):v = red
+152:	proc  6 (MS:1) mobile2.pml:98 Send red	-> queue 7 (out)
+152:	proc  6 (MS:1) mobile2.pml:98 (state 3)	[out!v]
+		queue 6 (inp): [white]
+		queue 7 (out): [red]
+153:	proc  6 (MS:1) mobile2.pml:105 (state 12)	[.(goto)]
+		queue 6 (inp): [white]
+		queue 7 (out): [red]
+154:	proc  1 (Out:1) mobile2.pml:125 Recv red	<- queue 7 (out)
+154:	proc  1 (Out:1) mobile2.pml:125 (state 1)	[out?red]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+155:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+155:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+155:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+155:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+156:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+156:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+156:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+156:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+157:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+158:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+158:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+158:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+158:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+159:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+159:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+159:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+159:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+160:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+160:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+160:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+160:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                          MSC: FAILURE
+161:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+162:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+162:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+162:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+162:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+                  MSC: FAIL
+163:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [white]
+		queue 7 (out): 
+164:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+164:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+164:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+164:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [white]
+		queue 7 (out): 
+165:	proc  3 (CC:1) mobile2.pml:37 Recv white	<- queue 6 (inp)
+165:	proc  3 (CC:1) mobile2.pml:37 (state 1)	[inp?v]
+		queue 6 (inp): 
+		queue 7 (out): 
+		CC(3):v = white
+                  MSC: DATA
+166:	proc  3 (CC:1) mobile2.pml:38 (state 2)	[printf('MSC: DATA\\n')]
+		queue 6 (inp): 
+		queue 7 (out): 
+167:	proc  0 (System:1) mobile2.pml:118 Send blue	-> queue 6 (inp)
+167:	proc  0 (System:1) mobile2.pml:118 (state 9)	[inp!blue]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+168:	proc  0 (System:1) mobile2.pml:120 (state 11)	[.(goto)]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+169:	proc  3 (CC:1) mobile2.pml:39 (state 3)	[fa!data]
+169:	proc  5 (BS:1) mobile2.pml:74 (state 8)	[f?data]
+169:	proc  3 (CC:1) mobile2.pml:39 Sent 9	-> queue 3 (fa)
+169:	proc  5 (BS:1) mobile2.pml:74 Recv 9	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+170:	proc  3 (CC:1) mobile2.pml:39 (state 4)	[fa!v]
+170:	proc  5 (BS:1) mobile2.pml:74 (state 9)	[f?v]
+170:	proc  3 (CC:1) mobile2.pml:39 Sent 3	-> queue 3 (fa)
+170:	proc  5 (BS:1) mobile2.pml:74 Recv 3	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+171:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+171:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+171:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+171:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+172:	proc  5 (BS:1) mobile2.pml:74 (state 10)	[m!data]
+172:	proc  6 (MS:1) mobile2.pml:98 (state 1)	[m?data]
+172:	proc  5 (BS:1) mobile2.pml:74 Sent 9	-> queue 4 (m)
+172:	proc  6 (MS:1) mobile2.pml:98 Recv 9	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+173:	proc  5 (BS:1) mobile2.pml:74 (state 11)	[m!v]
+173:	proc  6 (MS:1) mobile2.pml:98 (state 2)	[m?v]
+173:	proc  5 (BS:1) mobile2.pml:74 Sent 3	-> queue 4 (m)
+173:	proc  6 (MS:1) mobile2.pml:98 Recv 3	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+		MS(6):v = white
+174:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+174:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+174:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+174:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+175:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+175:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+175:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+175:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+176:	proc  6 (MS:1) mobile2.pml:98 Send white	-> queue 7 (out)
+176:	proc  6 (MS:1) mobile2.pml:98 (state 3)	[out!v]
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+177:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+177:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+177:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+177:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+178:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+178:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+178:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+178:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+179:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+179:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+179:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+179:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+                  MSC: HAND-OFF
+180:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+                          MSC: FAILURE
+181:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): [white]
+182:	proc  1 (Out:1) mobile2.pml:125 Recv white	<- queue 7 (out)
+182:	proc  1 (Out:1) mobile2.pml:125 (state 2)	[out?white]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+183:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+183:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+183:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+183:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: FAIL
+184:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+185:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+185:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+185:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+185:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+186:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+186:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+186:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+186:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+187:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+187:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+187:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+187:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+188:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+188:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+188:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+188:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+189:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+190:	proc  5 (BS:1) mobile2.pml:76 (state 14)	[m!ho_cmd]
+190:	proc  6 (MS:1) mobile2.pml:99 (state 4)	[m?ho_cmd]
+190:	proc  5 (BS:1) mobile2.pml:76 Sent 8	-> queue 4 (m)
+190:	proc  6 (MS:1) mobile2.pml:99 Recv 8	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+191:	proc  5 (BS:1) mobile2.pml:76 (state 15)	[m!v]
+191:	proc  6 (MS:1) mobile2.pml:99 (state 5)	[m?m_new]
+191:	proc  5 (BS:1) mobile2.pml:76 Sent 1	-> queue 4 (m)
+191:	proc  6 (MS:1) mobile2.pml:99 Recv 1	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+192:	proc  6 (MS:1) mobile2.pml:102 (state 8)	[m!ho_fail]
+192:	proc  5 (BS:1) mobile2.pml:81 (state 19)	[m?ho_fail]
+192:	proc  6 (MS:1) mobile2.pml:102 Sent 5	-> queue 4 (m)
+192:	proc  5 (BS:1) mobile2.pml:81 Recv 5	<- queue 4 (m)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                          MSC: FAILURE
+193:	proc  5 (BS:1) mobile2.pml:82 (state 20)	[printf('MSC: FAILURE\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+194:	proc  5 (BS:1) mobile2.pml:83 (state 21)	[f!ho_fail]
+194:	proc  3 (CC:1) mobile2.pml:49 (state 17)	[fa?ho_fail]
+194:	proc  5 (BS:1) mobile2.pml:83 Sent 5	-> queue 3 (f)
+194:	proc  3 (CC:1) mobile2.pml:49 Recv 5	<- queue 3 (fa)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: FAIL
+195:	proc  3 (CC:1) mobile2.pml:50 (state 18)	[printf('MSC: FAIL\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+196:	proc  3 (CC:1) mobile2.pml:51 (state 19)	[l!m_new]
+196:	proc  2 (HC:1) mobile2.pml:59 (state 2)	[l?m]
+196:	proc  3 (CC:1) mobile2.pml:51 Sent 1	-> queue 5 (l)
+196:	proc  2 (HC:1) mobile2.pml:59 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+197:	proc  2 (HC:1) mobile2.pml:59 (state 1)	[l!m]
+197:	proc  3 (CC:1) mobile2.pml:40 (state 5)	[l?m_new]
+197:	proc  2 (HC:1) mobile2.pml:59 Sent 1	-> queue 5 (l)
+197:	proc  3 (CC:1) mobile2.pml:40 Recv 1	<- queue 5 (l)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+198:	proc  3 (CC:1) mobile2.pml:41 (state 6)	[fa!ho_cmd]
+198:	proc  5 (BS:1) mobile2.pml:75 (state 12)	[f?ho_cmd]
+198:	proc  3 (CC:1) mobile2.pml:41 Sent 8	-> queue 3 (fa)
+198:	proc  5 (BS:1) mobile2.pml:75 Recv 8	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+199:	proc  3 (CC:1) mobile2.pml:41 (state 7)	[fa!m_new]
+199:	proc  5 (BS:1) mobile2.pml:76 (state 13)	[f?v]
+199:	proc  3 (CC:1) mobile2.pml:41 Sent 1	-> queue 3 (fa)
+199:	proc  5 (BS:1) mobile2.pml:76 Recv 1	<- queue 3 (f)
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+                  MSC: HAND-OFF
+200:	proc  3 (CC:1) mobile2.pml:42 (state 8)	[printf('MSC: HAND-OFF\\n')]
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 7
+		queue 6 (inp): [blue]
+		queue 7 (out): 
+		a_id = 5
+		p_id = 4
+		progress = 0
+200:	proc  6 (MS:1) mobile2.pml:97 (state 11)
+		MS(6):v = white
+200:	proc  5 (BS:1) mobile2.pml:76 (state 14)
+		BS(5):how = 1
+200:	proc  4 (BS:1) mobile2.pml:89 (state 28)
+		BS(4):how = 0
+200:	proc  3 (CC:1) mobile2.pml:43 (state 20)
+		CC(3):v = white
+200:	proc  2 (HC:1) mobile2.pml:59 (state 2)
+200:	proc  1 (Out:1) mobile2.pml:125 (state 3)
+200:	proc  0 (System:1) mobile2.pml:117 (state 10) <valid end state>
+7 processes created
+exit: 0

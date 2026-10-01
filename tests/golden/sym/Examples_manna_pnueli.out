@@ -1,0 +1,6 @@
+byte  	cnt	0	<:global:>	<variable>	{scope _}
+byte  	request	0	<:global:>	<variable>	{scope _}
+byte  	respond	0	<:global:>	<variable>	{scope _}
+proctype	server	1	<:global:>	<variable>	{scope _}
+proctype	client	2	<:global:>	<variable>	{scope _}
+exit: 0

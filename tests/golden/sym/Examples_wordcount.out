@@ -1,0 +1,7 @@
+chan  	STDIN	0	<:global:>	<variable>	0		{scope _}
+int   	c	0	<:global:>	<variable>	{scope _}
+int   	nl	0	<:global:>	<variable>	{scope _}
+int   	nw	0	<:global:>	<variable>	{scope _}
+int   	nc	0	<:global:>	<variable>	{scope _}
+bit   	inword	0	<:init:>	<variable>	{scope _1_}
+exit: 0

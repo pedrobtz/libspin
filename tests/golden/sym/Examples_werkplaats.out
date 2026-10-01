@@ -1,0 +1,14 @@
+byte  	m1[9]	0	<:global:>	<array>	{scope _}
+byte  	m2[9]	0	<:global:>	<array>	{scope _}
+byte  	m3[9]	0	<:global:>	<array>	{scope _}
+byte  	m4[9]	0	<:global:>	<array>	{scope _}
+bit   	j1_done	0	<:global:>	<variable>	{scope _}
+bit   	j2_done	0	<:global:>	<variable>	{scope _}
+bit   	j3_done	0	<:global:>	<variable>	{scope _}
+proctype	j1	1	<:global:>	<variable>	{scope _}
+int   	i	0	<j1>	<variable>	{scope _1_}
+proctype	j2	1	<:global:>	<variable>	{scope _}
+int   	i	0	<j2>	<variable>	{scope _2_}
+proctype	j3	1	<:global:>	<variable>	{scope _}
+int   	i	0	<j3>	<variable>	{scope _3_}
+exit: 0

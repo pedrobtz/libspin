@@ -1,0 +1,13 @@
+ltl p: [] ((! (client_busy[1])) || (<> (! (client_busy[1]))))
+bit   	client_busy[3]	0	<:global:>	<array>	{scope _}
+bit   	Interrupt_set	0	<:global:>	<variable>	{scope _}
+proctype	disk_sched	1	<:global:>	<variable>	{scope _}
+chan  	req_q	3	<disk_sched>	<variable>	1	byte  	{scope _1_}
+byte  	disk_busy	0	<disk_sched>	<variable>	{scope _1_}
+byte  	curproc	0	<disk_sched>	<variable>	{scope _1_}
+label	accept_S4	10	<p>	{scope _3_}
+label	T0_init	5	<p>	{scope _3_}
+label	progress_2	39	<disk_sched>	{scope _1_}
+label	progress_1	26	<disk_sched>	{scope _1_}
+label	progress_0	13	<disk_sched>	{scope _1_}
+exit: 0

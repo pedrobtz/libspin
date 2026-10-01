@@ -1,0 +1,3 @@
+int   	a[5]	0	<:global:>	<array>	{scope _}
+proctype	A	0	<:global:>	<variable>	{scope _}
+exit: 0

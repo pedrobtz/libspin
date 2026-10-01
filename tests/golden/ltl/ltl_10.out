@@ -1,0 +1,15 @@
+never  {    /* [] (p -> (q V r)) */
+accept_init:
+T0_init:
+	do
+	:: ((r)) -> goto accept_S12
+	:: (((! ((p))) || ((q) && (r)))) -> goto T0_init
+	od;
+accept_S12:
+T0_S12:
+	do
+	:: ((r)) -> goto accept_S12
+	:: ((q) && (r)) -> goto T0_init
+	od;
+}
+exit: 0

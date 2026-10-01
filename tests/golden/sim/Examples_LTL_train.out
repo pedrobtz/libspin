@@ -1,0 +1,946 @@
+  0:	proc  - (:root:) creates proc  0 (train)
+  0:	proc  - (:root:) creates proc  1 (train)
+  0:	proc  - (:root:) creates proc  2 (train)
+  0:	proc  - (:root:) creates proc  3 (train)
+  0:	proc  - (:root:) creates proc  4 (gate)
+  0:	proc  - (:root:) creates proc  5 (queue)
+ltl c1: [] (<> ((gate@Occupied)))
+ltl c2: [] (<> ((train[0]@Crossed)))
+ltl c3: [] (<> (((train[0]@Crossed)) && ((train[1]@Stopped))))
+ltl c4: [] (<> (((((train[0]@Crossed)) && ((train[1]@Stopped))) && ((train[2]@Stopped))) && ((train[3]@Stopped))))
+ltl c5: [] ((((((train[0]@Crossed)+(train[1]@Crossed))+(train[2]@Crossed))+(train[3]@Crossed))<=1))
+ltl c6: [] ((len(list)<4))
+ltl c7: [] ((! (((gate@Add1)) || ((gate@Add2)))) || ((len(list)<4)))
+ltl c8: (! ([] ((train[0]@Approaching)))) || (<> ((train[0]@Crossed)))
+  1:	proc  5 (queue:1) train.pml:63 (state 4)	[(empty(list))]
+		queue 2 (list): 
+  2:	proc  1 (train:1) train.pml:19 (state 1)	[assert(((_pid>=0)&&(_pid<4)))]
+		queue 2 (list): 
+  3:	proc  5 (queue:1) train.pml:64 (state 5)	[qg!Empty,0]
+  3:	proc  4 (gate:1) train.pml:37 (state 1)	[qg?Empty,_]
+  3:	proc  5 (queue:1) train.pml:64 Sent Empty,0	-> queue 1 (qg)
+  3:	proc  4 (gate:1) train.pml:37 Recv Empty,0	<- queue 1 (qg)
+		queue 2 (list): 
+  4:	proc  2 (train:1) train.pml:19 (state 1)	[assert(((_pid>=0)&&(_pid<4)))]
+		queue 2 (list): 
+  5:	proc  3 (train:1) train.pml:19 (state 1)	[assert(((_pid>=0)&&(_pid<4)))]
+		queue 2 (list): 
+  6:	proc  2 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 2 (list): 
+  7:	proc  1 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 2 (list): 
+  8:	proc  3 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 2 (list): 
+  9:	proc  1 (train:1) train.pml:21 Send appr,1	-> queue 4 (g)
+  9:	proc  1 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,1]
+		queue 2 (list): 
+ 10:	proc  3 (train:1) train.pml:21 Send appr,3	-> queue 4 (g)
+ 10:	proc  3 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,1][appr,3]
+		queue 2 (list): 
+ 11:	proc  0 (train:1) train.pml:19 (state 1)	[assert(((_pid>=0)&&(_pid<4)))]
+		queue 4 (g): [appr,1][appr,3]
+		queue 2 (list): 
+ 12:	proc  0 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [appr,1][appr,3]
+		queue 2 (list): 
+ 13:	proc  4 (gate:1) train.pml:38 Recv appr,1	<- queue 4 (g)
+ 13:	proc  4 (gate:1) train.pml:38 (state 2)	[g?appr,who]
+		queue 4 (g): [appr,3]
+		queue 2 (list): 
+		gate(4):who = 1
+ 14:	proc  0 (train:1) train.pml:21 Send appr,0	-> queue 4 (g)
+ 14:	proc  0 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,3][appr,0]
+		queue 2 (list): 
+ 15:	proc  2 (train:1) train.pml:21 Send appr,2	-> queue 4 (g)
+ 15:	proc  2 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): 
+ 16:	proc  4 (gate:1) train.pml:39 (state 3)	[q!add,who]
+ 16:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 16:	proc  4 (gate:1) train.pml:39 Sent add,1	-> queue 3 (q)
+ 16:	proc  5 (queue:1) train.pml:67 Recv add,1	<- queue 3 (q)
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): 
+		queue(5):who = 1
+ 17:	proc  5 (queue:1) train.pml:68 Send 1	-> queue 2 (list)
+ 17:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): [1]
+ 18:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): [1]
+ 19:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+ 19:	proc  1 (train:1) train.pml:23 (state 3)	[t[_pid]?go]
+ 19:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 6 (t[1])
+ 19:	proc  1 (train:1) train.pml:23 Recv go	<- queue 6 (t[1])
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): [1]
+ 20:	proc  1 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): [appr,3][appr,0][appr,2]
+		queue 2 (list): [1]
+ 21:	proc  4 (gate:1) train.pml:45 Recv appr,3	<- queue 4 (g)
+ 21:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [appr,0][appr,2]
+		queue 2 (list): [1]
+		gate(4):who = 3
+ 22:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 22:	proc  3 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 22:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 8 (t[3])
+ 22:	proc  3 (train:1) train.pml:25 Recv stop	<- queue 8 (t[3])
+		queue 4 (g): [appr,0][appr,2]
+		queue 2 (list): [1]
+ 23:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 23:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 23:	proc  4 (gate:1) train.pml:47 Sent add,3	-> queue 3 (q)
+ 23:	proc  5 (queue:1) train.pml:67 Recv add,3	<- queue 3 (q)
+		queue 4 (g): [appr,0][appr,2]
+		queue 2 (list): [1]
+		queue(5):who = 3
+ 24:	proc  4 (gate:1) train.pml:45 Recv appr,0	<- queue 4 (g)
+ 24:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1]
+		gate(4):who = 0
+ 25:	proc  1 (train:1) train.pml:29 Send leave,1	-> queue 4 (g)
+ 25:	proc  1 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [appr,2][leave,1]
+		queue 2 (list): [1]
+ 26:	proc  5 (queue:1) train.pml:68 Send 3	-> queue 2 (list)
+ 26:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [appr,2][leave,1]
+		queue 2 (list): [1][3]
+ 27:	proc  1 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [appr,2][leave,1]
+		queue 2 (list): [1][3]
+ 28:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 28:	proc  0 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 28:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 5 (t[0])
+ 28:	proc  0 (train:1) train.pml:25 Recv stop	<- queue 5 (t[0])
+		queue 4 (g): [appr,2][leave,1]
+		queue 2 (list): [1][3]
+ 29:	proc  1 (train:1) train.pml:21 Send appr,1	-> queue 4 (g)
+ 29:	proc  1 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,2][leave,1][appr,1]
+		queue 2 (list): [1][3]
+ 30:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [appr,2][leave,1][appr,1]
+		queue 2 (list): [1][3]
+ 31:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 31:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 31:	proc  4 (gate:1) train.pml:47 Sent add,0	-> queue 3 (q)
+ 31:	proc  5 (queue:1) train.pml:67 Recv add,0	<- queue 3 (q)
+		queue 4 (g): [appr,2][leave,1][appr,1]
+		queue 2 (list): [1][3]
+		queue(5):who = 0
+ 32:	proc  4 (gate:1) train.pml:45 Recv appr,2	<- queue 4 (g)
+ 32:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3]
+		gate(4):who = 2
+ 33:	proc  5 (queue:1) train.pml:68 Send 0	-> queue 2 (list)
+ 33:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3][0]
+ 34:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 34:	proc  2 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 34:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 7 (t[2])
+ 34:	proc  2 (train:1) train.pml:25 Recv stop	<- queue 7 (t[2])
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3][0]
+ 35:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 35:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 35:	proc  4 (gate:1) train.pml:47 Sent add,2	-> queue 3 (q)
+ 35:	proc  5 (queue:1) train.pml:67 Recv add,2	<- queue 3 (q)
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3][0]
+		queue(5):who = 2
+ 36:	proc  5 (queue:1) train.pml:68 Send 2	-> queue 2 (list)
+ 36:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3][0][2]
+ 37:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [leave,1][appr,1]
+		queue 2 (list): [1][3][0][2]
+ 38:	proc  4 (gate:1) train.pml:48 Recv leave,1	<- queue 4 (g)
+ 38:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [1][3][0][2]
+		gate(4):who = 1
+ 39:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+ 39:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+ 39:	proc  4 (gate:1) train.pml:49 Sent rem,1	-> queue 3 (q)
+ 39:	proc  5 (queue:1) train.pml:69 Recv rem,1	<- queue 3 (q)
+		queue 4 (g): [appr,1]
+		queue 2 (list): [1][3][0][2]
+		queue(5):who = 1
+ 40:	proc  5 (queue:1) train.pml:70 Recv 1	<- queue 2 (list)
+ 40:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		queue(5):x = 1
+ 41:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+ 42:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+ 43:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+ 44:	proc  5 (queue:1) train.pml:61 [Recv] 3	<- queue 2 (list)
+ 44:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		queue(5):who = 3
+ 45:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+ 45:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+ 45:	proc  5 (queue:1) train.pml:62 Sent Notempty,3	-> queue 1 (qg)
+ 45:	proc  4 (gate:1) train.pml:40 Recv Notempty,3	<- queue 1 (qg)
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		gate(4):who = 3
+ 46:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+ 46:	proc  3 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+ 46:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 8 (t[3])
+ 46:	proc  3 (train:1) train.pml:27 Recv go	<- queue 8 (t[3])
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+ 47:	proc  4 (gate:1) train.pml:45 Recv appr,1	<- queue 4 (g)
+ 47:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+		gate(4):who = 1
+ 48:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 48:	proc  1 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 48:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 6 (t[1])
+ 48:	proc  1 (train:1) train.pml:25 Recv stop	<- queue 6 (t[1])
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+ 49:	proc  3 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+ 50:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 50:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 50:	proc  4 (gate:1) train.pml:47 Sent add,1	-> queue 3 (q)
+ 50:	proc  5 (queue:1) train.pml:67 Recv add,1	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+		queue(5):who = 1
+ 51:	proc  5 (queue:1) train.pml:68 Send 1	-> queue 2 (list)
+ 51:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+ 52:	proc  3 (train:1) train.pml:29 Send leave,3	-> queue 4 (g)
+ 52:	proc  3 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2][1]
+ 53:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2][1]
+ 54:	proc  3 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2][1]
+ 55:	proc  4 (gate:1) train.pml:48 Recv leave,3	<- queue 4 (g)
+ 55:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+		gate(4):who = 3
+ 56:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+ 56:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+ 56:	proc  4 (gate:1) train.pml:49 Sent rem,3	-> queue 3 (q)
+ 56:	proc  5 (queue:1) train.pml:69 Recv rem,3	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+		queue(5):who = 3
+ 57:	proc  3 (train:1) train.pml:21 Send appr,3	-> queue 4 (g)
+ 57:	proc  3 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [3][0][2][1]
+ 58:	proc  5 (queue:1) train.pml:70 Recv 3	<- queue 2 (list)
+ 58:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		queue(5):x = 3
+ 59:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+ 60:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+ 61:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+ 62:	proc  5 (queue:1) train.pml:61 [Recv] 0	<- queue 2 (list)
+ 62:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		queue(5):who = 0
+ 63:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+ 63:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+ 63:	proc  5 (queue:1) train.pml:62 Sent Notempty,0	-> queue 1 (qg)
+ 63:	proc  4 (gate:1) train.pml:40 Recv Notempty,0	<- queue 1 (qg)
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		gate(4):who = 0
+ 64:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+ 64:	proc  0 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+ 64:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 5 (t[0])
+ 64:	proc  0 (train:1) train.pml:27 Recv go	<- queue 5 (t[0])
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+ 65:	proc  0 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+ 66:	proc  0 (train:1) train.pml:29 Send leave,0	-> queue 4 (g)
+ 66:	proc  0 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [appr,3][leave,0]
+		queue 2 (list): [0][2][1]
+ 67:	proc  0 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [appr,3][leave,0]
+		queue 2 (list): [0][2][1]
+ 68:	proc  4 (gate:1) train.pml:45 Recv appr,3	<- queue 4 (g)
+ 68:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [leave,0]
+		queue 2 (list): [0][2][1]
+		gate(4):who = 3
+ 69:	proc  0 (train:1) train.pml:21 Send appr,0	-> queue 4 (g)
+ 69:	proc  0 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+ 70:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 70:	proc  3 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 70:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 8 (t[3])
+ 70:	proc  3 (train:1) train.pml:25 Recv stop	<- queue 8 (t[3])
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+ 71:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 71:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 71:	proc  4 (gate:1) train.pml:47 Sent add,3	-> queue 3 (q)
+ 71:	proc  5 (queue:1) train.pml:67 Recv add,3	<- queue 3 (q)
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+		queue(5):who = 3
+ 72:	proc  4 (gate:1) train.pml:48 Recv leave,0	<- queue 4 (g)
+ 72:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [0][2][1]
+		gate(4):who = 0
+ 73:	proc  5 (queue:1) train.pml:68 Send 3	-> queue 2 (list)
+ 73:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [0][2][1][3]
+ 74:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+ 74:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+ 74:	proc  4 (gate:1) train.pml:49 Sent rem,0	-> queue 3 (q)
+ 74:	proc  5 (queue:1) train.pml:69 Recv rem,0	<- queue 3 (q)
+		queue 4 (g): [appr,0]
+		queue 2 (list): [0][2][1][3]
+		queue(5):who = 0
+ 75:	proc  5 (queue:1) train.pml:70 Recv 0	<- queue 2 (list)
+ 75:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		queue(5):x = 0
+ 76:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+ 77:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+ 78:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+ 79:	proc  5 (queue:1) train.pml:61 [Recv] 2	<- queue 2 (list)
+ 79:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		queue(5):who = 2
+ 80:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+ 80:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+ 80:	proc  5 (queue:1) train.pml:62 Sent Notempty,2	-> queue 1 (qg)
+ 80:	proc  4 (gate:1) train.pml:40 Recv Notempty,2	<- queue 1 (qg)
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		gate(4):who = 2
+ 81:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+ 81:	proc  2 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+ 81:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 7 (t[2])
+ 81:	proc  2 (train:1) train.pml:27 Recv go	<- queue 7 (t[2])
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+ 82:	proc  4 (gate:1) train.pml:45 Recv appr,0	<- queue 4 (g)
+ 82:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3]
+		gate(4):who = 0
+ 83:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+ 83:	proc  0 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+ 83:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 5 (t[0])
+ 83:	proc  0 (train:1) train.pml:25 Recv stop	<- queue 5 (t[0])
+		queue 4 (g): 
+		queue 2 (list): [2][1][3]
+ 84:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+ 84:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+ 84:	proc  4 (gate:1) train.pml:47 Sent add,0	-> queue 3 (q)
+ 84:	proc  5 (queue:1) train.pml:67 Recv add,0	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [2][1][3]
+		queue(5):who = 0
+ 85:	proc  5 (queue:1) train.pml:68 Send 0	-> queue 2 (list)
+ 85:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3][0]
+ 86:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3][0]
+ 87:	proc  2 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3][0]
+ 88:	proc  2 (train:1) train.pml:29 Send leave,2	-> queue 4 (g)
+ 88:	proc  2 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [leave,2]
+		queue 2 (list): [2][1][3][0]
+ 89:	proc  2 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [leave,2]
+		queue 2 (list): [2][1][3][0]
+ 90:	proc  4 (gate:1) train.pml:48 Recv leave,2	<- queue 4 (g)
+ 90:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3][0]
+		gate(4):who = 2
+ 91:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+ 91:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+ 91:	proc  4 (gate:1) train.pml:49 Sent rem,2	-> queue 3 (q)
+ 91:	proc  5 (queue:1) train.pml:69 Recv rem,2	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [2][1][3][0]
+		queue(5):who = 2
+ 92:	proc  5 (queue:1) train.pml:70 Recv 2	<- queue 2 (list)
+ 92:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		queue(5):x = 2
+ 93:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+ 94:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+ 95:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+ 96:	proc  5 (queue:1) train.pml:61 [Recv] 1	<- queue 2 (list)
+ 96:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		queue(5):who = 1
+ 97:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+ 97:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+ 97:	proc  5 (queue:1) train.pml:62 Sent Notempty,1	-> queue 1 (qg)
+ 97:	proc  4 (gate:1) train.pml:40 Recv Notempty,1	<- queue 1 (qg)
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		gate(4):who = 1
+ 98:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+ 98:	proc  1 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+ 98:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 6 (t[1])
+ 98:	proc  1 (train:1) train.pml:27 Recv go	<- queue 6 (t[1])
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+ 99:	proc  2 (train:1) train.pml:21 Send appr,2	-> queue 4 (g)
+ 99:	proc  2 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+100:	proc  1 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+101:	proc  1 (train:1) train.pml:29 Send leave,1	-> queue 4 (g)
+101:	proc  1 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [appr,2][leave,1]
+		queue 2 (list): [1][3][0]
+102:	proc  4 (gate:1) train.pml:45 Recv appr,2	<- queue 4 (g)
+102:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+		gate(4):who = 2
+103:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+103:	proc  2 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+103:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 7 (t[2])
+103:	proc  2 (train:1) train.pml:25 Recv stop	<- queue 7 (t[2])
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+104:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+104:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+104:	proc  4 (gate:1) train.pml:47 Sent add,2	-> queue 3 (q)
+104:	proc  5 (queue:1) train.pml:67 Recv add,2	<- queue 3 (q)
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+		queue(5):who = 2
+105:	proc  4 (gate:1) train.pml:48 Recv leave,1	<- queue 4 (g)
+105:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		gate(4):who = 1
+106:	proc  5 (queue:1) train.pml:68 Send 2	-> queue 2 (list)
+106:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+107:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+108:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+108:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+108:	proc  4 (gate:1) train.pml:49 Sent rem,1	-> queue 3 (q)
+108:	proc  5 (queue:1) train.pml:69 Recv rem,1	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+		queue(5):who = 1
+109:	proc  1 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+110:	proc  5 (queue:1) train.pml:70 Recv 1	<- queue 2 (list)
+110:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+		queue(5):x = 1
+111:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+112:	proc  1 (train:1) train.pml:21 Send appr,1	-> queue 4 (g)
+112:	proc  1 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+113:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+114:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+115:	proc  5 (queue:1) train.pml:61 [Recv] 3	<- queue 2 (list)
+115:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		queue(5):who = 3
+116:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+116:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+116:	proc  5 (queue:1) train.pml:62 Sent Notempty,3	-> queue 1 (qg)
+116:	proc  4 (gate:1) train.pml:40 Recv Notempty,3	<- queue 1 (qg)
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		gate(4):who = 3
+117:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+117:	proc  3 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+117:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 8 (t[3])
+117:	proc  3 (train:1) train.pml:27 Recv go	<- queue 8 (t[3])
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+118:	proc  3 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+119:	proc  3 (train:1) train.pml:29 Send leave,3	-> queue 4 (g)
+119:	proc  3 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [appr,1][leave,3]
+		queue 2 (list): [3][0][2]
+120:	proc  4 (gate:1) train.pml:45 Recv appr,1	<- queue 4 (g)
+120:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2]
+		gate(4):who = 1
+121:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+121:	proc  1 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+121:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 6 (t[1])
+121:	proc  1 (train:1) train.pml:25 Recv stop	<- queue 6 (t[1])
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2]
+122:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+122:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+122:	proc  4 (gate:1) train.pml:47 Sent add,1	-> queue 3 (q)
+122:	proc  5 (queue:1) train.pml:67 Recv add,1	<- queue 3 (q)
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2]
+		queue(5):who = 1
+123:	proc  4 (gate:1) train.pml:48 Recv leave,3	<- queue 4 (g)
+123:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+		gate(4):who = 3
+124:	proc  5 (queue:1) train.pml:68 Send 1	-> queue 2 (list)
+124:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+125:	proc  3 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+126:	proc  3 (train:1) train.pml:21 Send appr,3	-> queue 4 (g)
+126:	proc  3 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [3][0][2][1]
+127:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+127:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+127:	proc  4 (gate:1) train.pml:49 Sent rem,3	-> queue 3 (q)
+127:	proc  5 (queue:1) train.pml:69 Recv rem,3	<- queue 3 (q)
+		queue 4 (g): [appr,3]
+		queue 2 (list): [3][0][2][1]
+		queue(5):who = 3
+128:	proc  5 (queue:1) train.pml:70 Recv 3	<- queue 2 (list)
+128:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		queue(5):x = 3
+129:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+130:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+131:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+132:	proc  5 (queue:1) train.pml:61 [Recv] 0	<- queue 2 (list)
+132:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		queue(5):who = 0
+133:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+133:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+133:	proc  5 (queue:1) train.pml:62 Sent Notempty,0	-> queue 1 (qg)
+133:	proc  4 (gate:1) train.pml:40 Recv Notempty,0	<- queue 1 (qg)
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		gate(4):who = 0
+134:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+134:	proc  0 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+134:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 5 (t[0])
+134:	proc  0 (train:1) train.pml:27 Recv go	<- queue 5 (t[0])
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+135:	proc  0 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+136:	proc  0 (train:1) train.pml:29 Send leave,0	-> queue 4 (g)
+136:	proc  0 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [appr,3][leave,0]
+		queue 2 (list): [0][2][1]
+137:	proc  0 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [appr,3][leave,0]
+		queue 2 (list): [0][2][1]
+138:	proc  4 (gate:1) train.pml:45 Recv appr,3	<- queue 4 (g)
+138:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): [leave,0]
+		queue 2 (list): [0][2][1]
+		gate(4):who = 3
+139:	proc  0 (train:1) train.pml:21 Send appr,0	-> queue 4 (g)
+139:	proc  0 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+140:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+140:	proc  3 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+140:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 8 (t[3])
+140:	proc  3 (train:1) train.pml:25 Recv stop	<- queue 8 (t[3])
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+141:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+141:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+141:	proc  4 (gate:1) train.pml:47 Sent add,3	-> queue 3 (q)
+141:	proc  5 (queue:1) train.pml:67 Recv add,3	<- queue 3 (q)
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1]
+		queue(5):who = 3
+142:	proc  5 (queue:1) train.pml:68 Send 3	-> queue 2 (list)
+142:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1][3]
+143:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [leave,0][appr,0]
+		queue 2 (list): [0][2][1][3]
+144:	proc  4 (gate:1) train.pml:48 Recv leave,0	<- queue 4 (g)
+144:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [0][2][1][3]
+		gate(4):who = 0
+145:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+145:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+145:	proc  4 (gate:1) train.pml:49 Sent rem,0	-> queue 3 (q)
+145:	proc  5 (queue:1) train.pml:69 Recv rem,0	<- queue 3 (q)
+		queue 4 (g): [appr,0]
+		queue 2 (list): [0][2][1][3]
+		queue(5):who = 0
+146:	proc  5 (queue:1) train.pml:70 Recv 0	<- queue 2 (list)
+146:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		queue(5):x = 0
+147:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+148:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+149:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+150:	proc  5 (queue:1) train.pml:61 [Recv] 2	<- queue 2 (list)
+150:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		queue(5):who = 2
+151:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+151:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+151:	proc  5 (queue:1) train.pml:62 Sent Notempty,2	-> queue 1 (qg)
+151:	proc  4 (gate:1) train.pml:40 Recv Notempty,2	<- queue 1 (qg)
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+		gate(4):who = 2
+152:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+152:	proc  2 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+152:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 7 (t[2])
+152:	proc  2 (train:1) train.pml:27 Recv go	<- queue 7 (t[2])
+		queue 4 (g): [appr,0]
+		queue 2 (list): [2][1][3]
+153:	proc  4 (gate:1) train.pml:45 Recv appr,0	<- queue 4 (g)
+153:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3]
+		gate(4):who = 0
+154:	proc  2 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): 
+		queue 2 (list): [2][1][3]
+155:	proc  2 (train:1) train.pml:29 Send leave,2	-> queue 4 (g)
+155:	proc  2 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [leave,2]
+		queue 2 (list): [2][1][3]
+156:	proc  2 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [leave,2]
+		queue 2 (list): [2][1][3]
+157:	proc  2 (train:1) train.pml:21 Send appr,2	-> queue 4 (g)
+157:	proc  2 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [leave,2][appr,2]
+		queue 2 (list): [2][1][3]
+158:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+158:	proc  0 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+158:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 5 (t[0])
+158:	proc  0 (train:1) train.pml:25 Recv stop	<- queue 5 (t[0])
+		queue 4 (g): [leave,2][appr,2]
+		queue 2 (list): [2][1][3]
+159:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+159:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+159:	proc  4 (gate:1) train.pml:47 Sent add,0	-> queue 3 (q)
+159:	proc  5 (queue:1) train.pml:67 Recv add,0	<- queue 3 (q)
+		queue 4 (g): [leave,2][appr,2]
+		queue 2 (list): [2][1][3]
+		queue(5):who = 0
+160:	proc  5 (queue:1) train.pml:68 Send 0	-> queue 2 (list)
+160:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [leave,2][appr,2]
+		queue 2 (list): [2][1][3][0]
+161:	proc  5 (queue:1) train.pml:74 (state 15)	[.(goto)]
+		queue 4 (g): [leave,2][appr,2]
+		queue 2 (list): [2][1][3][0]
+162:	proc  4 (gate:1) train.pml:48 Recv leave,2	<- queue 4 (g)
+162:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [2][1][3][0]
+		gate(4):who = 2
+163:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+163:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+163:	proc  4 (gate:1) train.pml:49 Sent rem,2	-> queue 3 (q)
+163:	proc  5 (queue:1) train.pml:69 Recv rem,2	<- queue 3 (q)
+		queue 4 (g): [appr,2]
+		queue 2 (list): [2][1][3][0]
+		queue(5):who = 2
+164:	proc  5 (queue:1) train.pml:70 Recv 2	<- queue 2 (list)
+164:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+		queue(5):x = 2
+165:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+166:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+167:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+168:	proc  5 (queue:1) train.pml:61 [Recv] 1	<- queue 2 (list)
+168:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+		queue(5):who = 1
+169:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+169:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+169:	proc  5 (queue:1) train.pml:62 Sent Notempty,1	-> queue 1 (qg)
+169:	proc  4 (gate:1) train.pml:40 Recv Notempty,1	<- queue 1 (qg)
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+		gate(4):who = 1
+170:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+170:	proc  1 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+170:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 6 (t[1])
+170:	proc  1 (train:1) train.pml:27 Recv go	<- queue 6 (t[1])
+		queue 4 (g): [appr,2]
+		queue 2 (list): [1][3][0]
+171:	proc  4 (gate:1) train.pml:45 Recv appr,2	<- queue 4 (g)
+171:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		gate(4):who = 2
+172:	proc  1 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+173:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+173:	proc  2 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+173:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 7 (t[2])
+173:	proc  2 (train:1) train.pml:25 Recv stop	<- queue 7 (t[2])
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+174:	proc  1 (train:1) train.pml:29 Send leave,1	-> queue 4 (g)
+174:	proc  1 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+175:	proc  1 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+176:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+176:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+176:	proc  4 (gate:1) train.pml:47 Sent add,2	-> queue 3 (q)
+176:	proc  5 (queue:1) train.pml:67 Recv add,2	<- queue 3 (q)
+		queue 4 (g): [leave,1]
+		queue 2 (list): [1][3][0]
+		queue(5):who = 2
+177:	proc  4 (gate:1) train.pml:48 Recv leave,1	<- queue 4 (g)
+177:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0]
+		gate(4):who = 1
+178:	proc  5 (queue:1) train.pml:68 Send 2	-> queue 2 (list)
+178:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+179:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+179:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+179:	proc  4 (gate:1) train.pml:49 Sent rem,1	-> queue 3 (q)
+179:	proc  5 (queue:1) train.pml:69 Recv rem,1	<- queue 3 (q)
+		queue 4 (g): 
+		queue 2 (list): [1][3][0][2]
+		queue(5):who = 1
+180:	proc  1 (train:1) train.pml:21 Send appr,1	-> queue 4 (g)
+180:	proc  1 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [1][3][0][2]
+181:	proc  5 (queue:1) train.pml:70 Recv 1	<- queue 2 (list)
+181:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		queue(5):x = 1
+182:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+183:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+184:	proc  5 (queue:1) train.pml:60 (state 1)	[(nempty(list))]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+185:	proc  5 (queue:1) train.pml:61 [Recv] 3	<- queue 2 (list)
+185:	proc  5 (queue:1) train.pml:61 (state 2)	[list?<who>]
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		queue(5):who = 3
+186:	proc  5 (queue:1) train.pml:62 (state 3)	[qg!Notempty,who]
+186:	proc  4 (gate:1) train.pml:40 (state 4)	[qg?Notempty,who]
+186:	proc  5 (queue:1) train.pml:62 Sent Notempty,3	-> queue 1 (qg)
+186:	proc  4 (gate:1) train.pml:40 Recv Notempty,3	<- queue 1 (qg)
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+		gate(4):who = 3
+187:	proc  4 (gate:1) train.pml:42 (state 7)	[t[who]!go]
+187:	proc  3 (train:1) train.pml:27 (state 8)	[t[_pid]?go]
+187:	proc  4 (gate:1) train.pml:42 Sent go	-> queue 8 (t[3])
+187:	proc  3 (train:1) train.pml:27 Recv go	<- queue 8 (t[3])
+		queue 4 (g): [appr,1]
+		queue 2 (list): [3][0][2]
+188:	proc  4 (gate:1) train.pml:45 Recv appr,1	<- queue 4 (g)
+188:	proc  4 (gate:1) train.pml:45 (state 8)	[g?appr,who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+		gate(4):who = 1
+189:	proc  4 (gate:1) train.pml:46 (state 9)	[t[who]!stop]
+189:	proc  1 (train:1) train.pml:25 (state 5)	[t[_pid]?stop]
+189:	proc  4 (gate:1) train.pml:46 Sent stop	-> queue 6 (t[1])
+189:	proc  1 (train:1) train.pml:25 Recv stop	<- queue 6 (t[1])
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+190:	proc  3 (train:1) train.pml:28 (state 9)	[(1)]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2]
+191:	proc  3 (train:1) train.pml:29 Send leave,3	-> queue 4 (g)
+191:	proc  3 (train:1) train.pml:29 (state 10)	[g!leave,_pid]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2]
+192:	proc  4 (gate:1) train.pml:47 (state 10)	[q!add,who]
+192:	proc  5 (queue:1) train.pml:67 (state 8)	[q?add,who]
+192:	proc  4 (gate:1) train.pml:47 Sent add,1	-> queue 3 (q)
+192:	proc  5 (queue:1) train.pml:67 Recv add,1	<- queue 3 (q)
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2]
+		queue(5):who = 1
+193:	proc  5 (queue:1) train.pml:68 Send 1	-> queue 2 (list)
+193:	proc  5 (queue:1) train.pml:68 (state 9)	[list!who]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2][1]
+194:	proc  3 (train:1) train.pml:31 (state 12)	[.(goto)]
+		queue 4 (g): [leave,3]
+		queue 2 (list): [3][0][2][1]
+195:	proc  4 (gate:1) train.pml:48 Recv leave,3	<- queue 4 (g)
+195:	proc  4 (gate:1) train.pml:48 (state 11)	[g?leave,who]
+		queue 4 (g): 
+		queue 2 (list): [3][0][2][1]
+		gate(4):who = 3
+196:	proc  3 (train:1) train.pml:21 Send appr,3	-> queue 4 (g)
+196:	proc  3 (train:1) train.pml:21 (state 2)	[g!appr,_pid]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [3][0][2][1]
+197:	proc  4 (gate:1) train.pml:49 (state 12)	[q!rem,who]
+197:	proc  5 (queue:1) train.pml:69 (state 10)	[q?rem,who]
+197:	proc  4 (gate:1) train.pml:49 Sent rem,3	-> queue 3 (q)
+197:	proc  5 (queue:1) train.pml:69 Recv rem,3	<- queue 3 (q)
+		queue 4 (g): [appr,3]
+		queue 2 (list): [3][0][2][1]
+		queue(5):who = 3
+198:	proc  5 (queue:1) train.pml:70 Recv 3	<- queue 2 (list)
+198:	proc  5 (queue:1) train.pml:70 (state 11)	[list?x]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		queue(5):x = 3
+199:	proc  5 (queue:1) train.pml:71 (state 12)	[assert((x==who))]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+200:	proc  5 (queue:1) train.pml:72 (state 13)	[goto Start]
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 6
+		queue 4 (g): [appr,3]
+		queue 2 (list): [0][2][1]
+		Occupied = 0
+		Crossed = 0
+		Stopped = 0
+		Add1 = 0
+		Add2 = 0
+		Approaching = 0
+200:	proc  5 (queue:1) train.pml:59 (state 6)
+		queue(5):x = 3
+		queue(5):who = 3
+200:	proc  4 (gate:1) train.pml:36 (state 5)
+		gate(4):who = 3
+200:	proc  3 (train:1) train.pml:22 (state 6)
+200:	proc  2 (train:1) train.pml:27 (state 8)
+200:	proc  1 (train:1) train.pml:27 (state 8)
+200:	proc  0 (train:1) train.pml:27 (state 8)
+6 processes created
+exit: 0

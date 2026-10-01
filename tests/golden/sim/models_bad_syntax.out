@@ -1,0 +1,3 @@
+spin: bad_syntax.pml:5, Error: syntax error statement separator
+spin: bad_syntax.pml:5, Error: undeclared variable: x	saw 'operator: ++'
+exit: 1

@@ -1,0 +1,61 @@
+ltl ltl_0: (! (! ([] (<> (((BS[a_id]@progress)) || ((BS[p_id]@progress))))))) || ([] ((! (<> (inp?[red]))) || (<> (out?[red]))))
+mtype 	data	9	<:global:>	<constant>	{scope _}
+mtype 	ho_cmd	8	<:global:>	<constant>	{scope _}
+mtype 	ho_com	7	<:global:>	<constant>	{scope _}
+mtype 	ho_acc	6	<:global:>	<constant>	{scope _}
+mtype 	ho_fail	5	<:global:>	<constant>	{scope _}
+mtype 	ch_rel	4	<:global:>	<constant>	{scope _}
+mtype 	white	3	<:global:>	<constant>	{scope _}
+mtype 	red	2	<:global:>	<constant>	{scope _}
+mtype 	blue	1	<:global:>	<constant>	{scope _}
+byte  	a_id	0	<:global:>	<variable>	{scope _}
+byte  	p_id	0	<:global:>	<variable>	{scope _}
+chan  	inp	1	<:global:>	<variable>	1	mtype 	{scope _}
+chan  	out	1	<:global:>	<variable>	1	mtype 	{scope _}
+proctype	CC	0	<:global:>	<variable>	{scope _}
+chan  	fa	0	<CC>	<parameter 1>	0		{scope _}
+chan  	fp	0	<CC>	<parameter 2>	0		{scope _}
+chan  	l	0	<CC>	<parameter 3>	0		{scope _}
+chan  	m_old	0	<CC>	<variable>	0		{scope _4_}
+chan  	m_new	0	<CC>	<variable>	0		{scope _4_}
+chan  	x	0	<CC>	<variable>	0		{scope _4_}
+mtype 	v	0	<CC>	<constant>	{scope _4_}
+proctype	HC	0	<:global:>	<variable>	{scope _}
+chan  	l	0	<HC>	<parameter 1>	0		{scope _}
+chan  	m	0	<HC>	<parameter 2>	0		{scope _}
+proctype	MSC	0	<:global:>	<variable>	{scope _}
+chan  	fa	0	<MSC>	<parameter 1>	0		{scope _}
+chan  	fp	0	<MSC>	<parameter 2>	0		{scope _}
+chan  	m	0	<MSC>	<parameter 3>	0		{scope _}
+chan  	l	0	<MSC>	<variable>	1	chan  	{scope _6_}
+proctype	BS	0	<:global:>	<variable>	{scope _}
+chan  	f	0	<BS>	<parameter 1>	0		{scope _}
+chan  	m	0	<BS>	<parameter 2>	0		{scope _}
+bit   	how	0	<BS>	<parameter 3>	{scope _}
+chan  	v	0	<BS>	<variable>	0		{scope _7_}
+proctype	MS	0	<:global:>	<variable>	{scope _}
+chan  	m	0	<MS>	<parameter 1>	0		{scope _}
+chan  	m_new	0	<MS>	<variable>	0		{scope _8_}
+mtype 	v	0	<MS>	<constant>	{scope _8_}
+proctype	P	0	<:global:>	<variable>	{scope _}
+chan  	fa	0	<P>	<parameter 1>	0		{scope _}
+chan  	fp	0	<P>	<parameter 2>	0		{scope _}
+chan  	m	0	<P>	<variable>	1	mtype 	{scope _9_}
+proctype	Q	0	<:global:>	<variable>	{scope _}
+chan  	fa	0	<Q>	<parameter 1>	0		{scope _}
+chan  	m	0	<Q>	<variable>	1	mtype 	{scope _10_}
+proctype	System	1	<:global:>	<variable>	{scope _}
+chan  	fa	0	<System>	<variable>	1	mtype 	{scope _11_}
+chan  	fp	0	<System>	<variable>	1	mtype 	{scope _11_}
+proctype	top	1	<:global:>	<variable>	{scope _}
+proctype	bot	1	<:global:>	<variable>	{scope _}
+label	T0_S144	52	<ltl_0>	{scope _15_}
+label	T0_S137	43	<ltl_0>	{scope _15_}
+label	T0_S94	36	<ltl_0>	{scope _15_}
+label	T0_S88	25	<ltl_0>	{scope _15_}
+label	accept_S132	18	<ltl_0>	{scope _15_}
+label	T0_init	13	<ltl_0>	{scope _15_}
+label	Passive	27	<BS>	{scope _7_}
+label	progress	13	<BS>	{scope _7_}
+label	Active	7	<BS>	{scope _7_}
+exit: 0

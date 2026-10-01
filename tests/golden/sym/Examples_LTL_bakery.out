@@ -1,0 +1,9 @@
+ltl invariant: [] ((! ((P@CS))) || ((mutex==1)))
+byte  	turn[2]	0	<:global:>	<array>	{scope _}
+byte  	mutex	0	<:global:>	<variable>	{scope _}
+proctype	P	2	<:global:>	<variable>	{scope _}
+byte  	i	0	<P>	<variable>	{scope _1_}
+label	accept_all	9	<invariant>	{scope _3_}
+label	T0_init	6	<invariant>	{scope _3_}
+label	CS	5	<P>	{scope _1_}
+exit: 0

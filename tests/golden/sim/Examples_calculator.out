@@ -1,0 +1,179 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) calculator.pml:33 Send operator,43	-> queue 2 (f)
+  1:	proc  0 (:init::1) calculator.pml:33 (state 1)	[f!operator,43]
+		queue 2 (f): [operator,43]
+  2:	proc  0 (:init::1) calculator.pml:34 Send operator,47	-> queue 2 (f)
+  2:	proc  0 (:init::1) calculator.pml:34 (state 2)	[f!operator,47]
+		queue 2 (f): [operator,43][operator,47]
+  3:	proc  0 (:init::1) calculator.pml:35 Send value,84	-> queue 2 (f)
+  3:	proc  0 (:init::1) calculator.pml:35 (state 3)	[f!value,84]
+		queue 2 (f): [operator,43][operator,47][value,84]
+  4:	proc  0 (:init::1) calculator.pml:36 Send value,2	-> queue 2 (f)
+  4:	proc  0 (:init::1) calculator.pml:36 (state 4)	[f!value,2]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2]
+  5:	proc  0 (:init::1) calculator.pml:37 Send operator,45	-> queue 2 (f)
+  5:	proc  0 (:init::1) calculator.pml:37 (state 5)	[f!operator,45]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45]
+  6:	proc  0 (:init::1) calculator.pml:38 Send value,36	-> queue 2 (f)
+  6:	proc  0 (:init::1) calculator.pml:38 (state 6)	[f!value,36]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45][value,36]
+  7:	proc  0 (:init::1) calculator.pml:39 Send operator,42	-> queue 2 (f)
+  7:	proc  0 (:init::1) calculator.pml:39 (state 7)	[f!operator,42]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45][value,36][operator,42]
+  8:	proc  0 (:init::1) calculator.pml:40 Send value,3	-> queue 2 (f)
+  8:	proc  0 (:init::1) calculator.pml:40 (state 8)	[f!value,3]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45][value,36][operator,42][value,3]
+  9:	proc  0 (:init::1) calculator.pml:41 Send value,4	-> queue 2 (f)
+  9:	proc  0 (:init::1) calculator.pml:41 (state 9)	[f!value,4]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+Starting calc with pid 1
+ 10:	proc  0 (:init::1) creates proc  1 (calc)
+ 10:	proc  0 (:init::1) calculator.pml:43 (state 10)	[(run calc(me))]
+		queue 2 (f): [operator,43][operator,47][value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+ 11:	proc  1 (calc:1) calculator.pml:14 Recv operator,43	<- queue 2 (f)
+ 11:	proc  1 (calc:1) calculator.pml:14 (state 1)	[f?operator,s]
+		queue 2 (f): [operator,47][value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+		calc(1):s = 43
+Starting calc with pid 2
+ 12:	proc  1 (calc:1) creates proc  2 (calc)
+ 12:	proc  1 (calc:1) calculator.pml:15 (state 2)	[(run calc(me))]
+		queue 2 (f): [operator,47][value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+ 13:	proc  2 (calc:1) calculator.pml:14 Recv operator,47	<- queue 2 (f)
+ 13:	proc  2 (calc:1) calculator.pml:14 (state 1)	[f?operator,s]
+		queue 2 (f): [value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+		calc(2):s = 47
+Starting calc with pid 3
+ 14:	proc  2 (calc:1) creates proc  3 (calc)
+ 14:	proc  2 (calc:1) calculator.pml:15 (state 2)	[(run calc(me))]
+		queue 2 (f): [value,84][value,2][operator,45][value,36][operator,42][value,3][value,4]
+ 15:	proc  3 (calc:1) calculator.pml:25 Recv value,84	<- queue 2 (f)
+ 15:	proc  3 (calc:1) calculator.pml:25 (state 19)	[f?value,s]
+		queue 2 (f): [value,2][operator,45][value,36][operator,42][value,3][value,4]
+		calc(3):s = 84
+ 16:	proc  3 (calc:1) calculator.pml:25 (state 20)	[you!s]
+ 16:	proc  2 (calc:1) calculator.pml:15 (state 3)	[me?lft]
+ 16:	proc  3 (calc:1) calculator.pml:25 Sent 84	-> queue 4 (you)
+ 16:	proc  2 (calc:1) calculator.pml:15 Recv 84	<- queue 4 (me)
+		queue 2 (f): [value,2][operator,45][value,36][operator,42][value,3][value,4]
+		calc(2):lft = 84
+Starting calc with pid 4
+ 17:	proc  2 (calc:1) creates proc  4 (calc)
+ 17:	proc  2 (calc:1) calculator.pml:16 (state 4)	[(run calc(me))]
+		queue 2 (f): [value,2][operator,45][value,36][operator,42][value,3][value,4]
+ 18:	proc  4 (calc:1) calculator.pml:25 Recv value,2	<- queue 2 (f)
+ 18:	proc  4 (calc:1) calculator.pml:25 (state 19)	[f?value,s]
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+		calc(4):s = 2
+ 19:	proc  4 (calc:1) calculator.pml:25 (state 20)	[you!s]
+ 19:	proc  2 (calc:1) calculator.pml:16 (state 5)	[me?rgt]
+ 19:	proc  4 (calc:1) calculator.pml:25 Sent 2	-> queue 4 (you)
+ 19:	proc  2 (calc:1) calculator.pml:16 Recv 2	<- queue 4 (me)
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+		calc(2):rgt = 2
+ 19:	proc  4 (calc:1)                       terminates
+ 20:	proc  2 (calc:1) calculator.pml:21 (state 12)	[((s==47))]
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+ 21:	proc  2 (calc:1) calculator.pml:21 (state 13)	[assert((rgt!=0))]
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+ 21:	proc  3 (calc:1)                   terminates
+ 22:	proc  2 (calc:1) calculator.pml:22 (state 14)	[you!(lft/rgt)]
+ 22:	proc  1 (calc:1) calculator.pml:15 (state 3)	[me?lft]
+ 22:	proc  2 (calc:1) calculator.pml:22 Sent 42	-> queue 3 (you)
+ 22:	proc  1 (calc:1) calculator.pml:15 Recv 42	<- queue 3 (me)
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+		calc(1):lft = 42
+Starting calc with pid 3
+ 23:	proc  1 (calc:1) creates proc  3 (calc)
+ 23:	proc  1 (calc:1) calculator.pml:16 (state 4)	[(run calc(me))]
+		queue 2 (f): [operator,45][value,36][operator,42][value,3][value,4]
+ 24:	proc  3 (calc:1) calculator.pml:14 Recv operator,45	<- queue 2 (f)
+ 24:	proc  3 (calc:1) calculator.pml:14 (state 1)	[f?operator,s]
+		queue 2 (f): [value,36][operator,42][value,3][value,4]
+		calc(3):s = 45
+Starting calc with pid 4
+ 25:	proc  3 (calc:1) creates proc  4 (calc)
+ 25:	proc  3 (calc:1) calculator.pml:15 (state 2)	[(run calc(me))]
+		queue 2 (f): [value,36][operator,42][value,3][value,4]
+ 26:	proc  4 (calc:1) calculator.pml:25 Recv value,36	<- queue 2 (f)
+ 26:	proc  4 (calc:1) calculator.pml:25 (state 19)	[f?value,s]
+		queue 2 (f): [operator,42][value,3][value,4]
+		calc(4):s = 36
+ 27:	proc  4 (calc:1) calculator.pml:25 (state 20)	[you!s]
+ 27:	proc  3 (calc:1) calculator.pml:15 (state 3)	[me?lft]
+ 27:	proc  4 (calc:1) calculator.pml:25 Sent 36	-> queue 7 (you)
+ 27:	proc  3 (calc:1) calculator.pml:15 Recv 36	<- queue 7 (me)
+		queue 2 (f): [operator,42][value,3][value,4]
+		calc(3):lft = 36
+ 27:	proc  4 (calc:1)                       terminates
+Starting calc with pid 4
+ 28:	proc  3 (calc:1) creates proc  4 (calc)
+ 28:	proc  3 (calc:1) calculator.pml:16 (state 4)	[(run calc(me))]
+		queue 2 (f): [operator,42][value,3][value,4]
+ 29:	proc  4 (calc:1) calculator.pml:14 Recv operator,42	<- queue 2 (f)
+ 29:	proc  4 (calc:1) calculator.pml:14 (state 1)	[f?operator,s]
+		queue 2 (f): [value,3][value,4]
+		calc(4):s = 42
+Starting calc with pid 5
+ 30:	proc  4 (calc:1) creates proc  5 (calc)
+ 30:	proc  4 (calc:1) calculator.pml:15 (state 2)	[(run calc(me))]
+		queue 2 (f): [value,3][value,4]
+ 31:	proc  5 (calc:1) calculator.pml:25 Recv value,3	<- queue 2 (f)
+ 31:	proc  5 (calc:1) calculator.pml:25 (state 19)	[f?value,s]
+		queue 2 (f): [value,4]
+		calc(5):s = 3
+ 32:	proc  5 (calc:1) calculator.pml:25 (state 20)	[you!s]
+ 32:	proc  4 (calc:1) calculator.pml:15 (state 3)	[me?lft]
+ 32:	proc  5 (calc:1) calculator.pml:25 Sent 3	-> queue 9 (you)
+ 32:	proc  4 (calc:1) calculator.pml:15 Recv 3	<- queue 9 (me)
+		queue 2 (f): [value,4]
+		calc(4):lft = 3
+Starting calc with pid 6
+ 33:	proc  4 (calc:1) creates proc  6 (calc)
+ 33:	proc  4 (calc:1) calculator.pml:16 (state 4)	[(run calc(me))]
+		queue 2 (f): [value,4]
+ 34:	proc  6 (calc:1) calculator.pml:25 Recv value,4	<- queue 2 (f)
+ 34:	proc  6 (calc:1) calculator.pml:25 (state 19)	[f?value,s]
+		queue 2 (f): 
+		calc(6):s = 4
+ 35:	proc  6 (calc:1) calculator.pml:25 (state 20)	[you!s]
+ 35:	proc  4 (calc:1) calculator.pml:16 (state 5)	[me?rgt]
+ 35:	proc  6 (calc:1) calculator.pml:25 Sent 4	-> queue 9 (you)
+ 35:	proc  4 (calc:1) calculator.pml:16 Recv 4	<- queue 9 (me)
+		queue 2 (f): 
+		calc(4):rgt = 4
+ 35:	proc  6 (calc:1)                               terminates
+ 36:	proc  4 (calc:1) calculator.pml:20 (state 10)	[((s==42))]
+		queue 2 (f): 
+ 36:	proc  5 (calc:1)                           terminates
+ 37:	proc  4 (calc:1) calculator.pml:20 (state 11)	[you!(lft*rgt)]
+ 37:	proc  3 (calc:1) calculator.pml:16 (state 5)	[me?rgt]
+ 37:	proc  4 (calc:1) calculator.pml:20 Sent 12	-> queue 7 (you)
+ 37:	proc  3 (calc:1) calculator.pml:16 Recv 12	<- queue 7 (me)
+		queue 2 (f): 
+		calc(3):rgt = 12
+ 38:	proc  3 (calc:1) calculator.pml:19 (state 8)	[((s==45))]
+		queue 2 (f): 
+ 39:	proc  3 (calc:1) calculator.pml:19 (state 9)	[you!(lft-rgt)]
+ 39:	proc  1 (calc:1) calculator.pml:16 (state 5)	[me?rgt]
+ 39:	proc  3 (calc:1) calculator.pml:19 Sent 24	-> queue 3 (you)
+ 39:	proc  1 (calc:1) calculator.pml:16 Recv 24	<- queue 3 (me)
+		queue 2 (f): 
+		calc(1):rgt = 24
+ 40:	proc  1 (calc:1) calculator.pml:18 (state 6)	[((s==43))]
+		queue 2 (f): 
+ 40:	proc  4 (calc:1)                       terminates
+ 41:	proc  1 (calc:1) calculator.pml:18 (state 7)	[you!(lft+rgt)]
+ 41:	proc  0 (:init::1) calculator.pml:43 (state 11)	[me?result]
+ 41:	proc  1 (calc:1) calculator.pml:18 Sent 66	-> queue 1 (you)
+ 41:	proc  0 (:init::1) calculator.pml:43 Recv 66	<- queue 1 (me)
+		queue 2 (f): 
+		:init:(0):result = 66
+ 41:	proc  3 (calc:1)                   terminates
+      result: 66
+ 42:	proc  0 (:init::1) calculator.pml:44 (state 12)	[printf('result: %d\\n',result)]
+		queue 2 (f): 
+ 42:	proc  2 (calc:1)               terminates
+ 42:	proc  1 (calc:1)           terminates
+ 42:	proc  0 (:init::1)       terminates
+10 processes created
+exit: 0

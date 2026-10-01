@@ -1,0 +1,150 @@
+  0:	proc  - (:root:) creates proc  0 (j1)
+  0:	proc  - (:root:) creates proc  1 (j2)
+  0:	proc  - (:root:) creates proc  2 (j3)
+warning: never claim not used in random simulation
+  1:	proc  1 (j2:1) werkplaats.pml:98 (state 1)	[((i<(9-4)))]
+  2:	proc  2 (j3:1) werkplaats.pml:106 (state 1)	[((i<(9-7)))]
+  3:	proc  1 (j2:1) werkplaats.pml:98 (state 2)	[(((!(m2[i])&&!(m2[(i+1)]))&&!(m2[(i+2)])))]
+  4:	proc  1 (j2:1) werkplaats.pml:98 (state 3)	[m2[i] = 2]
+		m2[0] = 2
+		m2[1] = 0
+		m2[2] = 0
+		m2[3] = 0
+		m2[4] = 0
+		m2[5] = 0
+		m2[6] = 0
+		m2[7] = 0
+		m2[8] = 0
+  5:	proc  1 (j2:1) werkplaats.pml:98 (state 4)	[m2[(i+1)] = 2]
+		m2[0] = 2
+		m2[1] = 2
+		m2[2] = 0
+		m2[3] = 0
+		m2[4] = 0
+		m2[5] = 0
+		m2[6] = 0
+		m2[7] = 0
+		m2[8] = 0
+  6:	proc  1 (j2:1) werkplaats.pml:98 (state 5)	[m2[(i+2)] = 2]
+		m2[0] = 2
+		m2[1] = 2
+		m2[2] = 2
+		m2[3] = 0
+		m2[4] = 0
+		m2[5] = 0
+		m2[6] = 0
+		m2[7] = 0
+		m2[8] = 0
+  7:	proc  1 (j2:1) werkplaats.pml:98 (state 6)	[i = (i+3)]
+		j2(1):i = 3
+  8:	proc  1 (j2:1) werkplaats.pml:98 (state 15)	[break]
+  9:	proc  2 (j3:1) werkplaats.pml:106 (state 8)	[else]
+ 10:	proc  1 (j2:1) werkplaats.pml:100 (state 27)	[.(goto)]
+ 11:	proc  1 (j2:1) werkplaats.pml:99 (state 16)	[((i<(9-1)))]
+ 12:	proc  1 (j2:1) werkplaats.pml:99 (state 17)	[(!(m3[i]))]
+ 13:	proc  1 (j2:1) werkplaats.pml:99 (state 18)	[m3[i] = 2]
+		m3[0] = 0
+		m3[1] = 0
+		m3[2] = 0
+		m3[3] = 2
+		m3[4] = 0
+		m3[5] = 0
+		m3[6] = 0
+		m3[7] = 0
+		m3[8] = 0
+ 14:	proc  1 (j2:1) werkplaats.pml:99 (state 19)	[i = (i+1)]
+		j2(1):i = 4
+ 15:	proc  1 (j2:1) werkplaats.pml:99 (state 28)	[break]
+ 16:	proc  2 (j3:1) werkplaats.pml:106 (state 9)	[i = (i+1)]
+		j3(2):i = 1
+ 17:	proc  1 (j2:1) werkplaats.pml:100 (state 29)	[j2_done = 1]
+		j2_done = 1
+ 18:	proc  0 (j1:1) werkplaats.pml:84 (state 1)	[((i<(9-8)))]
+ 19:	proc  2 (j3:1) werkplaats.pml:106 (state 11)	[.(goto)]
+ 20:	proc  2 (j3:1) werkplaats.pml:107 (state 13)	[.(goto)]
+ 21:	proc  2 (j3:1) werkplaats.pml:106 (state 1)	[((i<(9-7)))]
+ 22:	proc  2 (j3:1) werkplaats.pml:106 (state 8)	[else]
+ 23:	proc  2 (j3:1) werkplaats.pml:106 (state 9)	[i = (i+1)]
+		j3(2):i = 2
+ 24:	proc  0 (j1:1) werkplaats.pml:84 (state 2)	[((!(m3[i])&&!(m3[(i+1)])))]
+ 25:	proc  0 (j1:1) werkplaats.pml:84 (state 3)	[m3[i] = 1]
+		m3[0] = 1
+		m3[1] = 0
+		m3[2] = 0
+		m3[3] = 2
+		m3[4] = 0
+		m3[5] = 0
+		m3[6] = 0
+		m3[7] = 0
+		m3[8] = 0
+ 26:	proc  0 (j1:1) werkplaats.pml:84 (state 4)	[m3[(i+1)] = 1]
+		m3[0] = 1
+		m3[1] = 1
+		m3[2] = 0
+		m3[3] = 2
+		m3[4] = 0
+		m3[5] = 0
+		m3[6] = 0
+		m3[7] = 0
+		m3[8] = 0
+ 27:	proc  0 (j1:1) werkplaats.pml:84 (state 5)	[i = (i+2)]
+		j1(0):i = 2
+ 28:	proc  2 (j3:1) werkplaats.pml:106 (state 11)	[.(goto)]
+ 29:	proc  0 (j1:1) werkplaats.pml:84 (state 14)	[break]
+ 30:	proc  0 (j1:1) werkplaats.pml:87 (state 27)	[.(goto)]
+ 31:	proc  0 (j1:1) werkplaats.pml:85 (state 15)	[((i<(9-6)))]
+ 32:	proc  0 (j1:1) werkplaats.pml:85 (state 22)	[else]
+ 33:	proc  2 (j3:1) werkplaats.pml:107 (state 13)	[.(goto)]
+ 34:	proc  0 (j1:1) werkplaats.pml:85 (state 23)	[i = (i+1)]
+		j1(0):i = 3
+ 35:	proc  0 (j1:1) werkplaats.pml:85 (state 25)	[.(goto)]
+ 36:	proc  0 (j1:1) werkplaats.pml:87 (state 27)	[.(goto)]
+      timeout
+#processes: 3
+		m1[0] = 0
+		m1[1] = 0
+		m1[2] = 0
+		m1[3] = 0
+		m1[4] = 0
+		m1[5] = 0
+		m1[6] = 0
+		m1[7] = 0
+		m1[8] = 0
+		m2[0] = 2
+		m2[1] = 2
+		m2[2] = 2
+		m2[3] = 0
+		m2[4] = 0
+		m2[5] = 0
+		m2[6] = 0
+		m2[7] = 0
+		m2[8] = 0
+		m3[0] = 1
+		m3[1] = 1
+		m3[2] = 0
+		m3[3] = 2
+		m3[4] = 0
+		m3[5] = 0
+		m3[6] = 0
+		m3[7] = 0
+		m3[8] = 0
+		m4[0] = 0
+		m4[1] = 0
+		m4[2] = 0
+		m4[3] = 0
+		m4[4] = 0
+		m4[5] = 0
+		m4[6] = 0
+		m4[7] = 0
+		m4[8] = 0
+		j1_done = 0
+		j2_done = 1
+		j3_done = 0
+ 36:	proc  2 (j3:1) werkplaats.pml:106 (state 12)
+		j3(2):i = 2
+ 36:	proc  1 (j2:1) werkplaats.pml:101 (state 30) <valid end state>
+		j2(1):i = 4
+ 36:	proc  0 (j1:1) werkplaats.pml:85 (state 26)
+		j1(0):i = 3
+3 processes created
+exit: 0

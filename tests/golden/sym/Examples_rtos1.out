@@ -1,0 +1,5 @@
+byte  	cnt	0	<:global:>	<variable>	{scope _}
+proctype	medium	1	<:global:>	<variable>	{scope _}
+proctype	high	1	<:global:>	<variable>	{scope _}
+proctype	low	1	<:global:>	<variable>	{scope _}
+exit: 0

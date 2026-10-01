@@ -1,0 +1,8 @@
+byte  	cnt	0	<:global:>	<variable>	{scope _}
+byte  	x	0	<:global:>	<variable>	{scope _}
+byte  	y	0	<:global:>	<variable>	{scope _}
+byte  	z	0	<:global:>	<variable>	{scope _}
+proctype	user	2	<:global:>	<variable>	{scope _}
+byte  	me	1	<user>	<variable>	{scope _1_}
+label	L1	1	<user>	{scope _1_}
+exit: 0

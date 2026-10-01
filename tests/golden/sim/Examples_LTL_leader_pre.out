@@ -1,0 +1,1566 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+ltl p0: <> ((nr_leaders>0))
+ltl p1: <> ([] ((nr_leaders==1)))
+ltl p2: [] (((nr_leaders==0)) U ((nr_leaders==1)))
+ltl p3: ! ([] ((nr_leaders==0)))
+  1:	proc  0 (:init::1) leader_pre.pml:105 (state 1)	[I = 1]
+		I = 1
+  2:	proc  0 (:init::1) leader_pre.pml:121 (state 21)	[.(goto)]
+  3:	proc  0 (:init::1) leader_pre.pml:107 (state 2)	[((I<=5))]
+  4:	proc  0 (:init::1) leader_pre.pml:110 (state 5)	[(((Ini[1]==0)&&(5>=2)))]
+  5:	proc  0 (:init::1) leader_pre.pml:110 (state 6)	[Ini[1] = I]
+		:init:(0):Ini[0] = 0
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 0
+		:init:(0):Ini[3] = 0
+		:init:(0):Ini[4] = 0
+		:init:(0):Ini[5] = 0
+  6:	proc  0 (:init::1) leader_pre.pml:116 (state 17)	[I = (I+1)]
+		I = 2
+  7:	proc  0 (:init::1) leader_pre.pml:107 (state 2)	[((I<=5))]
+  8:	proc  0 (:init::1) leader_pre.pml:111 (state 7)	[(((Ini[2]==0)&&(5>=3)))]
+  9:	proc  0 (:init::1) leader_pre.pml:111 (state 8)	[Ini[2] = I]
+		:init:(0):Ini[0] = 0
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 2
+		:init:(0):Ini[3] = 0
+		:init:(0):Ini[4] = 0
+		:init:(0):Ini[5] = 0
+ 10:	proc  0 (:init::1) leader_pre.pml:116 (state 17)	[I = (I+1)]
+		I = 3
+ 11:	proc  0 (:init::1) leader_pre.pml:107 (state 2)	[((I<=5))]
+ 12:	proc  0 (:init::1) leader_pre.pml:112 (state 9)	[(((Ini[3]==0)&&(5>=4)))]
+ 13:	proc  0 (:init::1) leader_pre.pml:112 (state 10)	[Ini[3] = I]
+		:init:(0):Ini[0] = 0
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 2
+		:init:(0):Ini[3] = 3
+		:init:(0):Ini[4] = 0
+		:init:(0):Ini[5] = 0
+ 14:	proc  0 (:init::1) leader_pre.pml:116 (state 17)	[I = (I+1)]
+		I = 4
+ 15:	proc  0 (:init::1) leader_pre.pml:107 (state 2)	[((I<=5))]
+ 16:	proc  0 (:init::1) leader_pre.pml:113 (state 11)	[(((Ini[4]==0)&&(5>=5)))]
+ 17:	proc  0 (:init::1) leader_pre.pml:113 (state 12)	[Ini[4] = I]
+		:init:(0):Ini[0] = 0
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 2
+		:init:(0):Ini[3] = 3
+		:init:(0):Ini[4] = 4
+		:init:(0):Ini[5] = 0
+ 18:	proc  0 (:init::1) leader_pre.pml:116 (state 17)	[I = (I+1)]
+		I = 5
+ 19:	proc  0 (:init::1) leader_pre.pml:107 (state 2)	[((I<=5))]
+ 20:	proc  0 (:init::1) leader_pre.pml:109 (state 3)	[(((Ini[0]==0)&&(5>=1)))]
+ 21:	proc  0 (:init::1) leader_pre.pml:109 (state 4)	[Ini[0] = I]
+		:init:(0):Ini[0] = 5
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 2
+		:init:(0):Ini[3] = 3
+		:init:(0):Ini[4] = 4
+		:init:(0):Ini[5] = 0
+ 22:	proc  0 (:init::1) leader_pre.pml:116 (state 17)	[I = (I+1)]
+		I = 6
+ 23:	proc  0 (:init::1) leader_pre.pml:117 (state 18)	[((I>5))]
+ 24:	proc  0 (:init::1) leader_pre.pml:106 (state 22)	[break]
+ 25:	proc  0 (:init::1) leader_pre.pml:121 (state 23)	[proc = 1]
+		:init:(0):proc = 1
+ 26:	proc  0 (:init::1) leader_pre.pml:123 (state 24)	[((proc<=5))]
+Starting nnode with pid 1
+ 27:	proc  0 (:init::1) creates proc  1 (nnode)
+ 27:	proc  0 (:init::1) leader_pre.pml:124 (state 25)	[(run nnode(q[(proc-1)],q[(proc%5)],Ini[(proc-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 28:	proc  0 (:init::1) leader_pre.pml:125 (state 26)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		:init:(0):proc = 2
+ 29:	proc  0 (:init::1) leader_pre.pml:123 (state 24)	[((proc<=5))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+Starting nnode with pid 2
+ 30:	proc  0 (:init::1) creates proc  2 (nnode)
+ 30:	proc  0 (:init::1) leader_pre.pml:124 (state 25)	[(run nnode(q[(proc-1)],q[(proc%5)],Ini[(proc-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 31:	proc  0 (:init::1) leader_pre.pml:125 (state 26)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		:init:(0):proc = 3
+ 32:	proc  0 (:init::1) leader_pre.pml:123 (state 24)	[((proc<=5))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+Starting nnode with pid 3
+ 33:	proc  0 (:init::1) creates proc  3 (nnode)
+ 33:	proc  0 (:init::1) leader_pre.pml:124 (state 25)	[(run nnode(q[(proc-1)],q[(proc%5)],Ini[(proc-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 34:	proc  0 (:init::1) leader_pre.pml:125 (state 26)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		:init:(0):proc = 4
+ 35:	proc  0 (:init::1) leader_pre.pml:123 (state 24)	[((proc<=5))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+Starting nnode with pid 4
+ 36:	proc  0 (:init::1) creates proc  4 (nnode)
+ 36:	proc  0 (:init::1) leader_pre.pml:124 (state 25)	[(run nnode(q[(proc-1)],q[(proc%5)],Ini[(proc-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 37:	proc  0 (:init::1) leader_pre.pml:125 (state 26)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		:init:(0):proc = 5
+ 38:	proc  0 (:init::1) leader_pre.pml:123 (state 24)	[((proc<=5))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+Starting nnode with pid 5
+ 39:	proc  0 (:init::1) creates proc  5 (nnode)
+ 39:	proc  0 (:init::1) leader_pre.pml:124 (state 25)	[(run nnode(q[(proc-1)],q[(proc%5)],Ini[(proc-1)]))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 40:	proc  0 (:init::1) leader_pre.pml:125 (state 26)	[proc = (proc+1)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		:init:(0):proc = 6
+ 41:	proc  0 (:init::1) leader_pre.pml:126 (state 27)	[((proc>5))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+ 42:	proc  0 (:init::1) leader_pre.pml:122 (state 31)	[break]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+                          MSC: #4
+ 43:	proc  5 (nnode:1) leader_pre.pml:52 (state 1)	[printf('MSC: #%d\\n',mynumber)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+          MSC: #5
+ 44:	proc  1 (nnode:1) leader_pre.pml:52 (state 1)	[printf('MSC: #%d\\n',mynumber)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+                  MSC: #2
+ 45:	proc  3 (nnode:1) leader_pre.pml:52 (state 1)	[printf('MSC: #%d\\n',mynumber)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+ 46:	proc  5 (nnode:1) leader_pre.pml:53 Send one,4	-> queue 1 (out)
+ 46:	proc  5 (nnode:1) leader_pre.pml:53 (state 2)	[out!one,mynumber]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [one,4]
+		queue 5 (nnode(5):inp): 
+              MSC: #1
+ 47:	proc  2 (nnode:1) leader_pre.pml:52 (state 1)	[printf('MSC: #%d\\n',mynumber)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 48:	proc  3 (nnode:1) leader_pre.pml:53 Send one,2	-> queue 4 (out)
+ 48:	proc  3 (nnode:1) leader_pre.pml:53 (state 2)	[out!one,mynumber]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2]
+		queue 3 (nnode(3):inp): 
+ 49:	proc  5 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [one,4]
+		queue 5 (nnode(5):inp): 
+ 50:	proc  2 (nnode:1) leader_pre.pml:53 Send one,1	-> queue 3 (out)
+ 50:	proc  2 (nnode:1) leader_pre.pml:53 (state 2)	[out!one,mynumber]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): [one,1]
+		queue 2 (nnode(2):inp): 
+ 51:	proc  3 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2]
+		queue 3 (nnode(3):inp): [one,1]
+ 52:	proc  2 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): [one,1]
+		queue 2 (nnode(2):inp): 
+ 53:	proc  1 (nnode:1) leader_pre.pml:53 Send one,5	-> queue 2 (out)
+ 53:	proc  1 (nnode:1) leader_pre.pml:53 (state 2)	[out!one,mynumber]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): [one,5]
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): [one,5]
+		queue 1 (nnode(1):inp): [one,4]
+                      MSC: #3
+ 54:	proc  4 (nnode:1) leader_pre.pml:52 (state 1)	[printf('MSC: #%d\\n',mynumber)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): [one,5]
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,2]
+ 55:	proc  2 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 2 (inp)
+ 55:	proc  2 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		nnode(2):nr = 5
+		queue 3 (nnode(2):out): [one,1]
+		queue 2 (nnode(2):inp): 
+ 56:	proc  1 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,1]
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): [one,4]
+ 57:	proc  3 (nnode:1) leader_pre.pml:55 Recv one,1	<- queue 3 (inp)
+ 57:	proc  3 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		nnode(3):nr = 1
+		queue 4 (nnode(3):out): [one,2]
+		queue 3 (nnode(3):inp): 
+ 58:	proc  2 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): [one,4]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 59:	proc  1 (nnode:1) leader_pre.pml:55 Recv one,4	<- queue 1 (inp)
+ 59:	proc  1 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		nnode(1):nr = 4
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+ 60:	proc  2 (nnode:1) leader_pre.pml:59 (state 5)	[((nr!=maximum))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 61:	proc  4 (nnode:1) leader_pre.pml:53 Send one,3	-> queue 5 (out)
+ 61:	proc  4 (nnode:1) leader_pre.pml:53 (state 2)	[out!one,mynumber]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): [one,3]
+		queue 5 (nnode(4):out): [one,3]
+		queue 4 (nnode(4):inp): [one,2]
+ 62:	proc  5 (nnode:1) leader_pre.pml:55 Recv one,3	<- queue 5 (inp)
+ 62:	proc  5 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		nnode(5):nr = 3
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+ 63:	proc  1 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+ 64:	proc  3 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2]
+		queue 3 (nnode(3):inp): 
+ 65:	proc  3 (nnode:1) leader_pre.pml:59 (state 5)	[((nr!=maximum))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2]
+		queue 3 (nnode(3):inp): 
+ 66:	proc  3 (nnode:1) leader_pre.pml:60 Send two,1	-> queue 4 (out)
+ 66:	proc  3 (nnode:1) leader_pre.pml:60 (state 6)	[out!two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2][two,1]
+		queue 3 (nnode(3):inp): 
+ 67:	proc  2 (nnode:1) leader_pre.pml:60 Send two,5	-> queue 3 (out)
+ 67:	proc  2 (nnode:1) leader_pre.pml:60 (state 6)	[out!two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): [two,5]
+		queue 2 (nnode(2):inp): 
+ 68:	proc  4 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,2][two,1]
+ 69:	proc  3 (nnode:1) leader_pre.pml:61 (state 7)	[neighbourR = nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		nnode(3):neighbourR = 1
+		queue 4 (nnode(3):out): [one,2][two,1]
+		queue 3 (nnode(3):inp): [two,5]
+ 70:	proc  1 (nnode:1) leader_pre.pml:59 (state 5)	[((nr!=maximum))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+ 71:	proc  3 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2][two,1]
+		queue 3 (nnode(3):inp): [two,5]
+ 72:	proc  3 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2][two,1]
+		queue 3 (nnode(3):inp): [two,5]
+ 73:	proc  3 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [one,2][two,1]
+		queue 3 (nnode(3):inp): [two,5]
+ 74:	proc  2 (nnode:1) leader_pre.pml:61 (state 7)	[neighbourR = nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [one,2][two,1]
+		queue 5 (q[4]): 
+		nnode(2):neighbourR = 5
+		queue 3 (nnode(2):out): [two,5]
+		queue 2 (nnode(2):inp): 
+ 75:	proc  4 (nnode:1) leader_pre.pml:55 Recv one,2	<- queue 4 (inp)
+ 75:	proc  4 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [two,5]
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		nnode(4):nr = 2
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1]
+ 76:	proc  3 (nnode:1) leader_pre.pml:70 Recv two,5	<- queue 3 (inp)
+ 76:	proc  3 (nnode:1) leader_pre.pml:70 (state 17)	[inp?two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		nnode(3):nr = 5
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 77:	proc  2 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 78:	proc  3 (nnode:1) leader_pre.pml:72 (state 18)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 79:	proc  4 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1]
+ 80:	proc  1 (nnode:1) leader_pre.pml:60 Send two,4	-> queue 2 (out)
+ 80:	proc  1 (nnode:1) leader_pre.pml:60 (state 6)	[out!two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): [two,4]
+		queue 1 (nnode(1):inp): 
+ 81:	proc  3 (nnode:1) leader_pre.pml:77 (state 22)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 82:	proc  2 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): [two,4]
+ 83:	proc  3 (nnode:1) leader_pre.pml:78 (state 23)	[Active = 0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		nnode(3):Active = 0
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 84:	proc  4 (nnode:1) leader_pre.pml:59 (state 5)	[((nr!=maximum))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1]
+ 85:	proc  2 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): [two,4]
+ 86:	proc  5 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+ 87:	proc  5 (nnode:1) leader_pre.pml:59 (state 5)	[((nr!=maximum))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [two,4]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+ 88:	proc  2 (nnode:1) leader_pre.pml:70 Recv two,4	<- queue 2 (inp)
+ 88:	proc  2 (nnode:1) leader_pre.pml:70 (state 17)	[inp?two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		nnode(2):nr = 4
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 89:	proc  2 (nnode:1) leader_pre.pml:72 (state 18)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 90:	proc  3 (nnode:1) leader_pre.pml:80 (state 25)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 91:	proc  1 (nnode:1) leader_pre.pml:61 (state 7)	[neighbourR = nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		nnode(1):neighbourR = 4
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+ 92:	proc  5 (nnode:1) leader_pre.pml:60 Send two,3	-> queue 1 (out)
+ 92:	proc  5 (nnode:1) leader_pre.pml:60 (state 6)	[out!two,nr]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [two,3]
+		queue 5 (nnode(5):inp): 
+ 93:	proc  4 (nnode:1) leader_pre.pml:60 Send two,2	-> queue 5 (out)
+ 93:	proc  4 (nnode:1) leader_pre.pml:60 (state 6)	[out!two,nr]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 5 (nnode(4):out): [two,2]
+		queue 4 (nnode(4):inp): [two,1]
+ 94:	proc  3 (nnode:1) leader_pre.pml:83 (state 29)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+ 95:	proc  1 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): [two,3]
+ 96:	proc  2 (nnode:1) leader_pre.pml:74 (state 19)	[(((neighbourR>nr)&&(neighbourR>maximum)))]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 97:	proc  5 (nnode:1) leader_pre.pml:61 (state 7)	[neighbourR = nr]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		nnode(5):neighbourR = 3
+		queue 1 (nnode(5):out): [two,3]
+		queue 5 (nnode(5):inp): [two,2]
+ 98:	proc  2 (nnode:1) leader_pre.pml:75 (state 20)	[maximum = neighbourR]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		nnode(2):maximum = 5
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+ 99:	proc  2 (nnode:1) leader_pre.pml:76 Send one,5	-> queue 3 (out)
+ 99:	proc  2 (nnode:1) leader_pre.pml:76 (state 21)	[out!one,neighbourR]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,5]
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 3 (nnode(2):out): [one,5]
+		queue 2 (nnode(2):inp): 
+100:	proc  1 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,5]
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): [two,3]
+101:	proc  5 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,5]
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 1 (nnode(5):out): [two,3]
+		queue 5 (nnode(5):inp): [two,2]
+102:	proc  3 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [one,5]
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): [one,5]
+103:	proc  3 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 3 (inp)
+103:	proc  3 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		nnode(3):nr = 5
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+104:	proc  3 (nnode:1) leader_pre.pml:66 (state 13)	[else]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1]
+		queue 3 (nnode(3):inp): 
+105:	proc  2 (nnode:1) leader_pre.pml:80 (state 25)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+106:	proc  2 (nnode:1) leader_pre.pml:83 (state 29)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1]
+		queue 5 (q[4]): [two,2]
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+107:	proc  3 (nnode:1) leader_pre.pml:67 Send one,5	-> queue 4 (out)
+107:	proc  3 (nnode:1) leader_pre.pml:67 (state 14)	[out!one,nr]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1][one,5]
+		queue 3 (nnode(3):inp): 
+108:	proc  5 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 1 (nnode(5):out): [two,3]
+		queue 5 (nnode(5):inp): [two,2]
+109:	proc  1 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): [two,3]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): [two,3]
+110:	proc  1 (nnode:1) leader_pre.pml:70 Recv two,3	<- queue 1 (inp)
+110:	proc  1 (nnode:1) leader_pre.pml:70 (state 17)	[inp?two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		nnode(1):nr = 3
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+111:	proc  2 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+112:	proc  4 (nnode:1) leader_pre.pml:61 (state 7)	[neighbourR = nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		nnode(4):neighbourR = 2
+		queue 5 (nnode(4):out): [two,2]
+		queue 4 (nnode(4):inp): [two,1][one,5]
+113:	proc  3 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1][one,5]
+		queue 3 (nnode(3):inp): 
+114:	proc  3 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 4 (nnode(3):out): [two,1][one,5]
+		queue 3 (nnode(3):inp): 
+115:	proc  5 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): [two,2]
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): [two,2]
+116:	proc  5 (nnode:1) leader_pre.pml:70 Recv two,2	<- queue 5 (inp)
+116:	proc  5 (nnode:1) leader_pre.pml:70 (state 17)	[inp?two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		nnode(5):nr = 2
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+117:	proc  1 (nnode:1) leader_pre.pml:72 (state 18)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+118:	proc  1 (nnode:1) leader_pre.pml:77 (state 22)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+119:	proc  5 (nnode:1) leader_pre.pml:72 (state 18)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+120:	proc  5 (nnode:1) leader_pre.pml:77 (state 22)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+121:	proc  1 (nnode:1) leader_pre.pml:78 (state 23)	[Active = 0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		nnode(1):Active = 0
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+122:	proc  1 (nnode:1) leader_pre.pml:80 (state 25)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+123:	proc  1 (nnode:1) leader_pre.pml:83 (state 29)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+124:	proc  1 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+125:	proc  5 (nnode:1) leader_pre.pml:78 (state 23)	[Active = 0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		nnode(5):Active = 0
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+126:	proc  4 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1][one,5]
+127:	proc  5 (nnode:1) leader_pre.pml:80 (state 25)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+128:	proc  4 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1][one,5]
+129:	proc  5 (nnode:1) leader_pre.pml:83 (state 29)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+130:	proc  5 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+131:	proc  4 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [two,1][one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [two,1][one,5]
+132:	proc  4 (nnode:1) leader_pre.pml:70 Recv two,1	<- queue 4 (inp)
+132:	proc  4 (nnode:1) leader_pre.pml:70 (state 17)	[inp?two,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		nnode(4):nr = 1
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+133:	proc  4 (nnode:1) leader_pre.pml:72 (state 18)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+134:	proc  4 (nnode:1) leader_pre.pml:77 (state 22)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+135:	proc  4 (nnode:1) leader_pre.pml:78 (state 23)	[Active = 0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		nnode(4):Active = 0
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+136:	proc  4 (nnode:1) leader_pre.pml:80 (state 25)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+137:	proc  4 (nnode:1) leader_pre.pml:83 (state 29)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+138:	proc  4 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [one,5]
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): [one,5]
+139:	proc  4 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 4 (inp)
+139:	proc  4 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(4):nr = 5
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+140:	proc  4 (nnode:1) leader_pre.pml:66 (state 13)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+141:	proc  4 (nnode:1) leader_pre.pml:67 Send one,5	-> queue 5 (out)
+141:	proc  4 (nnode:1) leader_pre.pml:67 (state 14)	[out!one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [one,5]
+		queue 5 (nnode(4):out): [one,5]
+		queue 4 (nnode(4):inp): 
+142:	proc  4 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [one,5]
+		queue 5 (nnode(4):out): [one,5]
+		queue 4 (nnode(4):inp): 
+143:	proc  4 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [one,5]
+		queue 5 (nnode(4):out): [one,5]
+		queue 4 (nnode(4):inp): 
+144:	proc  5 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 5 (inp)
+144:	proc  5 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(5):nr = 5
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+145:	proc  5 (nnode:1) leader_pre.pml:66 (state 13)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+146:	proc  5 (nnode:1) leader_pre.pml:67 Send one,5	-> queue 1 (out)
+146:	proc  5 (nnode:1) leader_pre.pml:67 (state 14)	[out!one,nr]
+		queue 1 (q[0]): [one,5]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [one,5]
+		queue 5 (nnode(5):inp): 
+147:	proc  5 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): [one,5]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [one,5]
+		queue 5 (nnode(5):inp): 
+148:	proc  1 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 1 (inp)
+148:	proc  1 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(1):nr = 5
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+149:	proc  5 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+150:	proc  1 (nnode:1) leader_pre.pml:66 (state 13)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+151:	proc  1 (nnode:1) leader_pre.pml:67 Send one,5	-> queue 2 (out)
+151:	proc  1 (nnode:1) leader_pre.pml:67 (state 14)	[out!one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [one,5]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): [one,5]
+		queue 1 (nnode(1):inp): 
+152:	proc  2 (nnode:1) leader_pre.pml:55 Recv one,5	<- queue 2 (inp)
+152:	proc  2 (nnode:1) leader_pre.pml:55 (state 3)	[inp?one,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(2):nr = 5
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+153:	proc  2 (nnode:1) leader_pre.pml:57 (state 4)	[(Active)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+154:	proc  1 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+155:	proc  1 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+156:	proc  2 (nnode:1) leader_pre.pml:62 (state 8)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+157:	proc  2 (nnode:1) leader_pre.pml:63 (state 9)	[know_winner = 1]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(2):know_winner = 1
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+158:	proc  2 (nnode:1) leader_pre.pml:64 Send winner,5	-> queue 3 (out)
+158:	proc  2 (nnode:1) leader_pre.pml:64 (state 10)	[out!winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): [winner,5]
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): [winner,5]
+		queue 2 (nnode(2):inp): 
+159:	proc  3 (nnode:1) leader_pre.pml:83 Recv winner,5	<- queue 3 (inp)
+159:	proc  3 (nnode:1) leader_pre.pml:83 (state 30)	[inp?winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(3):nr = 5
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+160:	proc  3 (nnode:1) leader_pre.pml:85 (state 31)	[((nr!=mynumber))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+161:	proc  2 (nnode:1) leader_pre.pml:66 (state 12)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+                  MSC: LOST
+162:	proc  3 (nnode:1) leader_pre.pml:86 (state 32)	[printf('MSC: LOST\\n')]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+163:	proc  2 (nnode:1) leader_pre.pml:70 (state 16)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+164:	proc  2 (nnode:1) leader_pre.pml:98 (state 46)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+165:	proc  3 (nnode:1) leader_pre.pml:92 (state 38)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+166:	proc  3 (nnode:1) leader_pre.pml:94 (state 40)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+167:	proc  3 (nnode:1) leader_pre.pml:94 Send winner,5	-> queue 4 (out)
+167:	proc  3 (nnode:1) leader_pre.pml:94 (state 41)	[out!winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): [winner,5]
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): [winner,5]
+		queue 3 (nnode(3):inp): 
+168:	proc  4 (nnode:1) leader_pre.pml:83 Recv winner,5	<- queue 4 (inp)
+168:	proc  4 (nnode:1) leader_pre.pml:83 (state 30)	[inp?winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(4):nr = 5
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+169:	proc  3 (nnode:1) leader_pre.pml:96 (state 43)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+170:	proc  4 (nnode:1) leader_pre.pml:85 (state 31)	[((nr!=mynumber))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+                      MSC: LOST
+171:	proc  4 (nnode:1) leader_pre.pml:86 (state 32)	[printf('MSC: LOST\\n')]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+172:	proc  3 (nnode:1) leader_pre.pml:96 (state 44)	[goto :b0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 4 (nnode(3):out): 
+		queue 3 (nnode(3):inp): 
+173:	proc  4 (nnode:1) leader_pre.pml:92 (state 38)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+174:	proc  4 (nnode:1) leader_pre.pml:94 (state 40)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+175:	proc  4 (nnode:1) leader_pre.pml:94 Send winner,5	-> queue 5 (out)
+175:	proc  4 (nnode:1) leader_pre.pml:94 (state 41)	[out!winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): [winner,5]
+		queue 5 (nnode(4):out): [winner,5]
+		queue 4 (nnode(4):inp): 
+176:	proc  5 (nnode:1) leader_pre.pml:83 Recv winner,5	<- queue 5 (inp)
+176:	proc  5 (nnode:1) leader_pre.pml:83 (state 30)	[inp?winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(5):nr = 5
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+177:	proc  5 (nnode:1) leader_pre.pml:85 (state 31)	[((nr!=mynumber))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+                          MSC: LOST
+178:	proc  5 (nnode:1) leader_pre.pml:86 (state 32)	[printf('MSC: LOST\\n')]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+179:	proc  4 (nnode:1) leader_pre.pml:96 (state 43)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+180:	proc  5 (nnode:1) leader_pre.pml:92 (state 38)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+181:	proc  5 (nnode:1) leader_pre.pml:94 (state 40)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+182:	proc  5 (nnode:1) leader_pre.pml:94 Send winner,5	-> queue 1 (out)
+182:	proc  5 (nnode:1) leader_pre.pml:94 (state 41)	[out!winner,nr]
+		queue 1 (q[0]): [winner,5]
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): [winner,5]
+		queue 5 (nnode(5):inp): 
+183:	proc  1 (nnode:1) leader_pre.pml:83 Recv winner,5	<- queue 1 (inp)
+183:	proc  1 (nnode:1) leader_pre.pml:83 (state 30)	[inp?winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(1):nr = 5
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+184:	proc  4 (nnode:1) leader_pre.pml:96 (state 44)	[goto :b0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 5 (nnode(4):out): 
+		queue 4 (nnode(4):inp): 
+185:	proc  5 (nnode:1) leader_pre.pml:96 (state 43)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+186:	proc  5 (nnode:1) leader_pre.pml:96 (state 44)	[goto :b0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 1 (nnode(5):out): 
+		queue 5 (nnode(5):inp): 
+187:	proc  1 (nnode:1) leader_pre.pml:87 (state 33)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+187:	proc  5 (nnode:1)                           terminates
+          MSC: LEADER
+188:	proc  1 (nnode:1) leader_pre.pml:88 (state 34)	[printf('MSC: LEADER\\n')]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+188:	proc  4 (nnode:1)                       terminates
+188:	proc  3 (nnode:1)                   terminates
+189:	proc  1 (nnode:1) leader_pre.pml:89 (state 35)	[nr_leaders = (nr_leaders+1)]
+		nr_leaders = 1
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+190:	proc  1 (nnode:1) leader_pre.pml:90 (state 36)	[assert((nr_leaders==1))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+191:	proc  1 (nnode:1) leader_pre.pml:92 (state 38)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+192:	proc  1 (nnode:1) leader_pre.pml:94 (state 40)	[else]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+193:	proc  1 (nnode:1) leader_pre.pml:94 Send winner,5	-> queue 2 (out)
+193:	proc  1 (nnode:1) leader_pre.pml:94 (state 41)	[out!winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [winner,5]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): [winner,5]
+		queue 1 (nnode(1):inp): 
+194:	proc  1 (nnode:1) leader_pre.pml:96 (state 43)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): [winner,5]
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): [winner,5]
+		queue 1 (nnode(1):inp): 
+195:	proc  2 (nnode:1) leader_pre.pml:83 Recv winner,5	<- queue 2 (inp)
+195:	proc  2 (nnode:1) leader_pre.pml:83 (state 30)	[inp?winner,nr]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		nnode(2):nr = 5
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+196:	proc  1 (nnode:1) leader_pre.pml:96 (state 44)	[goto :b0]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+197:	proc  2 (nnode:1) leader_pre.pml:85 (state 31)	[((nr!=mynumber))]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+              MSC: LOST
+198:	proc  2 (nnode:1) leader_pre.pml:86 (state 32)	[printf('MSC: LOST\\n')]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+199:	proc  2 (nnode:1) leader_pre.pml:92 (state 38)	[.(goto)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+200:	proc  2 (nnode:1) leader_pre.pml:93 (state 39)	[(know_winner)]
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 3
+		nr_leaders = 1
+		I = 6
+		queue 1 (q[0]): 
+		queue 2 (q[1]): 
+		queue 3 (q[2]): 
+		queue 4 (q[3]): 
+		queue 5 (q[4]): 
+200:	proc  2 (nnode:1) leader_pre.pml:96 (state 43)
+		nnode(2):neighbourR = 5
+		nnode(2):maximum = 5
+		nnode(2):nr = 5
+		nnode(2):know_winner = 1
+		nnode(2):Active = 1
+		nnode(2):mynumber = 1
+		queue 3 (nnode(2):out): 
+		queue 2 (nnode(2):inp): 
+200:	proc  1 (nnode:1) leader_pre.pml:98 (state 48) <valid end state>
+		nnode(1):neighbourR = 4
+		nnode(1):maximum = 5
+		nnode(1):nr = 5
+		nnode(1):know_winner = 0
+		nnode(1):Active = 0
+		nnode(1):mynumber = 5
+		queue 2 (nnode(1):out): 
+		queue 1 (nnode(1):inp): 
+200:	proc  0 (:init::1) leader_pre.pml:130 (state 33) <valid end state>
+		:init:(0):Ini[0] = 5
+		:init:(0):Ini[1] = 1
+		:init:(0):Ini[2] = 2
+		:init:(0):Ini[3] = 3
+		:init:(0):Ini[4] = 4
+		:init:(0):Ini[5] = 0
+		:init:(0):proc = 6
+6 processes created
+exit: 0

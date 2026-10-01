@@ -1,0 +1,334 @@
+  0:	proc  - (:root:) creates proc  0 (user)
+  0:	proc  - (:root:) creates proc  1 (user)
+  0:	proc  - (:root:) creates proc  2 (user)
+  0:	proc  - (:root:) creates proc  3 (user)
+  0:	proc  - (:root:) creates proc  4 (user)
+ltl bounded_bypass: (! ((user[1]@again))) || (<> ((user[1]@cs)))
+  1:	proc  2 (user:1) petersonN.pml:13 (state 1)	[k = 0]
+		user(2):k = 0
+  2:	proc  3 (user:1) petersonN.pml:13 (state 1)	[k = 0]
+		user(3):k = 0
+  3:	proc  0 (user:1) petersonN.pml:13 (state 1)	[k = 0]
+		user(0):k = 0
+  4:	proc  2 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+  5:	proc  2 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+  6:	proc  3 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+  7:	proc  0 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+  8:	proc  2 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+  9:	proc  3 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+ 10:	proc  3 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+ 11:	proc  1 (user:1) petersonN.pml:13 (state 1)	[k = 0]
+		user(1):k = 0
+ 12:	proc  4 (user:1) petersonN.pml:13 (state 1)	[k = 0]
+		user(4):k = 0
+ 13:	proc  2 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 2
+		turn[1] = 0
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+ 14:	proc  4 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+ 15:	proc  2 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(2):j = 0
+ 16:	proc  3 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 3
+		turn[1] = 0
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+ 17:	proc  3 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(3):j = 0
+ 18:	proc  1 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+ 19:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 20:	proc  4 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+ 21:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 22:	proc  2 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 23:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 24:	proc  2 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 25:	proc  0 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+ 26:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 27:	proc  0 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+ 28:	proc  1 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+ 29:	proc  2 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 30:	proc  1 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+ 31:	proc  4 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+ 32:	proc  2 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(2):j = 1
+ 33:	proc  4 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 4
+		turn[1] = 0
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+ 34:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 35:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 1
+ 36:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 37:	proc  0 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 0
+		turn[1] = 0
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+ 38:	proc  4 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(4):j = 0
+ 39:	proc  0 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(0):j = 0
+ 40:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 41:	proc  2 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 42:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 43:	proc  1 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 1
+		turn[1] = 0
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+ 44:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 45:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 46:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 47:	proc  4 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 48:	proc  1 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(1):j = 0
+ 49:	proc  4 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 50:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 51:	proc  4 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(4):j = 1
+ 52:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 53:	proc  1 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 54:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 55:	proc  0 (user:1) petersonN.pml:21 (state 6)	[((j==_pid))]
+ 56:	proc  2 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 57:	proc  2 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 58:	proc  2 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 59:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 2
+ 60:	proc  0 (user:1) petersonN.pml:22 (state 7)	[j = (j+1)]
+		user(0):j = 1
+ 61:	proc  4 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 62:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 63:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 64:	proc  0 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 65:	proc  1 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 66:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 67:	proc  4 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 68:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 69:	proc  0 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 70:	proc  2 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(2):j = 2
+ 71:	proc  2 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 72:	proc  0 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 73:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 74:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 75:	proc  1 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 76:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 77:	proc  2 (user:1) petersonN.pml:21 (state 6)	[((j==_pid))]
+ 78:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 79:	proc  0 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(0):j = 2
+ 80:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 81:	proc  2 (user:1) petersonN.pml:22 (state 7)	[j = (j+1)]
+		user(2):j = 3
+ 82:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 3
+ 83:	proc  4 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+ 84:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 85:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 86:	proc  3 (user:1) petersonN.pml:21 (state 6)	[((j==_pid))]
+ 87:	proc  0 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 88:	proc  3 (user:1) petersonN.pml:22 (state 7)	[j = (j+1)]
+		user(3):j = 4
+ 89:	proc  4 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(4):j = 2
+ 90:	proc  4 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+ 91:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 92:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 93:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 94:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+ 95:	proc  0 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 96:	proc  2 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 97:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+ 98:	proc  4 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+ 99:	proc  2 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+100:	proc  4 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+101:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+102:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+103:	proc  0 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+104:	proc  4 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(4):j = 3
+105:	proc  4 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+106:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+107:	proc  0 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+108:	proc  0 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(0):j = 3
+109:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+110:	proc  2 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+111:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+112:	proc  0 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+113:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+114:	proc  2 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(2):j = 4
+115:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 5
+116:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+117:	proc  0 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+118:	proc  0 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+119:	proc  4 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+120:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+121:	proc  4 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+122:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+123:	proc  3 (user:1) petersonN.pml:28 (state 12)	[((j>=5))]
+124:	proc  4 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(4):j = 4
+125:	proc  4 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+126:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+127:	proc  2 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+128:	proc  0 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+129:	proc  4 (user:1) petersonN.pml:21 (state 6)	[((j==_pid))]
+130:	proc  3 (user:1) petersonN.pml:29 (state 13)	[goto :b1]
+131:	proc  3 (user:1) petersonN.pml:32 (state 19)	[k = (k+1)]
+		user(3):k = 1
+132:	proc  0 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(0):j = 4
+133:	proc  0 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+134:	proc  3 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+135:	proc  3 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+136:	proc  3 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+		flag[0] = 0
+		flag[1] = 0
+		flag[2] = 0
+		flag[3] = 1
+		flag[4] = 0
+137:	proc  4 (user:1) petersonN.pml:22 (state 7)	[j = (j+1)]
+		user(4):j = 5
+138:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+139:	proc  2 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+140:	proc  3 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 1
+		turn[1] = 3
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+141:	proc  3 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(3):j = 0
+142:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+143:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+144:	proc  2 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+145:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+146:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+147:	proc  4 (user:1) petersonN.pml:28 (state 12)	[((j>=5))]
+148:	proc  4 (user:1) petersonN.pml:29 (state 13)	[goto :b1]
+149:	proc  2 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+150:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+151:	proc  2 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(2):j = 5
+152:	proc  2 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+153:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+154:	proc  4 (user:1) petersonN.pml:32 (state 19)	[k = (k+1)]
+		user(4):k = 1
+155:	proc  4 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+156:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+157:	proc  4 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+158:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+159:	proc  2 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+160:	proc  0 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+161:	proc  2 (user:1) petersonN.pml:28 (state 12)	[((j>=5))]
+162:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 1
+163:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+164:	proc  4 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+		flag[0] = 0
+		flag[1] = 0
+		flag[2] = 0
+		flag[3] = 1
+		flag[4] = 1
+165:	proc  4 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 1
+		turn[1] = 4
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+166:	proc  4 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(4):j = 0
+167:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+168:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+169:	proc  0 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+170:	proc  4 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+171:	proc  0 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+172:	proc  4 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+173:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+174:	proc  2 (user:1) petersonN.pml:29 (state 13)	[goto :b1]
+175:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+176:	proc  2 (user:1) petersonN.pml:32 (state 19)	[k = (k+1)]
+		user(2):k = 1
+177:	proc  2 (user:1) petersonN.pml:37 (state 23)	[.(goto)]
+178:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+179:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 2
+180:	proc  4 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+181:	proc  4 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(4):j = 1
+182:	proc  0 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(0):j = 5
+183:	proc  2 (user:1) petersonN.pml:15 (state 2)	[((k<(5-1)))]
+184:	proc  2 (user:1) petersonN.pml:16 (state 3)	[flag[_pid] = k]
+		flag[0] = 0
+		flag[1] = 0
+		flag[2] = 1
+		flag[3] = 1
+		flag[4] = 1
+185:	proc  0 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+186:	proc  0 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+187:	proc  3 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+188:	proc  3 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+189:	proc  3 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+190:	proc  4 (user:1) petersonN.pml:31 (state 15)	[.(goto)]
+191:	proc  2 (user:1) petersonN.pml:17 (state 4)	[turn[k] = _pid]
+		turn[0] = 1
+		turn[1] = 2
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+192:	proc  4 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+193:	proc  0 (user:1) petersonN.pml:23 (state 8)	[((j!=_pid))]
+194:	proc  0 (user:1) petersonN.pml:28 (state 12)	[((j>=5))]
+195:	proc  3 (user:1) petersonN.pml:25 (state 9)	[((j<5))]
+196:	proc  2 (user:1) petersonN.pml:19 (state 5)	[j = 0]
+		user(2):j = 0
+197:	proc  3 (user:1) petersonN.pml:26 (state 10)	[(((flag[j]<k)||(turn[k]!=_pid)))]
+198:	proc  3 (user:1) petersonN.pml:27 (state 11)	[j = (j+1)]
+		user(3):j = 3
+199:	proc  0 (user:1) petersonN.pml:29 (state 13)	[goto :b1]
+200:	proc  2 (user:1) petersonN.pml:32 (state 17)	[.(goto)]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 5
+		turn[0] = 1
+		turn[1] = 2
+		turn[2] = 0
+		turn[3] = 0
+		turn[4] = 0
+		flag[0] = 0
+		flag[1] = 0
+		flag[2] = 1
+		flag[3] = 1
+		flag[4] = 1
+		ncrit = 0
+		again = 0
+		cs = 0
+200:	proc  4 (user:1) petersonN.pml:20 (state 16)
+		user(4):k = 1
+		user(4):j = 1
+200:	proc  3 (user:1) petersonN.pml:31 (state 15)
+		user(3):k = 1
+		user(3):j = 3
+200:	proc  2 (user:1) petersonN.pml:20 (state 16)
+		user(2):k = 1
+		user(2):j = 0
+200:	proc  1 (user:1) petersonN.pml:26 (state 10)
+		user(1):k = 0
+		user(1):j = 0
+200:	proc  0 (user:1) petersonN.pml:32 (state 19)
+		user(0):k = 0
+		user(0):j = 5
+5 processes created
+exit: 0

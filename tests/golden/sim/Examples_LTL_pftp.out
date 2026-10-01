@@ -1,0 +1,2454 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+ltl p1: ((! ((len(flow_to_ses[1])>0))) || (flow_to_ses[1]?[white])) U (flow_to_ses[1]?[red])
+ltl p2: (! (flow_to_ses[1]?[blue])) U (flow_to_ses[1]?[red])
+ltl p3: <> (flow_to_ses[1]?[blue])
+Starting fc with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (fc)
+  1:	proc  0 (:init::1) pftp.pml:201 (state 1)	[(run fc(ses_to_flow[0],dll_to_flow[1],flow_to_ses[0],dll_to_flow[0]))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+Starting fc with pid 2
+  2:	proc  0 (:init::1) creates proc  2 (fc)
+  2:	proc  0 (:init::1) pftp.pml:202 (state 2)	[(run fc(ses_to_flow[1],dll_to_flow[0],flow_to_ses[1],dll_to_flow[1]))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+Starting upper_s with pid 3
+  3:	proc  0 (:init::1) creates proc  3 (upper_s)
+  3:	proc  0 (:init::1) pftp.pml:203 (state 3)	[(run upper_s(ses_to_flow[0],flow_to_ses[0]))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+Starting upper_r with pid 4
+  4:	proc  0 (:init::1) creates proc  4 (upper_r)
+  4:	proc  0 (:init::1) pftp.pml:204 (state 4)	[(run upper_r(flow_to_ses[1]))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+  5:	proc  3 (upper_s:1) pftp.pml:147 Send 5,0	-> queue 1 (s2f)
+  5:	proc  3 (upper_s:1) pftp.pml:147 (state 1)	[s2f!sync,toggle]
+		queue 1 (ses_to_flow[0]): [5,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [5,0]
+  6:	proc  1 (fc:1) pftp.pml:54 (state 1)	[((((window<2)&&nempty(s2f))&&nfull(f2d)))]
+		queue 1 (ses_to_flow[0]): [5,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [5,0]
+  7:	proc  1 (fc:1) pftp.pml:55 Recv 5,0	<- queue 1 (s2f)
+  7:	proc  1 (fc:1) pftp.pml:55 (state 2)	[s2f?type,x]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):x = 0
+		fc(1):type = 5
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+  8:	proc  1 (fc:1) pftp.pml:56 (state 3)	[window = (window+1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):window = 1
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+  9:	proc  1 (fc:1) pftp.pml:57 (state 4)	[busy[s] = 1]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 10:	proc  1 (fc:1) pftp.pml:58 (state 5)	[O_buf[s] = type]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):O_buf[0] = 5
+		fc(1):O_buf[1] = 0
+		fc(1):O_buf[2] = 0
+		fc(1):O_buf[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 11:	proc  1 (fc:1) pftp.pml:59 Send 5,0	-> queue 4 (f2d)
+ 11:	proc  1 (fc:1) pftp.pml:59 (state 6)	[f2d!type,s]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 12:	proc  1 (fc:1) pftp.pml:63 (state 9)	[((type==sync))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 13:	proc  1 (fc:1) pftp.pml:64 (state 10)	[window = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):window = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 14:	proc  1 (fc:1) pftp.pml:65 (state 11)	[s = 4]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):s = 4
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 15:	proc  1 (fc:1) pftp.pml:67 (state 12)	[((s>0))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 16:	proc  1 (fc:1) pftp.pml:68 (state 13)	[s = (s-1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):s = 3
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 17:	proc  1 (fc:1) pftp.pml:69 (state 14)	[busy[s] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 18:	proc  1 (fc:1) pftp.pml:67 (state 12)	[((s>0))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 19:	proc  1 (fc:1) pftp.pml:68 (state 13)	[s = (s-1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):s = 2
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 20:	proc  1 (fc:1) pftp.pml:69 (state 14)	[busy[s] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 21:	proc  1 (fc:1) pftp.pml:67 (state 12)	[((s>0))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 22:	proc  1 (fc:1) pftp.pml:68 (state 13)	[s = (s-1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):s = 1
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 23:	proc  1 (fc:1) pftp.pml:69 (state 14)	[busy[s] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 24:	proc  1 (fc:1) pftp.pml:67 (state 12)	[((s>0))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 25:	proc  1 (fc:1) pftp.pml:68 (state 13)	[s = (s-1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):s = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 26:	proc  1 (fc:1) pftp.pml:69 (state 14)	[busy[s] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		fc(1):busy[0] = 0
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 27:	proc  1 (fc:1) pftp.pml:70 (state 15)	[((s==0))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 28:	proc  1 (fc:1) pftp.pml:66 (state 19)	[break]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [5,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [5,0]
+		queue 1 (fc(1):s2f): 
+ 29:	proc  2 (fc:1) pftp.pml:94 Recv 5,0	<- queue 4 (d2f)
+ 29:	proc  2 (fc:1) pftp.pml:94 (state 31)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 5
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 30:	proc  2 (fc:1) pftp.pml:101 (state 35)	[((type==sync))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 31:	proc  2 (fc:1) pftp.pml:102 (state 36)	[m = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 32:	proc  2 (fc:1) pftp.pml:104 (state 37)	[((m<4))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 33:	proc  2 (fc:1) pftp.pml:105 (state 38)	[received[m] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 0
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 34:	proc  2 (fc:1) pftp.pml:106 (state 39)	[m = (m+1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):m = 1
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 35:	proc  2 (fc:1) pftp.pml:104 (state 37)	[((m<4))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 36:	proc  2 (fc:1) pftp.pml:105 (state 38)	[received[m] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 0
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 37:	proc  2 (fc:1) pftp.pml:106 (state 39)	[m = (m+1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):m = 2
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 38:	proc  2 (fc:1) pftp.pml:104 (state 37)	[((m<4))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 39:	proc  2 (fc:1) pftp.pml:105 (state 38)	[received[m] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 0
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 40:	proc  2 (fc:1) pftp.pml:106 (state 39)	[m = (m+1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):m = 3
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 41:	proc  2 (fc:1) pftp.pml:104 (state 37)	[((m<4))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 42:	proc  2 (fc:1) pftp.pml:105 (state 38)	[received[m] = 0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 0
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 43:	proc  2 (fc:1) pftp.pml:106 (state 39)	[m = (m+1)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):m = 4
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 44:	proc  2 (fc:1) pftp.pml:107 (state 40)	[((m==4))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 45:	proc  2 (fc:1) pftp.pml:103 (state 44)	[break]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 46:	proc  3 (upper_s:1) pftp.pml:157 (state 11)	[.(goto)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 47:	proc  2 (fc:1) pftp.pml:110 Send 13,0	-> queue 3 (f2d)
+ 47:	proc  2 (fc:1) pftp.pml:110 (state 46)	[f2d!sync_ack,0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [13,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [13,0]
+		queue 2 (fc(2):s2f): 
+ 48:	proc  2 (fc:1) pftp.pml:131 (state 66)	[.(goto)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [13,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [13,0]
+		queue 2 (fc(2):s2f): 
+ 49:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [13,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [13,0]
+		queue 2 (fc(2):s2f): 
+ 50:	proc  1 (fc:1) pftp.pml:94 Recv 13,0	<- queue 3 (d2f)
+ 50:	proc  1 (fc:1) pftp.pml:94 (state 31)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):type = 13
+		fc(1):m = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 51:	proc  1 (fc:1) pftp.pml:111 (state 47)	[((type==sync_ack))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 52:	proc  1 (fc:1) pftp.pml:112 Send 13,0	-> queue 5 (f2s)
+ 52:	proc  1 (fc:1) pftp.pml:112 (state 48)	[f2s!sync_ack,0]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): [13,0]
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): [13,0]
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 53:	proc  3 (upper_s:1) pftp.pml:149 Recv 13,0	<- queue 5 (f2s0)
+ 53:	proc  3 (upper_s:1) pftp.pml:149 (state 2)	[f2s0?sync_ack,type]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		upper_s(3):type = 0
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 54:	proc  3 (upper_s:1) pftp.pml:152 (state 4)	[((type==toggle))]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 55:	proc  3 (upper_s:1) pftp.pml:152 (state 5)	[goto :b3]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 56:	proc  3 (upper_s:1) pftp.pml:157 (state 13)	[toggle = (1-toggle)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		upper_s(3):toggle = 1
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 57:	proc  3 (upper_s:1) pftp.pml:172 (state 24)	[.(goto)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): 
+ 58:	proc  1 (fc:1) pftp.pml:131 (state 66)	[.(goto)]
+		queue 1 (ses_to_flow[0]): 
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): 
+ 59:	proc  3 (upper_s:1) pftp.pml:160 Send 18,0	-> queue 1 (s2f)
+ 59:	proc  3 (upper_s:1) pftp.pml:160 (state 14)	[s2f!white,0]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0]
+ 60:	proc  3 (upper_s:1) pftp.pml:172 (state 24)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0]
+ 61:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 62:	proc  3 (upper_s:1) pftp.pml:160 Send 18,0	-> queue 1 (s2f)
+ 62:	proc  3 (upper_s:1) pftp.pml:160 (state 14)	[s2f!white,0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+ 63:	proc  3 (upper_s:1) pftp.pml:172 (state 24)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+ 64:	proc  1 (fc:1) pftp.pml:54 (state 1)	[((((window<2)&&nempty(s2f))&&nfull(f2d)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+ 65:	proc  1 (fc:1) pftp.pml:55 Recv 18,0	<- queue 1 (s2f)
+ 65:	proc  1 (fc:1) pftp.pml:55 (state 2)	[s2f?type,x]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):x = 0
+		fc(1):type = 18
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 66:	proc  1 (fc:1) pftp.pml:56 (state 3)	[window = (window+1)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):window = 1
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 67:	proc  1 (fc:1) pftp.pml:57 (state 4)	[busy[s] = 1]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 0
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 68:	proc  1 (fc:1) pftp.pml:58 (state 5)	[O_buf[s] = type]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):O_buf[0] = 18
+		fc(1):O_buf[1] = 0
+		fc(1):O_buf[2] = 0
+		fc(1):O_buf[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 69:	proc  1 (fc:1) pftp.pml:59 Send 18,0	-> queue 4 (f2d)
+ 69:	proc  1 (fc:1) pftp.pml:59 (state 6)	[f2d!type,s]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0]
+ 70:	proc  1 (fc:1) pftp.pml:61 (state 7)	[((type!=sync))]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0]
+ 71:	proc  1 (fc:1) pftp.pml:62 (state 8)	[s = ((s+1)%4)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		fc(1):s = 1
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0]
+ 72:	proc  3 (upper_s:1) pftp.pml:160 Send 18,0	-> queue 1 (s2f)
+ 72:	proc  3 (upper_s:1) pftp.pml:160 (state 14)	[s2f!white,0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+ 73:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+ 73:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 74:	proc  1 (fc:1) pftp.pml:54 (state 1)	[((((window<2)&&nempty(s2f))&&nfull(f2d)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+ 75:	proc  1 (fc:1) pftp.pml:55 Recv 18,0	<- queue 1 (s2f)
+ 75:	proc  1 (fc:1) pftp.pml:55 (state 2)	[s2f?type,x]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):x = 0
+		fc(1):type = 18
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 76:	proc  1 (fc:1) pftp.pml:56 (state 3)	[window = (window+1)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):window = 2
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 77:	proc  1 (fc:1) pftp.pml:57 (state 4)	[busy[s] = 1]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 1
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 78:	proc  1 (fc:1) pftp.pml:58 (state 5)	[O_buf[s] = type]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):O_buf[0] = 18
+		fc(1):O_buf[1] = 18
+		fc(1):O_buf[2] = 0
+		fc(1):O_buf[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0]
+ 79:	proc  1 (fc:1) pftp.pml:59 Send 18,1	-> queue 4 (f2d)
+ 79:	proc  1 (fc:1) pftp.pml:59 (state 6)	[f2d!type,s]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,1]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,1]
+		queue 1 (fc(1):s2f): [18,0]
+ 80:	proc  1 (fc:1) pftp.pml:61 (state 7)	[((type!=sync))]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,1]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,1]
+		queue 1 (fc(1):s2f): [18,0]
+ 81:	proc  1 (fc:1) pftp.pml:62 (state 8)	[s = ((s+1)%4)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,1]
+		fc(1):s = 2
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,1]
+		queue 1 (fc(1):s2f): [18,0]
+ 82:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,1]
+		queue 4 (fc(2):d2f): [18,1]
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 83:	proc  3 (upper_s:1) pftp.pml:172 (state 24)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,1]
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0]
+ 84:	proc  2 (fc:1) pftp.pml:92 Recv 18,1	<- queue 4 (d2f)
+ 84:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 1
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 85:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 86:	proc  3 (upper_s:1) pftp.pml:160 Send 18,0	-> queue 1 (s2f)
+ 86:	proc  3 (upper_s:1) pftp.pml:160 (state 14)	[s2f!white,0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+ 87:	proc  3 (upper_s:1) pftp.pml:172 (state 24)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+      timeout
+ 88:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+ 89:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+ 89:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+ 90:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+ 91:	proc  2 (fc:1) pftp.pml:94 Recv 18,0	<- queue 4 (d2f)
+ 91:	proc  2 (fc:1) pftp.pml:94 (state 31)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 92:	proc  2 (fc:1) pftp.pml:113 (state 49)	[((((type!=ack)&&(type!=sync))&&(type!=sync_ack)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 93:	proc  2 (fc:1) pftp.pml:124 (state 58)	[((received[m]==0))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 94:	proc  2 (fc:1) pftp.pml:125 (state 59)	[I_buf[m] = type]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):I_buf[0] = 18
+		fc(2):I_buf[1] = 0
+		fc(2):I_buf[2] = 0
+		fc(2):I_buf[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 95:	proc  2 (fc:1) pftp.pml:126 (state 60)	[received[m] = 1]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 1
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 96:	proc  2 (fc:1) pftp.pml:127 (state 61)	[received[(((m-2)+4)%4)] = 0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):received[0] = 1
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 97:	proc  2 (fc:1) pftp.pml:130 (state 64)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 98:	proc  2 (fc:1) pftp.pml:131 (state 66)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+ 99:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+100:	proc  2 (fc:1) pftp.pml:132 (state 67)	[((((received[p]==1)&&nfull(f2s))&&nfull(f2d)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+101:	proc  2 (fc:1) pftp.pml:133 Send 18,0	-> queue 6 (f2s)
+101:	proc  2 (fc:1) pftp.pml:133 (state 68)	[f2s!I_buf[p],0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): [18,0]
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): [18,0]
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+102:	proc  2 (fc:1) pftp.pml:134 Send 14,0	-> queue 3 (f2d)
+102:	proc  2 (fc:1) pftp.pml:134 (state 69)	[f2d!ack,p]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): [18,0]
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): [18,0]
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+103:	proc  4 (upper_r:1) pftp.pml:180 Recv 18,0	<- queue 6 (f2s1)
+103:	proc  4 (upper_r:1) pftp.pml:180 (state 1)	[f2s1?white,0]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 6 (upper_r(4):f2s1): 
+104:	proc  2 (fc:1) pftp.pml:135 (state 70)	[p = ((p+1)%4)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		fc(2):p = 1
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+105:	proc  1 (fc:1) pftp.pml:92 Recv 14,0	<- queue 3 (d2f)
+105:	proc  1 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):type = 14
+		fc(1):m = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+106:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+107:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+108:	proc  4 (upper_r:1) pftp.pml:185 (state 7)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 6 (upper_r(4):f2s1): 
+      timeout
+109:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+110:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+110:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+111:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+112:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+112:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+113:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+114:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+115:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+115:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+116:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+117:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+117:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+118:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+119:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+120:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+120:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+121:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+121:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+122:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+123:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+124:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+125:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+125:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+126:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+127:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+127:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+128:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+129:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+130:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+130:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+131:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+132:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+132:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+133:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+134:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+135:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+135:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+136:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+136:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+137:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+138:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+      timeout
+139:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+140:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+140:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+141:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+141:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+142:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+143:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+144:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+145:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+145:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+146:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+147:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+147:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+148:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+149:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+150:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+150:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+151:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+151:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+152:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+153:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+      timeout
+154:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+155:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+155:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+156:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+156:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+157:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+158:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+159:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+160:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+160:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+161:	proc  2 (fc:1) pftp.pml:94 Recv 18,0	<- queue 4 (d2f)
+161:	proc  2 (fc:1) pftp.pml:94 (state 31)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+162:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+163:	proc  2 (fc:1) pftp.pml:113 (state 49)	[((((type!=ack)&&(type!=sync))&&(type!=sync_ack)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+164:	proc  2 (fc:1) pftp.pml:116 (state 50)	[((received[m]==1))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+165:	proc  2 (fc:1) pftp.pml:117 (state 51)	[x = (((0<(p-m))&&((p-m)<=2))||((0<((p-m)+4))&&(((p-m)+4)<=2)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):x = 1
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+166:	proc  2 (fc:1) pftp.pml:120 (state 53)	[(x)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+167:	proc  2 (fc:1) pftp.pml:120 Send 14,0	-> queue 3 (f2d)
+167:	proc  2 (fc:1) pftp.pml:120 (state 54)	[f2d!ack,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+168:	proc  2 (fc:1) pftp.pml:123 (state 57)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+169:	proc  2 (fc:1) pftp.pml:130 (state 64)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+170:	proc  2 (fc:1) pftp.pml:131 (state 66)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): [14,0]
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): [14,0]
+		queue 2 (fc(2):s2f): 
+171:	proc  1 (fc:1) pftp.pml:92 Recv 14,0	<- queue 3 (d2f)
+171:	proc  1 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(1):type = 14
+		fc(1):m = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+172:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+173:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+174:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+175:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+175:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+176:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+176:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+177:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+178:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+179:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+180:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+180:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+181:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+181:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+182:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+183:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+184:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+185:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+185:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+186:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+186:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+187:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+188:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+      timeout
+189:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+190:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+190:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+191:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+192:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+192:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+193:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+194:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+195:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+195:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+196:	proc  2 (fc:1) pftp.pml:92 Recv 18,0	<- queue 4 (d2f)
+196:	proc  2 (fc:1) pftp.pml:92 (state 30)	[d2f?type,m]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		fc(2):type = 18
+		fc(2):m = 0
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+197:	proc  1 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+198:	proc  2 (fc:1) pftp.pml:138 (state 72)	[.(goto)]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 4 (fc(2):d2f): 
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+      timeout
+199:	proc  1 (fc:1) pftp.pml:87 (state 27)	[((((timeout&&nfull(f2d))&&(window>0))&&(busy[q]==1)))]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): 
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): 
+		queue 1 (fc(1):s2f): [18,0][18,0]
+200:	proc  1 (fc:1) pftp.pml:88 Send 18,0	-> queue 4 (f2d)
+200:	proc  1 (fc:1) pftp.pml:88 (state 28)	[f2d!O_buf[q],q]
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 5
+		queue 1 (ses_to_flow[0]): [18,0][18,0]
+		queue 2 (ses_to_flow[1]): 
+		queue 5 (flow_to_ses[0]): 
+		queue 6 (flow_to_ses[1]): 
+		queue 3 (dll_to_flow[0]): 
+		queue 4 (dll_to_flow[1]): [18,0]
+200:	proc  4 (upper_r:1) pftp.pml:179 (state 6)
+		upper_r(4):r_state = 0
+		queue 6 (upper_r(4):f2s1): 
+200:	proc  3 (upper_s:1) pftp.pml:159 (state 23) <valid end state>
+		upper_s(3):toggle = 1
+		upper_s(3):type = 0
+		upper_s(3):s_state = 0
+		queue 5 (upper_s(3):f2s0): 
+		queue 1 (upper_s(3):s2f): [18,0][18,0]
+200:	proc  2 (fc:1) pftp.pml:51 (state 71) <valid end state>
+		fc(2):O_buf[0] = 0
+		fc(2):O_buf[1] = 0
+		fc(2):O_buf[2] = 0
+		fc(2):O_buf[3] = 0
+		fc(2):I_buf[0] = 18
+		fc(2):I_buf[1] = 0
+		fc(2):I_buf[2] = 0
+		fc(2):I_buf[3] = 0
+		fc(2):p = 1
+		fc(2):x = 1
+		fc(2):received[0] = 1
+		fc(2):received[1] = 0
+		fc(2):received[2] = 0
+		fc(2):received[3] = 0
+		fc(2):type = 18
+		fc(2):window = 0
+		fc(2):s = 0
+		fc(2):m = 0
+		fc(2):q = 0
+		fc(2):busy[0] = 0
+		fc(2):busy[1] = 0
+		fc(2):busy[2] = 0
+		fc(2):busy[3] = 0
+		queue 4 (fc(2):d2f): [18,0]
+		queue 6 (fc(2):f2s): 
+		queue 3 (fc(2):f2d): 
+		queue 2 (fc(2):s2f): 
+200:	proc  1 (fc:1) pftp.pml:138 (state 72)
+		fc(1):O_buf[0] = 18
+		fc(1):O_buf[1] = 18
+		fc(1):O_buf[2] = 0
+		fc(1):O_buf[3] = 0
+		fc(1):I_buf[0] = 0
+		fc(1):I_buf[1] = 0
+		fc(1):I_buf[2] = 0
+		fc(1):I_buf[3] = 0
+		fc(1):p = 0
+		fc(1):x = 0
+		fc(1):received[0] = 0
+		fc(1):received[1] = 0
+		fc(1):received[2] = 0
+		fc(1):received[3] = 0
+		fc(1):type = 14
+		fc(1):window = 2
+		fc(1):s = 2
+		fc(1):m = 0
+		fc(1):q = 0
+		fc(1):busy[0] = 1
+		fc(1):busy[1] = 1
+		fc(1):busy[2] = 0
+		fc(1):busy[3] = 0
+		queue 3 (fc(1):d2f): 
+		queue 5 (fc(1):f2s): 
+		queue 4 (fc(1):f2d): [18,0]
+		queue 1 (fc(1):s2f): [18,0][18,0]
+200:	proc  0 (:init::1) pftp.pml:206 (state 6) <valid end state>
+5 processes created
+exit: 0

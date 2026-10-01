@@ -1,0 +1,11 @@
+# One LTL formula per line, fed to `spin -f`. Lines starting with # are skipped.
+[] ( p U ( <> q ))
+[] p
+<> p
+p U q
+[] (p -> <> q)
+<> [] p
+[] <> p
+!([] <> p -> [] <> q)
+(p && !q) U (q || X r)
+[] (p -> (q V r))

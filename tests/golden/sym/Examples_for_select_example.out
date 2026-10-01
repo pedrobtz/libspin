@@ -1,0 +1,13 @@
+bit   	m.b	0	<:struct-field:>	<variable>	{scope _}
+int   	m.x	0	<:struct-field:>	<variable>	{scope _}
+chan  	m.c	0	<:struct-field:>	<variable>	0		{scope _}
+int   	i	0	<:init:>	<variable>	{scope _2_}
+int   	j	0	<:init:>	<variable>	{scope _2_}
+chan  	a[10]	7	<:init:>	<array>	1	struct m	{scope _2_}
+chan  	b[4]	0	<:init:>	<array>	0		{scope _2_}
+struct	foo	m	<:init:>	<variable>	{scope _2_}
+struct	bar	m	<:init:>	<variable>	{scope _2_}
+struct	goo	m	<:init:>	<variable>	{scope _2_}
+byte  	_f0r_t3mp_2_	0	<:init:>	<variable>	{scope _2_}
+byte  	_f0r_t3mp_2_4_	0	<:init:>	<variable>	{scope _2_4_}
+exit: 0

@@ -1,0 +1,26 @@
+mtype 	NoOp	3	<:global:>	<constant>	{scope _}
+mtype 	UnOp	2	<:global:>	<constant>	{scope _}
+mtype 	BiOp	1	<:global:>	<constant>	{scope _}
+mtype 	Always	12	<:global:>	<constant>	{scope _}
+mtype 	Eventually	11	<:global:>	<constant>	{scope _}
+mtype 	Next	10	<:global:>	<constant>	{scope _}
+mtype 	Not	9	<:global:>	<constant>	{scope _}
+mtype 	Until	8	<:global:>	<constant>	{scope _}
+mtype 	And	7	<:global:>	<constant>	{scope _}
+mtype 	Or	6	<:global:>	<constant>	{scope _}
+mtype 	Implies	5	<:global:>	<constant>	{scope _}
+mtype 	Equiv	4	<:global:>	<constant>	{scope _}
+mtype 	Node.op	0	<:struct-field:>	<constant>	{scope _}
+byte  	Node.f	0	<:struct-field:>	<variable>	{scope _}
+byte  	Node.g	0	<:struct-field:>	<variable>	{scope _}
+mtype 	Node.act	0	<:struct-field:>	<constant>	{scope _}
+struct	nodes[31]	Node	<:global:>	<array>	{scope _}
+proctype	view	0	<:global:>	<variable>	{scope _}
+byte  	this	0	<view>	<parameter 1>	{scope _}
+byte  	next	0	<view>	<parameter 2>	{scope _}
+byte  	n	0	<view>	<variable>	{scope _4_}
+byte  	depth	0	<:init:>	<variable>	{scope _5_}
+byte  	next	0	<:init:>	<variable>	{scope _5_}
+byte  	this	0	<:init:>	<variable>	{scope _5_}
+byte  	dpth	0	<:init:>	<variable>	{scope _5_}
+exit: 0

@@ -1,0 +1,271 @@
+  0:	proc  - (:root:) creates proc  0 (zune)
+  0:	proc  - (:root:) creates proc  1 (:init:)
+ltl p1: [] ((! ((zune@S))) || (<> ((zune@E))))
+  1:	proc  1 (:init::1) zune.pml:58 (state 3)	[q!(days+367)]
+  1:	proc  0 (zune:1) zune.pml:23 (state 1)	[q?days]
+  1:	proc  1 (:init::1) zune.pml:58 Sent 10594	-> queue 1 (q)
+  1:	proc  0 (zune:1) zune.pml:23 Recv 10594	<- queue 1 (q)
+		zune(0):days = 10594
+  2:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+  2:	proc  1 (:init::1)           terminates
+  3:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+  4:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+  5:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 10228
+  6:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 1981
+  7:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+  8:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+  9:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 10:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 11:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 12:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 9863
+ 13:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1982
+ 14:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 15:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 16:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 17:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 18:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 9498
+ 19:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1983
+ 20:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 21:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 22:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 23:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 24:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 9133
+ 25:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1984
+ 26:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 27:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 28:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 29:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+ 30:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+ 31:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 8767
+ 32:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 1985
+ 33:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+ 34:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 35:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 36:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 37:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 38:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 8402
+ 39:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1986
+ 40:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 41:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 42:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 43:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 44:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 8037
+ 45:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1987
+ 46:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 47:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 48:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 49:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 50:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 7672
+ 51:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1988
+ 52:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 53:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 54:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 55:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+ 56:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+ 57:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 7306
+ 58:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 1989
+ 59:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+ 60:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 61:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 62:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 63:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 64:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 6941
+ 65:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1990
+ 66:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 67:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 68:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 69:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 70:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 6576
+ 71:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1991
+ 72:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 73:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 74:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 75:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 76:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 6211
+ 77:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1992
+ 78:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 79:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 80:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 81:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+ 82:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+ 83:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 5845
+ 84:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 1993
+ 85:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+ 86:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 87:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 88:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 89:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 90:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 5480
+ 91:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1994
+ 92:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 93:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+ 94:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+ 95:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+ 96:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 5115
+ 97:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1995
+ 98:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+ 99:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+100:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+101:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+102:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 4750
+103:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1996
+104:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+105:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+106:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+107:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+108:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+109:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 4384
+110:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 1997
+111:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+112:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+113:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+114:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+115:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+116:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 4019
+117:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1998
+118:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+119:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+120:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+121:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+122:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 3654
+123:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 1999
+124:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+125:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+126:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+127:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+128:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 3289
+129:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2000
+130:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+131:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+132:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+133:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+134:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+135:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 2923
+136:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 2001
+137:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+138:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+139:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+140:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+141:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+142:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 2558
+143:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2002
+144:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+145:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+146:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+147:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+148:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 2193
+149:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2003
+150:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+151:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+152:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+153:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+154:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 1828
+155:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2004
+156:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+157:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+158:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+159:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+160:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+161:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 1462
+162:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 2005
+163:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+164:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+165:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+166:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+167:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+168:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 1097
+169:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2006
+170:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+171:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+172:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+173:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+174:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 732
+175:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2007
+176:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+177:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+178:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+179:	proc  0 (zune:1) zune.pml:37 (state 10)	[else]
+180:	proc  0 (zune:1) zune.pml:38 (state 11)	[days = (days-365)]
+		zune(0):days = 367
+181:	proc  0 (zune:1) zune.pml:39 (state 12)	[year = (year+1)]
+		zune(0):year = 2008
+182:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+183:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+184:	proc  0 (zune:1) zune.pml:25 (state 2)	[((days>365))]
+185:	proc  0 (zune:1) zune.pml:27 (state 3)	[(((((year%4)==0)&&((year%100)!=0))||((year%400)==0)))]
+186:	proc  0 (zune:1) zune.pml:29 (state 4)	[((days>366))]
+187:	proc  0 (zune:1) zune.pml:30 (state 5)	[days = (days-366)]
+		zune(0):days = 1
+188:	proc  0 (zune:1) zune.pml:31 (state 6)	[year = (year+1)]
+		zune(0):year = 2009
+189:	proc  0 (zune:1) zune.pml:37 (state 9)	[.(goto)]
+190:	proc  0 (zune:1) zune.pml:41 (state 14)	[.(goto)]
+191:	proc  0 (zune:1) zune.pml:44 (state 18)	[.(goto)]
+192:	proc  0 (zune:1) zune.pml:41 (state 15)	[else]
+193:	proc  0 (zune:1) zune.pml:42 (state 16)	[goto :b1]
+      Year: 2009, Day 1
+194:	proc  0 (zune:1) zune.pml:44 (state 20)	[printf('Year: %d, Day %d\\n',year,days)]
+195:	proc  0 (zune:1) zune.pml:47 (state 22)	[.(goto)]
+      timeout
+#processes: 1
+		S = 0
+		E = 0
+195:	proc  0 (zune:1) zune.pml:22 (state 21) <valid end state>
+		zune(0):days = 1
+		zune(0):year = 2009
+2 processes created
+exit: 0

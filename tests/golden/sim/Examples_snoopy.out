@@ -1,0 +1,2977 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting cpu0 with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (cpu0)
+  1:	proc  0 (:init::1) snoopy.pml:259 (state 1)	[(run cpu0())]
+Starting cpu1 with pid 2
+  2:	proc  0 (:init::1) creates proc  2 (cpu1)
+  2:	proc  0 (:init::1) snoopy.pml:259 (state 2)	[(run cpu1())]
+Starting cache0 with pid 3
+  3:	proc  0 (:init::1) creates proc  3 (cache0)
+  3:	proc  0 (:init::1) snoopy.pml:260 (state 3)	[(run cache0())]
+Starting cache1 with pid 4
+  4:	proc  0 (:init::1) creates proc  4 (cache1)
+  4:	proc  0 (:init::1) snoopy.pml:260 (state 4)	[(run cache1())]
+Starting bus with pid 5
+  5:	proc  0 (:init::1) creates proc  5 (bus)
+  5:	proc  0 (:init::1) snoopy.pml:261 (state 5)	[(run bus())]
+Starting busarbiter with pid 6
+  6:	proc  0 (:init::1) creates proc  6 (busarbiter)
+  6:	proc  0 (:init::1) snoopy.pml:261 (state 6)	[(run busarbiter())]
+  7:	proc  2 (cpu1:1) snoopy.pml:57 Send w	-> queue 6 (fromcpu1)
+  7:	proc  2 (cpu1:1) snoopy.pml:57 (state 3)	[fromcpu1!w]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+  8:	proc  1 (cpu0:1) snoopy.pml:46 Send w	-> queue 8 (fromcpu0)
+  8:	proc  1 (cpu0:1) snoopy.pml:46 (state 3)	[fromcpu0!w]
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+  9:	proc  3 (cache0:1) snoopy.pml:93 Recv w	<- queue 8 (fromcpu0)
+  9:	proc  3 (cache0:1) snoopy.pml:93 (state 31)	[fromcpu0?w]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 10:	proc  4 (cache1:1) snoopy.pml:169 Recv w	<- queue 6 (fromcpu1)
+ 10:	proc  4 (cache1:1) snoopy.pml:169 (state 31)	[fromcpu1?w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 11:	proc  4 (cache1:1) snoopy.pml:172 (state 34)	[((state!=1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 12:	proc  4 (cache1:1) snoopy.pml:172 (state 35)	[which = MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		cache1(4):which = 8
+ 13:	proc  4 (cache1:1) snoopy.pml:172 (state 36)	[goto buscycle]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 14:	proc  3 (cache0:1) snoopy.pml:96 (state 34)	[((state!=1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 15:	proc  4 (cache1:1) snoopy.pml:181 Send req1	-> queue 4 (claim1)
+ 15:	proc  4 (cache1:1) snoopy.pml:181 (state 50)	[claim1!req1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): [req1]
+ 16:	proc  4 (cache1:1) snoopy.pml:204 (state 85)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): [req1]
+ 17:	proc  6 (busarbiter:1) snoopy.pml:225 Recv req1	<- queue 4 (claim1)
+ 17:	proc  6 (busarbiter:1) snoopy.pml:225 (state 4)	[claim1?req1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 18:	proc  3 (cache0:1) snoopy.pml:96 (state 35)	[which = MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		cache0(3):which = 8
+ 19:	proc  6 (busarbiter:1) snoopy.pml:225 Send grant	-> queue 11 (grant1)
+ 19:	proc  6 (busarbiter:1) snoopy.pml:225 (state 5)	[grant1!grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): [grant]
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+ 20:	proc  3 (cache0:1) snoopy.pml:96 (state 36)	[goto buscycle]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): [grant]
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 21:	proc  4 (cache1:1) snoopy.pml:195 Recv grant	<- queue 11 (grant1)
+ 21:	proc  4 (cache1:1) snoopy.pml:195 (state 73)	[grant1?grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 22:	proc  4 (cache1:1) snoopy.pml:198 (state 76)	[((which==MX))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 23:	proc  4 (cache1:1) snoopy.pml:198 (state 77)	[state = 1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+		cache1(4):state = 1
+ 24:	proc  4 (cache1:1) snoopy.pml:201 (state 81)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 25:	proc  4 (cache1:1) snoopy.pml:201 Send done	-> queue 10 (tocpu1)
+ 25:	proc  4 (cache1:1) snoopy.pml:201 (state 82)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 26:	proc  3 (cache0:1) snoopy.pml:105 Send req0	-> queue 3 (claim0)
+ 26:	proc  3 (cache0:1) snoopy.pml:105 (state 50)	[claim0!req0]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 27:	proc  3 (cache0:1) snoopy.pml:128 (state 85)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 28:	proc  4 (cache1:1) snoopy.pml:202 (state 83)	[goto :b5]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 29:	proc  2 (cpu1:1) snoopy.pml:57 Recv done	<- queue 10 (tocpu1)
+ 29:	proc  2 (cpu1:1) snoopy.pml:57 (state 4)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 30:	proc  4 (cache1:1) snoopy.pml:204 Send done	-> queue 12 (release1)
+ 30:	proc  4 (cache1:1) snoopy.pml:204 (state 87)	[release1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): [done]
+ 31:	proc  6 (busarbiter:1) snoopy.pml:225 Recv done	<- queue 12 (release1)
+ 31:	proc  6 (busarbiter:1) snoopy.pml:225 (state 6)	[release1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 32:	proc  4 (cache1:1) snoopy.pml:208 (state 91)	[((which==MX))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 33:	proc  4 (cache1:1) snoopy.pml:208 Send MX	-> queue 2 (tobus1)
+ 33:	proc  4 (cache1:1) snoopy.pml:208 (state 92)	[tobus1!MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): [MX]
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 34:	proc  6 (busarbiter:1) snoopy.pml:227 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): [MX]
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 35:	proc  5 (bus:1) snoopy.pml:250 Recv MX	<- queue 2 (tobus1)
+ 35:	proc  5 (bus:1) snoopy.pml:250 (state 19)	[tobus1?MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 36:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 37:	proc  5 (bus:1) snoopy.pml:250 Send MX	-> queue 7 (frombus0)
+ 37:	proc  5 (bus:1) snoopy.pml:250 (state 20)	[frombus0!MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [MX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 38:	proc  2 (cpu1:1) snoopy.pml:58 Send raw	-> queue 6 (fromcpu1)
+ 38:	proc  2 (cpu1:1) snoopy.pml:58 (state 5)	[fromcpu1!raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [MX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 39:	proc  6 (busarbiter:1) snoopy.pml:224 Recv req0	<- queue 3 (claim0)
+ 39:	proc  6 (busarbiter:1) snoopy.pml:224 (state 1)	[claim0?req0]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [MX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 40:	proc  3 (cache0:1) snoopy.pml:112 Recv MX	<- queue 7 (frombus0)
+ 40:	proc  3 (cache0:1) snoopy.pml:112 (state 59)	[frombus0?MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 41:	proc  3 (cache0:1) snoopy.pml:112 (state 60)	[state = 3]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+		cache0(3):state = 3
+ 42:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 43:	proc  6 (busarbiter:1) snoopy.pml:224 Send grant	-> queue 13 (grant0)
+ 43:	proc  6 (busarbiter:1) snoopy.pml:224 (state 2)	[grant0!grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 44:	proc  3 (cache0:1) snoopy.pml:112 Send MXdone	-> queue 1 (tobus0)
+ 44:	proc  3 (cache0:1) snoopy.pml:112 (state 61)	[tobus0!MXdone]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): [MXdone]
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 45:	proc  5 (bus:1) snoopy.pml:243 Recv MXdone	<- queue 1 (tobus0)
+ 45:	proc  5 (bus:1) snoopy.pml:243 (state 9)	[tobus0?MXdone]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 12 (release1): 
+ 46:	proc  5 (bus:1) snoopy.pml:243 Send done	-> queue 5 (frombus1)
+ 46:	proc  5 (bus:1) snoopy.pml:243 (state 10)	[frombus1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [done]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 47:	proc  4 (cache1:1) snoopy.pml:208 Recv done	<- queue 5 (frombus1)
+ 47:	proc  4 (cache1:1) snoopy.pml:208 (state 93)	[frombus1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 48:	proc  4 (cache1:1) snoopy.pml:211 (state 98)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 49:	proc  3 (cache0:1) snoopy.pml:128 (state 85)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 50:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 51:	proc  4 (cache1:1) snoopy.pml:211 (state 99)	[goto resume]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 52:	proc  4 (cache1:1) snoopy.pml:174 Recv raw	<- queue 6 (fromcpu1)
+ 52:	proc  4 (cache1:1) snoopy.pml:174 (state 39)	[fromcpu1?raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 53:	proc  3 (cache0:1) snoopy.pml:119 Recv grant	<- queue 13 (grant0)
+ 53:	proc  3 (cache0:1) snoopy.pml:119 (state 73)	[grant0?grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 54:	proc  4 (cache1:1) snoopy.pml:176 (state 40)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 55:	proc  3 (cache0:1) snoopy.pml:122 (state 76)	[((which==MX))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 56:	proc  4 (cache1:1) snoopy.pml:176 Send done	-> queue 10 (tocpu1)
+ 56:	proc  4 (cache1:1) snoopy.pml:176 (state 41)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 57:	proc  4 (cache1:1) snoopy.pml:179 (state 46)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 58:	proc  3 (cache0:1) snoopy.pml:122 (state 77)	[state = 1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache0(3):state = 1
+ 59:	proc  3 (cache0:1) snoopy.pml:125 (state 81)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 60:	proc  2 (cpu1:1) snoopy.pml:58 Recv done	<- queue 10 (tocpu1)
+ 60:	proc  2 (cpu1:1) snoopy.pml:58 (state 6)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 61:	proc  3 (cache0:1) snoopy.pml:125 Send done	-> queue 9 (tocpu0)
+ 61:	proc  3 (cache0:1) snoopy.pml:125 (state 82)	[tocpu0!done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 62:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 63:	proc  1 (cpu0:1) snoopy.pml:46 Recv done	<- queue 9 (tocpu0)
+ 63:	proc  1 (cpu0:1) snoopy.pml:46 (state 4)	[tocpu0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 64:	proc  1 (cpu0:1) snoopy.pml:49 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 65:	proc  1 (cpu0:1) snoopy.pml:46 Send w	-> queue 8 (fromcpu0)
+ 65:	proc  1 (cpu0:1) snoopy.pml:46 (state 3)	[fromcpu0!w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 66:	proc  3 (cache0:1) snoopy.pml:126 (state 83)	[goto :b3]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 67:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 68:	proc  3 (cache0:1) snoopy.pml:128 Send done	-> queue 14 (release0)
+ 68:	proc  3 (cache0:1) snoopy.pml:128 (state 87)	[release0!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): [done]
+		queue 12 (release1): 
+ 69:	proc  6 (busarbiter:1) snoopy.pml:224 Recv done	<- queue 14 (release0)
+ 69:	proc  6 (busarbiter:1) snoopy.pml:224 (state 3)	[release0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 70:	proc  6 (busarbiter:1) snoopy.pml:227 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 71:	proc  3 (cache0:1) snoopy.pml:132 (state 91)	[((which==MX))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 72:	proc  3 (cache0:1) snoopy.pml:132 Send MX	-> queue 1 (tobus0)
+ 72:	proc  3 (cache0:1) snoopy.pml:132 (state 92)	[tobus0!MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): [MX]
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 73:	proc  2 (cpu1:1) snoopy.pml:58 Send raw	-> queue 6 (fromcpu1)
+ 73:	proc  2 (cpu1:1) snoopy.pml:58 (state 5)	[fromcpu1!raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): [MX]
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 74:	proc  4 (cache1:1) snoopy.pml:174 Recv raw	<- queue 6 (fromcpu1)
+ 74:	proc  4 (cache1:1) snoopy.pml:174 (state 39)	[fromcpu1?raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): [MX]
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 75:	proc  5 (bus:1) snoopy.pml:249 Recv MX	<- queue 1 (tobus0)
+ 75:	proc  5 (bus:1) snoopy.pml:249 (state 17)	[tobus0?MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 76:	proc  4 (cache1:1) snoopy.pml:176 (state 40)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 77:	proc  4 (cache1:1) snoopy.pml:176 Send done	-> queue 10 (tocpu1)
+ 77:	proc  4 (cache1:1) snoopy.pml:176 (state 41)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 78:	proc  2 (cpu1:1) snoopy.pml:58 Recv done	<- queue 10 (tocpu1)
+ 78:	proc  2 (cpu1:1) snoopy.pml:58 (state 6)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 79:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 80:	proc  5 (bus:1) snoopy.pml:249 Send MX	-> queue 5 (frombus1)
+ 80:	proc  5 (bus:1) snoopy.pml:249 (state 18)	[frombus1!MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 81:	proc  4 (cache1:1) snoopy.pml:179 (state 46)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 82:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 83:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 84:	proc  2 (cpu1:1) snoopy.pml:57 Send w	-> queue 6 (fromcpu1)
+ 84:	proc  2 (cpu1:1) snoopy.pml:57 (state 3)	[fromcpu1!w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 85:	proc  4 (cache1:1) snoopy.pml:169 Recv w	<- queue 6 (fromcpu1)
+ 85:	proc  4 (cache1:1) snoopy.pml:169 (state 31)	[fromcpu1?w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 86:	proc  4 (cache1:1) snoopy.pml:171 (state 32)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 87:	proc  4 (cache1:1) snoopy.pml:171 Send done	-> queue 10 (tocpu1)
+ 87:	proc  4 (cache1:1) snoopy.pml:171 (state 33)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 88:	proc  2 (cpu1:1) snoopy.pml:57 Recv done	<- queue 10 (tocpu1)
+ 88:	proc  2 (cpu1:1) snoopy.pml:57 (state 4)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 89:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 90:	proc  2 (cpu1:1) snoopy.pml:57 Send w	-> queue 6 (fromcpu1)
+ 90:	proc  2 (cpu1:1) snoopy.pml:57 (state 3)	[fromcpu1!w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 91:	proc  4 (cache1:1) snoopy.pml:174 (state 38)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 92:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [w]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 93:	proc  4 (cache1:1) snoopy.pml:169 Recv w	<- queue 6 (fromcpu1)
+ 93:	proc  4 (cache1:1) snoopy.pml:169 (state 31)	[fromcpu1?w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 94:	proc  4 (cache1:1) snoopy.pml:171 (state 32)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 95:	proc  4 (cache1:1) snoopy.pml:171 Send done	-> queue 10 (tocpu1)
+ 95:	proc  4 (cache1:1) snoopy.pml:171 (state 33)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 96:	proc  4 (cache1:1) snoopy.pml:174 (state 38)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 97:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 98:	proc  2 (cpu1:1) snoopy.pml:57 Recv done	<- queue 10 (tocpu1)
+ 98:	proc  2 (cpu1:1) snoopy.pml:57 (state 4)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+ 99:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+100:	proc  2 (cpu1:1) snoopy.pml:58 Send raw	-> queue 6 (fromcpu1)
+100:	proc  2 (cpu1:1) snoopy.pml:58 (state 5)	[fromcpu1!raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+101:	proc  4 (cache1:1) snoopy.pml:174 Recv raw	<- queue 6 (fromcpu1)
+101:	proc  4 (cache1:1) snoopy.pml:174 (state 39)	[fromcpu1?raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+102:	proc  4 (cache1:1) snoopy.pml:176 (state 40)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+103:	proc  4 (cache1:1) snoopy.pml:176 Send done	-> queue 10 (tocpu1)
+103:	proc  4 (cache1:1) snoopy.pml:176 (state 41)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+104:	proc  2 (cpu1:1) snoopy.pml:58 Recv done	<- queue 10 (tocpu1)
+104:	proc  2 (cpu1:1) snoopy.pml:58 (state 6)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+105:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+106:	proc  2 (cpu1:1) snoopy.pml:58 Send raw	-> queue 6 (fromcpu1)
+106:	proc  2 (cpu1:1) snoopy.pml:58 (state 5)	[fromcpu1!raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+107:	proc  4 (cache1:1) snoopy.pml:179 (state 46)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+108:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [MX]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+109:	proc  4 (cache1:1) snoopy.pml:156 Recv MX	<- queue 5 (frombus1)
+109:	proc  4 (cache1:1) snoopy.pml:156 (state 9)	[frombus1?MX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+110:	proc  4 (cache1:1) snoopy.pml:156 (state 10)	[state = 3]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache1(4):state = 3
+111:	proc  4 (cache1:1) snoopy.pml:156 Send MXdone	-> queue 2 (tobus1)
+111:	proc  4 (cache1:1) snoopy.pml:156 (state 11)	[tobus1!MXdone]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): [MXdone]
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+112:	proc  5 (bus:1) snoopy.pml:244 Recv MXdone	<- queue 2 (tobus1)
+112:	proc  5 (bus:1) snoopy.pml:244 (state 11)	[tobus1?MXdone]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+113:	proc  5 (bus:1) snoopy.pml:244 Send done	-> queue 7 (frombus0)
+113:	proc  5 (bus:1) snoopy.pml:244 (state 12)	[frombus0!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [done]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+114:	proc  3 (cache0:1) snoopy.pml:132 Recv done	<- queue 7 (frombus0)
+114:	proc  3 (cache0:1) snoopy.pml:132 (state 93)	[frombus0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+115:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+116:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+117:	proc  3 (cache0:1) snoopy.pml:135 (state 98)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+118:	proc  3 (cache0:1) snoopy.pml:135 (state 99)	[goto resume]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [w]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+119:	proc  3 (cache0:1) snoopy.pml:93 Recv w	<- queue 8 (fromcpu0)
+119:	proc  3 (cache0:1) snoopy.pml:93 (state 31)	[fromcpu0?w]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [raw]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+120:	proc  4 (cache1:1) snoopy.pml:174 Recv raw	<- queue 6 (fromcpu1)
+120:	proc  4 (cache1:1) snoopy.pml:174 (state 39)	[fromcpu1?raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+121:	proc  4 (cache1:1) snoopy.pml:177 (state 42)	[((state!=1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+122:	proc  3 (cache0:1) snoopy.pml:95 (state 32)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+123:	proc  4 (cache1:1) snoopy.pml:177 (state 43)	[which = RX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache1(4):which = 9
+124:	proc  4 (cache1:1) snoopy.pml:177 (state 44)	[goto buscycle]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+125:	proc  4 (cache1:1) snoopy.pml:181 Send req1	-> queue 4 (claim1)
+125:	proc  4 (cache1:1) snoopy.pml:181 (state 50)	[claim1!req1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): [req1]
+		queue 14 (release0): 
+		queue 12 (release1): 
+126:	proc  4 (cache1:1) snoopy.pml:204 (state 85)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): [req1]
+		queue 14 (release0): 
+		queue 12 (release1): 
+127:	proc  6 (busarbiter:1) snoopy.pml:225 Recv req1	<- queue 4 (claim1)
+127:	proc  6 (busarbiter:1) snoopy.pml:225 (state 4)	[claim1?req1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+128:	proc  6 (busarbiter:1) snoopy.pml:225 Send grant	-> queue 11 (grant1)
+128:	proc  6 (busarbiter:1) snoopy.pml:225 (state 5)	[grant1!grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): [grant]
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+129:	proc  4 (cache1:1) snoopy.pml:195 Recv grant	<- queue 11 (grant1)
+129:	proc  4 (cache1:1) snoopy.pml:195 (state 73)	[grant1?grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+130:	proc  3 (cache0:1) snoopy.pml:95 Send done	-> queue 9 (tocpu0)
+130:	proc  3 (cache0:1) snoopy.pml:95 (state 33)	[tocpu0!done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+131:	proc  4 (cache1:1) snoopy.pml:199 (state 78)	[((which==RX))]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+132:	proc  3 (cache0:1) snoopy.pml:98 (state 38)	[.(goto)]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+133:	proc  1 (cpu0:1) snoopy.pml:46 Recv done	<- queue 9 (tocpu0)
+133:	proc  1 (cpu0:1) snoopy.pml:46 (state 4)	[tocpu0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+134:	proc  3 (cache0:1) snoopy.pml:104 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+135:	proc  4 (cache1:1) snoopy.pml:199 (state 79)	[state = 1]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache1(4):state = 1
+136:	proc  1 (cpu0:1) snoopy.pml:49 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+137:	proc  1 (cpu0:1) snoopy.pml:47 Send raw	-> queue 8 (fromcpu0)
+137:	proc  1 (cpu0:1) snoopy.pml:47 (state 5)	[fromcpu0!raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [raw]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+138:	proc  3 (cache0:1) snoopy.pml:98 Recv raw	<- queue 8 (fromcpu0)
+138:	proc  3 (cache0:1) snoopy.pml:98 (state 39)	[fromcpu0?raw]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+139:	proc  4 (cache1:1) snoopy.pml:201 (state 81)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+140:	proc  4 (cache1:1) snoopy.pml:201 Send done	-> queue 10 (tocpu1)
+140:	proc  4 (cache1:1) snoopy.pml:201 (state 82)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+141:	proc  4 (cache1:1) snoopy.pml:202 (state 83)	[goto :b5]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+142:	proc  3 (cache0:1) snoopy.pml:100 (state 40)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+143:	proc  3 (cache0:1) snoopy.pml:100 Send done	-> queue 9 (tocpu0)
+143:	proc  3 (cache0:1) snoopy.pml:100 (state 41)	[tocpu0!done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+144:	proc  3 (cache0:1) snoopy.pml:103 (state 46)	[.(goto)]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+145:	proc  3 (cache0:1) snoopy.pml:104 (state 48)	[.(goto)]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+146:	proc  2 (cpu1:1) snoopy.pml:58 Recv done	<- queue 10 (tocpu1)
+146:	proc  2 (cpu1:1) snoopy.pml:58 (state 6)	[tocpu1?done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+147:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+148:	proc  4 (cache1:1) snoopy.pml:204 Send done	-> queue 12 (release1)
+148:	proc  4 (cache1:1) snoopy.pml:204 (state 87)	[release1!done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): [done]
+149:	proc  1 (cpu0:1) snoopy.pml:47 Recv done	<- queue 9 (tocpu0)
+149:	proc  1 (cpu0:1) snoopy.pml:47 (state 6)	[tocpu0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): [done]
+150:	proc  1 (cpu0:1) snoopy.pml:49 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): [done]
+151:	proc  6 (busarbiter:1) snoopy.pml:225 Recv done	<- queue 12 (release1)
+151:	proc  6 (busarbiter:1) snoopy.pml:225 (state 6)	[release1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+152:	proc  2 (cpu1:1) snoopy.pml:56 Send r	-> queue 6 (fromcpu1)
+152:	proc  2 (cpu1:1) snoopy.pml:56 (state 1)	[fromcpu1!r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+153:	proc  6 (busarbiter:1) snoopy.pml:227 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+154:	proc  4 (cache1:1) snoopy.pml:209 (state 94)	[((which==RX))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+155:	proc  4 (cache1:1) snoopy.pml:209 Send RX	-> queue 2 (tobus1)
+155:	proc  4 (cache1:1) snoopy.pml:209 (state 95)	[tobus1!RX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): [RX]
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+156:	proc  5 (bus:1) snoopy.pml:253 Recv RX	<- queue 2 (tobus1)
+156:	proc  5 (bus:1) snoopy.pml:253 (state 23)	[tobus1?RX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+157:	proc  5 (bus:1) snoopy.pml:253 Send RX	-> queue 7 (frombus0)
+157:	proc  5 (bus:1) snoopy.pml:253 (state 24)	[frombus0!RX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [RX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+158:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [RX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+159:	proc  1 (cpu0:1) snoopy.pml:45 Send r	-> queue 8 (fromcpu0)
+159:	proc  1 (cpu0:1) snoopy.pml:45 (state 1)	[fromcpu0!r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): [RX]
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+160:	proc  3 (cache0:1) snoopy.pml:81 Recv RX	<- queue 7 (frombus0)
+160:	proc  3 (cache0:1) snoopy.pml:81 (state 12)	[frombus0?RX]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+161:	proc  3 (cache0:1) snoopy.pml:83 (state 13)	[((state==1))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+162:	proc  3 (cache0:1) snoopy.pml:83 (state 14)	[state = 3]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache0(3):state = 3
+163:	proc  3 (cache0:1) snoopy.pml:83 Send CtoB	-> queue 1 (tobus0)
+163:	proc  3 (cache0:1) snoopy.pml:83 (state 15)	[tobus0!CtoB]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): [CtoB]
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+164:	proc  5 (bus:1) snoopy.pml:237 Recv CtoB	<- queue 1 (tobus0)
+164:	proc  5 (bus:1) snoopy.pml:237 (state 1)	[tobus0?CtoB]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+165:	proc  3 (cache0:1) snoopy.pml:88 (state 22)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+166:	proc  5 (bus:1) snoopy.pml:237 Send BtoC	-> queue 5 (frombus1)
+166:	proc  5 (bus:1) snoopy.pml:237 (state 2)	[frombus1!BtoC]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [BtoC]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+167:	proc  3 (cache0:1) snoopy.pml:104 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [BtoC]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+168:	proc  5 (bus:1) snoopy.pml:255 (state 26)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): [BtoC]
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+169:	proc  4 (cache1:1) snoopy.pml:209 Recv BtoC	<- queue 5 (frombus1)
+169:	proc  4 (cache1:1) snoopy.pml:209 (state 96)	[frombus1?BtoC]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+170:	proc  4 (cache1:1) snoopy.pml:211 (state 98)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+171:	proc  4 (cache1:1) snoopy.pml:211 (state 99)	[goto resume]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+172:	proc  4 (cache1:1) snoopy.pml:164 Recv r	<- queue 6 (fromcpu1)
+172:	proc  4 (cache1:1) snoopy.pml:164 (state 23)	[fromcpu1?r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): [r]
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+173:	proc  3 (cache0:1) snoopy.pml:88 Recv r	<- queue 8 (fromcpu0)
+173:	proc  3 (cache0:1) snoopy.pml:88 (state 23)	[fromcpu0?r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+174:	proc  4 (cache1:1) snoopy.pml:166 (state 24)	[((state!=3))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+175:	proc  3 (cache0:1) snoopy.pml:91 (state 26)	[((state==3))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+176:	proc  3 (cache0:1) snoopy.pml:91 (state 27)	[which = RD]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache0(3):which = 11
+177:	proc  3 (cache0:1) snoopy.pml:91 (state 28)	[goto buscycle]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+178:	proc  4 (cache1:1) snoopy.pml:166 Send done	-> queue 10 (tocpu1)
+178:	proc  4 (cache1:1) snoopy.pml:166 (state 25)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+179:	proc  3 (cache0:1) snoopy.pml:105 Send req0	-> queue 3 (claim0)
+179:	proc  3 (cache0:1) snoopy.pml:105 (state 50)	[claim0!req0]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): [req0]
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+180:	proc  6 (busarbiter:1) snoopy.pml:224 Recv req0	<- queue 3 (claim0)
+180:	proc  6 (busarbiter:1) snoopy.pml:224 (state 1)	[claim0?req0]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+181:	proc  3 (cache0:1) snoopy.pml:128 (state 85)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+182:	proc  2 (cpu1:1) snoopy.pml:56 Recv done	<- queue 10 (tocpu1)
+182:	proc  2 (cpu1:1) snoopy.pml:56 (state 2)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+183:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+184:	proc  4 (cache1:1) snoopy.pml:169 (state 30)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+185:	proc  4 (cache1:1) snoopy.pml:180 (state 48)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+186:	proc  6 (busarbiter:1) snoopy.pml:224 Send grant	-> queue 13 (grant0)
+186:	proc  6 (busarbiter:1) snoopy.pml:224 (state 2)	[grant0!grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): [grant]
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+187:	proc  3 (cache0:1) snoopy.pml:119 Recv grant	<- queue 13 (grant0)
+187:	proc  3 (cache0:1) snoopy.pml:119 (state 73)	[grant0?grant]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+188:	proc  2 (cpu1:1) snoopy.pml:56 Send r	-> queue 6 (fromcpu1)
+188:	proc  2 (cpu1:1) snoopy.pml:56 (state 1)	[fromcpu1!r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+189:	proc  3 (cache0:1) snoopy.pml:121 (state 74)	[((which==RD))]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): [r]
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+190:	proc  4 (cache1:1) snoopy.pml:164 Recv r	<- queue 6 (fromcpu1)
+190:	proc  4 (cache1:1) snoopy.pml:164 (state 23)	[fromcpu1?r]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+191:	proc  3 (cache0:1) snoopy.pml:121 (state 75)	[state = 2]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+		cache0(3):state = 2
+192:	proc  3 (cache0:1) snoopy.pml:125 (state 81)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+193:	proc  3 (cache0:1) snoopy.pml:125 Send done	-> queue 9 (tocpu0)
+193:	proc  3 (cache0:1) snoopy.pml:125 (state 82)	[tocpu0!done]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+194:	proc  4 (cache1:1) snoopy.pml:166 (state 24)	[((state!=3))]
+		queue 9 (tocpu0): [done]
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+195:	proc  1 (cpu0:1) snoopy.pml:45 Recv done	<- queue 9 (tocpu0)
+195:	proc  1 (cpu0:1) snoopy.pml:45 (state 2)	[tocpu0?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+196:	proc  4 (cache1:1) snoopy.pml:166 Send done	-> queue 10 (tocpu1)
+196:	proc  4 (cache1:1) snoopy.pml:166 (state 25)	[tocpu1!done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+197:	proc  1 (cpu0:1) snoopy.pml:49 (state 8)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+198:	proc  4 (cache1:1) snoopy.pml:169 (state 30)	[.(goto)]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): [done]
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+199:	proc  2 (cpu1:1) snoopy.pml:56 Recv done	<- queue 10 (tocpu1)
+199:	proc  2 (cpu1:1) snoopy.pml:56 (state 2)	[tocpu1?done]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+200:	proc  3 (cache0:1) snoopy.pml:126 (state 83)	[goto :b3]
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+-------------
+depth-limit (-u200 steps) reached
+#processes: 7
+		queue 9 (tocpu0): 
+		queue 8 (fromcpu0): 
+		queue 1 (tobus0): 
+		queue 7 (frombus0): 
+		queue 13 (grant0): 
+		queue 10 (tocpu1): 
+		queue 6 (fromcpu1): 
+		queue 2 (tobus1): 
+		queue 5 (frombus1): 
+		queue 11 (grant1): 
+		queue 3 (claim0): 
+		queue 4 (claim1): 
+		queue 14 (release0): 
+		queue 12 (release1): 
+200:	proc  6 (busarbiter:1) snoopy.pml:224 (state 3)
+200:	proc  5 (bus:1) snoopy.pml:236 (state 25)
+200:	proc  4 (cache1:1) snoopy.pml:180 (state 48)
+		cache1(4):which = 9
+		cache1(4):state = 1
+200:	proc  3 (cache0:1) snoopy.pml:128 (state 87)
+		cache0(3):which = 11
+		cache0(3):state = 2
+200:	proc  2 (cpu1:1) snoopy.pml:60 (state 8)
+200:	proc  1 (cpu0:1) snoopy.pml:44 (state 7)
+200:	proc  0 (:init::1) snoopy.pml:263 (state 8) <valid end state>
+7 processes created
+exit: 0

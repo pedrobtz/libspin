@@ -1,0 +1,2 @@
+spin: bad_undeclared.pml:4, Error: undeclared variable: y	saw 'operator: ='
+exit: 1

@@ -1,0 +1,24 @@
+never  {    /* [] (p -> <> q) */
+T0_init:
+	do
+	:: (((! ((p))) || ((q)))) -> goto accept_S20
+	:: (1) -> goto T0_S27
+	od;
+accept_S20:
+	do
+	:: (((! ((p))) || ((q)))) -> goto T0_init
+	:: (1) -> goto T0_S27
+	od;
+accept_S27:
+	do
+	:: ((q)) -> goto T0_init
+	:: (1) -> goto T0_S27
+	od;
+T0_S27:
+	do
+	:: ((q)) -> goto accept_S20
+	:: (1) -> goto T0_S27
+	:: ((q)) -> goto accept_S27
+	od;
+}
+exit: 0

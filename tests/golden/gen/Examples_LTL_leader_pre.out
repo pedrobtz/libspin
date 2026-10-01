@@ -1,0 +1,15 @@
+ltl p0: <> ((nr_leaders>0))
+ltl p1: <> ([] ((nr_leaders==1)))
+ltl p2: [] (((nr_leaders==0)) U ((nr_leaders==1)))
+ltl p3: ! ([] ((nr_leaders==0)))
+  the model contains 4 never claims: p3, p2, p1, p0
+  only one claim is used in a verification run
+  choose which one with ./pan -a -N name (defaults to -N p0)
+  or use e.g.: spin -search -ltl p0 leader_pre.pml
+exit: 0
+sha256 pan.b b716de71621e32d8df19c3ea94ba4d273ac31d8d3b377cd5221944dd1edf4fe8
+sha256 pan.c 26f9f4d64bccea4ab02bf9e4bbb7b24982913303c0efc22f065be9218299f729
+sha256 pan.h 99c8e28a3ba38b4deb9f35fe8335c89e876bc25c22a7e9258f6cc15c930ffab4
+sha256 pan.m de6ad7b9dae563b9f06de1ec4d14d68a9dde5744f4891290ca61eccf9336022b
+sha256 pan.p 2b7918fb7f8bc2f82a94c76c89e812fdf3eef405c4b643a410cd2e33d27ddbe1
+sha256 pan.t 187ec833d0dfaa89638170f04039bd603548be991dfbed205fa567bc14103afc

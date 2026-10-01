@@ -1,0 +1,12 @@
+byte  	board[72]	0	<:global:>	<array>	{scope _}
+int   	moveall	0	<:global:>	<variable>	{scope _}
+int   	which	0	<:global:>	<variable>	{scope _}
+proctype	cell	0	<:global:>	<variable>	{scope _}
+int   	x	0	<cell>	<parameter 1>	{scope _}
+int   	y	0	<cell>	<parameter 2>	{scope _}
+int   	cnt	0	<cell>	<variable>	{scope _1_}
+int   	i	0	<cell>	<variable>	{scope _1_}
+int   	j	0	<cell>	<variable>	{scope _1_}
+int   	x	0	<:init:>	<variable>	{scope _2_}
+int   	y	0	<:init:>	<variable>	{scope _2_}
+exit: 0

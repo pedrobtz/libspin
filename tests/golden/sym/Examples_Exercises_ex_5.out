@@ -1,0 +1,13 @@
+mtype 	Wakeme	2	<:global:>	<constant>	{scope _}
+mtype 	Running	1	<:global:>	<constant>	{scope _}
+bit   	lk	0	<:global:>	<variable>	{scope _}
+bit   	sleep_q	0	<:global:>	<variable>	{scope _}
+bit   	r_lock	0	<:global:>	<variable>	{scope _}
+bit   	r_want	0	<:global:>	<variable>	{scope _}
+mtype 	State	1	<:global:>	<constant>	{scope _}
+proctype	client	1	<:global:>	<variable>	{scope _}
+proctype	server	1	<:global:>	<variable>	{scope _}
+label	wakeup	1	<server>	{scope _3_}
+label	progress	14	<client>	{scope _2_}
+label	sleep	3	<client>	{scope _2_}
+exit: 0

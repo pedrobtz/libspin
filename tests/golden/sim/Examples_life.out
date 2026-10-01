@@ -1,0 +1,679 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) life.pml:85 (state 1)	[board[(((((1-which)*5)*5)+(2*5))+1)] = 1]
+		board[0] = 0
+		board[1] = 0
+		board[2] = 0
+		board[3] = 0
+		board[4] = 0
+		board[5] = 0
+		board[6] = 0
+		board[7] = 0
+		board[8] = 0
+		board[9] = 0
+		board[10] = 0
+		board[11] = 0
+		board[12] = 0
+		board[13] = 0
+		board[14] = 0
+		board[15] = 0
+		board[16] = 0
+		board[17] = 0
+		board[18] = 0
+		board[19] = 0
+		board[20] = 0
+		board[21] = 0
+		board[22] = 0
+		board[23] = 0
+		board[24] = 0
+		board[25] = 0
+		board[26] = 0
+		board[27] = 0
+		board[28] = 0
+		board[29] = 0
+		board[30] = 0
+		board[31] = 0
+		board[32] = 0
+		board[33] = 0
+		board[34] = 0
+		board[35] = 0
+		board[36] = 1
+		board[37] = 0
+		board[38] = 0
+		board[39] = 0
+		board[40] = 0
+		board[41] = 0
+		board[42] = 0
+		board[43] = 0
+		board[44] = 0
+		board[45] = 0
+		board[46] = 0
+		board[47] = 0
+		board[48] = 0
+		board[49] = 0
+		board[50] = 0
+		board[51] = 0
+		board[52] = 0
+		board[53] = 0
+		board[54] = 0
+		board[55] = 0
+		board[56] = 0
+		board[57] = 0
+		board[58] = 0
+		board[59] = 0
+		board[60] = 0
+		board[61] = 0
+		board[62] = 0
+		board[63] = 0
+		board[64] = 0
+		board[65] = 0
+		board[66] = 0
+		board[67] = 0
+		board[68] = 0
+		board[69] = 0
+		board[70] = 0
+		board[71] = 0
+  2:	proc  0 (:init::1) life.pml:86 (state 2)	[board[(((((1-which)*5)*5)+(2*5))+2)] = 1]
+		board[0] = 0
+		board[1] = 0
+		board[2] = 0
+		board[3] = 0
+		board[4] = 0
+		board[5] = 0
+		board[6] = 0
+		board[7] = 0
+		board[8] = 0
+		board[9] = 0
+		board[10] = 0
+		board[11] = 0
+		board[12] = 0
+		board[13] = 0
+		board[14] = 0
+		board[15] = 0
+		board[16] = 0
+		board[17] = 0
+		board[18] = 0
+		board[19] = 0
+		board[20] = 0
+		board[21] = 0
+		board[22] = 0
+		board[23] = 0
+		board[24] = 0
+		board[25] = 0
+		board[26] = 0
+		board[27] = 0
+		board[28] = 0
+		board[29] = 0
+		board[30] = 0
+		board[31] = 0
+		board[32] = 0
+		board[33] = 0
+		board[34] = 0
+		board[35] = 0
+		board[36] = 1
+		board[37] = 1
+		board[38] = 0
+		board[39] = 0
+		board[40] = 0
+		board[41] = 0
+		board[42] = 0
+		board[43] = 0
+		board[44] = 0
+		board[45] = 0
+		board[46] = 0
+		board[47] = 0
+		board[48] = 0
+		board[49] = 0
+		board[50] = 0
+		board[51] = 0
+		board[52] = 0
+		board[53] = 0
+		board[54] = 0
+		board[55] = 0
+		board[56] = 0
+		board[57] = 0
+		board[58] = 0
+		board[59] = 0
+		board[60] = 0
+		board[61] = 0
+		board[62] = 0
+		board[63] = 0
+		board[64] = 0
+		board[65] = 0
+		board[66] = 0
+		board[67] = 0
+		board[68] = 0
+		board[69] = 0
+		board[70] = 0
+		board[71] = 0
+  3:	proc  0 (:init::1) life.pml:87 (state 3)	[board[(((((1-which)*5)*5)+(2*5))+3)] = 1]
+		board[0] = 0
+		board[1] = 0
+		board[2] = 0
+		board[3] = 0
+		board[4] = 0
+		board[5] = 0
+		board[6] = 0
+		board[7] = 0
+		board[8] = 0
+		board[9] = 0
+		board[10] = 0
+		board[11] = 0
+		board[12] = 0
+		board[13] = 0
+		board[14] = 0
+		board[15] = 0
+		board[16] = 0
+		board[17] = 0
+		board[18] = 0
+		board[19] = 0
+		board[20] = 0
+		board[21] = 0
+		board[22] = 0
+		board[23] = 0
+		board[24] = 0
+		board[25] = 0
+		board[26] = 0
+		board[27] = 0
+		board[28] = 0
+		board[29] = 0
+		board[30] = 0
+		board[31] = 0
+		board[32] = 0
+		board[33] = 0
+		board[34] = 0
+		board[35] = 0
+		board[36] = 1
+		board[37] = 1
+		board[38] = 1
+		board[39] = 0
+		board[40] = 0
+		board[41] = 0
+		board[42] = 0
+		board[43] = 0
+		board[44] = 0
+		board[45] = 0
+		board[46] = 0
+		board[47] = 0
+		board[48] = 0
+		board[49] = 0
+		board[50] = 0
+		board[51] = 0
+		board[52] = 0
+		board[53] = 0
+		board[54] = 0
+		board[55] = 0
+		board[56] = 0
+		board[57] = 0
+		board[58] = 0
+		board[59] = 0
+		board[60] = 0
+		board[61] = 0
+		board[62] = 0
+		board[63] = 0
+		board[64] = 0
+		board[65] = 0
+		board[66] = 0
+		board[67] = 0
+		board[68] = 0
+		board[69] = 0
+		board[70] = 0
+		board[71] = 0
+  4:	proc  0 (:init::1) life.pml:90 (state 4)	[x = 1]
+		:init:(0):x = 1
+  5:	proc  0 (:init::1) life.pml:101 (state 19)	[.(goto)]
+  6:	proc  0 (:init::1) life.pml:92 (state 5)	[((x<5))]
+  7:	proc  0 (:init::1) life.pml:93 (state 6)	[y = 1]
+		:init:(0):y = 1
+  8:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 1
+  9:	proc  0 (:init::1) creates proc  1 (cell)
+  9:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 10:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 2
+ 11:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 2
+ 12:	proc  0 (:init::1) creates proc  2 (cell)
+ 12:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 13:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 3
+ 14:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 3
+ 15:	proc  0 (:init::1) creates proc  3 (cell)
+ 15:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 16:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 4
+ 17:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 4
+ 18:	proc  0 (:init::1) creates proc  4 (cell)
+ 18:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 19:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 5
+ 20:	proc  0 (:init::1) life.pml:96 (state 10)	[else]
+ 21:	proc  0 (:init::1) life.pml:94 (state 14)	[break]
+ 22:	proc  0 (:init::1) life.pml:98 (state 15)	[x = (x+1)]
+		:init:(0):x = 2
+ 23:	proc  0 (:init::1) life.pml:92 (state 5)	[((x<5))]
+ 24:	proc  0 (:init::1) life.pml:93 (state 6)	[y = 1]
+		:init:(0):y = 1
+ 25:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 5
+ 26:	proc  0 (:init::1) creates proc  5 (cell)
+ 26:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 27:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 2
+ 28:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 6
+ 29:	proc  0 (:init::1) creates proc  6 (cell)
+ 29:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 30:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 3
+ 31:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 7
+ 32:	proc  0 (:init::1) creates proc  7 (cell)
+ 32:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 33:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 4
+ 34:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 8
+ 35:	proc  0 (:init::1) creates proc  8 (cell)
+ 35:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 36:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 5
+ 37:	proc  0 (:init::1) life.pml:96 (state 10)	[else]
+ 38:	proc  0 (:init::1) life.pml:94 (state 14)	[break]
+ 39:	proc  0 (:init::1) life.pml:98 (state 15)	[x = (x+1)]
+		:init:(0):x = 3
+ 40:	proc  0 (:init::1) life.pml:92 (state 5)	[((x<5))]
+ 41:	proc  0 (:init::1) life.pml:93 (state 6)	[y = 1]
+		:init:(0):y = 1
+ 42:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 9
+ 43:	proc  0 (:init::1) creates proc  9 (cell)
+ 43:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 44:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 2
+ 45:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 10
+ 46:	proc  0 (:init::1) creates proc 10 (cell)
+ 46:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 47:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 3
+ 48:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 11
+ 49:	proc  0 (:init::1) creates proc 11 (cell)
+ 49:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 50:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 4
+ 51:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 12
+ 52:	proc  0 (:init::1) creates proc 12 (cell)
+ 52:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 53:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 5
+ 54:	proc  0 (:init::1) life.pml:96 (state 10)	[else]
+ 55:	proc  0 (:init::1) life.pml:94 (state 14)	[break]
+ 56:	proc  0 (:init::1) life.pml:98 (state 15)	[x = (x+1)]
+		:init:(0):x = 4
+ 57:	proc  0 (:init::1) life.pml:92 (state 5)	[((x<5))]
+ 58:	proc  0 (:init::1) life.pml:93 (state 6)	[y = 1]
+		:init:(0):y = 1
+ 59:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 13
+ 60:	proc  0 (:init::1) creates proc 13 (cell)
+ 60:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 61:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 2
+ 62:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 14
+ 63:	proc  0 (:init::1) creates proc 14 (cell)
+ 63:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 64:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 3
+ 65:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 15
+ 66:	proc  0 (:init::1) creates proc 15 (cell)
+ 66:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 67:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 4
+ 68:	proc  0 (:init::1) life.pml:95 (state 7)	[((y<5))]
+Starting cell with pid 16
+ 69:	proc  0 (:init::1) creates proc 16 (cell)
+ 69:	proc  0 (:init::1) life.pml:95 (state 8)	[(run cell(x,y))]
+ 70:	proc  0 (:init::1) life.pml:95 (state 9)	[y = (y+1)]
+		:init:(0):y = 5
+ 71:	proc  0 (:init::1) life.pml:96 (state 10)	[else]
+ 72:	proc  0 (:init::1) life.pml:94 (state 14)	[break]
+ 73:	proc  0 (:init::1) life.pml:98 (state 15)	[x = (x+1)]
+		:init:(0):x = 5
+ 74:	proc  0 (:init::1) life.pml:99 (state 16)	[else]
+ 75:	proc  0 (:init::1) life.pml:91 (state 20)	[break]
+ 76:	proc  0 (:init::1) life.pml:109 (state 52)	[.(goto)]
+ 77:	proc  0 (:init::1) life.pml:104 (state 22)	[((moveall==0))]
+ 78:	proc  0 (:init::1) life.pml:105 (state 23)	[which = (1-which)]
+		which = 1
+ 79:	proc  0 (:init::1) life.pml:13 (state 24)	[x = 0]
+		:init:(0):x = 0
+ 80:	proc  0 (:init::1) life.pml:33 (state 47)	[.(goto)]
+ 81:	proc  0 (:init::1) life.pml:15 (state 25)	[((x<5))]
+ 82:	proc  0 (:init::1) life.pml:16 (state 26)	[y = 0]
+		:init:(0):y = 0
+      | 83:	proc  0 (:init::1) life.pml:16 (state 27)	[printf('|')]
+ 84:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+ 85:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+ 86:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      . 87:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+ 88:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+ 89:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 1
+ 90:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+ 91:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+ 92:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      . 93:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+ 94:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+ 95:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 2
+ 96:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+ 97:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+ 98:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      . 99:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+100:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+101:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 3
+102:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+103:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+104:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .105:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+106:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+107:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 4
+108:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+109:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+110:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .111:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+112:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+113:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 5
+114:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+115:	proc  0 (:init::1) life.pml:24 (state 36)	[else]
+      |
+116:	proc  0 (:init::1) life.pml:25 (state 37)	[printf('|\\n')]
+117:	proc  0 (:init::1) life.pml:26 (state 38)	[goto :b7]
+118:	proc  0 (:init::1) life.pml:28 (state 42)	[x = (x+1)]
+		:init:(0):x = 1
+119:	proc  0 (:init::1) life.pml:33 (state 47)	[.(goto)]
+120:	proc  0 (:init::1) life.pml:15 (state 25)	[((x<5))]
+121:	proc  0 (:init::1) life.pml:16 (state 26)	[y = 0]
+		:init:(0):y = 0
+      |122:	proc  0 (:init::1) life.pml:16 (state 27)	[printf('|')]
+123:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+124:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+125:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .126:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+127:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+128:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 1
+129:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+130:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+131:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .132:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+133:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+134:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 2
+135:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+136:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+137:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .138:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+139:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+140:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 3
+141:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+142:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+143:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .144:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+145:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+146:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 4
+147:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+148:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+149:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .150:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+151:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+152:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 5
+153:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+154:	proc  0 (:init::1) life.pml:24 (state 36)	[else]
+      |
+155:	proc  0 (:init::1) life.pml:25 (state 37)	[printf('|\\n')]
+156:	proc  0 (:init::1) life.pml:26 (state 38)	[goto :b7]
+157:	proc  0 (:init::1) life.pml:28 (state 42)	[x = (x+1)]
+		:init:(0):x = 2
+158:	proc  0 (:init::1) life.pml:33 (state 47)	[.(goto)]
+159:	proc  0 (:init::1) life.pml:15 (state 25)	[((x<5))]
+160:	proc  0 (:init::1) life.pml:16 (state 26)	[y = 0]
+		:init:(0):y = 0
+      |161:	proc  0 (:init::1) life.pml:16 (state 27)	[printf('|')]
+162:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+163:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+164:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .165:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+166:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+167:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 1
+168:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+169:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+170:	proc  0 (:init::1) life.pml:20 (state 29)	[(board[((((which*5)*5)+(x*5))+y)])]
+      +171:	proc  0 (:init::1) life.pml:20 (state 30)	[printf('+')]
+172:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+173:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 2
+174:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+175:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+176:	proc  0 (:init::1) life.pml:20 (state 29)	[(board[((((which*5)*5)+(x*5))+y)])]
+      +177:	proc  0 (:init::1) life.pml:20 (state 30)	[printf('+')]
+178:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+179:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 3
+180:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+181:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+182:	proc  0 (:init::1) life.pml:20 (state 29)	[(board[((((which*5)*5)+(x*5))+y)])]
+      +183:	proc  0 (:init::1) life.pml:20 (state 30)	[printf('+')]
+184:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+185:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 4
+186:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+187:	proc  0 (:init::1) life.pml:18 (state 28)	[((y<5))]
+188:	proc  0 (:init::1) life.pml:21 (state 31)	[else]
+      .189:	proc  0 (:init::1) life.pml:21 (state 32)	[printf('.')]
+190:	proc  0 (:init::1) life.pml:23 (state 34)	[.(goto)]
+191:	proc  0 (:init::1) life.pml:23 (state 35)	[y = (y+1)]
+		:init:(0):y = 5
+192:	proc  0 (:init::1) life.pml:28 (state 40)	[.(goto)]
+193:	proc  0 (:init::1) life.pml:24 (state 36)	[else]
+      |
+194:	proc  0 (:init::1) life.pml:25 (state 37)	[printf('|\\n')]
+195:	proc  0 (:init::1) life.pml:26 (state 38)	[goto :b7]
+196:	proc  0 (:init::1) life.pml:28 (state 42)	[x = (x+1)]
+		:init:(0):x = 3
+197:	proc  0 (:init::1) life.pml:33 (state 47)	[.(goto)]
+198:	proc  0 (:init::1) life.pml:15 (state 25)	[((x<5))]
+199:	proc  0 (:init::1) life.pml:16 (state 26)	[y = 0]
+		:init:(0):y = 0
+      |200:	proc  0 (:init::1) life.pml:16 (state 27)	[printf('|')]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 17
+		board[0] = 0
+		board[1] = 0
+		board[2] = 0
+		board[3] = 0
+		board[4] = 0
+		board[5] = 0
+		board[6] = 0
+		board[7] = 0
+		board[8] = 0
+		board[9] = 0
+		board[10] = 0
+		board[11] = 0
+		board[12] = 0
+		board[13] = 0
+		board[14] = 0
+		board[15] = 0
+		board[16] = 0
+		board[17] = 0
+		board[18] = 0
+		board[19] = 0
+		board[20] = 0
+		board[21] = 0
+		board[22] = 0
+		board[23] = 0
+		board[24] = 0
+		board[25] = 0
+		board[26] = 0
+		board[27] = 0
+		board[28] = 0
+		board[29] = 0
+		board[30] = 0
+		board[31] = 0
+		board[32] = 0
+		board[33] = 0
+		board[34] = 0
+		board[35] = 0
+		board[36] = 1
+		board[37] = 1
+		board[38] = 1
+		board[39] = 0
+		board[40] = 0
+		board[41] = 0
+		board[42] = 0
+		board[43] = 0
+		board[44] = 0
+		board[45] = 0
+		board[46] = 0
+		board[47] = 0
+		board[48] = 0
+		board[49] = 0
+		board[50] = 0
+		board[51] = 0
+		board[52] = 0
+		board[53] = 0
+		board[54] = 0
+		board[55] = 0
+		board[56] = 0
+		board[57] = 0
+		board[58] = 0
+		board[59] = 0
+		board[60] = 0
+		board[61] = 0
+		board[62] = 0
+		board[63] = 0
+		board[64] = 0
+		board[65] = 0
+		board[66] = 0
+		board[67] = 0
+		board[68] = 0
+		board[69] = 0
+		board[70] = 0
+		board[71] = 0
+		moveall = 0
+		which = 1
+200:	proc 16 (cell:1) life.pml:38 (state 42)
+		cell(16):j = 0
+		cell(16):i = 0
+		cell(16):cnt = 0
+		cell(16):y = 4
+		cell(16):x = 4
+200:	proc 15 (cell:1) life.pml:38 (state 42)
+		cell(15):j = 0
+		cell(15):i = 0
+		cell(15):cnt = 0
+		cell(15):y = 3
+		cell(15):x = 4
+200:	proc 14 (cell:1) life.pml:38 (state 42)
+		cell(14):j = 0
+		cell(14):i = 0
+		cell(14):cnt = 0
+		cell(14):y = 2
+		cell(14):x = 4
+200:	proc 13 (cell:1) life.pml:38 (state 42)
+		cell(13):j = 0
+		cell(13):i = 0
+		cell(13):cnt = 0
+		cell(13):y = 1
+		cell(13):x = 4
+200:	proc 12 (cell:1) life.pml:38 (state 42)
+		cell(12):j = 0
+		cell(12):i = 0
+		cell(12):cnt = 0
+		cell(12):y = 4
+		cell(12):x = 3
+200:	proc 11 (cell:1) life.pml:38 (state 42)
+		cell(11):j = 0
+		cell(11):i = 0
+		cell(11):cnt = 0
+		cell(11):y = 3
+		cell(11):x = 3
+200:	proc 10 (cell:1) life.pml:38 (state 42)
+		cell(10):j = 0
+		cell(10):i = 0
+		cell(10):cnt = 0
+		cell(10):y = 2
+		cell(10):x = 3
+200:	proc  9 (cell:1) life.pml:38 (state 42)
+		cell(9):j = 0
+		cell(9):i = 0
+		cell(9):cnt = 0
+		cell(9):y = 1
+		cell(9):x = 3
+200:	proc  8 (cell:1) life.pml:38 (state 42)
+		cell(8):j = 0
+		cell(8):i = 0
+		cell(8):cnt = 0
+		cell(8):y = 4
+		cell(8):x = 2
+200:	proc  7 (cell:1) life.pml:38 (state 42)
+		cell(7):j = 0
+		cell(7):i = 0
+		cell(7):cnt = 0
+		cell(7):y = 3
+		cell(7):x = 2
+200:	proc  6 (cell:1) life.pml:38 (state 42)
+		cell(6):j = 0
+		cell(6):i = 0
+		cell(6):cnt = 0
+		cell(6):y = 2
+		cell(6):x = 2
+200:	proc  5 (cell:1) life.pml:38 (state 42)
+		cell(5):j = 0
+		cell(5):i = 0
+		cell(5):cnt = 0
+		cell(5):y = 1
+		cell(5):x = 2
+200:	proc  4 (cell:1) life.pml:38 (state 42)
+		cell(4):j = 0
+		cell(4):i = 0
+		cell(4):cnt = 0
+		cell(4):y = 4
+		cell(4):x = 1
+200:	proc  3 (cell:1) life.pml:38 (state 42)
+		cell(3):j = 0
+		cell(3):i = 0
+		cell(3):cnt = 0
+		cell(3):y = 3
+		cell(3):x = 1
+200:	proc  2 (cell:1) life.pml:38 (state 42)
+		cell(2):j = 0
+		cell(2):i = 0
+		cell(2):cnt = 0
+		cell(2):y = 2
+		cell(2):x = 1
+200:	proc  1 (cell:1) life.pml:38 (state 42)
+		cell(1):j = 0
+		cell(1):i = 0
+		cell(1):cnt = 0
+		cell(1):y = 1
+		cell(1):x = 1
+200:	proc  0 (:init::1) life.pml:28 (state 40)
+		:init:(0):y = 0
+		:init:(0):x = 3
+17 processes created
+exit: 0

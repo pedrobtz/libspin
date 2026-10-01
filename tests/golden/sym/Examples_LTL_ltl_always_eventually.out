@@ -1,0 +1,5 @@
+ltl name: [] (<> ((p>5)))
+int   	p	0	<:global:>	<variable>	{scope _}
+label	accept_S4	10	<name>	{scope _3_}
+label	T0_init	5	<name>	{scope _3_}
+exit: 0

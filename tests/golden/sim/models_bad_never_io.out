@@ -1,0 +1,12 @@
+  0:	proc  - (:root:) creates proc  0 (p)
+spin: bad_never_io.pml:4, Error: never claim contains i/o stmnts	saw 'keyword: od' near 'od'
+warning: never claim not used in random simulation
+  1:	proc  0 (p:1) bad_never_io.pml:3 Send 1	-> queue 1 (c)
+  1:	proc  0 (p:1) bad_never_io.pml:3 (state 1)	[c!1]
+		queue 1 (c): [1]
+  2:	proc  0 (p:1) bad_never_io.pml:3 Recv 1	<- queue 1 (c)
+  2:	proc  0 (p:1) bad_never_io.pml:3 (state 2)	[c?_]
+		queue 1 (c): 
+  2:	proc  0 (p:1)       terminates
+1 process created
+exit: 1

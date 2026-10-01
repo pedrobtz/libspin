@@ -1,0 +1,12 @@
+ltl p1: [] ((! ((zune@S))) || (<> ((zune@E))))
+chan  	q	0	<:global:>	<variable>	1	short 	{scope _}
+proctype	zune	1	<:global:>	<variable>	{scope _}
+short 	year	1980	<zune>	<variable>	{scope _2_}
+short 	days	0	<zune>	<variable>	{scope _2_}
+short 	days	10227	<:init:>	<variable>	{scope _3_}
+label	accept_S4	10	<p1>	{scope _5_}
+label	T0_init	5	<p1>	{scope _5_}
+label	end	21	<zune>	{scope _2_}
+label	E	20	<zune>	{scope _2_}
+label	S	17	<zune>	{scope _2_}
+exit: 0

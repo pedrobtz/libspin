@@ -1,0 +1,17 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) ex_1f.pml:11 Send 170	-> queue 1 (dummy)
+  1:	proc  0 (:init::1) ex_1f.pml:11 (state 2)	[dummy!170]
+		queue 1 (:init:(0):dummy): [170]
+  2:	proc  0 (:init::1) ex_1f.pml:13 (state 4)	[.(goto)]
+		queue 1 (:init:(0):dummy): [170]
+  3:	proc  0 (:init::1) ex_1f.pml:11 Send 170	-> queue 1 (dummy)
+  3:	proc  0 (:init::1) ex_1f.pml:11 (state 2)	[dummy!170]
+		queue 1 (:init:(0):dummy): [170][170]
+  4:	proc  0 (:init::1) ex_1f.pml:13 (state 4)	[.(goto)]
+		queue 1 (:init:(0):dummy): [170][170]
+      timeout
+#processes: 1
+  4:	proc  0 (:init::1) ex_1f.pml:9 (state 3)
+		queue 1 (:init:(0):dummy): [170][170]
+1 process created
+exit: 0

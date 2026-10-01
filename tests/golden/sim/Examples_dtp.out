@@ -1,0 +1,1354 @@
+dtp.pml:107:17: warning: '/*' within block comment [-Wcomment]
+  107 | /*              :: goto s5              /* channel disconnected */
+      |                                         ^
+dtp.pml:242:34: warning: '/*' within block comment [-Wcomment]
+  242 |         /*      :: rtype == rvnak -> goto s4    /* too soon */
+      |                                                 ^
+2 warnings generated.
+  0:	proc  - (:root:) creates proc  0 (:init:)
+Starting sender with pid 1
+  1:	proc  0 (:init::1) creates proc  1 (sender)
+  1:	proc  0 (:init::1) dtp.pml:21 (state 1)	[(run sender(RtoS,StoC))]
+		queue 2 (StoC): 
+		queue 1 (RtoS): 
+Starting channel with pid 2
+  2:	proc  0 (:init::1) creates proc  2 (channel)
+  2:	proc  0 (:init::1) dtp.pml:22 (state 2)	[(run channel(StoC,CtoR))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+Starting receiver with pid 3
+  3:	proc  0 (:init::1) creates proc  3 (receiver)
+  3:	proc  0 (:init::1) dtp.pml:23 (state 3)	[(run receiver(CtoR,RtoS))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+  4:	proc  1 (sender:1) dtp.pml:54 (state 1)	[offset = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):offset = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+  5:	proc  1 (sender:1) dtp.pml:55 (state 2)	[retries = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):retries = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+  6:	proc  1 (sender:1) dtp.pml:56 (state 3)	[maxretries = 6]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):maxretries = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+  7:	proc  1 (sender:1) dtp.pml:57 (state 4)	[rcvrrdy = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):rcvrrdy = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+  8:	proc  1 (sender:1) dtp.pml:58 (state 5)	[state = 2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):state = 2
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+  9:	proc  1 (sender:1) dtp.pml:59 (state 6)	[datat = data8]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):datat = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 10:	proc  1 (sender:1) dtp.pml:60 (state 7)	[queryt = query8]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):queryt = 3
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 11:	proc  1 (sender:1) dtp.pml:61 (state 8)	[lastt = last8]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):lastt = 5
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 12:	proc  3 (receiver:1) dtp.pml:220 (state 1)	[offset = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):offset = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 13:	proc  3 (receiver:1) dtp.pml:221 (state 2)	[state = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):state = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 14:	proc  3 (receiver:1) dtp.pml:222 (state 3)	[lasttyp = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):lasttyp = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 15:	proc  3 (receiver:1) dtp.pml:223 (state 4)	[retries = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):retries = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 16:	proc  3 (receiver:1) dtp.pml:224 (state 5)	[lastack = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):lastack = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 17:	proc  3 (receiver:1) dtp.pml:225 (state 6)	[rtype = nak]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):rtype = 4
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 18:	proc  3 (receiver:1) dtp.pml:226 (state 7)	[readStat = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):readStat = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 19:	proc  1 (sender:1) dtp.pml:68 (state 13)	[((len(inp)==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 20:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 21:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 22:	proc  3 (receiver:1) dtp.pml:266 (state 38)	[((state==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 23:	proc  1 (sender:1) dtp.pml:76 (state 21)	[((state==2))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 24:	proc  3 (receiver:1) dtp.pml:266 (state 39)	[goto s5]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 25:	proc  1 (sender:1) dtp.pml:76 (state 22)	[goto s7]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 26:	proc  3 (receiver:1) dtp.pml:273 Send 4,0	-> queue 1 (out)
+ 26:	proc  3 (receiver:1) dtp.pml:273 (state 48)	[out!rtype,offset]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+ 27:	proc  1 (sender:1) dtp.pml:117 Recv 4,0	<- queue 1 (inp)
+ 27:	proc  1 (sender:1) dtp.pml:117 (state 54)	[inp?t,seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):seqno = 0
+		sender(1):t = 4
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 28:	proc  1 (sender:1) dtp.pml:121 (state 59)	[((t==nak))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 29:	proc  1 (sender:1) dtp.pml:173 (state 97)	[toff = seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):toff = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 30:	proc  1 (sender:1) dtp.pml:175 (state 98)	[((toff>=offset))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 31:	proc  1 (sender:1) dtp.pml:146 (state 77)	[retries = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):retries = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 32:	proc  1 (sender:1) dtp.pml:150 (state 80)	[((offset<=toff))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 33:	proc  1 (sender:1) dtp.pml:151 (state 81)	[offset = toff]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):offset = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 34:	proc  3 (receiver:1) dtp.pml:274 (state 49)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):state = 1
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 35:	proc  1 (sender:1) dtp.pml:159 (state 86)	[(!(rcvrrdy))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 36:	proc  1 (sender:1) dtp.pml:160 (state 87)	[rcvrrdy = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):rcvrrdy = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 37:	proc  1 (sender:1) dtp.pml:161 (state 88)	[maxretries = 5]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):maxretries = 5
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 38:	proc  1 (sender:1) dtp.pml:163 (state 89)	[retries = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):retries = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 39:	proc  1 (sender:1) dtp.pml:167 (state 94)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):state = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 40:	proc  3 (receiver:1) dtp.pml:275 (state 50)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 41:	proc  1 (sender:1) dtp.pml:68 (state 13)	[((len(inp)==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 42:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 43:	proc  3 (receiver:1) dtp.pml:267 (state 40)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 44:	proc  3 (receiver:1) dtp.pml:267 (state 41)	[goto s6]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 45:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 46:	proc  1 (sender:1) dtp.pml:75 (state 19)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 47:	proc  1 (sender:1) dtp.pml:75 (state 20)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 48:	proc  1 (sender:1) dtp.pml:88 (state 30)	[((offset<3))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 49:	proc  1 (sender:1) dtp.pml:88 (state 31)	[type = datat]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):type = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 50:	proc  1 (sender:1) dtp.pml:93 (state 38)	[((retries<=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 51:	proc  1 (sender:1) dtp.pml:96 Send 6,0	-> queue 2 (out)
+ 51:	proc  1 (sender:1) dtp.pml:96 (state 42)	[out!type,offset]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 52:	proc  1 (sender:1) dtp.pml:97 (state 43)	[goto s6]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 53:	proc  1 (sender:1) dtp.pml:105 (state 46)	[offset = (offset+1)]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):offset = 1
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 54:	proc  1 (sender:1) dtp.pml:110 (state 49)	[(!(((type==queryt)||(type==lastt))))]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 55:	proc  1 (sender:1) dtp.pml:68 (state 13)	[((len(inp)==0))]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 56:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): [6,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,0]
+		queue 1 (sender(1):inp): 
+ 57:	proc  2 (channel:1) dtp.pml:32 Recv 6,0	<- queue 2 (inp)
+ 57:	proc  2 (channel:1) dtp.pml:32 (state 1)	[inp?a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		channel(2):b = 0
+		channel(2):a = 6
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+ 58:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 59:	proc  2 (channel:1) dtp.pml:35 (state 3)	[(((cnt==0)&&(a!=zak)))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+ 60:	proc  2 (channel:1) dtp.pml:35 (state 4)	[cnt = (cnt+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		channel(2):cnt = 1
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+ 61:	proc  1 (sender:1) dtp.pml:75 (state 19)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 62:	proc  2 (channel:1) dtp.pml:35 Send 7,0	-> queue 3 (out)
+ 62:	proc  2 (channel:1) dtp.pml:35 (state 5)	[out!crcck,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [7,0]
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): [7,0]
+		queue 2 (channel(2):inp): 
+ 63:	proc  1 (sender:1) dtp.pml:75 (state 20)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [7,0]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 64:	proc  3 (receiver:1) dtp.pml:279 Recv 7,0	<- queue 3 (inp)
+ 64:	proc  3 (receiver:1) dtp.pml:279 (state 51)	[inp?type,seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):type = 7
+		receiver(3):seqno = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 65:	proc  3 (receiver:1) dtp.pml:280 (state 52)	[rtype = nak]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):rtype = 4
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 66:	proc  3 (receiver:1) dtp.pml:281 (state 53)	[typ = ack]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):typ = 9
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 67:	proc  3 (receiver:1) dtp.pml:286 (state 56)	[(((type==-(3))||(type==crcck)))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 68:	proc  1 (sender:1) dtp.pml:88 (state 30)	[((offset<3))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 69:	proc  1 (sender:1) dtp.pml:88 (state 31)	[type = datat]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):type = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 70:	proc  1 (sender:1) dtp.pml:93 (state 38)	[((retries<=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 71:	proc  3 (receiver:1) dtp.pml:243 (state 18)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 72:	proc  3 (receiver:1) dtp.pml:245 (state 20)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 73:	proc  3 (receiver:1) dtp.pml:245 (state 21)	[retries = (retries+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		receiver(3):retries = 1
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 74:	proc  2 (channel:1) dtp.pml:42 (state 7)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+ 75:	proc  1 (sender:1) dtp.pml:96 Send 6,1	-> queue 2 (out)
+ 75:	proc  1 (sender:1) dtp.pml:96 (state 42)	[out!type,offset]
+		queue 2 (StoC): [6,1]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): [6,1]
+		queue 1 (sender(1):inp): 
+ 76:	proc  2 (channel:1) dtp.pml:43 (state 9)	[.(goto)]
+		queue 2 (StoC): [6,1]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): [6,1]
+ 77:	proc  2 (channel:1) dtp.pml:32 Recv 6,1	<- queue 2 (inp)
+ 77:	proc  2 (channel:1) dtp.pml:32 (state 1)	[inp?a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		channel(2):b = 1
+		channel(2):a = 6
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+ 78:	proc  3 (receiver:1) dtp.pml:251 (state 26)	[((retries<7))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): 
+ 79:	proc  1 (sender:1) dtp.pml:97 (state 43)	[goto s6]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 80:	proc  1 (sender:1) dtp.pml:105 (state 46)	[offset = (offset+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		sender(1):offset = 2
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 81:	proc  1 (sender:1) dtp.pml:110 (state 49)	[(!(((type==queryt)||(type==lastt))))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 82:	proc  2 (channel:1) dtp.pml:34 Send 6,1	-> queue 3 (out)
+ 82:	proc  2 (channel:1) dtp.pml:34 (state 2)	[out!a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): [6,1]
+		queue 2 (channel(2):inp): 
+ 83:	proc  3 (receiver:1) dtp.pml:252 (state 27)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 84:	proc  2 (channel:1) dtp.pml:42 (state 7)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): [6,1]
+		queue 2 (channel(2):inp): 
+ 85:	proc  1 (sender:1) dtp.pml:68 (state 13)	[((len(inp)==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 86:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 87:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 88:	proc  2 (channel:1) dtp.pml:43 (state 9)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): [6,1]
+		queue 2 (channel(2):inp): 
+ 89:	proc  3 (receiver:1) dtp.pml:254 (state 29)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 90:	proc  1 (sender:1) dtp.pml:75 (state 19)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 91:	proc  3 (receiver:1) dtp.pml:258 (state 32)	[((retries!=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 92:	proc  3 (receiver:1) dtp.pml:259 (state 33)	[state = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		receiver(3):state = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 93:	proc  3 (receiver:1) dtp.pml:266 (state 38)	[((state==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 94:	proc  3 (receiver:1) dtp.pml:266 (state 39)	[goto s5]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1]
+ 95:	proc  1 (sender:1) dtp.pml:75 (state 20)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 96:	proc  1 (sender:1) dtp.pml:88 (state 30)	[((offset<3))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 97:	proc  1 (sender:1) dtp.pml:88 (state 31)	[type = datat]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		sender(1):type = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 98:	proc  1 (sender:1) dtp.pml:93 (state 38)	[((retries<=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+ 99:	proc  3 (receiver:1) dtp.pml:273 Send 4,0	-> queue 1 (out)
+ 99:	proc  3 (receiver:1) dtp.pml:273 (state 48)	[out!rtype,offset]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,1]
+100:	proc  1 (sender:1) dtp.pml:96 Send 6,2	-> queue 2 (out)
+100:	proc  1 (sender:1) dtp.pml:96 (state 42)	[out!type,offset]
+		queue 2 (StoC): [6,2]
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): [6,2]
+		queue 1 (sender(1):inp): [4,0]
+101:	proc  3 (receiver:1) dtp.pml:274 (state 49)	[state = 1]
+		queue 2 (StoC): [6,2]
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): [4,0]
+		receiver(3):state = 1
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,1]
+102:	proc  2 (channel:1) dtp.pml:32 Recv 6,2	<- queue 2 (inp)
+102:	proc  2 (channel:1) dtp.pml:32 (state 1)	[inp?a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1]
+		queue 1 (RtoS): [4,0]
+		channel(2):b = 2
+		channel(2):a = 6
+		queue 3 (channel(2):out): [6,1]
+		queue 2 (channel(2):inp): 
+103:	proc  2 (channel:1) dtp.pml:34 Send 6,2	-> queue 3 (out)
+103:	proc  2 (channel:1) dtp.pml:34 (state 2)	[out!a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 3 (channel(2):out): [6,1][6,2]
+		queue 2 (channel(2):inp): 
+104:	proc  2 (channel:1) dtp.pml:42 (state 7)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 3 (channel(2):out): [6,1][6,2]
+		queue 2 (channel(2):inp): 
+105:	proc  2 (channel:1) dtp.pml:43 (state 9)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 3 (channel(2):out): [6,1][6,2]
+		queue 2 (channel(2):inp): 
+106:	proc  1 (sender:1) dtp.pml:97 (state 43)	[goto s6]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+107:	proc  3 (receiver:1) dtp.pml:275 (state 50)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,1][6,2]
+108:	proc  3 (receiver:1) dtp.pml:267 (state 40)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,1][6,2]
+109:	proc  1 (sender:1) dtp.pml:105 (state 46)	[offset = (offset+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		sender(1):offset = 3
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+110:	proc  1 (sender:1) dtp.pml:110 (state 49)	[(!(((type==queryt)||(type==lastt))))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+111:	proc  1 (sender:1) dtp.pml:67 (state 11)	[((len(inp)>0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+112:	proc  1 (sender:1) dtp.pml:67 (state 12)	[state = 2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		sender(1):state = 2
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+113:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+114:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+115:	proc  1 (sender:1) dtp.pml:76 (state 21)	[((state==2))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+116:	proc  1 (sender:1) dtp.pml:76 (state 22)	[goto s7]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+117:	proc  1 (sender:1) dtp.pml:117 Recv 4,0	<- queue 1 (inp)
+117:	proc  1 (sender:1) dtp.pml:117 (state 54)	[inp?t,seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): 
+		sender(1):seqno = 0
+		sender(1):t = 4
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+118:	proc  1 (sender:1) dtp.pml:121 (state 59)	[((t==nak))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+119:	proc  3 (receiver:1) dtp.pml:267 (state 41)	[goto s6]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,1][6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,1][6,2]
+120:	proc  3 (receiver:1) dtp.pml:279 Recv 6,1	<- queue 3 (inp)
+120:	proc  3 (receiver:1) dtp.pml:279 (state 51)	[inp?type,seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		receiver(3):type = 6
+		receiver(3):seqno = 1
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+121:	proc  3 (receiver:1) dtp.pml:280 (state 52)	[rtype = nak]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		receiver(3):rtype = 4
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+122:	proc  3 (receiver:1) dtp.pml:281 (state 53)	[typ = ack]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		receiver(3):typ = 9
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+123:	proc  3 (receiver:1) dtp.pml:290 (state 64)	[((type==data8))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+124:	proc  3 (receiver:1) dtp.pml:323 (state 81)	[((seqno>offset))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+125:	proc  3 (receiver:1) dtp.pml:324 (state 82)	[goto s3]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+126:	proc  3 (receiver:1) dtp.pml:243 (state 18)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+127:	proc  3 (receiver:1) dtp.pml:245 (state 21)	[retries = (retries+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		receiver(3):retries = 2
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+128:	proc  3 (receiver:1) dtp.pml:251 (state 26)	[((retries<7))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+129:	proc  1 (sender:1) dtp.pml:173 (state 97)	[toff = seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		sender(1):toff = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+130:	proc  1 (sender:1) dtp.pml:177 (state 100)	[((toff<offset))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+131:	proc  1 (sender:1) dtp.pml:179 (state 103)	[retries = (retries+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		sender(1):retries = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+132:	proc  1 (sender:1) dtp.pml:183 (state 106)	[((retries<maxretries))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+133:	proc  1 (sender:1) dtp.pml:185 (state 109)	[offset = toff]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		sender(1):offset = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+134:	proc  1 (sender:1) dtp.pml:164 (state 90)	[(rcvrrdy)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+135:	proc  1 (sender:1) dtp.pml:165 (state 91)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+136:	proc  1 (sender:1) dtp.pml:167 (state 94)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		sender(1):state = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+137:	proc  3 (receiver:1) dtp.pml:252 (state 27)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+138:	proc  1 (sender:1) dtp.pml:68 (state 13)	[((len(inp)==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+139:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+140:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+141:	proc  3 (receiver:1) dtp.pml:254 (state 29)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+142:	proc  3 (receiver:1) dtp.pml:258 (state 32)	[((retries!=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+143:	proc  3 (receiver:1) dtp.pml:259 (state 33)	[state = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		receiver(3):state = 0
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+144:	proc  3 (receiver:1) dtp.pml:266 (state 38)	[((state==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+145:	proc  1 (sender:1) dtp.pml:75 (state 19)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+146:	proc  3 (receiver:1) dtp.pml:266 (state 39)	[goto s5]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): 
+		queue 1 (receiver(3):out): 
+		queue 3 (receiver(3):inp): [6,2]
+147:	proc  3 (receiver:1) dtp.pml:273 Send 4,0	-> queue 1 (out)
+147:	proc  3 (receiver:1) dtp.pml:273 (state 48)	[out!rtype,offset]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,2]
+148:	proc  3 (receiver:1) dtp.pml:274 (state 49)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		receiver(3):state = 1
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,2]
+149:	proc  3 (receiver:1) dtp.pml:275 (state 50)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,2]
+150:	proc  3 (receiver:1) dtp.pml:267 (state 40)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,2]
+151:	proc  1 (sender:1) dtp.pml:75 (state 20)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+152:	proc  1 (sender:1) dtp.pml:88 (state 30)	[((offset<3))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+153:	proc  1 (sender:1) dtp.pml:88 (state 31)	[type = datat]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		sender(1):type = 6
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+154:	proc  1 (sender:1) dtp.pml:92 (state 36)	[((retries>0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+155:	proc  1 (sender:1) dtp.pml:92 (state 37)	[type = queryt]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		sender(1):type = 3
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+156:	proc  1 (sender:1) dtp.pml:96 Send 3,0	-> queue 2 (out)
+156:	proc  1 (sender:1) dtp.pml:96 (state 42)	[out!type,offset]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): [3,0]
+		queue 1 (sender(1):inp): [4,0]
+157:	proc  3 (receiver:1) dtp.pml:267 (state 41)	[goto s6]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): [6,2]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [6,2]
+158:	proc  3 (receiver:1) dtp.pml:279 Recv 6,2	<- queue 3 (inp)
+158:	proc  3 (receiver:1) dtp.pml:279 (state 51)	[inp?type,seqno]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		receiver(3):type = 6
+		receiver(3):seqno = 2
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+159:	proc  3 (receiver:1) dtp.pml:280 (state 52)	[rtype = nak]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		receiver(3):rtype = 4
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+160:	proc  3 (receiver:1) dtp.pml:281 (state 53)	[typ = ack]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		receiver(3):typ = 9
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+161:	proc  3 (receiver:1) dtp.pml:290 (state 64)	[((type==data8))]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+162:	proc  3 (receiver:1) dtp.pml:323 (state 81)	[((seqno>offset))]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+163:	proc  3 (receiver:1) dtp.pml:324 (state 82)	[goto s3]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+164:	proc  3 (receiver:1) dtp.pml:243 (state 18)	[(1)]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+165:	proc  3 (receiver:1) dtp.pml:245 (state 21)	[retries = (retries+1)]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		receiver(3):retries = 3
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+166:	proc  3 (receiver:1) dtp.pml:251 (state 26)	[((retries<7))]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+167:	proc  1 (sender:1) dtp.pml:97 (state 43)	[goto s6]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): [3,0]
+		queue 1 (sender(1):inp): [4,0]
+168:	proc  1 (sender:1) dtp.pml:105 (state 46)	[offset = (offset+1)]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		sender(1):offset = 1
+		queue 2 (sender(1):out): [3,0]
+		queue 1 (sender(1):inp): [4,0]
+169:	proc  1 (sender:1) dtp.pml:108 (state 47)	[(((type==queryt)||(type==lastt)))]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): [3,0]
+		queue 1 (sender(1):inp): [4,0]
+170:	proc  1 (sender:1) dtp.pml:109 (state 48)	[state = 2]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		sender(1):state = 2
+		queue 2 (sender(1):out): [3,0]
+		queue 1 (sender(1):inp): [4,0]
+171:	proc  3 (receiver:1) dtp.pml:252 (state 27)	[(1)]
+		queue 2 (StoC): [3,0]
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): 
+172:	proc  2 (channel:1) dtp.pml:32 Recv 3,0	<- queue 2 (inp)
+172:	proc  2 (channel:1) dtp.pml:32 (state 1)	[inp?a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		channel(2):b = 0
+		channel(2):a = 3
+		queue 3 (channel(2):out): 
+		queue 2 (channel(2):inp): 
+173:	proc  1 (sender:1) dtp.pml:67 (state 11)	[((len(inp)>0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): 
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+174:	proc  2 (channel:1) dtp.pml:34 Send 3,0	-> queue 3 (out)
+174:	proc  2 (channel:1) dtp.pml:34 (state 2)	[out!a,b]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 3 (channel(2):out): [3,0]
+		queue 2 (channel(2):inp): 
+175:	proc  1 (sender:1) dtp.pml:67 (state 12)	[state = 2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		sender(1):state = 2
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+176:	proc  3 (receiver:1) dtp.pml:254 (state 29)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+177:	proc  1 (sender:1) dtp.pml:70 (state 15)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+178:	proc  2 (channel:1) dtp.pml:42 (state 7)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 3 (channel(2):out): [3,0]
+		queue 2 (channel(2):inp): 
+179:	proc  1 (sender:1) dtp.pml:70 (state 16)	[goto s2]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+180:	proc  3 (receiver:1) dtp.pml:258 (state 32)	[((retries!=0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+181:	proc  3 (receiver:1) dtp.pml:259 (state 33)	[state = 0]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		receiver(3):state = 0
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+182:	proc  3 (receiver:1) dtp.pml:266 (state 38)	[((state==0))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+183:	proc  3 (receiver:1) dtp.pml:266 (state 39)	[goto s5]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+184:	proc  1 (sender:1) dtp.pml:76 (state 21)	[((state==2))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+185:	proc  1 (sender:1) dtp.pml:76 (state 22)	[goto s7]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+186:	proc  1 (sender:1) dtp.pml:117 Recv 4,0	<- queue 1 (inp)
+186:	proc  1 (sender:1) dtp.pml:117 (state 54)	[inp?t,seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): 
+		sender(1):seqno = 0
+		sender(1):t = 4
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+187:	proc  1 (sender:1) dtp.pml:121 (state 59)	[((t==nak))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): 
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): 
+188:	proc  2 (channel:1) dtp.pml:43 (state 9)	[.(goto)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): 
+		queue 3 (channel(2):out): [3,0]
+		queue 2 (channel(2):inp): 
+189:	proc  3 (receiver:1) dtp.pml:273 Send 4,0	-> queue 1 (out)
+189:	proc  3 (receiver:1) dtp.pml:273 (state 48)	[out!rtype,offset]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+190:	proc  3 (receiver:1) dtp.pml:274 (state 49)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		receiver(3):state = 1
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+191:	proc  3 (receiver:1) dtp.pml:275 (state 50)	[goto s4]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+192:	proc  3 (receiver:1) dtp.pml:267 (state 40)	[((state==1))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+193:	proc  1 (sender:1) dtp.pml:173 (state 97)	[toff = seqno]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		sender(1):toff = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+194:	proc  1 (sender:1) dtp.pml:177 (state 100)	[((toff<offset))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+195:	proc  1 (sender:1) dtp.pml:179 (state 103)	[retries = (retries+1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		sender(1):retries = 2
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+196:	proc  1 (sender:1) dtp.pml:183 (state 106)	[((retries<maxretries))]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+197:	proc  1 (sender:1) dtp.pml:185 (state 109)	[offset = toff]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		sender(1):offset = 0
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+198:	proc  1 (sender:1) dtp.pml:164 (state 90)	[(rcvrrdy)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+199:	proc  1 (sender:1) dtp.pml:165 (state 91)	[(1)]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+200:	proc  1 (sender:1) dtp.pml:167 (state 94)	[state = 1]
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+		sender(1):state = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+-------------
+depth-limit (-u200 steps) reached
+#processes: 4
+		queue 2 (StoC): 
+		queue 3 (CtoR): [3,0]
+		queue 1 (RtoS): [4,0]
+200:	proc  3 (receiver:1) dtp.pml:267 (state 41)
+		receiver(3):typ = 9
+		receiver(3):respreq = 0
+		receiver(3):type = 6
+		receiver(3):rtype = 4
+		receiver(3):seqno = 2
+		receiver(3):cnt = 0
+		receiver(3):readStat = 0
+		receiver(3):lastack = 0
+		receiver(3):retries = 3
+		receiver(3):offset = 0
+		receiver(3):lasttyp = 0
+		receiver(3):state = 1
+		queue 1 (receiver(3):out): [4,0]
+		queue 3 (receiver(3):inp): [3,0]
+200:	proc  2 (channel:1) dtp.pml:31 (state 8) <valid end state>
+		channel(2):cnt = 1
+		channel(2):b = 0
+		channel(2):a = 3
+		queue 3 (channel(2):out): [3,0]
+		queue 2 (channel(2):inp): 
+200:	proc  1 (sender:1) dtp.pml:66 (state 14)
+		sender(1):maxretries = 5
+		sender(1):retries = 2
+		sender(1):cnt = 0
+		sender(1):offset = 0
+		sender(1):toff = 0
+		sender(1):seqno = 0
+		sender(1):type = 3
+		sender(1):t = 4
+		sender(1):lastt = 5
+		sender(1):datat = 6
+		sender(1):queryt = 3
+		sender(1):state = 1
+		sender(1):rcvrrdy = 1
+		queue 2 (sender(1):out): 
+		queue 1 (sender(1):inp): [4,0]
+200:	proc  0 (:init::1) dtp.pml:25 (state 5) <valid end state>
+4 processes created
+exit: 0

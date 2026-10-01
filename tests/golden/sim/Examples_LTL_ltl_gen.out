@@ -1,0 +1,62 @@
+  0:	proc  - (:root:) creates proc  0 (:init:)
+  1:	proc  0 (:init::1) ltl_gen.pml:78 (state 1)	[((depth<4))]
+  2:	proc  0 (:init::1) ltl_gen.pml:81 (state 3)	[nodes[this].op = UnOp]
+  3:	proc  0 (:init::1) ltl_gen.pml:82 (state 4)	[next = (next+1)]
+		:init:(0):next = 1
+  4:	proc  0 (:init::1) ltl_gen.pml:83 (state 5)	[nodes[this].f = next]
+  5:	proc  0 (:init::1) ltl_gen.pml:86 (state 7)	[nodes[this].act = Eventually]
+  6:	proc  0 (:init::1) ltl_gen.pml:90 (state 11)	[.(goto)]
+  7:	proc  0 (:init::1) ltl_gen.pml:102 (state 25)	[.(goto)]
+  8:	proc  0 (:init::1) ltl_gen.pml:104 (state 28)	[else]
+  9:	proc  0 (:init::1) ltl_gen.pml:107 (state 30)	[.(goto)]
+ 10:	proc  0 (:init::1) ltl_gen.pml:108 (state 31)	[((dpth==this))]
+ 11:	proc  0 (:init::1) ltl_gen.pml:108 (state 32)	[dpth = next]
+		:init:(0):dpth = 1
+ 12:	proc  0 (:init::1) ltl_gen.pml:108 (state 33)	[depth = (depth+1)]
+		:init:(0):depth = 1
+ 13:	proc  0 (:init::1) ltl_gen.pml:112 (state 36)	[.(goto)]
+ 14:	proc  0 (:init::1) ltl_gen.pml:112 (state 37)	[this = (this+1)]
+		:init:(0):this = 1
+ 15:	proc  0 (:init::1) ltl_gen.pml:121 (state 49)	[.(goto)]
+ 16:	proc  0 (:init::1) ltl_gen.pml:78 (state 1)	[((depth<4))]
+ 17:	proc  0 (:init::1) ltl_gen.pml:80 (state 2)	[nodes[this].op = NoOp]
+ 18:	proc  0 (:init::1) ltl_gen.pml:102 (state 25)	[.(goto)]
+ 19:	proc  0 (:init::1) ltl_gen.pml:103 (state 26)	[((this==next))]
+ 20:	proc  0 (:init::1) ltl_gen.pml:103 (state 27)	[goto :b0]
+ 21:	proc  0 (:init::1) ltl_gen.pml:121 (state 51)	[assert((this!=31))]
+      ltl {  22:	proc  0 (:init::1) ltl_gen.pml:123 (state 52)	[printf('ltl { ')]
+Starting view with pid 1
+ 23:	proc  0 (:init::1) creates proc  1 (view)
+ 23:	proc  0 (:init::1) ltl_gen.pml:124 (state 53)	[(run view(0,next))]
+ 24:	proc  1 (view:1) ltl_gen.pml:42 (state 1)	[((this<=next))]
+ 25:	proc  1 (view:1) ltl_gen.pml:44 (state 2)	[((nodes[this].op==UnOp))]
+ 26:	proc  1 (view:1) ltl_gen.pml:47 (state 10)	[((nodes[this].act==Eventually))]
+          <> 27:	proc  1 (view:1) ltl_gen.pml:47 (state 11)	[printf('<>')]
+           ( 28:	proc  1 (view:1) ltl_gen.pml:47 (state 12)	[printf(' (')]
+ 29:	proc  1 (view:1) ltl_gen.pml:47 (state 13)	[n = _nr_pr]
+		view(1):n = 2
+Starting view with pid 2
+ 30:	proc  1 (view:1) creates proc  2 (view)
+ 30:	proc  1 (view:1) ltl_gen.pml:47 (state 14)	[(run view(nodes[this].f,next))]
+ 31:	proc  2 (view:1) ltl_gen.pml:42 (state 1)	[((this<=next))]
+ 32:	proc  2 (view:1) ltl_gen.pml:61 (state 96)	[((nodes[this].op==NoOp))]
+              p1  33:	proc  2 (view:1) ltl_gen.pml:62 (state 97)	[printf('p%d ',this)]
+ 34:	proc  2 (view:1) ltl_gen.pml:66 (state 101)	[.(goto)]
+ 35:	proc  2 (view:1) ltl_gen.pml:66 (state 102)	[this = (this+1)]
+		view(2):this = 2
+ 36:	proc  2 (view:1) ltl_gen.pml:69 (state 105)	[.(goto)]
+ 36:	proc  2 (view:1)               terminates
+ 37:	proc  1 (view:1) ltl_gen.pml:47 (state 15)	[((n==_nr_pr))]
+          )  38:	proc  1 (view:1) ltl_gen.pml:47 (state 16)	[printf(') ')]
+ 39:	proc  1 (view:1) ltl_gen.pml:52 (state 32)	[.(goto)]
+ 40:	proc  1 (view:1) ltl_gen.pml:66 (state 101)	[.(goto)]
+ 41:	proc  1 (view:1) ltl_gen.pml:66 (state 102)	[this = (this+1)]
+		view(1):this = 1
+ 42:	proc  1 (view:1) ltl_gen.pml:69 (state 105)	[.(goto)]
+ 42:	proc  1 (view:1)           terminates
+ 43:	proc  0 (:init::1) ltl_gen.pml:125 (state 54)	[((_nr_pr==1))]
+       }
+ 44:	proc  0 (:init::1) ltl_gen.pml:126 (state 55)	[printf(' }\\n')]
+ 44:	proc  0 (:init::1)       terminates
+3 processes created
+exit: 0

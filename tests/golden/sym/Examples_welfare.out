@@ -1,0 +1,8 @@
+int   	a[5]	0	<:global:>	<array>	{scope _}
+int   	b[5]	0	<:global:>	<array>	{scope _}
+int   	c[5]	0	<:global:>	<array>	{scope _}
+proctype	cr	1	<:global:>	<variable>	{scope _}
+byte  	i	0	<cr>	<variable>	{scope _1_}
+byte  	j	0	<cr>	<variable>	{scope _1_}
+byte  	k	0	<cr>	<variable>	{scope _1_}
+exit: 0

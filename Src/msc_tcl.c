@@ -41,7 +41,6 @@ extern int	ntrail, s_trail, prno, depth;
 extern short	Have_claim;
 extern Symbol	*oFname;
 
-extern void	exit(int);
 extern void	putpostlude(void);
 
 static void	putpages(void);
@@ -284,13 +283,13 @@ putpostlude(void)
 	putpages();
 	fprintf(pfd, ".c lower grid\n");
 	fprintf(pfd, ".c raise mesg\n");
-	fclose(pfd);
+	spin_fclose(pfd);
 
 	fprintf(stderr, "seed used: -n%d\n", WhatSeed());
 	sprintf(cmd, "wish -f %s.tcl &", oFname?oFname->name:"msc");
 	fprintf(stderr, "%s\n", cmd);
 	(void) unlink("pan.pre");
-	exit (system(cmd));
+	spin_bail(system(cmd));
 }
 
 void
@@ -298,7 +297,7 @@ putprelude(void)
 {	char snap[256]; FILE *fd;
 
 	sprintf(snap, "%s.tcl", oFname?oFname->name:"msc");
-	if (!(pfd = fopen(snap, MFLAGS)))
+	if (!(pfd = spin_fopen(snap, MFLAGS)))
 	{	fatal("cannot create file '%s'", snap);
 	}
 	if (s_trail)
@@ -306,14 +305,14 @@ putprelude(void)
 		sprintf(snap, "%s%d.trail", oFname?oFname->name:"msc", ntrail);
 		else
 		sprintf(snap, "%s.trail", oFname?oFname->name:"msc");
-		if (!(fd = fopen(snap, "r")))
+		if (!(fd = spin_fopen(snap, "r")))
 		{	snap[strlen(snap)-2] = '\0';
-			if (!(fd = fopen(snap, "r")))
+			if (!(fd = spin_fopen(snap, "r")))
 				fatal("cannot open trail file", (char *) 0);
 		}
 		TotSteps = 1;
 		while (fgets(snap, 256, fd)) TotSteps++;
-		fclose(fd);
+		spin_fclose(fd);
 	}
 	TotSteps *= 2;
 	R = (int   *) emalloc(TotSteps * sizeof(int));

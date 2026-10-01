@@ -1,3 +1,5 @@
 *.o
 Src/spin
 Src/y.output
+tests/lib/once
+Src/libspin.a

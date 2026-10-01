@@ -34,7 +34,6 @@ static void ana_stmnt(FSM_trans *, Lextok *, int);
 extern void AST_slice(void);
 extern void AST_store(ProcList *, int);
 extern int  has_global(Lextok *);
-extern void exit(int);
 
 static void
 fsm_table(void)

@@ -210,7 +210,7 @@ qrecv(Lextok *n, int full)
 #endif
 				if (c == 27 || c == 3)	/* escape or control-c */
 				{	printf("quit\n");
-					exit(0);
+					spin_bail(0);
 				} /* else: non-blocking */
 				if (c == EOF) return 0;	/* no char available */
 				(void) setval(m->lft, c);

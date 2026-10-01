@@ -39,13 +39,19 @@ INSTALL?=cp		# on linux: install -D
 SPIN_OS= spinlex.o sym.o vars.o main.o msc_tcl.o \
 	mesg.o flow.o sched.o run.o pangen1.o pangen2.o \
 	pangen3.o pangen4.o pangen5.o guided.o dstep.o \
-	structs.o pangen6.o pangen7.o reprosrc.o
+	structs.o pangen6.o pangen7.o reprosrc.o \
+	spin_lib.o
 
 TL_OS=	tl_parse.o tl_lex.o tl_main.o tl_trans.o tl_buchi.o \
 	tl_mem.o tl_rewrt.o tl_cache.o
 
-spin:	makefile $(SPIN_OS) $(TL_OS) spin.o
-	$(CC) $(CFLAGS) -o spin spin.o $(SPIN_OS) $(TL_OS) $(LDFLAGS)
+# libspin: the library is every object but spin_cli.o, which holds main().
+spin:	makefile libspin.a spin_cli.o
+	$(CC) $(CFLAGS) -o spin spin_cli.o libspin.a $(LDFLAGS)
+
+libspin.a: makefile $(SPIN_OS) $(TL_OS) spin.o
+	rm -f libspin.a
+	$(AR) rcs libspin.a spin.o $(SPIN_OS) $(TL_OS)
 
 install: spin
 	$(INSTALL) spin $(DESTDIR)/bin/spin
@@ -59,16 +65,16 @@ parser:	spin.y
 	$(BISON) $(YFLAGS) spin.y
 	@$(BISON) --version | head -1
 
-$(SPIN_OS): makefile spin.h spin.o
+$(SPIN_OS) spin_cli.o: makefile spin.h spin_lib.h spin.o
 
-$(TL_OS): makefile tl.h spin.o
+$(TL_OS): makefile tl.h spin_lib.h spin.o
 
 main.o pangen2.o msc_tcl.o: version.h
 pangen1.o: pangen1.h pangen3.h pangen6.h
 pangen2.o: pangen2.h pangen4.h pangen5.h pangen7.h
 
 clean:
-	rm -f spin *.o y.output y.debug
+	rm -f spin libspin.a *.o y.output y.debug
 	rm -f pan.[chmotb] a.out core *stackdump
 
 .PHONY: clean install parser

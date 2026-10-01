@@ -1,0 +1,148 @@
+/***** libspin: spin_lib.c *****/
+
+/*
+ * See spin_lib.h. Nothing in this file knows about Promela; it only gives
+ * the rest of Spin a way to stop, allocate and open files that does not
+ * assume the process ends when the work does.
+ */
+
+#include <setjmp.h>
+#include <stdlib.h>
+#include <string.h>
+#include "spin_lib.h"
+
+/* ---- termination ------------------------------------------------------ */
+
+static jmp_buf *bail_target;	/* armed by spin_main_once(), else NULL */
+
+void
+spin_bail(int status)
+{
+	if (bail_target)
+	{	/* longjmp(..., 0) would read as 1 at setjmp; shift by one */
+		longjmp(*bail_target, status + 1);
+	}
+	/* No entry point armed: only reachable if a caller bypasses
+	 * spin_main_once(). Keep upstream's behaviour in that case. */
+	exit(status);
+}
+
+/* ---- arena ------------------------------------------------------------ */
+
+/* Chunks are a singly linked list; allocation bumps inside the newest one.
+ * Spin never frees individually (emalloc() has no counterpart), so a bump
+ * allocator loses nothing and releasing is one walk of the list. */
+
+#define ARENA_CHUNK	(1u << 20)	/* 1 MB; bigger requests get their own */
+#define ARENA_ALIGN	16
+
+typedef struct Chunk {
+	struct Chunk	*next;
+	size_t		used;
+	size_t		cap;
+	size_t		pad_;	/* header is 2*ARENA_ALIGN on LP64/LLP64, 1x on ILP32 */
+} Chunk;
+
+static Chunk *arena;
+
+void *
+spin_arena_alloc(size_t n)
+{	Chunk *c;
+	void *p;
+
+	n = (n + ARENA_ALIGN - 1) & ~((size_t) ARENA_ALIGN - 1);
+	if (!arena || arena->cap - arena->used < n)
+	{	size_t cap = (n > ARENA_CHUNK) ? n : ARENA_CHUNK;
+		c = (Chunk *) malloc(sizeof(Chunk) + cap);
+		if (!c)
+		{	return NULL;
+		}
+		c->next = arena;
+		c->used = 0;
+		c->cap  = cap;
+		arena = c;
+	}
+	p = (char *) (arena + 1) + arena->used;
+	arena->used += n;
+	return p;
+}
+
+static void
+arena_release(void)
+{	Chunk *c, *nxt;
+
+	for (c = arena; c; c = nxt)
+	{	nxt = c->next;
+		free(c);
+	}
+	arena = NULL;
+}
+
+/* ---- files ------------------------------------------------------------ */
+
+/* Spin has at most a handful of files open at once (the five pan.* streams,
+ * the input, a never-claim temp file, a trail). A fixed table is enough;
+ * if it ever overflows the handle is still returned, just not tracked. */
+
+#define MAX_OPEN	64
+
+static FILE	*open_files[MAX_OPEN];
+static int	n_open;
+
+FILE *
+spin_fopen(const char *path, const char *mode)
+{	FILE *fp = fopen(path, mode);
+
+	if (fp && n_open < MAX_OPEN)
+	{	open_files[n_open++] = fp;
+	}
+	return fp;
+}
+
+int
+spin_fclose(FILE *fp)
+{	int i;
+
+	for (i = 0; i < n_open; i++)
+	{	if (open_files[i] == fp)
+		{	open_files[i] = open_files[--n_open];
+			break;
+	}	}
+	return fclose(fp);
+}
+
+static void
+files_release(void)
+{
+	while (n_open > 0)
+	{	(void) fclose(open_files[--n_open]);
+	}
+}
+
+/* ---- entry ------------------------------------------------------------ */
+
+void
+spin_cleanup(void)
+{
+	files_release();
+	arena_release();
+}
+
+int
+spin_main_once(int argc, char *argv[])
+{	jmp_buf here;
+	jmp_buf *outer = bail_target;
+	volatile int status = 0;
+	int jumped;
+
+	bail_target = &here;
+	jumped = setjmp(here);
+	if (jumped == 0)
+	{	status = spin_main_body(argc, argv);
+	} else
+	{	status = jumped - 1;
+	}
+	bail_target = outer;
+	spin_cleanup();
+	return status;
+}

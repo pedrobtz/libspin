@@ -7,7 +7,12 @@
 # differ between gcc and clang (Examples/dtp.pml has nested comments, which
 # clang reports and gcc does not). Carriage returns are stripped from both
 # the output and the pan.* files before comparing, so a text-mode stdout on
-# Windows compares equal to the goldens recorded on unix. pan.c alone is ~330 KB per model, so the generated
+# Windows compares equal to the goldens recorded on unix.
+#
+# pan.h records the generating machine's sizeof(long) as G_long, by design:
+# pan.c checks it against the compiler that builds the verifier. It is 8 on
+# every unix leg and 4 on mingw64, so that one line is masked before hashing.
+# It is the only platform-dependent byte in the generated sources. pan.c alone is ~330 KB per model, so the generated
 # sources are compared by checksum rather than stored; a mismatch names the
 # file, and the reference binary (upstream `spin` built from the `upstream`
 # remote) regenerates it for a real diff.
@@ -27,10 +32,11 @@ here=$(cd "$(dirname "$0")" && pwd)
 root=$(cd "$here/.." && pwd)
 golden="$here/golden"
 
+normalize() { tr -d '\r' < "$1" | sed 's/^\(#define G_long[[:space:]]*\)[0-9]*/\1N/'; }
 if command -v sha256sum >/dev/null 2>&1; then
-  sha256() { tr -d '\r' < "$1" | sha256sum | cut -c1-64; }
+  sha256() { normalize "$1" | sha256sum | cut -c1-64; }
 else
-  sha256() { tr -d '\r' < "$1" | shasum -a 256 | cut -c1-64; }
+  sha256() { normalize "$1" | shasum -a 256 | cut -c1-64; }
 fi
 
 # Models under test, as paths relative to the scratch root. Book_1991 is left

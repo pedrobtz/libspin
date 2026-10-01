@@ -160,7 +160,7 @@ getglobal(Lextok *sn)
 	int i, n = eval(sn->lft);
 
 	if (s->type == 0 && X_lst && (i = find_lab(s, X_lst->n, 0)))	/* getglobal */
-	{	printf("findlab through getglobal on %s\n", s->name);
+	{	spin_printf("findlab through getglobal on %s\n", s->name);
 		return i;	/* can this happen? */
 	}
 	if (s->type == STRUCT)
@@ -286,15 +286,15 @@ dumpglobals(void)
 			dg_dummy->lft->val = j;
 			/* in case of cast_val warnings, do this first: */
 			prefetch = getglobal(dg_dummy);
-			printf("\t\t%s", sp->name);
-			if (sp->nel > 1 || sp->isarray) printf("[%d]", j);
-			printf(" = ");
+			spin_printf("\t\t%s", sp->name);
+			if (sp->nel > 1 || sp->isarray) spin_printf("[%d]", j);
+			spin_printf(" = ");
 			if (sp->type == MTYPE
 			&&  sp->mtype_name)
 			{	s = sp->mtype_name->name;
 			}
-			sr_mesg(stdout, prefetch, sp->type == MTYPE, s);
-			printf("\n");
+			sr_mesg(spin_out, prefetch, sp->type == MTYPE, s);
+			spin_printf("\n");
 			if (limited_vis && (sp->hidden&2))
 			{	int colpos;
 				GBuf[0] = '\0';
@@ -315,16 +315,16 @@ dumpglobals(void)
 					continue;
 				}
 				if (!xspin)
-				{	printf("\t\t%s\n", GBuf);
+				{	spin_printf("\t\t%s\n", GBuf);
 					continue;
 				}
-				printf("MSC: ~G %s %s\n", sp->name, GBuf);
-				printf("%3d:\tproc %3d (TRACK) line   1 \"var\" ",
+				spin_printf("MSC: ~G %s %s\n", sp->name, GBuf);
+				spin_printf("%3d:\tproc %3d (TRACK) line   1 \"var\" ",
 					depth, colpos);
-				printf("(state 0)\t[printf('MSC: globvar\\\\n')]\n");
-				printf("\t\t%s", sp->name);
-				if (sp->nel > 1 || sp->isarray) printf("[%d]", j);
-				printf(" = %s\n", GBuf);
+				spin_printf("(state 0)\t[printf('MSC: globvar\\\\n')]\n");
+				spin_printf("\t\t%s", sp->name);
+				if (sp->nel > 1 || sp->isarray) spin_printf("[%d]", j);
+				spin_printf(" = %s\n", GBuf);
 	}	}	}
 }
 
@@ -367,17 +367,17 @@ dumplocal(RunList *r, int final)
 			dl_dummy->sym = z;
 			dl_dummy->lft->val = i;
 
-			printf("\t\t%s(%d):%s",
+			spin_printf("\t\t%s(%d):%s",
 				r->n->name, r->pid - Have_claim, z->name);
-			if (z->nel > 1 || z->isarray) printf("[%d]", i);
-			printf(" = ");
+			if (z->nel > 1 || z->isarray) spin_printf("[%d]", i);
+			spin_printf(" = ");
 
 			if (z->type == MTYPE
 			&&  z->mtype_name)
 			{	t = z->mtype_name->name;
 			}
-			sr_mesg(stdout, getval(dl_dummy), z->type == MTYPE, t);
-			printf("\n");
+			sr_mesg(spin_out, getval(dl_dummy), z->type == MTYPE, t);
+			spin_printf("\n");
 			if (limited_vis && (z->hidden&2))
 			{	int colpos;
 				GBuf[0] = '\0';
@@ -400,19 +400,19 @@ dumplocal(RunList *r, int final)
 					continue;
 				}
 				if (!xspin)
-				{	printf("\t\t%s\n", GBuf);
+				{	spin_printf("\t\t%s\n", GBuf);
 					continue;
 				}
-				printf("MSC: ~G %s(%d):%s %s\n",
+				spin_printf("MSC: ~G %s(%d):%s %s\n",
 					r->n->name, r->pid, z->name, GBuf);
 
-				printf("%3d:\tproc %3d (TRACK) line   1 \"var\" ",
+				spin_printf("%3d:\tproc %3d (TRACK) line   1 \"var\" ",
 					depth, colpos);
-				printf("(state 0)\t[printf('MSC: locvar\\\\n')]\n");
-				printf("\t\t%s(%d):%s",
+				spin_printf("(state 0)\t[printf('MSC: locvar\\\\n')]\n");
+				spin_printf("\t\t%s(%d):%s",
 					r->n->name, r->pid, z->name);
-				if (z->nel > 1 || z->isarray) printf("[%d]", i);
-				printf(" = %s\n", GBuf);
+				if (z->nel > 1 || z->isarray) spin_printf("[%d]", i);
+				spin_printf(" = %s\n", GBuf);
 	}	}	}
 }
 

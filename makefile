@@ -9,6 +9,8 @@
 #   make globals    regenerate the globals reset (Src/spin_reset_*.inc) after
 #                   adding or removing a file-scope variable; tools/globals.py
 #   make globals-check  fail if the generated reset is out of date (CI, unix legs)
+#   make redirect   re-run tools/redirect.py after an upstream merge
+#   make redirect-check  fail if library code names a console stream (CI)
 #   make parser     regenerate Src/y.tab.[ch] with bison 3.8 (see Src/makefile)
 #   make install    install spin and its man page (upstream target)
 #   make clean
@@ -36,12 +38,22 @@ tests/lib/once: tests/lib/once.c Src/libspin.a Src/spin_lib.h
 tests/lib/multi: tests/lib/multi.c Src/libspin.a Src/spin_lib.h
 	$(CC) $(CFLAGS) -ISrc -o $@ tests/lib/multi.c Src/libspin.a $(LDFLAGS)
 
-LIBTESTS = tests/lib/once tests/lib/multi
+tests/lib/capture: tests/lib/capture.c Src/libspin.a Src/spin_lib.h
+	$(CC) $(CFLAGS) -ISrc -o $@ tests/lib/capture.c Src/libspin.a $(LDFLAGS)
+
+LIBTESTS = tests/lib/once tests/lib/multi tests/lib/capture
 
 check: all $(LIBTESTS)
 	sh tests/run.sh Src/spin
 	sh tests/lib/run.sh tests/lib/once
 	sh tests/lib/multi.sh tests/lib/multi tests/lib/once
+	sh tests/lib/capture.sh tests/lib/capture tests/lib/once
+
+redirect:
+	python3 tools/redirect.py
+
+redirect-check:
+	python3 tools/redirect.py --check
 
 globals:
 	CC="$(CC)" python3 tools/globals.py
@@ -57,6 +69,7 @@ sanitize:
 	$(SAN_ENV) sh tests/run.sh Src/spin
 	$(SAN_ENV) sh tests/lib/run.sh tests/lib/once
 	$(SAN_ENV) sh tests/lib/multi.sh tests/lib/multi tests/lib/once
+	$(SAN_ENV) sh tests/lib/capture.sh tests/lib/capture tests/lib/once
 	$(MAKE) -C Src clean
 	rm -f $(LIBTESTS)
 
@@ -67,4 +80,4 @@ clean:
 	$(MAKE) -C Src clean
 	rm -f $(LIBTESTS)
 
-.PHONY: all install check sanitize parser globals globals-check clean
+.PHONY: all install check sanitize parser globals globals-check redirect redirect-check clean

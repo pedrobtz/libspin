@@ -117,14 +117,14 @@ AST_var(Lextok *n, Symbol *s, int toplevel)
 
 	if (toplevel)
 	{	if (s->context && s->type)
-			printf(":%s:L:", s->context->name);
+			spin_printf(":%s:L:", s->context->name);
 		else
-			printf("G:");
+			spin_printf("G:");
 	}
-	printf("%s", s->name); /* array indices ignored */
+	spin_printf("%s", s->name); /* array indices ignored */
 
 	if (s->type == STRUCT && n && n->rgt && n->rgt->lft)
-	{	printf(":");
+	{	spin_printf(":");
 		AST_var(n->rgt->lft, n->rgt->lft->sym, 0);
 	}
 }
@@ -424,13 +424,13 @@ AST_para(ProcList *p)
 			na->nxt = chalias;
 			chalcur = chalias = na;
 #if 0
-			printf("%s -- (par) -- ", p->n->name);
+			spin_printf("%s -- (par) -- ", p->n->name);
 			AST_var(c, c->sym, 1);
-			printf(" => <<");
+			spin_printf(" => <<");
 #endif
 			AST_findrun(p->n->name, cnt);
 #if 0
-			printf(">>\n");
+			spin_printf(">>\n");
 #endif
 		}
 	}
@@ -443,9 +443,9 @@ AST_haschan(Lextok *c)
 	if (Sym_typ(c) == CHAN)
 	{	AST_add_alias(c, 2);	/* ASGN */
 #if 0
-		printf("<<");
+		spin_printf("<<");
 		AST_var(c, c->sym, 1);
-		printf(">>\n");
+		spin_printf(">>\n");
 #endif
 	} else
 	{	AST_haschan(c->rgt);
@@ -481,7 +481,7 @@ static void
 AST_ownership(Symbol *s)
 {
 	if (!s) return;
-	printf("%s:", s->name);
+	spin_printf("%s:", s->name);
 	AST_ownership(s->owner);
 }
 #endif
@@ -564,7 +564,7 @@ AST_other(AST *a)	/* check chan params in asgns and recvs */
 				}
 				break;
 			default:
-				printf("type = %d\n", t->step->n->ntyp);
+				spin_printf("type = %d\n", t->step->n->ntyp);
 				non_fatal("unexpected chan def type", (char *) 0);
 				break;
 		}	}
@@ -575,25 +575,25 @@ AST_aliases(void)
 {	ALIAS *na, *ca;
 
 	for (na = chalias; na; na = na->nxt)
-	{	printf("\npossible aliases of ");
+	{	spin_printf("\npossible aliases of ");
 		AST_var(na->cnm, na->cnm->sym, 1);
-		printf("\n\t");
+		spin_printf("\n\t");
 		for (ca = na->alias; ca; ca = ca->nxt)
 		{	if (!ca->cnm->sym)
-				printf("no valid name ");
+				spin_printf("no valid name ");
 			else
 				AST_var(ca->cnm, ca->cnm->sym, 1);
-			printf("<");
-			if (ca->origin & 1) printf("RUN ");
-			if (ca->origin & 2) printf("ASGN ");
-			if (ca->origin & 4) printf("RCV ");
-			printf("[%s]", AST_isini(ca->cnm)?"Initzd":"Name");
-			printf(">");
-			if (ca->nxt) printf(", ");
+			spin_printf("<");
+			if (ca->origin & 1) spin_printf("RUN ");
+			if (ca->origin & 2) spin_printf("ASGN ");
+			if (ca->origin & 4) spin_printf("RCV ");
+			spin_printf("[%s]", AST_isini(ca->cnm)?"Initzd":"Name");
+			spin_printf(">");
+			if (ca->nxt) spin_printf(", ");
 		}
-		printf("\n");
+		spin_printf("\n");
 	}
-	printf("\n");
+	spin_printf("\n");
 }
 
 static void
@@ -609,19 +609,19 @@ AST_indirect(FSM_use *uin, FSM_trans *t, char *cause, char *pn)
 	t->relevant = 1;
 
 	if ((verbose&32) && t->step)
-	{	printf("\tDR %s [[ ", pn);
-		comment(stdout, t->step->n, 0);
-		printf("]]\n\t\tfully relevant %s", cause);
-		if (uin) { printf(" due to "); AST_var(uin->n, uin->n->sym, 1); }
-		printf("\n");
+	{	spin_printf("\tDR %s [[ ", pn);
+		comment(spin_out, t->step->n, 0);
+		spin_printf("]]\n\t\tfully relevant %s", cause);
+		if (uin) { spin_printf(" due to "); AST_var(uin->n, uin->n->sym, 1); }
+		spin_printf("\n");
 	}
 	for (u = t->Val[0]; u; u = u->nxt)
 		if (u != uin
 		&& (u->special&(USE|DEREF_USE)))
 		{	if (verbose&32)
-			{	printf("\t\t\tuses(%d): ", u->special);
+			{	spin_printf("\t\t\tuses(%d): ", u->special);
 				AST_var(u->n, u->n->sym, 1);
-				printf("\n");
+				spin_printf("\n");
 			}
 			name_AST_track(u->n, u->special);	/* add to slice criteria */
 		}
@@ -681,9 +681,9 @@ AST_relevant(Lextok *n)
 	ischan = (Sym_typ(n) == CHAN);
 
 	if (verbose&32)
-	{	printf("<<ast_relevant (ntyp=%d) ", n->ntyp);
+	{	spin_printf("<<ast_relevant (ntyp=%d) ", n->ntyp);
 		AST_var(n, n->sym, 1);
-		printf(">>\n");
+		spin_printf(">>\n");
 	}
 
 	for (t = expl_par; t; t = t->nxt)	/* param assignments */
@@ -719,9 +719,9 @@ AST_relpar(char *s)
 			&&  strcmp(u->n->sym->context->name, s) == 0)
 			{
 				if (verbose&32)
-				{	printf("proctype %s relevant, due to symbol ", s);
+				{	spin_printf("proctype %s relevant, due to symbol ", s);
 					AST_var(u->n, u->n->sym, 1);
-					printf("\n");
+					spin_printf("\n");
 				}
 				return 1;
 	}	}	}
@@ -821,16 +821,16 @@ AST_report(AST *a, Element *e)	/* ALSO deduce irrelevant vars */
 {
 	if (!(a->relevant&2))
 	{	a->relevant |= 2;
-		printf("spin: redundant in proctype %s (for given property):\n",
+		spin_printf("spin: redundant in proctype %s (for given property):\n",
 			a->p->n->name);
 	}
-	printf("      %s:%d (state %d)",
+	spin_printf("      %s:%d (state %d)",
 		e->n?e->n->fn->name:"-",
 		e->n?e->n->ln:-1,
 		e->seqno);
-	printf("	[");
-	comment(stdout, e->n, 0);
-	printf("]\n");
+	spin_printf("	[");
+	comment(spin_out, e->n, 0);
+	spin_printf("]\n");
 }
 
 static int
@@ -856,25 +856,25 @@ AST_edge_dump(AST *a, FSM_state *f)
 
 		if (verbose&32)
 		{	switch (t->relevant) {
-			case  0: printf("     "); break;
-			case  1: printf("*%3d ", t->round); break;
-			case  2: printf("+%3d ", t->round); break;
-			case  3: printf("#%3d ", t->round); break;
-			default: printf("? "); break;
+			case  0: spin_printf("     "); break;
+			case  1: spin_printf("*%3d ", t->round); break;
+			case  2: spin_printf("+%3d ", t->round); break;
+			case  3: spin_printf("#%3d ", t->round); break;
+			default: spin_printf("? "); break;
 			}
 	
-			printf("%d\t->\t%d\t", f->from, t->to);
+			spin_printf("%d\t->\t%d\t", f->from, t->to);
 			if (t->step)
-				comment(stdout, t->step->n, 0);
+				comment(spin_out, t->step->n, 0);
 			else
-				printf("Unless");
+				spin_printf("Unless");
 	
 			for (u = t->Val[0]; u; u = u->nxt)
-			{	printf(" <");
+			{	spin_printf(" <");
 				AST_var(u->n, u->n->sym, 1);
-				printf(":%d>", u->special);
+				spin_printf(":%d>", u->special);
 			}
-			printf("\n");
+			spin_printf("\n");
 		} else
 		{	if (t->relevant)
 				continue;
@@ -924,7 +924,7 @@ AST_dump(AST *a)
 	}
 
 	if (verbose&32)
-		printf("AST_START %s from %d\n", a->p->n->name, a->i_st);
+		spin_printf("AST_START %s from %d\n", a->p->n->name, a->i_st);
 
 	AST_dfs(a, a->i_st, 1);
 }
@@ -946,10 +946,10 @@ AST_sends(AST *a)
 			&&  ((u->special&USE) && !(u->special&DEREF_USE)))
 			{
 #if 0
-				printf("%s -- (%d->%d) -- ",
+				spin_printf("%s -- (%d->%d) -- ",
 					a->p->n->name, f->from, t->to);
 				AST_var(u->n, u->n->sym, 1);
-				printf(" -> chanlist\n");
+				spin_printf(" -> chanlist\n");
 #endif
 				cl = (ChanList *) emalloc(sizeof(ChanList));
 				cl->s = t->step->n;
@@ -1012,15 +1012,15 @@ static void
 name_AST_track(Lextok *n, int code)
 {	extern int nr_errs;
 #if 0
-	printf("AST_name: ");
+	spin_printf("AST_name: ");
 	AST_var(n, n->sym, 1);
-	printf(" -- %d\n", code);
+	spin_printf(" -- %d\n", code);
 #endif
 	if (in_recv && (code&DEF) && (code&USE))
-	{	printf("spin: %s:%d, error: DEF and USE of same var in rcv stmnt: ",
+	{	spin_printf("spin: %s:%d, error: DEF and USE of same var in rcv stmnt: ",
 			n->fn->name, n->ln);
 		AST_var(n, n->sym, 1);
-		printf(" -- %d\n", code);
+		spin_printf(" -- %d\n", code);
 		nr_errs++;
 	}
 	check_slice(n, code);
@@ -1170,7 +1170,7 @@ AST_track(Lextok *now, int code)	/* called from main.c */
 		break;
 
 	default:
-		printf("AST_track, NOT EXPECTED ntyp: %d\n", now->ntyp);
+		spin_printf("AST_track, NOT EXPECTED ntyp: %d\n", now->ntyp);
 		break;
 	}
 }
@@ -1183,11 +1183,11 @@ AST_dump_rel(void)
 	int banner=0;
 
 	if (verbose&32)
-	{	printf("Relevant variables:\n");
+	{	spin_printf("Relevant variables:\n");
 		for (rv = rel_vars; rv; rv = rv->nxt)
-		{	printf("\t");
+		{	spin_printf("\t");
 			AST_var(rv->n, rv->n->sym, 1);
-			printf("\n");
+			spin_printf("\n");
 		}
 		return 1;
 	}
@@ -1205,9 +1205,9 @@ AST_dump_rel(void)
 		&&  sputtype(buf, s->type))
 		{	if (!banner)
 			{	banner = 1;
-				printf("spin: redundant vars (for given property):\n");
+				spin_printf("spin: redundant vars (for given property):\n");
 			}
-			printf("\t");
+			spin_printf("\t");
 			symvar(s);
 	}	}
 	return banner;
@@ -1232,10 +1232,10 @@ AST_suggestions(void)
 		||   s->type == MTYPE))
 		{	if (!banner)
 			{	banner = 1;
-				printf("spin: consider using predicate");
-				printf(" abstraction to replace:\n");
+				spin_printf("spin: consider using predicate");
+				spin_printf(" abstraction to replace:\n");
 			}
-			printf("\t");
+			spin_printf("\t");
 			symvar(s);
 	}	}
 
@@ -1275,26 +1275,26 @@ AST_suggestions(void)
 			}
 		}
 no_good:	if (banner == 1 || banner == 2)
-		{	printf("spin: proctype %s defines a %s process\n",
+		{	spin_printf("spin: proctype %s defines a %s process\n",
 				a->p->n->name,
 				banner==1?"source":"sink");
 			talked |= banner;
 		} else if (banner == 3)
-		{	printf("spin: proctype %s mimics a buffer\n",
+		{	spin_printf("spin: proctype %s mimics a buffer\n",
 				a->p->n->name);
 			talked |= 4;
 		}
 	}
 	if (talked&1)
-	{	printf("\tto reduce complexity, consider merging the code of\n");
-		printf("\teach source process into the code of its target\n");
+	{	spin_printf("\tto reduce complexity, consider merging the code of\n");
+		spin_printf("\teach source process into the code of its target\n");
 	}
 	if (talked&2)
-	{	printf("\tto reduce complexity, consider merging the code of\n");
-		printf("\teach sink process into the code of its source\n");
+	{	spin_printf("\tto reduce complexity, consider merging the code of\n");
+		spin_printf("\teach sink process into the code of its source\n");
 	}
 	if (talked&4)
-		printf("\tto reduce complexity, avoid buffer processes\n");
+		spin_printf("\tto reduce complexity, avoid buffer processes\n");
 }
 
 static void
@@ -1344,9 +1344,9 @@ AST_data_dep(void)
 	for (sc = slicer; sc; sc = sc->nxt)
 	{	sc->used = 1;
 		if (verbose&32)
-		{	printf("spin: slice criterion ");
+		{	spin_printf("spin: slice criterion ");
 			AST_var(sc->n, sc->n->sym, 1);
-			printf(" type=%d\n", Sym_typ(sc->n));
+			spin_printf(" type=%d\n", Sym_typ(sc->n));
 		}
 		AST_relevant(sc->n);
 	}
@@ -1483,9 +1483,9 @@ AST_shouldconsider(AST *a, int s)
 	relevant may be replaceable with arbitrary tokens
  */
 				if (AST_suspect(t))
-				{	printf("spin: possibly redundant parameters in: ");
-					comment(stdout, t->step->n, 0);
-					printf("\n");
+				{	spin_printf("spin: possibly redundant parameters in: ");
+					comment(spin_out, t->step->n, 0);
+					spin_printf("\n");
 				}
 				break;
 			}
@@ -1512,18 +1512,18 @@ FSM_critical(AST *a, int s)
 		{	f->cr = 1;
 
 			if (verbose&32)
-			{	printf("\t\t\t\tcritical(%d) ", t->relevant);
-				comment(stdout, t->step->n, 0);
-				printf("\n");
+			{	spin_printf("\t\t\t\tcritical(%d) ", t->relevant);
+				comment(spin_out, t->step->n, 0);
+				spin_printf("\n");
 			}
 			break;
 		}
 #if 0
 	else {
 		if (verbose&32)
-		{ printf("\t\t\t\tnot-crit ");
-		  comment(stdout, t->step->n, 0);
-	 	  printf("\n");
+		{ spin_printf("\t\t\t\tnot-crit ");
+		  comment(spin_out, t->step->n, 0);
+	 	  spin_printf("\n");
 		}
 	}
 #endif
@@ -1541,7 +1541,7 @@ AST_ctrl(AST *a)
 	 * from which relevant transitions can be reached
 	 */
 	if (verbose&32)
-		printf("CTL -- %s\n", a->p->n->name);
+		spin_printf("CTL -- %s\n", a->p->n->name);
 
 	/* 1 : mark all blockable edges */
 	for (f = a->fsm; f; f = f->nxt)
@@ -1556,9 +1556,9 @@ AST_ctrl(AST *a)
 				t->round = AST_Round;
 				t->relevant |= 2;	/* mark for next phases */
 				if (verbose&32)
-				{	printf("\tpremark ");
-					comment(stdout, t->step->n, 0);
-					printf("\n");
+				{	spin_printf("\tpremark ");
+					comment(spin_out, t->step->n, 0);
+					spin_printf("\n");
 				}
 				break;
 			default:
@@ -1576,10 +1576,10 @@ AST_ctrl(AST *a)
 			if (t->relevant&2)
 			{	t->relevant &= ~2;	/* clear mark */
 				if (verbose&32)
-				{	printf("\t\tnomark ");
+				{	spin_printf("\t\tnomark ");
 					if (t->step && t->step->n)
-						comment(stdout, t->step->n, 0);
-					printf("\n");
+						comment(spin_out, t->step->n, 0);
+					spin_printf("\n");
 	}		}	}
 
 	/* 3 : lift marks across IF/DO etc. */
@@ -1609,10 +1609,10 @@ AST_ctrl(AST *a)
 		{	t->round = AST_Round;
 			t->relevant |= 2;	/* lift */
 			if (verbose&32)
-			{	printf("\t\t\tliftmark ");
+			{	spin_printf("\t\t\tliftmark ");
 				if (t->step && t->step->n)
-					comment(stdout, t->step->n, 0);
-				printf("\n");
+					comment(spin_out, t->step->n, 0);
+				spin_printf("\n");
 			}
 			AST_spread(a, t->to);	/* and spread to all guards */
 	}	}
@@ -1669,7 +1669,7 @@ AST_criteria(void)
 		AST_control_dep();	/* can add data deps, which add control deps */
 
 		if (verbose&32)
-			printf("\n\nROUND %d -- changes %d\n",
+			spin_printf("\n\nROUND %d -- changes %d\n",
 				AST_Round, AST_Changes);
 	}
 }
@@ -1699,7 +1699,7 @@ AST_slice(void)
 	int spurious = 0;
 
 	if (!slicer)
-	{	printf("spin: warning: no slice criteria found (no assertions and no claim)\n");
+	{	spin_printf("spin: warning: no slice criteria found (no assertions and no claim)\n");
 		spurious = 1;
 	}
 	AST_dorelevant();		/* mark procs refered to in remote refs */
@@ -1724,7 +1724,7 @@ AST_slice(void)
 		}
 		if (!AST_dump_rel()		/* relevant variables */
 		&&  spurious)
-			printf("spin: no redundancies found (for given property)\n");
+			spin_printf("spin: no redundancies found (for given property)\n");
 	}
 	AST_suggestions();
 
@@ -1869,22 +1869,22 @@ show_expl(void)
 {	FSM_trans *t, *T;
 	FSM_use *u;
 
-	printf("\nExplicit List:\n");
+	spin_printf("\nExplicit List:\n");
 	for (T = expl_par; T; T = (T == expl_par)?expl_var: (FSM_trans *) 0)
 	{	for (t = T; t; t = t->nxt)
 		{	if (!t->Val[0]) continue;
-			printf("%s", t->relevant?"*":" ");
-			printf("%3d", t->round);
+			spin_printf("%s", t->relevant?"*":" ");
+			spin_printf("%3d", t->round);
 			for (u = t->Val[0]; u; u = u->nxt)
-			{	printf("\t<");
+			{	spin_printf("\t<");
 				AST_var(u->n, u->n->sym, 1);
-				printf(":%d>, ", u->special);
+				spin_printf(":%d>, ", u->special);
 			}
-			printf("\n");
+			spin_printf("\n");
 		}
-		printf("==\n");
+		spin_printf("==\n");
 	}
-	printf("End\n");
+	spin_printf("End\n");
 }
 
 static void
@@ -1920,11 +1920,11 @@ bad_scratch(FSM_state *f, int upto)
 
 	f->scratch |= 4;
 
-	if (verbose&32) printf("X[%d:%d:%d] ", f->from, upto, f->scratch);
+	if (verbose&32) spin_printf("X[%d:%d:%d] ", f->from, upto, f->scratch);
 
 	if (f->scratch&1)
 	{	if (verbose&32)
-			printf("\tbad scratch: %d\n", f->from);
+			spin_printf("\tbad scratch: %d\n", f->from);
 bad:		f->scratch &= ~4;
 	/*	f->scratch |=  8;	 wrong */
 		return 1;
@@ -1975,10 +1975,10 @@ AST_checkpairs(AST *a)
 
 	for (p = a->pairs; p; p = p->nxt)
 	{	if (verbose&32)
-			printf("	inspect pair %d %d\n", p->b, p->h->from);
+			spin_printf("	inspect pair %d %d\n", p->b, p->h->from);
 		if (!bad_scratch(p->h, p->b))	/* subgraph is clean */
 		{	if (verbose&32)
-				printf("subgraph: %d .. %d\n", p->b, p->h->from);
+				spin_printf("subgraph: %d .. %d\n", p->b, p->h->from);
 			mark_subgraph(p->h, p->b);
 		}
 	}
@@ -2000,7 +2000,7 @@ subgraph(AST *a, FSM_state *f, int out)
 	g = h->mod;
 
 	if (verbose&32)
-		printf("possible pair %d %d -- %d\n",
+		spin_printf("possible pair %d %d -- %d\n",
 			f->from, h->from, (g[i]&(1<<j))?1:0);
 	
 	if (g[i]&(1<<j))		/* also a forward dominance pair */
@@ -2123,7 +2123,7 @@ curtail(AST *a)
 	3. all internal edges are non-data-relevant
 #endif
 	if (verbose&32)
-		printf("Curtail %s:\n", a->p->n->name);
+		spin_printf("Curtail %s:\n", a->p->n->name);
 
 	for (f = a->fsm; f; f = f->nxt)
 	{	if (!f->seen
@@ -2153,7 +2153,7 @@ curtail(AST *a)
 		}	}	}
 #if 0
 		if (verbose&32)
-			printf("prescratch %d -- %d %d %d %d -- %d\n",
+			spin_printf("prescratch %d -- %d %d %d %d -- %d\n",
 				f->from, i, isrel, blocking, haselse, is_guard(f));
 #endif
 		if (isrel			/* 3. */		
@@ -2162,7 +2162,7 @@ curtail(AST *a)
 		{	if (!is_guard(f))
 			{	f->scratch |= 1;
 				if (verbose&32)
-				printf("scratch %d -- %d %d %d %d\n",
+				spin_printf("scratch %d -- %d %d %d %d\n",
 					f->from, i, isrel, blocking, haselse);
 			}
 		}
@@ -2300,8 +2300,8 @@ AST_dominant(void)
 		a->nwords = (a->nstates + BPW - 1) / BPW;	/* round up */
 
 		if (verbose&32)
-		{	printf("%s (%d): ", a->p->n->name, a->i_st);
-			printf("states=%d (max %d), words = %d, bpw %d, overflow %d\n",
+		{	spin_printf("%s (%d): ", a->p->n->name, a->i_st);
+			spin_printf("states=%d (max %d), words = %d, bpw %d, overflow %d\n",
 				a->nstates, o_max, a->nwords,
 				(int) BPW, (int) (a->nstates % BPW));
 		}

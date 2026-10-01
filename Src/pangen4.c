@@ -199,7 +199,7 @@ undostmnt(Lextok *now, int m)
 			break;
 		} /* else fall thru */
 	default:
-		printf("spin: bad node type %d (.b)\n", now->ntyp);
+		spin_printf("spin: bad node type %d (.b)\n", now->ntyp);
 		alldone(1);
 	}
 }
@@ -361,9 +361,9 @@ proper_enabler(Lextok *n)
 	default:
 		break;
 	}
-	printf("spin: saw ");
+	spin_printf("spin: saw ");
 	explain(n->ntyp);
-	printf("\n");
+	spin_printf("\n");
 	return 0;
 }
 

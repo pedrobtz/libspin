@@ -114,9 +114,9 @@ tl_factor(void)
 	}
 	if (!ptr) tl_yyerror("expected predicate");
 #if 0
-	printf("factor:	");
+	spin_printf("factor:	");
 	tl_explain(ptr->ntyp);
-	printf("\n");
+	spin_printf("\n");
 #endif
 	return ptr;
 }
@@ -377,9 +377,9 @@ again:
 		}
 	if (!ptr) tl_yyerror("syntax error");
 #if 0
-	printf("level %d:	", nr);
+	spin_printf("level %d:	", nr);
 	tl_explain(ptr->ntyp);
-	printf("\n");
+	spin_printf("\n");
 #endif
 	return ptr;
 }
@@ -397,9 +397,9 @@ tl_parse(void)
 	/* tl_verbose = 1; */
 	n = tl_formula();
 	if (tl_verbose)
-	{	printf("formula: ");
+	{	spin_printf("formula: ");
 		dump(n);
-		printf("\n");
+		spin_printf("\n");
 	}
 	if (tl_Getchar() != -1)
 	{	tl_yyerror("syntax error");

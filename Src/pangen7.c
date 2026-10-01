@@ -147,9 +147,9 @@ more:
 static void
 wrap_text(char *pre, Lextok *t, char *post)
 {
-	printf(pre, (char *) 0);
-	comment(stdout, t, 0);
-	printf(post, (char *) 0);
+	spin_printf(pre, (char *) 0);
+	comment(spin_out, t, 0);
+	spin_printf(post, (char *) 0);
 }
 
 static State_Stack *
@@ -160,7 +160,7 @@ push_dsts(int *n)
 	for (s = dsts; s; s = s->nxt)
 	{	if (same_state(s->n, n))
 		{	if (verbose&64)
-			{	printf("\n");
+			{	spin_printf("\n");
 				for (s = dsts; s; s = s->nxt)
 				{	print_state_nm("\t", s->n, "\n");
 				}
@@ -190,7 +190,7 @@ complete_transition(Succ_List *sl, Guard *g)
 {	Guard *w;
 	int cnt = 0;
 
-	printf("	:: ");
+	spin_printf("	:: ");
 	for (w = g; w; w = w->nxt)
 	{	if (w->t->ntyp == CONST
 		&&  w->t->val == 1)
@@ -202,20 +202,20 @@ complete_transition(Succ_List *sl, Guard *g)
 		}
 
 		if (cnt > 0)
-		{	printf(" && ");
+		{	spin_printf(" && ");
 		}
 		wrap_text("", w->t, "");
 		cnt++;
 	}
 	if (cnt == 0)
-	{	printf("true");
+	{	spin_printf("true");
 	}
 	print_state_nm(" -> goto ", sl->s->state.combo, "");
 
 	if (is_accept > 0)
-	{	printf("_U%d\n", (unfolding+1)%nclaims);
+	{	spin_printf("_U%d\n", (unfolding+1)%nclaims);
 	} else
-	{	printf("_U%d\n", unfolding);
+	{	spin_printf("_U%d\n", unfolding);
 	}
 }
 
@@ -250,7 +250,7 @@ state_body(OneState *s, Guard *guard)
 					}
 					pop_dsts();
 				} else if (!y->nxt)	/* self-loop transition */
-				{	if (!not_printing) printf(" /* self-loop */\n");
+				{	if (!not_printing) spin_printf(" /* self-loop */\n");
 				} else
 				{	/* non_fatal("loop in state body", 0); ** maybe ok */
 				}
@@ -327,7 +327,7 @@ prune_accept(void)
 	for (n = 0; n < nclaims; n++)
 	{	if ((reached[n][Selfs[n]->seqno] & 2) == 0)
 		{	if (verbose)
-			{	printf("claim %d: selfloop not reachable\n", n);
+			{	spin_printf("claim %d: selfloop not reachable\n", n);
 			}
 			elim_lab(Selfs[n]);
 			Nacc[n] = claim_has_accept(locate_claim(n));
@@ -388,7 +388,7 @@ check_special(int *nrs)
 			 */
 			if (Strict == 0 && j == 1 && Nacc[i] == 0 && any_accepts > 0)
 			{	if ((verbose&32) && i == unfolding)
-				{	printf("	/* claim %d pseudo-accept */\n", i);
+				{	spin_printf("	/* claim %d pseudo-accept */\n", i);
 				}
 				goto is_accepting;
 			}
@@ -406,11 +406,11 @@ is_accepting:					if (strchr(p->n->name, ':'))
 						}
 						if (unfolding == 0 && i == 0)
 						{	if (!not_printing)
-							printf("%s_%s_%d:\n",	/* true accept */
+							spin_printf("%s_%s_%d:\n",	/* true accept */
 								spl[j].s, buf, slcnt++);
 						} else if (verbose&32)
 						{	if (!not_printing)
-							printf("%s_%s%d:\n",
+							spin_printf("%s_%s%d:\n",
 								buf, spl[j].s, slcnt++);
 						}
 						if (i == unfolding)
@@ -423,7 +423,7 @@ is_accepting:					if (strchr(p->n->name, ':'))
 		}	}	}
 		if (j == 0 && nmatches == nclaims)	/* end-state */
 		{	if (!not_printing)
-			{	printf("%s%d:\n", spl[j].s, slcnt++);
+			{	spin_printf("%s%d:\n", spl[j].s, slcnt++);
 	}	}	}
 }
 
@@ -432,7 +432,7 @@ render_state(SQueue *q)
 {
 	if (!q || !q->state.succ)
 	{	if (verbose&64)
-		{	printf("	no exit\n");
+		{	spin_printf("	no exit\n");
 		}
 		return 0;
 	}
@@ -444,13 +444,13 @@ render_state(SQueue *q)
 
 	if (!not_printing)
 	{	print_state_nm("", q->state.combo, "");	/* the name */
-		printf("_U%d:\n\tdo\n", unfolding);
+		spin_printf("_U%d:\n\tdo\n", unfolding);
 	}
 
 	state_body(&(q->state), (Guard *) 0);
 
 	if (!not_printing)
-	{	printf("\tod;\n");
+	{	spin_printf("\tod;\n");
 	}
 	pop_dsts();
 	return 1;
@@ -495,7 +495,7 @@ print_product(void)
 	int cnt;
 
 	if (unfolding == 0)
-	{	printf("never Product {\n");	/* name expected by iSpin */
+	{	spin_printf("never Product {\n");	/* name expected by iSpin */
 		q = find_state(Ist);	/* should find it in the holding q */
 		assert(q != NULL);
 		q->nxt = holding;	/* put it at the front */
@@ -504,7 +504,7 @@ print_product(void)
 	render = holding;
 	holding = lasthold = 0;
 
-	printf("/* ============= U%d ============= */\n", unfolding);
+	spin_printf("/* ============= U%d ============= */\n", unfolding);
 	cnt = 0;
 	do {
 		q = render;
@@ -525,11 +525,11 @@ print_product(void)
 	assert(!dsts);
 
 	if (cnt == 0)
-	{	printf("	0;\n");
+	{	spin_printf("	0;\n");
 	}
 
 	if (unfolding == nclaims-1)
-	{	printf("}\n");
+	{	spin_printf("}\n");
 	}
 }
 
@@ -561,21 +561,21 @@ static void
 print_raw(void)
 {	int i, j, n;
 
-	printf("#if 0\n");
+	spin_printf("#if 0\n");
 	for (n = 0; n < nclaims; n++)
-	{	printf("C%d:\n", n);
+	{	spin_printf("C%d:\n", n);
 		for (i = 0; i < nst; i++)
 		{	if (reached[n][i])
 			for (j = 0; j < nst; j++)
 			{	if (matrix[n][i][j])
-				{	if (reached[n][i] & 2) printf("+");
-					if (i == Ist[n]) printf("*");
-					printf("\t%d", i);
+				{	if (reached[n][i] & 2) spin_printf("+");
+					if (i == Ist[n]) spin_printf("*");
+					spin_printf("\t%d", i);
 					wrap_text(" -[", matrix[n][i][j]->n, "]->\t");
-					printf("%d\n", j);
+					spin_printf("%d\n", j);
 	}	}	}	}
-	printf("#endif\n\n");
-	fflush(stdout);
+	spin_printf("#endif\n\n");
+	fflush(spin_out);
 }
 
 void
@@ -644,11 +644,11 @@ nxt_trans(int n, int cs, int frst)
 static void
 print_state_nm(char *p, int *s, char *a)
 {	int i;
-	printf("%sP", p);
+	spin_printf("%sP", p);
 	for (i = 0; i < nclaims; i++)
-	{	printf("_%d", s[i]);
+	{	spin_printf("_%d", s[i]);
 	}
-	printf("%s", a);
+	spin_printf("%s", a);
 }
 
 static void
@@ -685,7 +685,7 @@ create_transition(OneState *s, SQueue *it)
 	s->succ = sl;
 done:
 	if (verbose&64)
-	{	printf("\n");
+	{	spin_printf("\n");
 	}
 }
 
@@ -872,7 +872,7 @@ get_seq(int n, Sequence *s)
 			for (h = e->sub; h; h = h->nxt)
 			{	Lextok *t = h->this->frst->n;
 				if (t->ntyp == ELSE)
-				{	if (verbose&64) printf("else at line %d\n", t->ln);
+				{	if (verbose&64) spin_printf("else at line %d\n", t->ln);
 					haselse = t;
 					continue;
 				}

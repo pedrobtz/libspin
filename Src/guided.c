@@ -33,7 +33,7 @@ whichproc(int p)
 
 	for (oX = run_lst; oX; oX = oX->nxt)
 		if (oX->pid == p)
-		{	printf("(%s) ", oX->n->name);
+		{	spin_printf("(%s) ", oX->n->name);
 			break;
 		}
 }
@@ -126,14 +126,14 @@ match_trail(void)
 	char snap[512], *q;
 
 	if (has_code)
-	{	printf("spin: important:\n");
-		printf("  =======================================warning====\n");
-		printf("  this model contains embedded c code statements\n");
-		printf("  these statements will not be executed when the trail\n");
-		printf("  is replayed in this way -- they are just printed,\n");
-		printf("  which will likely lead to inaccurate variable values.\n");
-		printf("  for an accurate replay use: ./pan -r\n");
-		printf("  =======================================warning====\n\n");
+	{	spin_printf("spin: important:\n");
+		spin_printf("  =======================================warning====\n");
+		spin_printf("  this model contains embedded c code statements\n");
+		spin_printf("  these statements will not be executed when the trail\n");
+		spin_printf("  is replayed in this way -- they are just printed,\n");
+		spin_printf("  which will likely lead to inaccurate variable values.\n");
+		spin_printf("  for an accurate replay use: ./pan -r\n");
+		spin_printf("  =======================================warning====\n\n");
 	}
 
 	/*
@@ -178,12 +178,12 @@ match_trail(void)
 				if ((fd = spin_fopen(snap, "r")) != NULL)
 					goto okay;
 			}
-			printf("spin: cannot find trail file\n");
+			spin_printf("spin: cannot find trail file\n");
 			alldone(1);
 	}	}
 okay:		
 	if (xspin == 0 && newer(oFname->name, snap))
-	{	printf("spin: warning, \"%s\" is newer than %s\n",
+	{	spin_printf("spin: warning, \"%s\" is newer than %s\n",
 			oFname->name, snap);
 	}
 	Tval = 1;
@@ -199,14 +199,14 @@ okay:
 	while (fscanf(fd, "%d:%d:%d\n", &depth, &prno, &nst) == 3)
 	{	if (depth == -2)
 		{	if (verbose)
-			{	printf("starting claim %d\n", prno);
+			{	spin_printf("starting claim %d\n", prno);
 			}
 			start_claim(prno);
 			continue;
 		}
 		if (depth == -4)
 		{	if (verbose&32)
-			{	printf("using statement merging\n");
+			{	spin_printf("using statement merging\n");
 			}
 			merger = 1;
 			ana_src(0, 1);
@@ -215,21 +215,21 @@ okay:
 		if (depth == -1)
 		{	if (1 || verbose)
 			{	if (columns == 2)
-				dotag(stdout, " CYCLE>\n");
+				dotag(spin_out, " CYCLE>\n");
 				else
-				dotag(stdout, "<<<<<START OF CYCLE>>>>>\n");
+				dotag(spin_out, "<<<<<START OF CYCLE>>>>>\n");
 			}
 			continue;
 		}
 		if (depth <= -5
 		&&  depth >= -8)
-		{	printf("spin: used search permutation, replay with ./pan -r\n");
+		{	spin_printf("spin: used search permutation, replay with ./pan -r\n");
 			return;	/* permuted: -5, -6, -7, -8 */
 		}
 
 		if (cutoff > 0 && depth >= cutoff)
-		{	printf("-------------\n");
-			printf("depth-limit (-u%d steps) reached\n", cutoff);
+		{	spin_printf("-------------\n");
+			spin_printf("depth-limit (-u%d steps) reached\n", cutoff);
 			break;
 		}
 
@@ -240,7 +240,7 @@ okay:
 				break;
 		}
 		if (!dothis)
-		{	printf("%3d: proc %d, no matching stmnt %d\n",
+		{	spin_printf("%3d: proc %d, no matching stmnt %d\n",
 				depth, prno - Have_claim, nst);
 			lost_trail();
 		}
@@ -253,27 +253,27 @@ okay:
 				nstop++;
 				if (verbose&4)
 				{	if (columns == 2)
-					{	dotag(stdout, "<end>\n");
+					{	dotag(spin_out, "<end>\n");
 						continue;
 					}
 					if (Have_claim && prno == 0)
-					printf("%3d: claim terminates\n",
+					spin_printf("%3d: claim terminates\n",
 						depth);
 					else
-					printf("%3d: proc %d terminates\n",
+					spin_printf("%3d: proc %d terminates\n",
 						depth, prno - Have_claim);
 				}
 				continue;
 			}
 			if (prno <= 1) continue;	/* init dies before never */
-			printf("%3d: stop error, ", depth);
-			printf("proc %d (i=%d) trans %d, %c\n",
+			spin_printf("%3d: stop error, ", depth);
+			spin_printf("proc %d (i=%d) trans %d, %c\n",
 				prno - Have_claim, i, nst, dothis->n->ntyp);
 			lost_trail();
 		}
 
 		if (0 && !xspin && (verbose&32))
-		{	printf("step %d i=%d pno %d stmnt %d\n", depth, i, prno, nst);
+		{	spin_printf("step %d i=%d pno %d stmnt %d\n", depth, i, prno, nst);
 		}
 
 		for (X_lst = run_lst; X_lst; X_lst = X_lst->nxt)
@@ -283,18 +283,18 @@ okay:
 
 		if (!X_lst)
 		{	if (verbose&32)
-			{	printf("%3d: no process %d (stmnt %d)\n", depth, prno - Have_claim, nst);
-				printf(" max %d (%d - %d + %d) claim %d ",
+			{	spin_printf("%3d: no process %d (stmnt %d)\n", depth, prno - Have_claim, nst);
+				spin_printf(" max %d (%d - %d + %d) claim %d ",
 					nproc - nstop + Skip_claim,
 					nproc, nstop, Skip_claim, Have_claim);
-				printf("active processes:\n");
+				spin_printf("active processes:\n");
 				for (X_lst = run_lst; X_lst; X_lst = X_lst->nxt)
-				{	printf("\tpid %d\tproctype %s\n", X_lst->pid, X_lst->n->name);
+				{	spin_printf("\tpid %d\tproctype %s\n", X_lst->pid, X_lst->n->name);
 				}
-				printf("\n");
+				spin_printf("\n");
 				continue;	
 			} else
-			{	printf("%3d:\tproc  %d (?) ", depth, prno);
+			{	spin_printf("%3d:\tproc  %d (?) ", depth, prno);
 				lost_trail();
 			}
 		} else
@@ -302,13 +302,13 @@ okay:
 			int max_seq = find_max(X_lst->ps);
 
 			if (nst < min_seq || nst > max_seq)
-			{	printf("%3d: error: invalid statement", depth);
+			{	spin_printf("%3d: error: invalid statement", depth);
 				if (verbose&32)
-				{	printf(": pid %d:%d (%s:%d:%d) stmnt %d (valid range %d .. %d)",
+				{	spin_printf(": pid %d:%d (%s:%d:%d) stmnt %d (valid range %d .. %d)",
 					prno, X_lst->pid, X_lst->n->name, X_lst->tn, X_lst->b,
 					nst, min_seq, max_seq);
 				}
-				printf("\n");
+				spin_printf("\n");
 				continue;
 				/* lost_trail(); */
 			}
@@ -330,13 +330,13 @@ okay:
 						if (og->n->ntyp == D_STEP)
 						og = og->n->sl->this->frst;
 		
-						printf("\t[");
-						comment(stdout, og->n, 0);
-						printf("]\n");
+						spin_printf("\t[");
+						comment(spin_out, og->n, 0);
+						spin_printf("]\n");
 					}
 					if (verbose&1) dumpglobals();
 					if (verbose&2) dumplocal(X_lst, 0);
-					if (xspin) printf("\n");
+					if (xspin) spin_printf("\n");
 				}
 				og = g;
 			} while (g && g != dothis->nxt);
@@ -363,22 +363,22 @@ keepgoing:		if (dothis->merge_start)
 					if (dothis->n->ntyp == D_STEP)
 					dothis = dothis->n->sl->this->frst;
 		
-					printf("\t[");
-					comment(stdout, dothis->n, 0);
-					printf("]");
+					spin_printf("\t[");
+					comment(spin_out, dothis->n, 0);
+					spin_printf("]");
 					if (a && (verbose&32))
-					printf("\t<merge %d now @%d>",
+					spin_printf("\t<merge %d now @%d>",
 						dothis->merge,
 						(X_lst && X_lst->pc)?X_lst->pc->seqno:-1);
-					printf("\n");
+					spin_printf("\n");
 				}
 				if (verbose&1) dumpglobals();
 				if (verbose&2) dumplocal(X_lst, 0);
-				if (xspin) printf("\n");
+				if (xspin) spin_printf("\n");
 
 				if (X_lst && !X_lst->pc)
 				{	X_lst->pc = dothis;
-					printf("\ttransition failed\n");
+					spin_printf("\ttransition failed\n");
 					a = 0;	/* avoid inf loop */
 				}
 			}
@@ -397,11 +397,11 @@ keepgoing:		if (dothis->merge_start)
 				pstext(0, t);
 			} else
 			{
-				printf("Never claim moves to line %d\t[", lastclaim);
-				comment(stdout, dothis->n, 0);
-				printf("]\n");
+				spin_printf("Never claim moves to line %d\t[", lastclaim);
+				comment(spin_out, dothis->n, 0);
+				spin_printf("]\n");
 	}	}	}
-	printf("spin: trail ends after %d steps\n", depth);
+	spin_printf("spin: trail ends after %d steps\n", depth);
 	wrapup(0);
 }
 
@@ -410,8 +410,8 @@ lost_trail(void)
 {	int d, p, n, l;
 
 	while (fscanf(fd, "%d:%d:%d:%d\n", &d, &p, &n, &l) == 4)
-	{	printf("step %d: proc  %d ", d, p); whichproc(p);
-		printf("(state %d) - d %d\n", n, l);
+	{	spin_printf("step %d: proc  %d ", d, p); whichproc(p);
+		spin_printf("(state %d) - d %d\n", n, l);
 	}
 	wrapup(1);	/* no return */
 }

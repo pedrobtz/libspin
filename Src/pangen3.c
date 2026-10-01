@@ -131,7 +131,7 @@ putsrc(Element *e)	/* match states to source lines */
 	for (tmp = frst; tmp; lst = tmp, tmp = tmp->nxt)
 	{	if (tmp->st == m)
 		{	if (tmp->ln != n || tmp->fn != e->n->fn)
-			printf("putsrc mismatch seqno %d, line %d - %d, file %s\n", m, n,
+			spin_printf("putsrc mismatch seqno %d, line %d - %d, file %s\n", m, n,
 				tmp->ln, tmp->fn->name);
 			return;
 		}

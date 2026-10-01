@@ -117,9 +117,9 @@ Getchar(void)
 	}
 #if 0
 	if (0)
-	{	printf("<%c:%d>[%d] ", c, c, Inlining);
+	{	spin_printf("<%c:%d>[%d] ", c, c, Inlining);
 	} else
-	{	printf("%c", c);
+	{	spin_printf("%c", c);
 	}
 #endif
 	return c;
@@ -139,7 +139,7 @@ Ungetch(int c)
 	{	uninline();
 	}
 	if (0)
-	{	printf("\n<bs{%d}bs>\n", c);
+	{	spin_printf("\n<bs{%d}bs>\n", c);
 	}
 }
 
@@ -332,7 +332,7 @@ getinline(void)
 
 #if 0
 		if (verbose&32)
-		printf("spin: %s:%d, done inlining %s\n",
+		spin_printf("spin: %s:%d, done inlining %s\n",
 			Fname, lineno, Inline_stub[Inlining+1]->nm->name);
 #endif
 		return Getchar();
@@ -909,7 +909,7 @@ check_inline(IType *tmp)
 			continue;
 		sprintf(buf, "P%s->", p->n->name);
 		if (strstr((char *)tmp->cn, buf))
-		{	printf("spin: in proctype %s, ref to object in proctype %s\n",
+		{	spin_printf("spin: in proctype %s, ref to object in proctype %s\n",
 				X_lst->n->name, p->n->name);
 			fatal("invalid variable ref in '%s'", tmp->nm->name);
 	}	}
@@ -1104,7 +1104,7 @@ pickup_inline(Symbol *t, Lextok *apars, Lextok *rval)
 	Inline_stub[Inlining] = tmp;
 #if 0
 	if (verbose&32)
-	printf("spin: %s:%d, inlining '%s' (from %s:%d)\n",
+	spin_printf("spin: %s:%d, inlining '%s' (from %s:%d)\n",
 		tmp->cfn->name, tmp->cln, t->name, tmp->dfn->name, tmp->dln);
 #endif
 	for (j = 0; j < Inlining; j++)
@@ -1141,7 +1141,7 @@ do_directive(int first)
 		fatal("malformed preprocessor directive - .fname", 0);
 
 	if ((c = Getchar()) != '\"')
-	{	printf("got %c, expected \" -- lineno %d\n", c, lineno);
+	{	spin_printf("got %c, expected \" -- lineno %d\n", c, lineno);
 		fatal("malformed preprocessor directive - .fname (%s)", yytext);
 	}
 
@@ -1227,7 +1227,7 @@ prep_inline(Symbol *s, Lextok *nms)
 		case ' ': case '\t': case '\f': case '\r':
 			continue;
 		default :
-			 printf("spin: saw char '%c'\n", c);
+			 spin_printf("spin: saw char '%c'\n", c);
 bad:			 fatal("bad inline: %s", s->name);
 		}
 		break;
@@ -1270,7 +1270,7 @@ more:
 			}	
 			def_inline(s, dln, &Buf1[0], &Buf2[0], nms);
 			if (firstchar)
-			{	printf("%3d: %s, warning: empty inline definition (%s)\n",
+			{	spin_printf("%3d: %s, warning: empty inline definition (%s)\n",
 					dln, Fname->name, s->name);
 			}
 			return s;	/* normal return */
@@ -1469,13 +1469,13 @@ scan_to(int stop, int (*tst)(int), char *buf, int bufsz)
 
 	if (c != stop)
 	{	if (0)
-		{	printf("saw: '%c', expected '%c'\n", c, stop);
+		{	spin_printf("saw: '%c', expected '%c'\n", c, stop);
 		}
 		if (tmp_has < (int) sizeof(tmp_hold))
 		{	tmp_hold[tmp_has] = '\0';
 			push_back(tmp_hold);
 			if (0)
-			{	printf("pushed back: <'%s'>\n", tmp_hold);
+			{	spin_printf("pushed back: <'%s'>\n", tmp_hold);
 			}
 			return 0; /* internal expansion fails */
 		} else
@@ -1523,12 +1523,12 @@ again:
 					 c == '\f' || c == '\n' ||
 					 c == '\r');
 				Ungetch(c);
-				if (0) printf("%d: saw %d\n", lineno, c);
+				if (0) spin_printf("%d: saw %d\n", lineno, c);
 				if (c == 'u') /* first letter of UNLESS */
 				{	goto again;
 			}	}
 			if (0)
-			{	printf("insert ; line %d, last_token %d in_seq %d\n",
+			{	spin_printf("insert ; line %d, last_token %d in_seq %d\n",
 				 lineno-1, last_token, in_seq);
 			}
 			ValToken(1, SEMI);
@@ -1586,7 +1586,7 @@ again:
 		errno = 0;
 		nr = strtol(yytext, NULL, 10);
 		if (errno != 0)
-		{	fprintf(stderr, "spin: value out of range: '%s' read as '%d'\n",
+		{	fprintf(spin_err, "spin: value out of range: '%s' read as '%d'\n",
 				yytext, (int) nr);
 		}
 		ValToken((int)nr, CONST)
@@ -1622,7 +1622,7 @@ again:
 				a = atoi(from);
 				b = atoi(upto);
 				if (0)
-				{	printf("Select %s from %d to %d\n",
+				{	spin_printf("Select %s from %d to %d\n",
 						name, a, b);
 				}
 				if (a > b)
@@ -1862,7 +1862,7 @@ check_name(char *s)
 		 {
 #if 0
 			if (verbose&32)
-			printf("\tline %d, replace %s in call of '%s' with %s\n",
+			spin_printf("\tline %d, replace %s in call of '%s' with %s\n",
 				lineno, s,
 				Inline_stub[Inlining]->nm->name,
 				Inline_stub[Inlining]->anms[i]);
@@ -1871,7 +1871,7 @@ check_name(char *s)
 				if (!strcmp(Inline_stub[Inlining]->anms[i],
 					tt->lft->sym->name))
 				{	/* would be cyclic if not caught */
-					printf("spin: %s:%d replacement value: %s\n",
+					spin_printf("spin: %s:%d replacement value: %s\n",
 						oFname->name?oFname->name:"--", lineno, tt->lft->sym->name);
 					fatal("formal par of %s contains replacement value",
 						Inline_stub[Inlining]->nm->name);

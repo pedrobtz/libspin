@@ -7,9 +7,37 @@
  */
 
 #include <setjmp.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
 #include "spin_lib.h"
+
+/* ---- console ---------------------------------------------------------- */
+
+/* This is the one file that may name the real streams: everything else
+ * was rewritten by tools/redirect.py to go through these. Not reset by
+ * the generated globals reset (spin_lib.c is excluded from it), so a
+ * stream set once stays set across runs. */
+FILE	*spin_out, *spin_err, *spin_in;
+
+int
+spin_printf(const char *fmt, ...)
+{	va_list ap;
+	int n;
+
+	va_start(ap, fmt);
+	n = vfprintf(spin_out, fmt, ap);
+	va_end(ap);
+	return n;
+}
+
+void
+spin_set_streams(FILE *in, FILE *out, FILE *err)
+{
+	if (in)  spin_in  = in;
+	if (out) spin_out = out;
+	if (err) spin_err = err;
+}
 
 /* ---- termination ------------------------------------------------------ */
 
@@ -142,6 +170,9 @@ spin_main_once(int argc, char *argv[])
 	volatile int status = 0;
 	int jumped;
 
+	if (!spin_in)  spin_in  = stdin;	/* the CLI never sets them */
+	if (!spin_out) spin_out = stdout;
+	if (!spin_err) spin_err = stderr;
 	reset_all_globals();	/* start from fresh-process state, every time */
 	bail_target = &here;
 	jumped = setjmp(here);

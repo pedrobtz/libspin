@@ -120,7 +120,7 @@ check_sequence(Sequence *s)
 			&&  n->ntyp != PRINT
 			&&  n->ntyp != PRINTM)
 			{	if (verbose&32)
-					printf("spin: %s:%d, redundant skip\n",
+					spin_printf("spin: %s:%d, redundant skip\n",
 						n->fn->name, n->ln);
 				if (e != s->frst
 				&&  e != s->last
@@ -159,54 +159,54 @@ close_seq(int nottop)
 	}
 
 	if (nottop > 0 && s->frst && (z = has_lab(s->frst, 0)))
-	{	printf("error: (%s:%d) label %s placed incorrectly\n",
+	{	spin_printf("error: (%s:%d) label %s placed incorrectly\n",
 			(s->frst->n)?s->frst->n->fn->name:"-",
 			(s->frst->n)?s->frst->n->ln:0,
 			z->name);
 		switch (nottop) {
 		case 1:
-			printf("=====> stmnt unless Label: stmnt\n");
-			printf("sorry, cannot jump to the guard of an\n");
-			printf("escape (it is not a unique state)\n");
+			spin_printf("=====> stmnt unless Label: stmnt\n");
+			spin_printf("sorry, cannot jump to the guard of an\n");
+			spin_printf("escape (it is not a unique state)\n");
 			break;
 		case 2:
-			printf("=====> instead of  ");
-			printf("\"Label: stmnt unless stmnt\"\n");
-			printf("=====> always use  ");
-			printf("\"Label: { stmnt unless stmnt }\"\n");
+			spin_printf("=====> instead of  ");
+			spin_printf("\"Label: stmnt unless stmnt\"\n");
+			spin_printf("=====> always use  ");
+			spin_printf("\"Label: { stmnt unless stmnt }\"\n");
 			break;
 		case 3:
-			printf("=====> instead of  ");
-			printf("\"atomic { Label: statement ... }\"\n");
-			printf("=====> always use  ");
-			printf("\"Label: atomic { statement ... }\"\n");
+			spin_printf("=====> instead of  ");
+			spin_printf("\"atomic { Label: statement ... }\"\n");
+			spin_printf("=====> always use  ");
+			spin_printf("\"Label: atomic { statement ... }\"\n");
 			break;
 		case 4:
-			printf("=====> instead of  ");
-			printf("\"d_step { Label: statement ... }\"\n");
-			printf("=====> always use  ");
-			printf("\"Label: d_step { statement ... }\"\n");
+			spin_printf("=====> instead of  ");
+			spin_printf("\"d_step { Label: statement ... }\"\n");
+			spin_printf("=====> always use  ");
+			spin_printf("\"Label: d_step { statement ... }\"\n");
 			break;
 		case 5:
-			printf("=====> instead of  ");
-			printf("\"{ Label: statement ... }\"\n");
-			printf("=====> always use  ");
-			printf("\"Label: { statement ... }\"\n");
+			spin_printf("=====> instead of  ");
+			spin_printf("\"{ Label: statement ... }\"\n");
+			spin_printf("=====> always use  ");
+			spin_printf("\"Label: { statement ... }\"\n");
 			break;
 		case 6:
-			printf("=====> instead of\n");
-			printf("	do (or if)\n");
-			printf("	:: ...\n");
-			printf("	:: Label: statement\n");
-			printf("	od (of fi)\n");
-			printf("=====> use\n");
-			printf("Label:	do (or if)\n");
-			printf("	:: ...\n");
-			printf("	:: statement\n");
-			printf("	od (or fi)\n");
+			spin_printf("=====> instead of\n");
+			spin_printf("	do (or if)\n");
+			spin_printf("	:: ...\n");
+			spin_printf("	:: Label: statement\n");
+			spin_printf("	od (of fi)\n");
+			spin_printf("=====> use\n");
+			spin_printf("Label:	do (or if)\n");
+			spin_printf("	:: ...\n");
+			spin_printf("	:: statement\n");
+			spin_printf("	od (or fi)\n");
 			break;
 		case 7:
-			printf("cannot happen - labels\n");
+			spin_printf("cannot happen - labels\n");
 			break;
 		}
 		if (nottop != 6)
@@ -337,7 +337,7 @@ loose_ends(void)	/* properly tie-up ends of sub-sequences */
 			f = e->nxt;
 			while (f && f->n->ntyp == '.')
 				f = f->nxt;
-			if (0) printf("link %d, {%d .. %d} -> %d (ntyp=%d) was %d\n",
+			if (0) spin_printf("link %d, {%d .. %d} -> %d (ntyp=%d) was %d\n",
 				e->seqno,
 				e->n->sl->this->frst->seqno,
 				e->n->sl->this->last->seqno,
@@ -469,11 +469,11 @@ escape_el(Element *f, Sequence *e)
 
 	f->esc = seqlist(e, f->esc);	/* in lifo order... */
 #ifdef DEBUG
-	printf("attach %d (", e->frst->Seqno);
-	comment(stdout, e->frst->n, 0);
-	printf(")	to %d (", f->Seqno);
-	comment(stdout, f->n, 0);
-	printf(")\n");
+	spin_printf("attach %d (", e->frst->Seqno);
+	comment(spin_out, e->frst->n, 0);
+	spin_printf(")	to %d (", f->Seqno);
+	comment(spin_out, f->n, 0);
+	spin_printf(")\n");
 #endif
 	switch (f->n->ntyp) {
 	case UNLESS:
@@ -532,15 +532,15 @@ unless_seq(Lextok *n)
 	add_el(e, cur_s->this);
 	add_el(t, cur_s->this);
 #ifdef DEBUG
-	printf("unless element (%d,%d):\n", e->Seqno, t->Seqno);
+	spin_printf("unless element (%d,%d):\n", e->Seqno, t->Seqno);
 	for (z = s; z; z = z->nxt)
-	{	Element *x; printf("\t%d,%d,%d :: ",
+	{	Element *x; spin_printf("\t%d,%d,%d :: ",
 		z->this->frst->Seqno,
 		z->this->extent->Seqno,
 		z->this->last->Seqno);
 		for (x = z->this->frst; x; x = x->nxt)
-			printf("(%d)", x->Seqno);
-		printf("\n");
+			spin_printf("(%d)", x->Seqno);
+		spin_printf("\n");
 	}
 #endif
 	return e;
@@ -565,10 +565,10 @@ add_el(Element *e, Sequence *s)
 			add_el(y, s);
 	}	}
 #ifdef DEBUG
-	printf("add_el %d after %d -- ",
+	spin_printf("add_el %d after %d -- ",
 	e->Seqno, (s->last)?s->last->Seqno:-1);
-	comment(stdout, e->n, 0);
-	printf("\n");
+	comment(spin_out, e->n, 0);
+	spin_printf("\n");
 #endif
 	if (!s->frst)
 		s->frst = e;
@@ -653,9 +653,9 @@ get_labspec(Lextok *n)
 			{	if (0) non_fatal("label %s re-declared", s->name);
 			}
 			if (0)
-			{	printf("Label %s uiid now::then %d :: %d bcsp %s :: %s\n",
+			{	spin_printf("Label %s uiid now::then %d :: %d bcsp %s :: %s\n",
 					s->name, n->uiid, l->uiid, s->bscp, l->s->bscp);
-				printf("get_labspec match on %s %s (bscp goto %s - label %s)\n",
+				spin_printf("get_labspec match on %s %s (bscp goto %s - label %s)\n",
 					s->name, s->context->name,  s->bscp, l->s->bscp);
 			}
 #endif
@@ -727,10 +727,10 @@ fix_dest(Symbol *c, Symbol *a)		/* c:label name, a:proctype name */
 {	Label *l; extern Symbol *context;
 
 #if 0
-	printf("ref to label '%s' in proctype '%s', search:\n",
+	spin_printf("ref to label '%s' in proctype '%s', search:\n",
 		c->name, a->name);
 	for (l = labtab; l; l = l->nxt)
-		printf("	%s in	%s\n", l->s->name, l->c->name);
+		spin_printf("	%s in	%s\n", l->s->name, l->c->name);
 #endif
 
 	for (l = labtab; l; l = l->nxt)
@@ -739,10 +739,10 @@ fix_dest(Symbol *c, Symbol *a)		/* c:label name, a:proctype name */
 			break;
 	}
 	if (!l)
-	{	printf("spin: label '%s' (proctype %s)\n", c->name, a->name);
+	{	spin_printf("spin: label '%s' (proctype %s)\n", c->name, a->name);
 		non_fatal("unknown label '%s'", c->name);
 		if (context == a)
-		printf("spin: cannot remote ref a label inside the same proctype\n");
+		spin_printf("spin: cannot remote ref a label inside the same proctype\n");
 		return;
 	}
 	if (!l->e || !l->e->n)
@@ -767,9 +767,9 @@ fix_dest(Symbol *c, Symbol *a)		/* c:label name, a:proctype name */
 	}
 	l->e->status |= CHECK2;	/* treat as if global */
 	if (l->e->status & (ATOM | L_ATOM | D_ATOM))
-	{	printf("spin: %s:%d, warning, reference to label ",
+	{	spin_printf("spin: %s:%d, warning, reference to label ",
 			Fname->name, lineno);
-		printf("from inside atomic or d_step (%s)\n", c->name);
+		spin_printf("from inside atomic or d_step (%s)\n", c->name);
 	}
 }
 
@@ -785,7 +785,7 @@ find_lab(Symbol *s, Symbol *c, int markit)
 		&&  strcmp(c->name, l->c->name) == 0)
 		{	ln = strlen((const char *) l->s->bscp);
 			if (0)
-			{	printf("want '%s' in context '%s', scope ref '%s' - label '%s'\n",
+			{	spin_printf("want '%s' in context '%s', scope ref '%s' - label '%s'\n",
 					s->name, c->name, s->bscp, l->s->bscp);
 			}
 			/* same or higher block scope */
@@ -867,12 +867,12 @@ dump_lex(Lextok *t, char *s)
 {	int i;
 
 	depth++;
-	printf(s);
+	spin_printf(s);
 	for (i = 0; i < depth; i++)
-		printf("\t");
+		spin_printf("\t");
 	explain(t->ntyp);
-	if (t->ntyp == NAME || t->ntyp == TYPE) printf(" '%s' ", t->sym->name);
-	if (t->ntyp == CONST) printf(" %d ", t->val);
+	if (t->ntyp == NAME || t->ntyp == TYPE) spin_printf(" '%s' ", t->sym->name);
+	if (t->ntyp == CONST) spin_printf(" %d ", t->val);
 	if (t->ntyp == STRUCT)
 	{	dump_sym(t->sym, "\n:Z:");
 	}
@@ -889,9 +889,9 @@ dump_sym(Symbol *z, char *s)
 {	int i;
 //	char txt[64];
 	depth++;
-	printf(s);
+	spin_printf(s);
 	for (i = 0; i < depth; i++)
-		printf("\t");
+		spin_printf("\t");
 
 	if (z->type == CHAN)
 	{	if (z->ini && z->ini->rgt && z->ini->rgt->sym)
@@ -899,11 +899,11 @@ dump_sym(Symbol *z, char *s)
 			if (z->ini->rgt->rgt
 			|| !z->ini->rgt->sym)
 			fatal("chan %s in for should have only one field (a typedef)", z->name);
-			printf(" -- %s %p -- ", z->ini->rgt->sym->name, (void *) z->ini->rgt->sym);
+			spin_printf(" -- %s %p -- ", z->ini->rgt->sym->name, (void *) z->ini->rgt->sym);
 		}
 	} else if (z->type == STRUCT)
 	{	if (z->Snm)
-			printf(" == %s %p == ", z->Snm->name, (void *) z->Snm);
+			spin_printf(" == %s %p == ", z->Snm->name, (void *) z->Snm);
 		else
 		{	if (z->Slst)
 				dump_lex(z->Slst, "\n:X:");
@@ -928,8 +928,8 @@ match_struct(Symbol *s, Symbol *t)
 	}
 	/* we already know that s is a STRUCT */
 	if (0)
-	{	printf("index type %s %p ==\n", s->Snm->name, (void *) s->Snm);
-		printf("chan type  %s %p --\n\n", t->ini->rgt->sym->name, (void *) t->ini->rgt->sym);
+	{	spin_printf("index type %s %p ==\n", s->Snm->name, (void *) s->Snm);
+		spin_printf("chan type  %s %p --\n\n", t->ini->rgt->sym->name, (void *) t->ini->rgt->sym);
 	}
 
 	return (s->Snm == t->ini->rgt->sym);
@@ -1102,7 +1102,7 @@ walk_atomic(Element *a, Element *b, int added)
 		switch (f->n->ntyp) {
 		case ATOMIC:
 			if (verbose&32)
-			  printf("spin: %s:%d, warning, atomic inside %s (ignored)\n",
+			  spin_printf("spin: %s:%d, warning, atomic inside %s (ignored)\n",
 			  f->n->fn->name, f->n->ln, (added)?"d_step":"atomic");
 			goto mknonat;
 		case D_STEP:
@@ -1110,13 +1110,13 @@ walk_atomic(Element *a, Element *b, int added)
 			{	if (added) goto mknonat;
 				break;
 			}
-			printf("spin: %s:%d, warning, d_step inside ",
+			spin_printf("spin: %s:%d, warning, d_step inside ",
 			 f->n->fn->name, f->n->ln);
 			if (added)
-			{	printf("d_step (ignored)\n");
+			{	spin_printf("d_step (ignored)\n");
 				goto mknonat;
 			}
-			printf("atomic\n");
+			spin_printf("atomic\n");
 			break;
 		case NON_ATOMIC:
 mknonat:		f->n->ntyp = NON_ATOMIC; /* can jump here */
@@ -1125,7 +1125,7 @@ mknonat:		f->n->ntyp = NON_ATOMIC; /* can jump here */
 			break;
 		case UNLESS:
 			if (added)
-			{ printf("spin: error, %s:%d, unless in d_step (ignored)\n",
+			{ spin_printf("spin: error, %s:%d, unless in d_step (ignored)\n",
 			 	 f->n->fn->name, f->n->ln);
 			}
 		}
@@ -1144,16 +1144,16 @@ dumplabels(void)
 
 	for (l = labtab; l; l = l->nxt)
 		if (l->c != 0 && l->s->name[0] != ':')
-		{	printf("label	%s	%d	",
+		{	spin_printf("label	%s	%d	",
 				l->s->name, l->e->seqno);
 			if (l->uiid == 0)
-				printf("<%s>", l->c->name);
+				spin_printf("<%s>", l->c->name);
 			else
-				printf("<%s i%d>", l->c->name, l->uiid);
+				spin_printf("<%s i%d>", l->c->name, l->uiid);
 			if (!old_scope_rules)
-			{	printf("\t{scope %s}", l->s->bscp);
+			{	spin_printf("\t{scope %s}", l->s->bscp);
 			}
-			printf("\n");
+			spin_printf("\n");
 		}
 }
 

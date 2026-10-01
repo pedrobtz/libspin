@@ -90,8 +90,8 @@ tl_UnGetchar(void)
 static void
 tl_stats(void)
 {	extern int Stack_mx;
-	printf("total memory used: %9ld\n", All_Mem);
-	printf("largest stack sze: %9d\n", Stack_mx);
+	spin_printf("total memory used: %9ld\n", All_Mem);
+	spin_printf("largest stack sze: %9d\n", Stack_mx);
 	cache_stats();
 	a_stats();
 }
@@ -148,16 +148,16 @@ tl_main(int argc, char *argv[])
 				claim_name = (char *) emalloc(strlen(argv[1])+1);
 				strcpy(claim_name, argv[1]);
 				break;
-		default :	printf("spin -f: saw '-%c'\n", argv[1][1]);
+		default :	spin_printf("spin -f: saw '-%c'\n", argv[1][1]);
 				goto nogood;
 		}
 		argc--; argv++;
 	}
 	if (hasuform == 0)
 	{
-nogood:		printf("usage:\tspin [-v] [-n] -f formula\n");
-		printf("	-v verbose translation\n");
-		printf("	-n normalize tl formula and exit\n");
+nogood:		spin_printf("usage:\tspin [-v] [-n] -f formula\n");
+		spin_printf("	-v verbose translation\n");
+		spin_printf("	-n normalize tl formula and exit\n");
 		spin_bail(1);
 	}
 	tl_balanced();
@@ -219,7 +219,7 @@ dump(Node *n)
 		fprintf(tl_out, " D ");
 		break;
 	default:
-		printf("Unknown token: ");
+		spin_printf("Unknown token: ");
 		tl_explain(n->ntyp);
 		break;
 	}
@@ -229,24 +229,24 @@ void
 tl_explain(int n)
 {
 	switch (n) {
-	case ALWAYS:	printf("[]"); break;
-	case EVENTUALLY: printf("<>"); break;
-	case IMPLIES:	printf("->"); break;
-	case EQUIV:	printf("<->"); break;
-	case PREDICATE:	printf("predicate"); break;
-	case OR:	printf("||"); break;
-	case AND:	printf("&&"); break;
-	case NOT:	printf("!"); break;
-	case U_OPER:	printf("U"); break;
-	case V_OPER:	printf("V"); break;
+	case ALWAYS:	spin_printf("[]"); break;
+	case EVENTUALLY: spin_printf("<>"); break;
+	case IMPLIES:	spin_printf("->"); break;
+	case EQUIV:	spin_printf("<->"); break;
+	case PREDICATE:	spin_printf("predicate"); break;
+	case OR:	spin_printf("||"); break;
+	case AND:	spin_printf("&&"); break;
+	case NOT:	spin_printf("!"); break;
+	case U_OPER:	spin_printf("U"); break;
+	case V_OPER:	spin_printf("V"); break;
 #ifdef NXT
-	case NEXT:	printf("X"); break;
+	case NEXT:	spin_printf("X"); break;
 #endif
-	case CEXPR:	printf("c_expr"); break;
-	case TRUE:	printf("true"); break;
-	case FALSE:	printf("false"); break;
-	case ';':	printf("end of formula"); break;
-	default:	printf("%c", n); break;
+	case CEXPR:	spin_printf("c_expr"); break;
+	case TRUE:	spin_printf("true"); break;
+	case FALSE:	spin_printf("false"); break;
+	case ';':	spin_printf("end of formula"); break;
+	default:	spin_printf("%c", n); break;
 	}
 }
 
@@ -255,25 +255,25 @@ tl_non_fatal(char *s1, char *s2)
 {	extern int tl_yychar;
 	int i;
 
-	printf("tl_spin: ");
+	spin_printf("tl_spin: ");
 #if 1
-	printf(s1, s2);	/* prevent a compiler warning */
+	spin_printf(s1, s2);	/* prevent a compiler warning */
 #else
 	if (s2)
-		printf(s1, s2);
+		spin_printf(s1, s2);
 	else
-		printf(s1);
+		spin_printf(s1);
 #endif
 	if (tl_yychar != -1 && tl_yychar != 0)
-	{	printf(", saw '");
+	{	spin_printf(", saw '");
 		tl_explain(tl_yychar);
-		printf("'");
+		spin_printf("'");
 	}
-	printf("\ntl_spin: %s\n---------", uform);
+	spin_printf("\ntl_spin: %s\n---------", uform);
 	for (i = 0; i < cnt; i++)
-		printf("-");
-	printf("^\n");
-	fflush(stdout);
+		spin_printf("-");
+	spin_printf("^\n");
+	fflush(spin_out);
 	tl_errs++;
 }
 

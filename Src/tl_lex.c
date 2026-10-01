@@ -60,7 +60,7 @@ int
 tl_yylex(void)
 {	int c = tl_lex();
 #if 0
-	printf("c = %c (%d)\n", c, c);
+	spin_printf("c = %c (%d)\n", c, c);
 #endif
 	return c;
 }

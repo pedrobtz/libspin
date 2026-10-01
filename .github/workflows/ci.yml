@@ -29,6 +29,8 @@ jobs:
         run: make check
       - name: generated globals reset is current
         run: make globals-check CC=${{ matrix.cc }}
+      - name: no console streams in library code
+        run: make redirect-check
       - name: sanitizers
         if: matrix.cc == 'clang'
         run: make sanitize CC=clang

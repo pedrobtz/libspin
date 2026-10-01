@@ -152,7 +152,7 @@ do_same(Lextok *n, Symbol *v, int xinit)
 	if (xinit) ini_struct(v);	/* once, at top level */
 
 	if (ix >= v->nel || ix < 0)
-	{	printf("spin: indexing %s[%d] - size is %d\n",
+	{	spin_printf("spin: indexing %s[%d] - size is %d\n",
 				v->name, ix, v->nel);
 		fatal("indexing error \'%s\'", v->name);
 	}
@@ -163,13 +163,13 @@ do_same(Lextok *n, Symbol *v, int xinit)
 	}
 
 	if (n->rgt->ntyp != '.')
-	{	printf("bad subfield type %d\n", n->rgt->ntyp);
+	{	spin_printf("bad subfield type %d\n", n->rgt->ntyp);
 		alldone(1);
 	}
 
 	tmp = n->rgt->lft;
 	if (tmp->ntyp != NAME && tmp->ntyp != TYPE)
-	{	printf("bad subfield entry %d\n", tmp->ntyp);
+	{	spin_printf("bad subfield entry %d\n", tmp->ntyp);
 		alldone(1);
 	}
 	for (fp = v->Sval[ix]; fp; fp = fp->rgt)
@@ -508,22 +508,22 @@ dump_struct(Symbol *z, char *prefix, RunList *r)
 					doq(tl->sym, jx, r);
 				else
 				{	char *s = 0;
-					printf("\t\t");
+					spin_printf("\t\t");
 					if (r)
-					printf("%s(%d):", r->n->name, r->pid);
-					printf("%s.%s", eprefix, tl->sym->name);
+					spin_printf("%s(%d):", r->n->name, r->pid);
+					spin_printf("%s.%s", eprefix, tl->sym->name);
 					if (tl->sym->nel > 1 || tl->sym->isarray == 1)
-						printf("[%d]", jx);
-					printf(" = ");
+						spin_printf("[%d]", jx);
+					spin_printf(" = ");
 
 					if (tl->sym->type == MTYPE
 					&&  tl->sym->mtype_name)
 					{	s = tl->sym->mtype_name->name;
 					}
 
-					sr_mesg(stdout, tl->sym->val[jx],
+					sr_mesg(spin_out, tl->sym->val[jx],
 						tl->sym->type == MTYPE, s);
-					printf("\n");
+					spin_printf("\n");
 		}	}	}
 	}
 }
@@ -567,7 +567,7 @@ is_explicit(Lextok *n)
 	if (n->rgt->ntyp != '.')
 	{	lineno = n->ln;
 		Fname  = n->fn;
-		printf("ntyp %d\n", n->rgt->ntyp);
+		spin_printf("ntyp %d\n", n->rgt->ntyp);
 		fatal("unexpected %s, no '.'", n->sym->name);
 	}
 	return is_explicit(n->rgt->lft);
@@ -622,9 +622,9 @@ mk_explicit(Lextok *n, int Ok, int Ntyp)
 
 	if (!Ok || !n->sym->Slst)
 	{	if (IArgs) return n;
-		printf("spin: saw '");
-		comment(stdout, n, 0);
-		printf("'\n");
+		spin_printf("spin: saw '");
+		comment(spin_out, n, 0);
+		spin_printf("'\n");
 		fatal("incomplete structure ref '%s'", n->sym->name);
 	}
 
@@ -632,7 +632,7 @@ mk_explicit(Lextok *n, int Ok, int Ntyp)
 	for (i = cnt-1; i >= 0; i--)
 	{	bld = nn(ZN, ',', ZN, bld);
 		if (retrieve(&(bld->lft), 0, i, n->sym->Slst, Ntyp) >= 0)
-		{	printf("cannot retrieve field %d\n", i);
+		{	spin_printf("cannot retrieve field %d\n", i);
 			fatal("bad structure %s", n->sym->name);
 		}
 		x = cpnn(n, 1, 0, 0);

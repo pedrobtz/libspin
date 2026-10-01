@@ -121,7 +121,7 @@ Dfs(State *b)
 	b->reachable = 1;
 
 	if (b->redundant)
-		printf("/* redundant state %s */\n",
+		spin_printf("/* redundant state %s */\n",
 			b->name->name);
 	for (t = b->trans; t; t = t->nxt)
 	{	if (!t->redundant)
@@ -139,7 +139,7 @@ retarget(char *from, char *to)
 	Transition *t;
 	Symbol *To = tl_lookup(to);
 
-	if (tl_verbose) printf("replace %s with %s\n", from, to);
+	if (tl_verbose) spin_printf("replace %s with %s\n", from, to);
 
 	for (b = never; b; b = b->nxt)
 	{	if (!strcmp(b->name->name, from))
@@ -190,9 +190,9 @@ combination(Node *s, Node *t)
 	Node *b = nonxt(t);
 
 	if (tl_verbose)
-	{	printf("\tnonxtA: "); dump(a);
-		printf("\n\tnonxtB: "); dump(b);
-		printf("\n");
+	{	spin_printf("\tnonxtA: "); dump(a);
+		spin_printf("\n\tnonxtB: "); dump(b);
+		spin_printf("\n");
 	}
 	/* if there's only a X(f), its equivalent to true */
 	if (!a || !b)
@@ -203,8 +203,8 @@ combination(Node *s, Node *t)
 	nc = tl_nn(OR, s, t);
 #endif
 	if (tl_verbose)
-	{	printf("\tcombo: "); dump(nc);
-		printf("\n");
+	{	spin_printf("\tcombo: "); dump(nc);
+		spin_printf("\n");
 	}
 	return nc;
 }
@@ -252,9 +252,9 @@ unclutter(Node *n, char *snm)
 				if (u->ntyp == PREDICATE
 				&&  strcmp(u->sym->name, w->name) == 0)
 				{	if (tl_verbose)
-					{	printf("BINGO %s:\t", snm);
+					{	spin_printf("BINGO %s:\t", snm);
 						dump(n);
-						printf("\n");
+						spin_printf("\n");
 					}
 					return False;
 				}
@@ -285,9 +285,9 @@ showtrans(State *a)
 {	Transition *s;
 
 	for (s = a->trans; s; s = s->nxt)
-	{	printf("%s ", s->name?s->name->name:"-");
+	{	spin_printf("%s ", s->name?s->name->name:"-");
 		dump(s->cond);
-		printf(" %d %d %d\n", s->redundant, s->merged, s->marked);
+		spin_printf(" %d %d %d\n", s->redundant, s->merged, s->marked);
 	}
 }
 
@@ -307,12 +307,12 @@ mergetrans(void)
 			if (!t->redundant
 			&&  !strcmp(s->name->name, t->name->name))
 			{	if (tl_verbose)
-				{	printf("===\nstate %s, trans to %s redundant\n",
+				{	spin_printf("===\nstate %s, trans to %s redundant\n",
 					b->name->name, s->name->name);
 					showtrans(b);
-					printf(" conditions ");
-					dump(s->cond); printf(" <-> ");
-					dump(t->cond); printf("\n");
+					spin_printf(" conditions ");
+					dump(s->cond); spin_printf(" <-> ");
+					dump(t->cond); spin_printf("\n");
 				}
 
 				if (!s->cond) /* same as T */
@@ -459,7 +459,7 @@ buckyballs(void)
 				if (all_bucky(a, b))
 				{	m++;
 					if (tl_verbose)
-					{	printf("%s bucky match %s\n",
+					{	spin_printf("%s bucky match %s\n",
 						a->name->name, b->name->name);
 					}
 
@@ -512,10 +512,10 @@ mergestates(int v)
 				if (all_trans_match(a, b))
 				{	m++;
 					if (tl_verbose)
-					{	printf("%d: state %s equals state %s\n",
+					{	spin_printf("%d: state %s equals state %s\n",
 						cnt, a->name->name, b->name->name);
 						showtrans(a);
-						printf("==\n");
+						spin_printf("==\n");
 						showtrans(b);
 					}
 					retarget(a->name->name, b->name->name);
@@ -529,13 +529,13 @@ mergestates(int v)
 				}
 #if 0
 				else if (tl_verbose)
-				{	printf("\n%d: state %s differs from state %s [%d,%d]\n",
+				{	spin_printf("\n%d: state %s differs from state %s [%d,%d]\n",
 						cnt, a->name->name, b->name->name,
 						a->accepting, b->accepting);
 					showtrans(a);
-					printf("==\n");
+					spin_printf("==\n");
 					showtrans(b);
-					printf("\n");
+					spin_printf("\n");
 				}
 #endif
 		}	}
@@ -607,9 +607,9 @@ addtrans(Graph *col, char *from, Node *op, char *to)
 	t->cond = Prune(dupnode(op));
 
 	if (tl_verbose)
-	{	printf("\n%s <<\t", from); dump(op);
-		printf("\n\t"); dump(t->cond);
-		printf(">> %s\n", t->name->name);
+	{	spin_printf("\n%s <<\t", from); dump(op);
+		spin_printf("\n\t"); dump(t->cond);
+		spin_printf(">> %s\n", t->name->name);
 	}
 	if (t->cond) t->cond = rewrite(t->cond);
 
@@ -660,7 +660,7 @@ fsm_print(void)
 		cnt1 = mergetrans();
 		cnt2 = mergestates(1);
 		if (tl_verbose)
-			printf("/* >>%d,%d<< */\n", cnt1, cnt2);
+			spin_printf("/* >>%d,%d<< */\n", cnt1, cnt2);
 	} while (cnt2 > 0);
 
 #ifdef BUCKY

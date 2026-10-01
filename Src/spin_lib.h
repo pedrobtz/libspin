@@ -26,6 +26,14 @@ void	*spin_arena_alloc(size_t n);
 FILE	*spin_fopen(const char *path, const char *mode);
 int	spin_fclose(FILE *fp);
 
+/* The console, as far as the library is concerned. tools/redirect.py has
+ * rewritten every stdout/stderr/stdin and printf in library code to these;
+ * spin_main_once() points any that are still NULL at the real streams, so
+ * the CLI needs no setup and an embedder sets them before calling. */
+extern FILE	*spin_out, *spin_err, *spin_in;
+int	spin_printf(const char *fmt, ...);
+void	spin_set_streams(FILE *in, FILE *out, FILE *err);	/* NULL keeps the current one */
+
 /* Closes registered files and releases the arena. Called by
  * spin_main_once(); safe to call when nothing is open or allocated. */
 void	spin_cleanup(void);

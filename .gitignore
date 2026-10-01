@@ -3,4 +3,5 @@ Src/spin
 Src/y.output
 tests/lib/once
 tests/lib/multi
+tests/lib/capture
 Src/libspin.a

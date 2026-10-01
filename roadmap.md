@@ -218,26 +218,34 @@ second generation in one process hashes like a fresh one.
 Step 2 (instance state via `struct spin_globals` and macro aliases) remains deferred until a
 consumer needs independent instances.
 
-## Stage 3 — Output and input redirection
+## Stage 3 — Output and input redirection — **done**
 
-- `tools/redirect.sh` rewrites, mechanically and idempotently: `printf(` → `Pf(`,
-  `fprintf(stdout,`/`fprintf(stderr,` → `Pf(`/`Ef(`, `fflush(stdout)` → `spin_flush()`. The
-  macros expand to context-aware functions that write through `spin_options.out`/`.err`. The
-  script is kept and re-run after upstream merges; the diff it produces is reviewed, never
-  hand-maintained.
-- `fprintf(fd_tc, …)` and the other verifier streams are left alone: they are files by design,
-  opened under `workdir` (Stage 2 adds the prefix to `Cfile[].nm`, `TMP_FILE1/2`,
-  `_spin_nvr.tmp`, `pan.pre`). `spin_fopen()` from Stage 1 is where the prefix goes.
-- Lexer input: `spinlex.c`'s `getc(yyin)`/`ungetc` go behind `spin_getc()`/`spin_ungetc()` so a
-  string source can be added without `fmemopen`. The deferred-declaration temp file
-  (`TMP_FILE2`) becomes a memory buffer in the context; it is the one temp file that exists only
-  because the lexer wanted a second pass.
-- Interactive simulation reads choices through a callback instead of `stdin`; the CLI's callback
-  reads the terminal.
+Decided differently from the first plan, after the survey: besides ~2,900 `printf` calls,
+many helpers take a `FILE *` that callers pass `stdout` into (`comment(stdout, …)`,
+`sr_mesg(stdout, …)`, `yyin = stdin`, `tl_out = stdout`), so rewriting calls would have missed
+them. The rewrite is of the **stream names**:
 
-Exit: golden tests pass with output captured through a sink rather than `stdout`; `grep -c
-'printf(' Src/*.c` outside the `Pf` macro definitions is zero; nothing in `Src/` references
-`stdin`.
+| upstream | library |
+| --- | --- |
+| `stdout`, `stderr`, `stdin` | `spin_out`, `spin_err`, `spin_in` (`FILE *` owned by `spin_lib.c`) |
+| `printf(` | `spin_printf(` (vfprintf to `spin_out`) |
+| `getchar()` | `getc(spin_in)` |
+
+`tools/redirect.py` does it token-aware (nothing inside string or character literals or
+comments is touched; `pangen*.c` emit C source containing these words as text), is idempotent,
+and has a `--check` mode that CI runs. `spin_main_once()` points any stream still `NULL` at
+the real one, so the CLI needs no setup; an embedder calls `spin_set_streams()`. The streams
+live in `spin_lib.c`, which the globals reset excludes, so they persist across runs.
+
+What this does **not** cover, on purpose: the verifier streams (`fd_tc`, `fd_th`, …) are files
+under the work directory and stay `fprintf`; the work-directory prefix for them is Stage 4's
+API work, where `spin_fopen()` is the one place to add it.
+
+- `tests/lib/capture.c` runs with `spin_out`/`spin_err` on temporary files and compares with
+  console output on eleven command lines; captured stderr must be empty, confirming Spin's
+  diagnostics all go to stdout.
+- Interactive simulation (`-i`) now reads from `spin_in`; a callback-based variant is left for
+  the API stage if zuspin wants it.
 
 ## Stage 4 — Public API and the CLI on top of it
 

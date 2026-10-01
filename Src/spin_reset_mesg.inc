@@ -14,10 +14,14 @@ spin_reset_mesg(void)
 		memcpy(&firstrow, &spin_init_firstrow, sizeof firstrow);
 	}
 	memset(&has_stdin, 0, sizeof has_stdin);
+#ifndef PC
 	memset(&initial_settings, 0, sizeof initial_settings);
+#endif
 	memset(&ltab, 0, sizeof ltab);
 	memset(&n_rem, 0, sizeof n_rem);
+#ifndef PC
 	memset(&new_settings, 0, sizeof new_settings);
+#endif
 	memset(&nrqs, 0, sizeof nrqs);
 	memset(&q_rem, 0, sizeof q_rem);
 	memset(&qh_lst, 0, sizeof qh_lst);

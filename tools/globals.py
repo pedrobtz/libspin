@@ -32,7 +32,10 @@ SRC = os.path.join(ROOT, "Src")
 CC = os.environ.get("CC", "cc")
 CFLAGS = ["-std=gnu99", "-O0", "-DNXT"]
 NOT_LIBRARY = {"spin_cli.c", "spin_lib.c"}          # spin_lib's own state must survive a reset
-GENERATED = re.compile(r"^spin_init_")              # our own init constants, if nm sees them
+# Not variables: our own init constants (if nm ever shows them), and the
+# assembler's section-start temporaries that newer Apple toolchains emit as
+# non-external data symbols (ltmp0, ltmp1, ...).
+GENERATED = re.compile(r"^spin_init_|^ltmp\d+$")
 
 # ---------------------------------------------------------------- symbols --
 
@@ -231,7 +234,10 @@ def declarations(text):
                 continue
             if name in ("static", "const", "int", "char", "void", "long", "short", "unsigned", "signed", "double", "float"):
                 continue
-            decls[name] = (init, guards[line_of(off)])
+            # the guard that applies is the one at the declaration itself; the
+            # statement text starts right after the previous ';' and may begin
+            # with the '#ifndef PC' line that guards it
+            decls[name] = (init, guards[line_of(off + len(stmt))])
     return decls
 
 # ------------------------------------------------------------------ emit --

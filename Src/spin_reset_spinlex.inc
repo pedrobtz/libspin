@@ -117,7 +117,9 @@ spin_reset_spinlex(void)
 #ifdef DEFER_LTL
 	memset(&defer_fd, 0, sizeof defer_fd);
 #endif
+#ifdef DEFER_LTL
 	memset(&deferred, 0, sizeof deferred);
+#endif
 	memset(&has_stack, 0, sizeof has_stack);
 	memset(&hold, 0, sizeof hold);
 	memset(&in_comment, 0, sizeof in_comment);
@@ -141,7 +143,7 @@ spin_reset_spinlex(void)
 #ifdef EXPAND_SELECT
 	memset(&tmp_has, 0, sizeof tmp_has);
 #endif
-#ifdef DEFER_LTL
+#ifdef EXPAND_SELECT
 	memset(&tmp_hold, 0, sizeof tmp_hold);
 #endif
 	memset(&yyin, 0, sizeof yyin);

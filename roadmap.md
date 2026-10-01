@@ -74,7 +74,7 @@ the AST (`ana_src()` dataflow and merging), so "parse once, then do several thin
 something the code supports and the API does not pretend otherwise. Return value is 0 or a
 `SPIN_E_*` code; `nr_errs` from `non_fatal()` is reported through the context.
 
-## Stage 0 — Baseline and harness (no behaviour change)
+## Stage 0 — Baseline and harness (no behaviour change) — **done**
 
 - Make `Src/` build with `-std=c99 -Wall -Wextra` warning-free on clang and gcc; fix only what
   is needed for that. Add `-fsanitize=address,undefined` as a makefile target.
@@ -90,6 +90,34 @@ something the code supports and the API does not pretend otherwise. Return value
   toolchain), each running the golden tests.
 
 Exit: a green matrix that proves nothing changed, so every later stage is a diff against it.
+
+### What Stage 0 established
+
+172 golden cases (`tests/`), bison 3.8.2 parser committed, warning-free on gcc 13, gcc 15,
+clang 17 and Apple clang, sanitizers clean on linux/clang with leak detection off, and the
+golden suite passing on all four CI legs including msys2 mingw64. It took four CI rounds; the
+findings that matter for later stages:
+
+- **Compilers disagree about `-Wextra`.** gcc adds `-Wimplicit-fallthrough` (six sites) and
+  gcc 15 `-Wunused-but-set-variable`; clang showed neither. "Any warning fails" only means
+  something if every leg enforces it, so the matrix is not optional.
+- **The preprocessor is part of spin's observable behaviour.** clang's `cpp` warns about
+  nested comments in `dtp.pml`, gcc's does not, and spin passes its stderr straight through.
+  The harness compares stdout only; the library in Stage 2 should never have had stderr to
+  begin with. This is also an argument for the scope decision that preprocessing stays out of
+  the library.
+- **Windows is `-DPC`, derived from `_WIN32` now.** Without it mingw64 has no `SIGPIPE` and no
+  `termios.h`. The cygwin-only gcc-4 probe inside the `PC` block is narrowed to `__CYGWIN__`.
+  Everything else `PC` selects is what Windows needs, including `"wb"` for generated files.
+- **`pan.h` is platform-dependent by design**, and only in one byte: `G_long` is
+  `sizeof(long)` on the generating machine, 4 on mingw64. pan.c itself hashed identically on
+  all legs. The harness masks that line; zuspin's tests should expect it too.
+- **One real portability bug:** `isprint()` on a yacc token value in `pangen3.c`, undefined
+  above 255, false on glibc/macOS, true on msvcrt. Guarded. Expect more of this class once
+  the string-input path and fuzzing exist (Stage 5).
+- **CI cost:** the full suite runs in ~2 minutes per leg; the msys2 leg spends most of its time
+  installing. Recording goldens is maintainer-side only and must come from an unmodified
+  upstream build (`tests/record.sh` says so).
 
 ## Stage 1 — Nonlocal termination and the arena
 

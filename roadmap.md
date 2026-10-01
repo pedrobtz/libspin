@@ -119,9 +119,10 @@ findings that matter for later stages:
   installing. Recording goldens is maintainer-side only and must come from an unmodified
   upstream build (`tests/record.sh` says so).
 
-## Stage 1 — Nonlocal termination and the arena
+## Stage 1 — Nonlocal termination and the arena — **done**
 
-The smallest change that makes the code callable twice from one process.
+The smallest change that removes process termination and process-lifetime memory from the
+library. Calling it twice in one process is Stage 2 (globals), which this stage makes possible.
 
 - Introduce `spin_bail(int status)`: `longjmp` to a `jmp_buf` armed by the entry point. Every
   `exit()` and `alldone()` in library code becomes `spin_bail()`. `alldone()`'s side jobs are
@@ -134,33 +135,35 @@ The smallest change that makes the code callable twice from one process.
   generated-code buffers. `FILE *` handles are tracked by the context and closed in
   `spin_cleanup()`, which is what makes a `longjmp` from deep inside the parser safe.
 - Entry point `spin_main_once(argc, argv)` wraps the old `main()` body in `setjmp`/cleanup so
-  the CLI is already a library client, with a test that calls it twice.
+  the CLI is already a library client.
 
-Exit: `tests/lib/twice.c` runs two models back to back and a failing then a succeeding one,
-clean under ASan and LeakSanitizer.
+Exit: `tests/lib/once.c` gets control back, with the right status, on every termination path
+(normal, `fatal()` in the parser, `fatal()` after parsing, usage, LTL `Fatal()`, missing files);
+the golden suite is unchanged; the Linux sanitizer leg runs with LeakSanitizer on and reports
+nothing.
 
-## Stage 2 — Output and input redirection
+### What Stage 1 established
 
-- `tools/redirect.sh` rewrites, mechanically and idempotently: `printf(` → `Pf(`,
-  `fprintf(stdout,`/`fprintf(stderr,` → `Pf(`/`Ef(`, `fflush(stdout)` → `spin_flush()`. The
-  macros expand to context-aware functions that write through `spin_options.out`/`.err`. The
-  script is kept and re-run after upstream merges; the diff it produces is reviewed, never
-  hand-maintained.
-- `fprintf(fd_tc, …)` and the other verifier streams are left alone: they are files by design,
-  opened under `workdir` (Stage 2 adds the prefix to `Cfile[].nm`, `TMP_FILE1/2`,
-  `_spin_nvr.tmp`, `pan.pre`).
-- Lexer input: `spinlex.c`'s `getc(yyin)`/`ungetc` go behind `spin_getc()`/`spin_ungetc()` so a
-  string source can be added without `fmemopen`. The deferred-declaration temp file
-  (`TMP_FILE2`) becomes a memory buffer in the context; it is the one temp file that exists only
-  because the lexer wanted a second pass.
-- Interactive simulation reads choices through a callback instead of `stdin`; the CLI's callback
-  reads the terminal.
+- `Src/spin_lib.{c,h}`: `spin_bail()`, the arena, the file registry, `spin_cleanup()`,
+  `spin_main_once()`. `Src/spin_cli.c` is the only `main()`. `Src/libspin.a` is everything else.
+- Every `exit()` is gone from library code; `alldone()` and both `fatal()`s end in `spin_bail()`.
+  `pangen5.c` and `msc_tcl.c` carried their own `extern void exit(int)` declarations, removed.
+- `emalloc()` is the arena; `tl_emalloc()` already sat on top of it. The one `getline()` buffer
+  that outlived the call (`-F` formula file) is copied into the arena. The `-f`/inline `ltl`
+  `getline()` buffer was already freed by upstream.
+- `fopen`/`fclose` → `spin_fopen`/`spin_fclose` everywhere (a `perl -pi` one-liner; see the
+  commit), so a bail from inside the parser closes `pan.*` and the never-claim temp file.
+- What still relies on the process: `signal(SIGPIPE, alldone)` under `-X`, the `system()`
+  calls, and bison's parser stack if a bail happens after it grew past 200 entries (bison
+  mallocs then; `yyparse` would have freed it). All three are CLI or Stage 4/5 matters.
+- macOS has no LeakSanitizer; `leaks --atExit` confirmed zero leaks on the five paths above,
+  and the `sanitize` target sets `detect_leaks` from `uname`.
 
-Exit: golden tests pass with output captured through a sink rather than `stdout`; `grep -c
-'printf(' Src/*.c` outside the `Pf` macro definitions is zero; nothing in `Src/` references
-`stdin`.
+## Stage 2 — Globals: reset first, then instance state
 
-## Stage 3 — Globals: reset first, then instance state
+(Swapped with output redirection after Stage 1: the "callable twice" test needs a reset, not
+redirected output, and a stale symbol table pointing into a released arena is a use-after-free
+waiting to happen, so this comes first.)
 
 Decision: do **not** hand-move 362 variables into a struct. Two steps, the second optional.
 
@@ -182,6 +185,27 @@ Decision: do **not** hand-move 362 variables into a struct. Two steps, the secon
 
 Exit: `tests/lib/reset.c` runs model A, then model B, then A again and gets byte-identical
 output each time; the golden suite passes with every test executed in a single process.
+
+## Stage 3 — Output and input redirection
+
+- `tools/redirect.sh` rewrites, mechanically and idempotently: `printf(` → `Pf(`,
+  `fprintf(stdout,`/`fprintf(stderr,` → `Pf(`/`Ef(`, `fflush(stdout)` → `spin_flush()`. The
+  macros expand to context-aware functions that write through `spin_options.out`/`.err`. The
+  script is kept and re-run after upstream merges; the diff it produces is reviewed, never
+  hand-maintained.
+- `fprintf(fd_tc, …)` and the other verifier streams are left alone: they are files by design,
+  opened under `workdir` (Stage 2 adds the prefix to `Cfile[].nm`, `TMP_FILE1/2`,
+  `_spin_nvr.tmp`, `pan.pre`). `spin_fopen()` from Stage 1 is where the prefix goes.
+- Lexer input: `spinlex.c`'s `getc(yyin)`/`ungetc` go behind `spin_getc()`/`spin_ungetc()` so a
+  string source can be added without `fmemopen`. The deferred-declaration temp file
+  (`TMP_FILE2`) becomes a memory buffer in the context; it is the one temp file that exists only
+  because the lexer wanted a second pass.
+- Interactive simulation reads choices through a callback instead of `stdin`; the CLI's callback
+  reads the terminal.
+
+Exit: golden tests pass with output captured through a sink rather than `stdout`; `grep -c
+'printf(' Src/*.c` outside the `Pf` macro definitions is zero; nothing in `Src/` references
+`stdin`.
 
 ## Stage 4 — Public API and the CLI on top of it
 

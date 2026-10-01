@@ -158,7 +158,7 @@ tl_main(int argc, char *argv[])
 nogood:		printf("usage:\tspin [-v] [-n] -f formula\n");
 		printf("	-v verbose translation\n");
 		printf("	-n normalize tl formula and exit\n");
-		exit(1);
+		spin_bail(1);
 	}
 	tl_balanced();
 
@@ -288,5 +288,5 @@ Fatal(char *s1, char *s2)
 {
 	tl_non_fatal(s1, s2);
 	/* tl_stats(); */
-	exit(1);
+	spin_bail(1);
 }

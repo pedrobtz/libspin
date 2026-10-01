@@ -127,3 +127,22 @@ spin_cleanup(void)
 	files_release();
 	arena_release();
 }
+
+int
+spin_main_once(int argc, char *argv[])
+{	jmp_buf here;
+	jmp_buf *outer = bail_target;
+	volatile int status = 0;
+	int jumped;
+
+	bail_target = &here;
+	jumped = setjmp(here);
+	if (jumped == 0)
+	{	status = spin_main_body(argc, argv);
+	} else
+	{	status = jumped - 1;
+	}
+	bail_target = outer;
+	spin_cleanup();
+	return status;
+}

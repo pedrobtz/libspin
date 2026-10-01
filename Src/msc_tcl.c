@@ -41,7 +41,6 @@ extern int	ntrail, s_trail, prno, depth;
 extern short	Have_claim;
 extern Symbol	*oFname;
 
-extern void	exit(int);
 extern void	putpostlude(void);
 
 static void	putpages(void);
@@ -290,7 +289,7 @@ putpostlude(void)
 	sprintf(cmd, "wish -f %s.tcl &", oFname?oFname->name:"msc");
 	fprintf(stderr, "%s\n", cmd);
 	(void) unlink("pan.pre");
-	exit (system(cmd));
+	spin_bail(system(cmd));
 }
 
 void

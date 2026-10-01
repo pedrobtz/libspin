@@ -30,4 +30,11 @@ int	spin_fclose(FILE *fp);
  * spin_main_once(); safe to call when nothing is open or allocated. */
 void	spin_cleanup(void);
 
+/* Upstream's main(), renamed. Returns a status or ends via spin_bail(). */
+int	spin_main_body(int argc, char *argv[]);
+
+/* Runs spin_main_body() with a bail target armed, then spin_cleanup().
+ * Always returns: the status spin would have exited with. */
+int	spin_main_once(int argc, char *argv[]);
+
 #endif

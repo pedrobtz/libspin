@@ -338,7 +338,7 @@ alldone(int estatus)
 
 		sprintf(tmp, "spin -t %s %s", pan_runtime, Fname->name);
 		estatus = e_system(1, tmp);	/* replay */
-		exit(estatus);	/* replay without c_code */
+		spin_bail(estatus);	/* replay without c_code */
 	}
 
 	if (buzzed && (!replay || has_code) && !estatus)
@@ -540,7 +540,7 @@ skipahead:
 		(void) unlink("pan.p");
 		(void) unlink("pan.t");
 	}
-	exit(estatus);
+	spin_bail(estatus);
 }
 #if 0
 	-P0	normal active process creation
@@ -884,7 +884,7 @@ getline(char **lineptr, size_t *n, FILE *stream)
 #endif
 
 int
-main(int argc, char *argv[])
+spin_main_body(int argc, char *argv[])
 {	Symbol *s;
 	int T = (int) time((time_t *)0);
 	int usedopts = 0;
@@ -1067,6 +1067,14 @@ samecase:			if (buzzed != 0)
 		}
 		spin_fclose(tl_out);
 		tl_out = stdout;
+		if (formula)
+		{	/* getline() malloc'd it; move into the arena so
+			 * nothing outlives spin_cleanup() */
+			char *in_arena = emalloc(strlen(formula)+1);
+			strcpy(in_arena, formula);
+			free(formula);
+			formula = in_arena;
+		}
 		*ltl_file = formula;
 	}
 	if (argc > 1)
@@ -1127,7 +1135,7 @@ samecase:			if (buzzed != 0)
 	{	oFname = Fname = lookup("<stdin>");
 		if (add_ltl)
 		{	if (argc > 0)
-				exit(tl_main(2, add_ltl));
+				spin_bail(tl_main(2, add_ltl));
 			printf("spin: missing argument to -f\n");
 			alldone(1);
 		}
@@ -1282,7 +1290,7 @@ emalloc(size_t n)
 	if (n == 0)
 		return NULL;	/* robert shelton 10/20/06 */
 
-	if (!(tmp = (char *) malloc(n)))
+	if (!(tmp = (char *) spin_arena_alloc(n)))
 	{	printf("spin: allocated %ld Gb, wanted %d bytes more\n",
 			cnt/(1024*1024*1024), (int) n);
 		fatal("not enough memory", (char *)0);

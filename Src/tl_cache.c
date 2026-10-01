@@ -51,9 +51,9 @@ cache_dump(void)
 
 Node *
 in_cache(Node *n)
-{	Cache *d; int nr=0;
+{	Cache *d;
 
-	for (d = stored; d; d = d->nxt, nr++)
+	for (d = stored; d; d = d->nxt)
 		if (isequal(d->before, n))
 		{	CacheHits++;
 			if (d->same && ismatch(n, d->before)) return n;

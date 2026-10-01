@@ -467,7 +467,7 @@ eval(Lextok *now)
 			printf(")\n");
 		     if (s_trail && !xspin) return 1;
 		     wrapup(1); /* doesn't return */
-
+		     /* fall through */
 	case  IF: case DO: case BREAK: case UNLESS:	/* compound */
 	case   '.': return 1;	/* return label for compound */
 	case   '@': return 0;	/* stop state */

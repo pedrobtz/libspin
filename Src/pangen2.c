@@ -1123,10 +1123,10 @@ valTpe(Lextok *n)
 	7*DELTA = @, process deletion (conditionally safe)
 	 */
 	switch (n->ntyp) { /* a series of fall-thru cases: */
-	case   FULL:	res += DELTA;		/* add 3*DELTA + chan nr */
-	case  EMPTY:	res += DELTA;		/* add 2*DELTA + chan nr */
+	case   FULL:	res += DELTA;		/* fall through - add 3*DELTA + chan nr */
+	case  EMPTY:	res += DELTA;		/* fall through - add 2*DELTA + chan nr */
 	case    'r':
-	case NEMPTY:	res += DELTA;		/* add 1*DELTA + chan nr */
+	case NEMPTY:	res += DELTA;		/* fall through - add 1*DELTA + chan nr */
 	case    's':
 	case  NFULL:	res += getNid(n->lft);	/* add channel nr */
 			break;

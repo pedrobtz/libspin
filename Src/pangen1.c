@@ -1303,6 +1303,7 @@ typ2c(Symbol *sp)
 		printf("spin: warning: bit-array %s[%d] mapped to byte-array\n",
 			sp->name, sp->nel);
 		nBits += 8*sp->nel; /* mapped onto array of uchars */
+		/* fall through */
 	case MTYPE:
 	case BYTE:
 	case CHAN:	/* good for up to 255 channels */
@@ -1397,7 +1398,7 @@ genaddqueue(void)
 				{	fprintf(fd_th, "\t\tunsigned");
 					fprintf(fd_th, " fld%d : 1;\n", j);
 					break;
-				} /* else fall through: smaller struct */
+				} /* else fall through - smaller struct */
 			case MTYPE:
 			case CHAN:
 			case BYTE:

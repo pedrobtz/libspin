@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include "spin_lib.h"
 /* libspin: upstream expects -DPC on Windows builds; derive it from the
  * compiler so mingw-w64 (the Rtools toolchain) builds with the default
  * flags. PC selects io.h over unistd.h, binary-mode output files, getchar()

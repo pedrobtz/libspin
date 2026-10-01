@@ -158,9 +158,9 @@ match_trail(void)
 			sprintf(snap, "%s.trail", oFname->name);
 	}
 
-	if ((fd = fopen(snap, "r")) == NULL)
+	if ((fd = spin_fopen(snap, "r")) == NULL)
 	{	snap[strlen(snap)-2] = '\0';	/* .tra */
-		if ((fd = fopen(snap, "r")) == NULL)
+		if ((fd = spin_fopen(snap, "r")) == NULL)
 		{	if ((q = strchr(oFname->name, '.')) != NULL)
 			{	*q = '\0';
 				if (ntrail)
@@ -171,11 +171,11 @@ match_trail(void)
 						oFname->name);
 				*q = '.';
 
-				if ((fd = fopen(snap, "r")) != NULL)
+				if ((fd = spin_fopen(snap, "r")) != NULL)
 					goto okay;
 
 				snap[strlen(snap)-2] = '\0';	/* last try */
-				if ((fd = fopen(snap, "r")) != NULL)
+				if ((fd = spin_fopen(snap, "r")) != NULL)
 					goto okay;
 			}
 			printf("spin: cannot find trail file\n");

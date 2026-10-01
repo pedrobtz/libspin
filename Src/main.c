@@ -1056,7 +1056,7 @@ samecase:			if (buzzed != 0)
 
 	if (ltl_file)
 	{	add_ltl = ltl_file-2; add_ltl[1][1] = 'f';
-		if (!(tl_out = fopen(*ltl_file, "r")))
+		if (!(tl_out = spin_fopen(*ltl_file, "r")))
 		{	printf("spin: cannot open %s\n", *ltl_file);
 			alldone(1);
 		}
@@ -1065,7 +1065,7 @@ samecase:			if (buzzed != 0)
 		if (!formula || !length)
 		{	printf("spin: cannot read %s\n", *ltl_file);
 		}
-		fclose(tl_out);
+		spin_fclose(tl_out);
 		tl_out = stdout;
 		*ltl_file = formula;
 	}
@@ -1079,7 +1079,7 @@ samecase:			if (buzzed != 0)
 		if (add_ltl || nvr_file)
 		{	assert(strlen(argv[1])+6 < sizeof(out2));
 			sprintf(out2, "%s.nvr", argv[1]);
-			if ((fd = fopen(out2, MFLAGS)) == NULL)
+			if ((fd = spin_fopen(out2, MFLAGS)) == NULL)
 			{	printf("spin: cannot create tmp file %s\n",
 					out2);
 				alldone(1);
@@ -1090,11 +1090,11 @@ samecase:			if (buzzed != 0)
 		if (add_ltl)
 		{	tl_out = fd;
 			nr_errs = tl_main(2, add_ltl);
-			fclose(fd);
+			spin_fclose(fd);
 			preprocess(out2, out1, 1);
 		} else if (nvr_file)
 		{	fprintf(fd, "#include \"%s\"\n", *nvr_file);
-			fclose(fd);
+			spin_fclose(fd);
 			preprocess(out2, out1, 1);
 		} else
 		{	preprocess(argv[1], out1, 0);
@@ -1104,7 +1104,7 @@ samecase:			if (buzzed != 0)
 		{	alldone(0);
 		}
 
-		if (!(yyin = fopen(out1, "r")))
+		if (!(yyin = spin_fopen(out1, "r")))
 		{	printf("spin: cannot open %s\n", out1);
 			alldone(1);
 		}
@@ -1160,19 +1160,19 @@ samecase:			if (buzzed != 0)
 	s = lookup("_priority"); s->type = PREDEF; /* new 6.2.0 */
 
 	yyparse();
-	fclose(yyin);
+	spin_fclose(yyin);
 
 	if (ltl_claims)
 	{	Symbol *r;
-		fclose(fd_ltl);
-		if (!(yyin = fopen(ltl_claims, "r")))
+		spin_fclose(fd_ltl);
+		if (!(yyin = spin_fopen(ltl_claims, "r")))
 		{	fatal("cannot open %s", ltl_claims);
 		}
 		r = oFname;
 		oFname = Fname = lookup(ltl_claims);
 		lineno = 0;
 		yyparse();
-		fclose(yyin);
+		spin_fclose(yyin);
 		oFname = Fname = r;
 		if (0)
 		{	(void) unlink(ltl_claims);
@@ -1208,7 +1208,7 @@ ltl_list(char *nm, char *fm)
 	||  dumptab)	/* when generating pan.c or replaying a trace */
 	{	if (!ltl_claims)
 		{	ltl_claims = "_spin_nvr.tmp";
-			if ((fd_ltl = fopen(ltl_claims, MFLAGS)) == NULL)
+			if ((fd_ltl = spin_fopen(ltl_claims, MFLAGS)) == NULL)
 			{	fatal("cannot open tmp file %s", ltl_claims);
 			}
 			tl_out = fd_ltl;

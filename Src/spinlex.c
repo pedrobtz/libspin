@@ -1378,14 +1378,14 @@ get_deferred(void)
 	if (!defer_fd)
 	{	return 0;	/* nothing was deferred */
 	}
-	fclose(defer_fd);
+	spin_fclose(defer_fd);
 
-	defer_fd = fopen(TMP_FILE2, "r");
+	defer_fd = spin_fopen(TMP_FILE2, "r");
 	if (!defer_fd)
 	{	non_fatal("cannot retrieve deferred ltl formula", (char *) 0);
 		return 0;
 	}
-	fclose(yyin);
+	spin_fclose(yyin);
 	yyin = defer_fd;
 	return 1;
 }
@@ -1400,7 +1400,7 @@ int
 put_deferred(void)
 {	int c, cnt;
 	if (!defer_fd)
-	{	defer_fd = fopen(TMP_FILE2, "w+");
+	{	defer_fd = spin_fopen(TMP_FILE2, "w+");
 		if (!defer_fd)
 		{	non_fatal("cannot defer ltl expansion", (char *) 0);
 			return 0;

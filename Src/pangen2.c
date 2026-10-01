@@ -211,11 +211,11 @@ gensrc(void)
 
 	disambiguate();		/* avoid name-clashes between scopes */
 
-	if (!(fd_tc = fopen(Cfile[0].nm[separate], MFLAGS))		/* main routines */
-	||  !(fd_th = fopen(Cfile[1].nm[separate], MFLAGS))		/* header file   */
-	||  !(fd_tt = fopen(Cfile[2].nm[separate], MFLAGS))		/* transition matrix */
-	||  !(fd_tm = fopen(Cfile[3].nm[separate], MFLAGS))		/* forward  moves */
-	||  !(fd_tb = fopen(Cfile[4].nm[separate], MFLAGS)))	/* backward moves */
+	if (!(fd_tc = spin_fopen(Cfile[0].nm[separate], MFLAGS))		/* main routines */
+	||  !(fd_th = spin_fopen(Cfile[1].nm[separate], MFLAGS))		/* header file   */
+	||  !(fd_tt = spin_fopen(Cfile[2].nm[separate], MFLAGS))		/* transition matrix */
+	||  !(fd_tm = spin_fopen(Cfile[3].nm[separate], MFLAGS))		/* forward  moves */
+	||  !(fd_tb = spin_fopen(Cfile[4].nm[separate], MFLAGS)))	/* backward moves */
 	{	printf("spin: cannot create pan.[chtmfb]\n");
 		alldone(1);
 	}
@@ -748,18 +748,18 @@ doless:
 	fprintf(fd_th, "#endif\n");
 
 	fprintf(fd_th, "\n\n/* end of PAN_H */\n#endif\n");
-	fclose(fd_th);
-	fclose(fd_tt);
-	fclose(fd_tm);
-	fclose(fd_tb);
+	spin_fclose(fd_th);
+	spin_fclose(fd_tt);
+	spin_fclose(fd_tm);
+	spin_fclose(fd_tb);
 
-	if (!(fd_th = fopen("pan.p", MFLAGS)))
+	if (!(fd_th = spin_fopen("pan.p", MFLAGS)))
 	{	printf("spin: cannot create pan.p for -DBFS_PAR\n");
 		return; 	/* we're done anyway */
 	}
 
 	ntimes(fd_th, 0, 1, pan_par);	/* BFS_PAR */
-	fclose(fd_th);
+	spin_fclose(fd_th);
 
 	fprintf(fd_tc, "\nTrans *t_id_lkup[%d];\n\n", globmax+1); 
 
@@ -767,7 +767,7 @@ doless:
 	{	fprintf(fd_tc, "\n#ifdef BFS_PAR\n\t#include \"pan.p\"\n#endif\n");
 	}
 	fprintf(fd_tc, "\n/* end of pan.c */\n");
-	fclose(fd_tc);
+	spin_fclose(fd_tc);
 }
 
 static int

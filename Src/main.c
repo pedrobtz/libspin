@@ -579,7 +579,7 @@ void
 preprocess(char *a, char *b, int a_tmp)
 {	char precmd[1024], cmd[2048];
 	int i;
-#ifdef PC
+#if defined(PC) && defined(__CYGWIN__) /* libspin: was all of PC */
 	/* gcc is sometimes a symbolic link to gcc-4
 	   that does not work well in cygwin, so we try
 	   to use the actual executable that is used.
@@ -873,6 +873,7 @@ ssize_t
 getline(char **lineptr, size_t *n, FILE *stream)
 {	static char buffer[8192];
 
+	(void) n;
 	*lineptr = (char *) &buffer;
 
 	if (!fgets(buffer, sizeof(buffer), stream))

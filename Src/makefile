@@ -23,8 +23,13 @@ PICKY=-std=c99 -Wstrict-prototypes -pedantic -fno-strength-reduce \
 			# on OS2:         spin -Picc -E/Pd+ -E/Q+
 			# for Visual C++: spin -PCL  -E/E
 
-YACC?=yacc		# on Solaris: /usr/ccs/bin/yacc
-YFLAGS=-v -d 		# creates y.output and y.tab.h
+# libspin: the generated parser (y.tab.c, y.tab.h) is committed and built
+# as-is, so compiling needs no parser generator. Regenerate it only with
+# `make parser`, and only with GNU Bison 3.8.x in yacc mode: the system
+# yacc on macOS is byacc/bison 2.3 and emits different code, which would
+# turn every grammar edit into an unrelated parser diff.
+BISON?=bison
+YFLAGS=-y -v -d 	# yacc mode; creates y.output and y.tab.h
 DESTDIR?=/usr/local
 INSTALL?=cp		# on linux: install -D
 
@@ -43,11 +48,13 @@ install: spin
 	$(INSTALL) spin $(DESTDIR)/bin/spin
 	$(INSTALL) ../Man/spin.1 $(DESTDIR)/share/man/man1/spin.1
 
-spin.o:	makefile spin.y
-	$(YACC) $(YFLAGS) spin.y
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c y?tab.c
-	rm -f y?tab.c
-	mv y?tab.o spin.o
+spin.o:	makefile y.tab.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c y.tab.c
+	mv y.tab.o spin.o
+
+parser:	spin.y
+	$(BISON) $(YFLAGS) spin.y
+	@$(BISON) --version | head -1
 
 $(SPIN_OS): makefile spin.h spin.o
 
@@ -58,7 +65,7 @@ pangen1.o: pangen1.h pangen3.h pangen6.h
 pangen2.o: pangen2.h pangen4.h pangen5.h pangen7.h
 
 clean:
-	rm -f spin *.o y?tab.[ch] y.output y.debug
+	rm -f spin *.o y.output y.debug
 	rm -f pan.[chmotb] a.out core *stackdump
 
-.PHONY: clean install
+.PHONY: clean install parser

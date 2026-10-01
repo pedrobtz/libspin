@@ -1,4 +1,3 @@
 *.o
 Src/spin
-Src/y.tab.h
 Src/y.output

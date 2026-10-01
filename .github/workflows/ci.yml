@@ -25,8 +25,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: build (warnings are errors)
         run: make CC=${{ matrix.cc }} 2>&1 | tee build.log; ! grep -q 'warning:' build.log
-      - name: golden suite
+      - name: golden suite and library tests
         run: make check
+      - name: generated globals reset is current
+        run: make globals-check CC=${{ matrix.cc }}
       - name: sanitizers
         if: matrix.cc == 'clang'
         run: make sanitize CC=clang

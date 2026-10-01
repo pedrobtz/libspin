@@ -2,4 +2,5 @@
 Src/spin
 Src/y.output
 tests/lib/once
+tests/lib/multi
 Src/libspin.a

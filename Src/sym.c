@@ -104,9 +104,9 @@ lookup(char *s)
 			&&  samename(sp->owner, owner))
 			{
 				if (!samename(sp->owner, owner))
-				{	printf("spin: different container %s\n", sp->name);
-					printf("	old: %s\n", sp->owner?sp->owner->name:"--");
-					printf("	new: %s\n", owner?owner->name:"--");
+				{	spin_printf("spin: different container %s\n", sp->name);
+					spin_printf("	old: %s\n", sp->owner?sp->owner->name:"--");
+					spin_printf("	new: %s\n", owner?owner->name:"--");
 				/*	alldone(1);	*/
 				}
 				return sp;		/* found */
@@ -211,9 +211,9 @@ checkrun(Symbol *parnm, int posno)
 		while (i > 0 && buf[--i] == ' ') buf[i] = '\0';
 		if (i == 0 || strcmp(buf, buf2) == 0) return;
 		prehint(parnm);
-		printf("proctype %s, '%s %s' could be declared",
+		spin_printf("proctype %s, '%s %s' could be declared",
 			parnm->context?parnm->context->name:"", buf, parnm->name);
-		printf(" '%s %s'\n", buf2, parnm->name);
+		spin_printf(" '%s %s'\n", buf2, parnm->name);
 	}
 }
 
@@ -250,7 +250,7 @@ setptype(Lextok *mtype_name, Lextok *n, int t, Lextok *vis)	/* predefined types 
 
 		if (mtype_name && n->sym->mtype_name
 		&& strcmp(mtype_name->sym->name, n->sym->mtype_name->name) != 0)
-		{	fprintf(stderr, "spin: %s:%d, Error: '%s' is type '%s' but assigned type '%s'\n",
+		{	fprintf(spin_err, "spin: %s:%d, Error: '%s' is type '%s' but assigned type '%s'\n",
 				n->fn->name, n->ln,
 				n->sym->name,
 				mtype_name->sym->name,
@@ -321,7 +321,7 @@ setonexu(Symbol *sp, int t)
 	if (t == XR || t == XS)
 	{	if (sp->xup[t-1]
 		&&  strcmp(sp->xup[t-1]->name, context->name))
-		{	printf("error: x[rs] claims from %s and %s\n",
+		{	spin_printf("error: x[rs] claims from %s and %s\n",
 				sp->xup[t-1]->name, context->name);
 			non_fatal("conflicting claims on chan '%s'",
 				sp->name);
@@ -352,7 +352,7 @@ setxus(Lextok *p, int t)
 	has_xu = 1;
 
 	if (m_loss && t == XS)
-	{	printf("spin: %s:%d, warning, xs tag not compatible with -m (message loss)\n",
+	{	spin_printf("spin: %s:%d, warning, xs tag not compatible with -m (message loss)\n",
 			(p->fn != NULL) ? p->fn->name : "stdin", p->ln);
 	}
 
@@ -519,7 +519,7 @@ puttype(int m)
 {	char buf[128];
 
 	if (sputtype(buf, m))
-	{	printf("%s", buf);
+	{	spin_printf("%s", buf);
 		return 1;
 	}
 	return 0;
@@ -532,54 +532,54 @@ symvar(Symbol *sp)
 	if (!puttype(sp->type))
 		return;
 
-	printf("\t");
-	if (sp->owner) printf("%s.", sp->owner->name);
-	printf("%s", sp->name);
-	if (sp->nel > 1 || sp->isarray == 1) printf("[%d]", sp->nel);
+	spin_printf("\t");
+	if (sp->owner) spin_printf("%s.", sp->owner->name);
+	spin_printf("%s", sp->name);
+	if (sp->nel > 1 || sp->isarray == 1) spin_printf("[%d]", sp->nel);
 
 	if (sp->type == CHAN)
-		printf("\t%d", (sp->ini)?sp->ini->val:0);
+		spin_printf("\t%d", (sp->ini)?sp->ini->val:0);
 	else if (sp->type == STRUCT && sp->Snm != NULL) /* Frank Weil, 2.9.8 */
-		printf("\t%s", sp->Snm->name);
+		spin_printf("\t%s", sp->Snm->name);
 	else
-		printf("\t%d", eval(sp->ini));
+		spin_printf("\t%d", eval(sp->ini));
 
 	if (sp->owner)
-		printf("\t<:struct-field:>");
+		spin_printf("\t<:struct-field:>");
 	else
 	if (!sp->context)
-		printf("\t<:global:>");
+		spin_printf("\t<:global:>");
 	else
-		printf("\t<%s>", sp->context->name);
+		spin_printf("\t<%s>", sp->context->name);
 
 	if (sp->Nid < 0)	/* formal parameter */
-		printf("\t<parameter %d>", -(sp->Nid));
+		spin_printf("\t<parameter %d>", -(sp->Nid));
 	else if (sp->type == MTYPE)
-		printf("\t<constant>");
+		spin_printf("\t<constant>");
 	else if (sp->isarray)
-		printf("\t<array>");
+		spin_printf("\t<array>");
 	else
-		printf("\t<variable>");
+		spin_printf("\t<variable>");
 
 	if (sp->type == CHAN && sp->ini)
 	{	int i;
 		for (m = sp->ini->rgt, i = 0; m; m = m->rgt)
 			i++;
-		printf("\t%d\t", i);
+		spin_printf("\t%d\t", i);
 		for (m = sp->ini->rgt; m; m = m->rgt)
 		{	if (m->ntyp == STRUCT)
-				printf("struct %s", m->sym->name);
+				spin_printf("struct %s", m->sym->name);
 			else
 				(void) puttype(m->ntyp);
-			if (m->rgt) printf("\t");
+			if (m->rgt) spin_printf("\t");
 		}
 	}
 
 	if (!old_scope_rules)
-	{	printf("\t{scope %s}", sp->bscp);
+	{	spin_printf("\t{scope %s}", sp->bscp);
 	}
 
-	printf("\n");
+	spin_printf("\n");
 }
 
 void
@@ -592,12 +592,12 @@ symdump(void)
 
 void
 chname(Symbol *sp)
-{	printf("chan ");
-	if (sp->context) printf("%s-", sp->context->name);
-	if (sp->owner) printf("%s.", sp->owner->name);
-	printf("%s", sp->name);
-	if (sp->nel > 1 || sp->isarray == 1) printf("[%d]", sp->nel);
-	printf("\t");
+{	spin_printf("chan ");
+	if (sp->context) spin_printf("%s-", sp->context->name);
+	if (sp->owner) spin_printf("%s.", sp->owner->name);
+	spin_printf("%s", sp->name);
+	if (sp->nel > 1 || sp->isarray == 1) spin_printf("[%d]", sp->nel);
+	spin_printf("\t");
 }
 
 static struct X_lkp {
@@ -639,16 +639,16 @@ report:
 		{	continue;
 		}
 		d++;
-		printf("\n\t%s by: ", xx[i].nm);
+		spin_printf("\n\t%s by: ", xx[i].nm);
 		for (a = sp->access; a; a = a->lnk)
 		  if (a->typ == xx[i].typ)
-		  {	printf("%s", a->who->name);
-			if (a->what) printf(" to %s", a->what->name);
-			if (a->cnt)  printf(" par %d", a->cnt);
-			if (--b > 0) printf(", ");
+		  {	spin_printf("%s", a->who->name);
+			if (a->what) spin_printf(" to %s", a->what->name);
+			if (a->cnt)  spin_printf(" par %d", a->cnt);
+			if (--b > 0) spin_printf(", ");
 		  }
 	}
-	printf("%s\n", (!d)?"\n\tnever used under this name":"");
+	spin_printf("%s\n", (!d)?"\n\tnever used under this name":"");
 }
 
 void
@@ -681,14 +681,14 @@ chanaccess(void)
 
 			if (!(verbose&32) || has_code) continue;
 
-			printf("spin: %s:0, warning, ", Fname->name);
+			spin_printf("spin: %s:0, warning, ", Fname->name);
 			sputtype(buf, walk->entry->type);
 			if (walk->entry->context)
-				printf("proctype %s",
+				spin_printf("proctype %s",
 					walk->entry->context->name);
 			else
-				printf("global");
-			printf(", '%s%s' variable is never used (other than in print stmnts)\n",
+				spin_printf("global");
+			spin_printf(", '%s%s' variable is never used (other than in print stmnts)\n",
 				buf, walk->entry->name);
 	}	}
 }

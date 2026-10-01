@@ -139,7 +139,7 @@ pid_is_claim(int p)	/* Pid_nr (p->tn) to type (p->b) */
 	for (r = ready; r; r = r->nxt)
 	{	if (r->tn == p) return (r->b == N_CLAIM);
 	}
-	printf("spin: error, cannot find pid %d\n", p);
+	spin_printf("spin: error, cannot find pid %d\n", p);
 	return 0;
 }
 
@@ -216,7 +216,7 @@ gensrc(void)
 	||  !(fd_tt = spin_fopen(Cfile[2].nm[separate], MFLAGS))		/* transition matrix */
 	||  !(fd_tm = spin_fopen(Cfile[3].nm[separate], MFLAGS))		/* forward  moves */
 	||  !(fd_tb = spin_fopen(Cfile[4].nm[separate], MFLAGS)))	/* backward moves */
-	{	printf("spin: cannot create pan.[chtmfb]\n");
+	{	spin_printf("spin: cannot create pan.[chtmfb]\n");
 		alldone(1);
 	}
 
@@ -324,8 +324,8 @@ gensrc(void)
 	}
 	if (separate == 2)
 	{	if (has_remote)
-		{	printf("spin: warning, make sure that the S1 model\n");
-			printf("      includes the same remote references\n");
+		{	spin_printf("spin: warning, make sure that the S1 model\n");
+			spin_printf("      includes the same remote references\n");
 		}
 		fprintf(fd_th, "#ifndef NFAIR\n");
 		fprintf(fd_th, "#define NFAIR	2	/* must be >= 2 */\n");
@@ -754,7 +754,7 @@ doless:
 	spin_fclose(fd_tb);
 
 	if (!(fd_th = spin_fopen("pan.p", MFLAGS)))
-	{	printf("spin: cannot create pan.p for -DBFS_PAR\n");
+	{	spin_printf("spin: cannot create pan.p for -DBFS_PAR\n");
 		return; 	/* we're done anyway */
 	}
 
@@ -1194,7 +1194,7 @@ put_sub(Element *e, int Tt0, int Tt1)
 	g = huntstart(s->frst);
 	a = g->seqno;
 
-	if (0) printf("put_sub %d -> %d -> %d\n", e->seqno, s->frst->seqno, a);
+	if (0) spin_printf("put_sub %d -> %d -> %d\n", e->seqno, s->frst->seqno, a);
 
 	if ((e->n->ntyp == ATOMIC
 	||  e->n->ntyp == D_STEP)
@@ -1483,7 +1483,7 @@ nrhops(Element *e)
 	else
 		stopat = e->merge;
 #if 0
-	printf("merge: %d merge_start %d - seqno %d\n",
+	spin_printf("merge: %d merge_start %d - seqno %d\n",
 		e->merge, e->merge_start, e->seqno);
 #endif
 	do {
@@ -1973,20 +1973,20 @@ nested_unless(Element *e, Element *g)
 	if (g->n->ntyp != GOTO
 	&&  g->n->ntyp != '.'
 	&&  e->sub->nxt)
-	{	printf("error: (%s:%d) saw 'unless' on a guard:\n",
+	{	spin_printf("error: (%s:%d) saw 'unless' on a guard:\n",
 			(e->n)?e->n->fn->name:"-",
 			(e->n)?e->n->ln:0);
-		printf("=====>instead of\n");
-		printf("	do (or if)\n");
-		printf("	:: ...\n");
-		printf("	:: stmnt1 unless stmnt2\n");
-		printf("	od (of fi)\n");
-		printf("=====>use\n");
-		printf("	do (or if)\n");
-		printf("	:: ...\n");
-		printf("	:: stmnt1\n");
-		printf("	od (or fi) unless stmnt2\n");
-		printf("=====>or rewrite\n");
+		spin_printf("=====>instead of\n");
+		spin_printf("	do (or if)\n");
+		spin_printf("	:: ...\n");
+		spin_printf("	:: stmnt1 unless stmnt2\n");
+		spin_printf("	od (of fi)\n");
+		spin_printf("=====>use\n");
+		spin_printf("	do (or if)\n");
+		spin_printf("	:: ...\n");
+		spin_printf("	:: stmnt1\n");
+		spin_printf("	od (or fi) unless stmnt2\n");
+		spin_printf("=====>or rewrite\n");
 	}
 }
 
@@ -1996,14 +1996,14 @@ put_seq(Sequence *s, int Tt0, int Tt1)
 	Element *e, *g;
 	int a, deadlink;
 
-	if (0) printf("put_seq %d\n", s->frst->seqno);
+	if (0) spin_printf("put_seq %d\n", s->frst->seqno);
 
 	for (e = s->frst; e; e = e->nxt)
 	{
-		if (0) printf("	step %d\n", e->seqno);
+		if (0) spin_printf("	step %d\n", e->seqno);
 		if (e->status & DONE)
 		{
-			if (0) printf("		done before\n");
+			if (0) spin_printf("		done before\n");
 			goto checklast;
 		}
 		e->status |= DONE;
@@ -2013,11 +2013,11 @@ put_seq(Sequence *s, int Tt0, int Tt1)
 
 		if (e->n->ntyp == UNLESS)
 		{
-			if (0) printf("		an unless\n");
+			if (0) spin_printf("		an unless\n");
 			put_seq(e->sub->this, Tt0, Tt1);
 		} else if (e->sub)
 		{
-			if (0) printf("		has sub\n");
+			if (0) spin_printf("		has sub\n");
 			fprintf(fd_tt, "\tT = trans[%d][%d] = ",
 				Pid_nr, e->seqno);
 			fprintf(fd_tt, "settr(%d,%d,0,0,0,\"",
@@ -2044,11 +2044,11 @@ in_settr--;
 				{	fprintf(fd_tt, "#if 0\n\t/* dead link: */\n");
 					deadlink = 1;
 					if (verbose&32)
-					printf("spin: %s:%d, warning, condition is always false\n",
+					spin_printf("spin: %s:%d, warning, condition is always false\n",
 						g->n->fn?g->n->fn->name:"", g->n->ln);
 				} else
 					deadlink = 0;
-				if (0) printf("			settr %d %d\n", a, 0);
+				if (0) spin_printf("			settr %d %d\n", a, 0);
 				if (h->nxt)
 					fprintf(fd_tt, "\tT = T->nxt\t= ");
 				else
@@ -2071,21 +2071,21 @@ in_settr--;
 				put_seq(h->this, Tt0, Tt1);
 		} else
 		{
-			if (0) printf("		[non]atomic %d\n", e->n->ntyp);
+			if (0) spin_printf("		[non]atomic %d\n", e->n->ntyp);
 			if (e->n->ntyp == ATOMIC
 			||  e->n->ntyp == D_STEP
 			||  e->n->ntyp == NON_ATOMIC)
 				put_sub(e, Tt0, Tt1);
 			else 
 			{
-				if (0) printf("			put_el %d\n", e->seqno);
+				if (0) spin_printf("			put_el %d\n", e->seqno);
 				put_el(e, Tt0, Tt1);
 			}
 		}
 checklast:	if (e == s->last)
 			break;
 	}
-	if (0) printf("put_seq done\n");
+	if (0) spin_printf("put_seq done\n");
 }
 
 static void
@@ -2377,11 +2377,11 @@ dump_tree(const char *s, Lextok *p)
 
 	if (!p) return;
 
-	printf("\n%s:\t%2d:\t%3d (", s, p->ln, p->ntyp);
+	spin_printf("\n%s:\t%2d:\t%3d (", s, p->ln, p->ntyp);
 	explain(p->ntyp);
-	if (p->ntyp == 315) printf(": %s", p->sym->name);
-	if (p->ntyp == 312) printf(": %d", p->val);
-	printf(")");
+	if (p->ntyp == 315) spin_printf(": %s", p->sym->name);
+	if (p->ntyp == 312) spin_printf(": %d", p->val);
+	spin_printf(")");
 
 	if (p->lft) { sprintf(z, "%sL", s); dump_tree(z, p->lft); }
 	if (p->rgt) { sprintf(z, "%sR", s); dump_tree(z, p->rgt); }
@@ -2427,7 +2427,7 @@ putstmnt(FILE *fd, Lextok *now, int m)
 		else
 			fprintf(fd, "((trpt->tau)&1)");
 		if (GenCode)
-		 printf("spin: %s:%d, warning, 'timeout' in d_step sequence\n",
+		 spin_printf("spin: %s:%d, warning, 'timeout' in d_step sequence\n",
 			Fname->name, lineno);
 		/* is okay as a guard */
 		break;
@@ -2645,9 +2645,9 @@ putstmnt(FILE *fd, Lextok *now, int m)
 		}
 		if (i > Mpars)
 		{	terse++;
-			putname(stdout, "channel name: ", now->lft, m, "\n");
+			putname(spin_out, "channel name: ", now->lft, m, "\n");
 			terse--;
-			printf("	%d msg parameters sent, %d expected\n", i, Mpars);
+			spin_printf("	%d msg parameters sent, %d expected\n", i, Mpars);
 			fatal("too many pars in send", "");
 		}
 		for (j = i; i < Mpars; i++)
@@ -3310,7 +3310,7 @@ putstmnt(FILE *fd, Lextok *now, int m)
 		break;
 
 	default:
-		printf("spin: error, %s:%d, bad node type %d (.m)\n",
+		spin_printf("spin: error, %s:%d, bad node type %d (.m)\n",
 			now->fn->name, now->ln, now->ntyp);
 		fflush(fd);
 		alldone(1);
@@ -3404,9 +3404,9 @@ putname(FILE *fd, char *pre, Lextok *n, int m, char *suff) /* varref */
 	{	if (no_arrays)
 		{	non_fatal("ref to array element invalid in this context",
 				(char *)0);
-			printf("\thint: instead of, e.g., x[rs] qu[3], use\n");
-			printf("\tchan nm_3 = qu[3]; x[rs] nm_3;\n");
-			printf("\tand use nm_3 in sends/recvs instead of qu[3]\n");
+			spin_printf("\thint: instead of, e.g., x[rs] qu[3], use\n");
+			spin_printf("\tchan nm_3 = qu[3]; x[rs] nm_3;\n");
+			spin_printf("\tand use nm_3 in sends/recvs instead of qu[3]\n");
 		}
 		/* an xr or xs reference to an array element
 		 * becomes an exclusion tag on the array itself -
@@ -3438,7 +3438,7 @@ putname(FILE *fd, char *pre, Lextok *n, int m, char *suff) /* varref */
 				 */
 #if 0
 				if (n->lft->ntyp == NAME)
-				{	printf("%4d: Basename %s	index %s\n",
+				{	spin_printf("%4d: Basename %s	index %s\n",
 						n->lft->ln, s->name, n->lft->sym->name);
 				}
 #endif

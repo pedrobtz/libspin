@@ -63,10 +63,10 @@ eval_sub(Element *e)
 	if (!e || !e->n)
 		return ZE;
 #ifdef DEBUG
-	printf("\n\teval_sub(%d %s: line %d) ",
+	spin_printf("\n\teval_sub(%d %s: line %d) ",
 		e->Seqno, e->esc?"+esc":"", e->n?e->n->ln:0);
-	comment(stdout, e->n, 0);
-	printf("\n");
+	comment(spin_out, e->n, 0);
+	spin_printf("\n");
 #endif
 	if (e->n->ntyp == GOTO)
 	{	if (Rvous) return ZE;
@@ -75,7 +75,7 @@ eval_sub(Element *e)
 		f = huntele(f, e->status, -1); /* 5.2.3: was missing */
 		cross_dsteps(e->n, f->n);
 #ifdef DEBUG
-		printf("GOTO leads to %d\n", f->seqno);
+		spin_printf("GOTO leads to %d\n", f->seqno);
 #endif
 		return f;
 	}
@@ -93,10 +93,10 @@ eval_sub(Element *e)
 		&& !Escape_Check
 		&& !(e->status&(D_ATOM))
 		&& depth >= jumpsteps)
-		{	printf("Select stmnt (");
-			whoruns(0); printf(")\n");
+		{	spin_printf("Select stmnt (");
+			whoruns(0); spin_printf(")\n");
 			if (nproc-nstop > 1)
-			{	printf("\tchoice 0: other process\n");
+			{	spin_printf("\tchoice 0: other process\n");
 				nr_choices++;
 				only_pos = 0;
 		}	}
@@ -114,23 +114,23 @@ eval_sub(Element *e)
 					nr_else = j;
 					continue;
 				}
-				printf("\tchoice %d: ", j);
+				spin_printf("\tchoice %d: ", j);
 #if 0
 				if (z->this->frst->n)
-					printf("line %d, ", z->this->frst->n->ln);
+					spin_printf("line %d, ", z->this->frst->n->ln);
 #endif
 				if (!Enabled0(z->this->frst))
-					printf("unexecutable, ");
+					spin_printf("unexecutable, ");
 				else
 				{	nr_choices++;
 					only_pos = j;
 				}
-				comment(stdout, z->this->frst->n, 0);
-				printf("\n");
+				comment(spin_out, z->this->frst->n, 0);
+				spin_printf("\n");
 		}	}
 
 		if (nr_choices == 0 && has_else)
-		{	printf("\tchoice %d: (else)\n", nr_else);
+		{	spin_printf("\tchoice %d: (else)\n", nr_else);
 			only_pos = nr_else;
 		}
 
@@ -145,12 +145,12 @@ eval_sub(Element *e)
 		{	if (!MadeChoice)
 			{	char buf[256];
 				if (xspin)
-					printf("Make Selection %d\n\n", j);
+					spin_printf("Make Selection %d\n\n", j);
 				else
-					printf("Select [0-%d]: ", j);
-				fflush(stdout);
+					spin_printf("Select [0-%d]: ", j);
+				fflush(spin_out);
 				if (scanf("%64s", buf) <= 0)
-				{	printf("no input\n");
+				{	spin_printf("no input\n");
 					return ZE;
 				}
 				if (isdigit((int)buf[0]))
@@ -165,7 +165,7 @@ eval_sub(Element *e)
 				MadeChoice = 0;
 			}
 			if (k < 1 || k > j)
-			{	if (k != 0) printf("\tchoice outside range\n");
+			{	if (k != 0) spin_printf("\tchoice outside range\n");
 				return ZE;
 			}
 			k--;
@@ -209,7 +209,7 @@ eval_sub(Element *e)
 				else if (interactive && depth >= jumpsteps
 				&& !(e->status&(D_ATOM)))
 				{	if (!E_Check && !Escape_Check)
-						printf("\tunexecutable\n");
+						spin_printf("\tunexecutable\n");
 					return ZE;
 			}	}
 			z = (z->nxt)?z->nxt:e->sub;
@@ -237,19 +237,19 @@ eval_sub(Element *e)
 		{	SeqList *x;
 			if (!(e->status & (D_ATOM))
 			&&  e->esc && (verbose&32))
-			{	printf("Stmnt [");
-				comment(stdout, e->n, 0);
-				printf("] has escape(s): ");
+			{	spin_printf("Stmnt [");
+				comment(spin_out, e->n, 0);
+				spin_printf("] has escape(s): ");
 				for (x = e->esc; x; x = x->nxt)
-				{	printf("[");
+				{	spin_printf("[");
 					g = x->this->frst;
 					if (g->n->ntyp == ATOMIC
 					||  g->n->ntyp == NON_ATOMIC)
 						g = g->n->sl->this->frst;
-					comment(stdout, g->n, 0);
-					printf("] ");
+					comment(spin_out, g->n, 0);
+					spin_printf("] ");
 				}
-				printf("\n");
+				spin_printf("\n");
 			}
 #if 0
 			if (!(e->status & D_ATOM))	/* escapes don't reach inside d_steps */
@@ -262,10 +262,10 @@ eval_sub(Element *e)
 				if (like_java)
 				{	if ((g = rev_escape(e->esc)) != ZE)
 					{	if (verbose&4)
-						{	printf("\tEscape taken (-J) ");
+						{	spin_printf("\tEscape taken (-J) ");
 							if (g->n && g->n->fn)
-								printf("%s:%d", g->n->fn->name, g->n->ln);
-							printf("\n");
+								spin_printf("%s:%d", g->n->fn->name, g->n->ln);
+							spin_printf("\n");
 						}
 						Escape_Check--;
 						return g;
@@ -274,10 +274,10 @@ eval_sub(Element *e)
 				{	for (x = e->esc; x; x = x->nxt)
 					{	if ((g = eval_sub(x->this->frst)) != ZE)
 						{	if (verbose&4)
-							{	printf("\tEscape taken ");
+							{	spin_printf("\tEscape taken ");
 								if (g->n && g->n->fn)
-									printf("%s:%d", g->n->fn->name, g->n->ln);
-								printf("\n");
+									spin_printf("%s:%d", g->n->fn->name, g->n->ln);
+								spin_printf("\n");
 							}
 							Escape_Check--;
 							return g;
@@ -366,9 +366,9 @@ eval(Lextok *now)
 	lineno = now->ln;
 	Fname  = now->fn;
 #ifdef DEBUG
-	printf("eval ");
-	comment(stdout, now, 0);
-	printf("\n");
+	spin_printf("eval ");
+	comment(spin_out, now, 0);
+	spin_printf("\n");
 #endif
 	switch (now->ntyp) {
 	case CONST: return now->val;
@@ -441,30 +441,30 @@ eval(Lextok *now)
 	case   's': return qsend(now);		/* send         */
 	case   'r': return qrecv(now, 1);	/* receive or poll */
 	case   'c': return eval(now->lft);	/* condition    */
-	case PRINT: return TstOnly?1:interprint(stdout, now);
-	case PRINTM: return TstOnly?1:printm(stdout, now);
+	case PRINT: return TstOnly?1:interprint(spin_out, now);
+	case PRINTM: return TstOnly?1:printm(spin_out, now);
 	case  ASGN:
 		if (check_track(now) == STRUCT) { return 1; }
 		return assign(now);
 
 	case C_CODE: if (!analyze)
-		     {	printf("%s:\t", now->sym->name);
-		     	plunk_inline(stdout, now->sym->name, 0, 1);
+		     {	spin_printf("%s:\t", now->sym->name);
+		     	plunk_inline(spin_out, now->sym->name, 0, 1);
 		     }
 		     return 1; /* uninterpreted */
 
 	case C_EXPR: if (!analyze)
-		     {	printf("%s:\t", now->sym->name);
-		     	plunk_expr(stdout, now->sym->name);
-		     	printf("\n");
+		     {	spin_printf("%s:\t", now->sym->name);
+		     	plunk_expr(spin_out, now->sym->name);
+		     	spin_printf("\n");
 		     }
 		     return 1; /* uninterpreted */
 
 	case ASSERT: if (TstOnly || eval(now->lft)) return 1;
 		     non_fatal("assertion violated", (char *) 0);
-			printf("spin: text of failed assertion: assert(");
-			comment(stdout, now->lft, 0);
-			printf(")\n");
+			spin_printf("spin: text of failed assertion: assert(");
+			comment(spin_out, now->lft, 0);
+			spin_printf(")\n");
 		     if (s_trail && !xspin) return 1;
 		     wrapup(1); /* doesn't return */
 		     /* fall through */
@@ -477,8 +477,8 @@ eval(Lextok *now)
 	case 0:
 		    return 0;	/* not great, but safe */
 
-	default   : printf("spin: bad node type %d (run)\n", now->ntyp);
-		    if (s_trail) printf("spin: trail file doesn't match spec?\n");
+	default   : spin_printf("spin: bad node type %d (run)\n", now->ntyp);
+		    if (s_trail) spin_printf("spin: trail file doesn't match spec?\n");
 		    fatal("aborting", 0);
 	}}
 	return 0;
@@ -663,9 +663,9 @@ Enabled0(Element *e)
 			return 1;
 	}
 #if 0
-	printf("enabled1 ");
-	comment(stdout, e->n, 0);
-	printf(" ==> %s\n", Enabled1(e->n)?"yes":"nope");
+	spin_printf("enabled1 ");
+	comment(spin_out, e->n, 0);
+	spin_printf(" ==> %s\n", Enabled1(e->n)?"yes":"nope");
 #endif
 	return Enabled1(e->n);
 }
@@ -706,23 +706,23 @@ pc_highest(Lextok *n)
 		{	target = Y->priority;
 			break;
 	}	}
-if (0) printf("highest for pid %d @ priority = %d\n", pid, target);
+if (0) spin_printf("highest for pid %d @ priority = %d\n", pid, target);
 
 	oX = X_lst;
 	i = nproc - nstop;
 	for (Y = run_lst; Y; Y = Y->nxt)
 	{	i--;
-if (0) printf("	pid %d @ priority %d\t", Y->pid, Y->priority);
+if (0) spin_printf("	pid %d @ priority %d\t", Y->pid, Y->priority);
 		if (Y->priority > target)
 		{	X_lst = Y;
-if (0) printf("enabled: %s\n", Enabled0(X_lst->pc)?"yes":"nope");
-if (0) printf("provided: %s\n", eval(X_lst->prov)?"yes":"nope");
+if (0) spin_printf("enabled: %s\n", Enabled0(X_lst->pc)?"yes":"nope");
+if (0) spin_printf("provided: %s\n", eval(X_lst->prov)?"yes":"nope");
 			if (Enabled0(X_lst->pc) && (!X_lst->prov || eval(X_lst->prov)))
 			{	result = 0;
 				break;
 		}	}
 else
-if (0) printf("\n");
+if (0) spin_printf("\n");
 	}
 	X_lst = oX;
 
@@ -761,13 +761,13 @@ set_priority(Lextok *n, Lextok *p)
 			Y->priority = eval(p);
 			Priority_Sum += Y->priority;
 			if (1)
-			{	printf("%3d: setting priority of proc %d (%s) to %d\n",
+			{	spin_printf("%3d: setting priority of proc %d (%s) to %d\n",
 					depth, pid, Y->n->name, Y->priority);
 	}	}	}
 	if (verbose&32)
-	{	printf("\tPid\tName\tPriority\n");
+	{	spin_printf("\tPid\tName\tPriority\n");
 		for (Y = run_lst; Y; Y = Y->nxt)
-		{	printf("\t%d\t%s\t%d\n",
+		{	spin_printf("\t%d\t%s\t%d\n",
 				Y->pid,
 				Y->n->name,
 				Y->priority);

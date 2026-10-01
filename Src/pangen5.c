@@ -65,7 +65,7 @@ FSM_DFS(int from, FSM_use *u)
 	f = fsm_tbl[from];
 
 	if (!f)
-	{	printf("cannot find state %d\n", from);
+	{	spin_printf("cannot find state %d\n", from);
 		fatal("fsm_dfs: cannot happen\n", (char *) 0);
 	}
 
@@ -236,17 +236,17 @@ build_step(FSM_trans *v)
 	lt = v->step->n;
 	if (verbose&32)
 	{	if (++howdeep == 1)
-			printf("spin: %s:%d, merge:\n", lt->fn->name, lt->ln);
-		printf("\t[%d] <seqno %d>\t", howdeep, el->seqno);
-		comment(stdout, lt, 0);
-		printf(";\n");
+			spin_printf("spin: %s:%d, merge:\n", lt->fn->name, lt->ln);
+		spin_printf("\t[%d] <seqno %d>\t", howdeep, el->seqno);
+		comment(spin_out, lt, 0);
+		spin_printf(";\n");
 	}
 #endif
 	r = build_step(f->t);
 	v->step->merge = (r == -1) ? st : r;
 #if 0
 	if (verbose&32)
-	{	printf("	merge value: %d (st=%d,r=%d, line %d)\n",
+	{	spin_printf("	merge value: %d (st=%d,r=%d, line %d)\n",
 			v->step->merge, st, r, el->n->ln);
 		howdeep--;
 	}
@@ -288,12 +288,12 @@ FSM_MERGER(/* char *pname */ void)	/* find candidates for safely merging steps *
 			t->step->merge_single = t->to;
 #if 0
 			if ((verbose&32))
-			{	printf("spin: %s:%d, merge_single:\n\t<seqno %d>\t",
+			{	spin_printf("spin: %s:%d, merge_single:\n\t<seqno %d>\t",
 					t->step->n->fn->name,
 					t->step->n->ln,
 					t->step->seqno);
-				comment(stdout, t->step->n, 0);
-				printf(";\n");
+				comment(spin_out, t->step->n, 0);
+				spin_printf(";\n");
 			}
 #endif
 #endif
@@ -349,11 +349,11 @@ FSM_MERGER(/* char *pname */ void)	/* find candidates for safely merging steps *
 #if 0
 			if ((verbose&32)
 			&& t->step->merge_start)
-			{	printf("spin: %s:%d, merge_START:\n\t<seqno %d>\t",
+			{	spin_printf("spin: %s:%d, merge_START:\n\t<seqno %d>\t",
 						lt->fn->name, lt->ln,
 						t->step->seqno);
-				comment(stdout, lt, 0);
-				printf(";\n");
+				comment(spin_out, lt, 0);
+				spin_printf(";\n");
 			}
 #endif
 		}
@@ -393,13 +393,13 @@ FSM_ANA(void)
 				w->nxt = v;
 #if q
 			if (verbose&32)
-			{	printf("%s : %3d:  %d -> %d \t",
+			{	spin_printf("%s : %3d:  %d -> %d \t",
 					t->step->n->fn->name,
 					t->step->n->ln,
 					f->from,
 					t->to);
-				comment(stdout, t->step->n, 0);
-				printf("\t%c%d: %s\n", n==0?'R':'L',
+				comment(spin_out, t->step->n, 0);
+				spin_printf("\t%c%d: %s\n", n==0?'R':'L',
 					u->special, u->var->name);
 			}
 #endif
@@ -702,7 +702,7 @@ ana_stmnt(FSM_trans *t, Lextok *now, int usage)
 		break;
 
 	default:
-		if (0) printf("spin: %s:%d, bad node type %d usage %d (ana_stmnt)\n",
+		if (0) spin_printf("spin: %s:%d, bad node type %d usage %d (ana_stmnt)\n",
 			now->fn->name, now->ln, now->ntyp, usage);
 		fatal("aborting (ana_stmnt)", (char *) 0);
 	}
@@ -723,9 +723,9 @@ ana_src(int dataflow, int merger)	/* called from main.c and guided.c */
 		e = p->s->frst;
 #if 0
 		if (dataflow || merger)
-		{	printf("spin: %d, optimizing '%s'",
+		{	spin_printf("spin: %d, optimizing '%s'",
 				counter++, p->n->name);
-			fflush(stdout);
+			fflush(spin_out);
 		}
 #endif
 		if (dataflow)
@@ -735,7 +735,7 @@ ana_src(int dataflow, int merger)	/* called from main.c and guided.c */
 		{	FSM_MERGER(/* p->n->name */);
 			huntele(e, e->status, -1)->merge_in = 1; /* start-state */
 #if 0
-			printf("\n");
+			spin_printf("\n");
 #endif
 		}
 		if (export_ast)
@@ -746,10 +746,10 @@ ana_src(int dataflow, int merger)	/* called from main.c and guided.c */
 	for (e = Al_El; e; e = e->Nxt)
 	{
 		if (!(e->status&DONE) && (verbose&32))
-		{	printf("unreachable code: ");
-			printf("%s:%3d  ", e->n->fn->name, e->n->ln);
-			comment(stdout, e->n, 0);
-			printf("\n");
+		{	spin_printf("unreachable code: ");
+			spin_printf("%s:%3d  ", e->n->fn->name, e->n->ln);
+			comment(spin_out, e->n, 0);
+			spin_printf("\n");
 		}
 		e->status &= ~DONE;
 	}

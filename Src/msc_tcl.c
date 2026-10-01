@@ -90,7 +90,7 @@ colbox(int ix, int iy, int w, int h_unused, char *color)
 	int y = iy*HH;
 
 	if (ix < 0 || ix > 255)
-	{	fprintf(stderr, "saw ix=%d\n", ix);
+	{	fprintf(spin_err, "saw ix=%d\n", ix);
 		fatal("msc_tcl: unexpected\n", (char *) 0);
 	}
 
@@ -261,7 +261,7 @@ static void
 putbox(int x)
 {
 	if (ldepth >= TotSteps)
-	{	fprintf(stderr, "max length of %d steps exceeded - ps file truncated\n",
+	{	fprintf(spin_err, "max length of %d steps exceeded - ps file truncated\n",
 			TotSteps);
 		putpostlude();
 	}
@@ -285,9 +285,9 @@ putpostlude(void)
 	fprintf(pfd, ".c raise mesg\n");
 	spin_fclose(pfd);
 
-	fprintf(stderr, "seed used: -n%d\n", WhatSeed());
+	fprintf(spin_err, "seed used: -n%d\n", WhatSeed());
 	sprintf(cmd, "wish -f %s.tcl &", oFname?oFname->name:"msc");
-	fprintf(stderr, "%s\n", cmd);
+	fprintf(spin_err, "%s\n", cmd);
 	(void) unlink("pan.pre");
 	spin_bail(system(cmd));
 }
@@ -346,7 +346,7 @@ pstext(int x, char *s)
 	{	I[x] = tmp;
 	} else
 	{	if (depth >= TotSteps || ldepth >= TotSteps)
-		{	fprintf(stderr, "spin: error: max nr of %d steps exceeded\n",
+		{	fprintf(spin_err, "spin: error: max nr of %d steps exceeded\n",
 				TotSteps);
 			fatal("use -uN to limit steps", (char *) 0);
 		}
@@ -370,9 +370,9 @@ dotag(FILE *fd, char *s)
 	{	pstext(pid, &s[i]);
 	} else
 	{	if (!notabs)
-		{	printf("  ");
+		{	spin_printf("  ");
 			for (i = 0; i <= pid; i++)
-			{	printf("    ");
+			{	spin_printf("    ");
 		}	}
 		fprintf(fd, "%s", s);
 		fflush(fd);

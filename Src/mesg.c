@@ -139,7 +139,7 @@ qsend(Lextok *n)
 {	int whichq = eval(n->lft)-1;
 
 	if (whichq == -1)
-	{	printf("Error: sending to an uninitialized chan\n");
+	{	spin_printf("Error: sending to an uninitialized chan\n");
 		/* whichq = 0; */
 		return 0;
 	}
@@ -177,7 +177,7 @@ qsend(Lextok *n)
 	has_stdin = 1;
 
 	tcsetattr(0, TCSANOW, &new_settings);
-	n = getchar();
+	n = getc(spin_in);
 	tcsetattr(0, TCSANOW, &initial_settings);
 
 	return n;
@@ -208,12 +208,12 @@ qrecv(Lextok *n, int full)
 			if (m->lft->ntyp != CONST && m->lft->ntyp != EVAL)
 			{
 #ifdef PC
-				int c = getchar();
+				int c = getc(spin_in);
 #else
 				int c = peek_ch();	/* 6.2.4, was getchar(); */
 #endif
 				if (c == 27 || c == 3)	/* escape or control-c */
-				{	printf("quit\n");
+				{	spin_printf("quit\n");
 					spin_bail(0);
 				} /* else: non-blocking */
 				if (c == EOF) return 0;	/* no char available */
@@ -223,7 +223,7 @@ qrecv(Lextok *n, int full)
 			}
 			return 1;
 		}
-		printf("Error: receiving from an uninitialized chan %s\n",
+		spin_printf("Error: receiving from an uninitialized chan %s\n",
 			n->sym?n->sym->name:"");
 		/* whichq = 0; */
 		return 0;
@@ -302,10 +302,10 @@ mtype_ck(char *p, Lextok *arg)
 	}
 
 	if (strcmp(s, t) != 0)
-	{	printf("spin: %s:%d, Error: '%s' is type '%s', but ",
+	{	spin_printf("spin: %s:%d, Error: '%s' is type '%s', but ",
 			arg->fn?arg->fn->name:"", arg->ln,
 			arg->sym->name, t);
-		printf("should be type '%s'\n", s);
+		spin_printf("should be type '%s'\n", s);
 		non_fatal("incorrect type of '%s'", arg->sym->name);
 	}
 }
@@ -347,11 +347,11 @@ a_snd(Queue *q, Lextok *n)
 		{	sr_talk(n, 0, "Send ", "->", i, q);
 		}
 		if (j < q->nflds)
-		{	printf("%3d: warning: missing params in send\n",
+		{	spin_printf("%3d: warning: missing params in send\n",
 				depth);
 		}
 		if (m)
-		{	printf("%3d: warning: too many params in send\n",
+		{	spin_printf("%3d: warning: too many params in send\n",
 				depth);
 	}	}
 	q->qlen++;
@@ -419,10 +419,10 @@ try_slot:
 
 	if (verbose&8)
 	{	if (j < q->nflds)
-		{	printf("%3d: warning: missing params in next recv\n",
+		{	spin_printf("%3d: warning: missing params in next recv\n",
 				depth);
 		} else if (m)
-		{	printf("%3d: warning: too many params in next recv\n",
+		{	spin_printf("%3d: warning: too many params in next recv\n",
 				depth);
 	}	}
 
@@ -506,10 +506,10 @@ s_snd(Queue *q, Lextok *n)
 		}
 
 		if (j < q->nflds)
-		{	  printf("%3d: warning: missing params in rv-send\n",
+		{	  spin_printf("%3d: warning: missing params in rv-send\n",
 				depth);
 		} else if (m)
-		{	  printf("%3d: warning: too many params in rv-send\n",
+		{	  spin_printf("%3d: warning: too many params in rv-send\n",
 				depth);
 		}
 
@@ -562,7 +562,7 @@ channm(Lextok *n)
 				return;
 		}	}
 		ini_struct(r);
-		printf("%s", r->name);
+		spin_printf("%s", r->name);
 		strcpy(lbuf, "");
 		struct_name(n->lft, r, 1, lbuf);
 		strcat(GBuf, lbuf);
@@ -603,28 +603,28 @@ docolumns(Lextok *n, char *tr, int v, int j, Queue *q)
 {	int i;
 
 	if (firstrow)
-	{	printf("q\\p");
+	{	spin_printf("q\\p");
 		for (i = 0; i < nproc-nstop - Have_claim; i++)
-			printf(" %3d", i);
-		printf("\n");
+			spin_printf(" %3d", i);
+		spin_printf("\n");
 		firstrow = 0;
 	}
 	if (j == 0)
-	{	printf("%3d", q->qid);
+	{	spin_printf("%3d", q->qid);
 		if (X_lst)
 		for (i = 0; i < X_lst->pid - Have_claim; i++)
-			printf("   .");
-		printf("   ");
+			spin_printf("   .");
+		spin_printf("   ");
 		GBuf[0] = '\0';
 		channm(n);
-		printf("%s%c", GBuf, (strncmp(tr, "Sen", 3))?'?':'!');
+		spin_printf("%s%c", GBuf, (strncmp(tr, "Sen", 3))?'?':'!');
 	} else
-		printf(",");
-	if (tr[0] == '[') printf("[");
-	sr_mesg(stdout, v, q->fld_width[j] == MTYPE, q->mtp[j]);
+		spin_printf(",");
+	if (tr[0] == '[') spin_printf("[");
+	sr_mesg(spin_out, v, q->fld_width[j] == MTYPE, q->mtp[j]);
 	if (j == q->nflds - 1)
-	{	if (tr[0] == '[') printf("]");
-		printf("\n");
+	{	if (tr[0] == '[') spin_printf("]");
+		spin_printf("\n");
 	}
 }
 
@@ -685,26 +685,26 @@ sr_talk(Lextok *n, int v, char *tr, char *a, int j, Queue *q)
 				ptr++;
 			}
 			*qtr = '\0';
-			printf("%s:%d %s",
+			spin_printf("%s:%d %s",
 				snm, n->ln, s);
 		}
 	} else
-	{	printf(",");
+	{	spin_printf(",");
 	}
-	sr_mesg(stdout, v, q->fld_width[j] == MTYPE, q->mtp[j]);
+	sr_mesg(spin_out, v, q->fld_width[j] == MTYPE, q->mtp[j]);
 
 	if (j == q->nflds - 1)
 	{	if (xspin)
-		{	printf("]\n");
-			if (!(verbose&4)) printf("\n");
+		{	spin_printf("]\n");
+			if (!(verbose&4)) spin_printf("\n");
 			return;
 		}
-		printf("\t%s queue %d (", a, eval(n->lft));
+		spin_printf("\t%s queue %d (", a, eval(n->lft));
 		GBuf[0] = '\0';
 		channm(n);
-		printf("%s)\n", GBuf);
+		spin_printf("%s)\n", GBuf);
 	}
-	fflush(stdout);
+	fflush(spin_out);
 }
 
 void
@@ -756,29 +756,29 @@ doq(Symbol *s, int n, RunList *r)
 		{	continue;	/* rv q always empty */
 		}
 
-		printf("\t\tqueue %d (", q->qid);
+		spin_printf("\t\tqueue %d (", q->qid);
 		if (r)
-		{	printf("%s(%d):", r->n->name, r->pid - Have_claim);
+		{	spin_printf("%s(%d):", r->n->name, r->pid - Have_claim);
 		}
 
 		if (s->nel > 1 || s->isarray)
-		{	printf("%s[%d]): ", s->name, n);
+		{	spin_printf("%s[%d]): ", s->name, n);
 		} else
-		{	printf("%s): ", s->name);
+		{	spin_printf("%s): ", s->name);
 		}
 
 		for (k = 0; k < q->qlen; k++)
-		{	printf("[");
+		{	spin_printf("[");
 			for (j = 0; j < q->nflds; j++)
-			{	if (j > 0) printf(",");
-				sr_mesg(stdout,
+			{	if (j > 0) spin_printf(",");
+				sr_mesg(spin_out,
 					q->contents[k*q->nflds+j],
 					q->fld_width[j] == MTYPE,
 					q->mtp[j]);
 			}
-			printf("]");
+			spin_printf("]");
 		}
-		printf("\n");
+		spin_printf("\n");
 		break;
 	}
 }
@@ -821,7 +821,7 @@ nochan_manip(Lextok *p, Lextok *n, int d)	/* p=lhs n=rhs */
 		{	p->sym->mtype_name = (Symbol *) emalloc(sizeof(Symbol));
 			p->sym->mtype_name->name = rhs;
 		} else if (strcmp(lhs, rhs) != 0)
-		{	fprintf(stderr, "spin: %s:%d, Error: '%s' is type '%s' but '%s' is type '%s'\n",
+		{	fprintf(spin_err, "spin: %s:%d, Error: '%s' is type '%s' but '%s' is type '%s'\n",
 				p->fn->name, p->ln,
 				p->sym?p->sym->name:"?", lhs,
 				n->sym?n->sym->name:"?", rhs);

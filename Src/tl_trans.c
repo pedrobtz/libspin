@@ -90,19 +90,19 @@ static void
 dump_graph(Graph *g)
 {	Node *n1;
 
-	printf("\n\tnew:\t");
+	spin_printf("\n\tnew:\t");
 	for (n1 = g->New; n1; n1 = n1->nxt)
-	{ dump(n1); printf(", "); }
-	printf("\n\told:\t");
+	{ dump(n1); spin_printf(", "); }
+	spin_printf("\n\told:\t");
 	for (n1 = g->Old; n1; n1 = n1->nxt)
-	{ dump(n1); printf(", "); }
-	printf("\n\tnxt:\t");
+	{ dump(n1); spin_printf(", "); }
+	spin_printf("\n\tnxt:\t");
 	for (n1 = g->Next; n1; n1 = n1->nxt)
-	{ dump(n1); printf(", "); }
-	printf("\n\tother:\t");
+	{ dump(n1); spin_printf(", "); }
+	spin_printf("\n\tother:\t");
 	for (n1 = g->Other; n1; n1 = n1->nxt)
-	{ dump(n1); printf(", "); }
-	printf("\n");
+	{ dump(n1); spin_printf(", "); }
+	spin_printf("\n");
 }
 
 static void
@@ -114,9 +114,9 @@ push_stack(Graph *g)
 	Nodes_Stack = g;
 	if (tl_verbose)
 	{	Symbol *z;
-		printf("\nPush %s, from ", g->name->name);
+		spin_printf("\nPush %s, from ", g->name->name);
 		for (z = g->incoming; z; z = z->next)
-			printf("%s, ", z->name);
+			spin_printf("%s, ", z->name);
 		dump_graph(g);
 	}
 	Stack_sz++;
@@ -240,7 +240,7 @@ findgraph(char *nm)
 		if (strcmp(m->from, nm) == 0)
 			return m->to;
 
-	printf("warning: node %s not found\n", nm);
+	spin_printf("warning: node %s not found\n", nm);
 	return (Graph *) 0;
 }
 
@@ -407,9 +407,9 @@ fsm_trans(Graph *p, int count, char *curnm)
 			strcpy(nwnm, "accept_all");
 
 		if (tl_verbose)
-		{	printf("maxred=%d, count=%d, curnm=%s, nwnm=%s ",
+		{	spin_printf("maxred=%d, count=%d, curnm=%s, nwnm=%s ",
 				Max_Red, count, curnm, nwnm);
-			printf("(greencnt=%d,%d, redcnt=%d,%d)\n",
+			spin_printf("(greencnt=%d,%d, redcnt=%d,%d)\n",
 				r->grncnt, r->isgrn[0],
 				r->redcnt, r->isred[0]);
 		}
@@ -714,7 +714,7 @@ expand_g(Graph *g)
 	{	Debug2("\nDone with %s", g->name->name);
 		if (tl_verbose) dump_graph(g);
 		if (not_new(g))
-		{	if (tl_verbose) printf("\tIs Not New\n");
+		{	if (tl_verbose) spin_printf("\tIs Not New\n");
 			return;
 		}
 		if (g->Next)
@@ -730,10 +730,10 @@ expand_g(Graph *g)
 
 	if (tl_verbose)
 	{	Symbol *z;
-		printf("\nExpand %s, from ", g->name->name);
+		spin_printf("\nExpand %s, from ", g->name->name);
 		for (z = g->incoming; z; z = z->next)
-			printf("%s, ", z->name);
-		printf("\n\thandle:\t"); Explain(g->New->ntyp);
+			spin_printf("%s, ", z->name);
+		spin_printf("\n\thandle:\t"); Explain(g->New->ntyp);
 		dump_graph(g);
 	}
 
@@ -935,11 +935,11 @@ trans(Node *p)
 
 	mkbuchi();
 	if (tl_verbose)
-	{	printf("/*\n");
-		printf(" * %d states in Streett automaton\n", Base);
-		printf(" * %d Streett acceptance conditions\n", Max_Red);
-		printf(" * %d Buchi states\n", Total);
-		printf(" */\n");
+	{	spin_printf("/*\n");
+		spin_printf(" * %d states in Streett automaton\n", Base);
+		spin_printf(" * %d Streett acceptance conditions\n", Max_Red);
+		spin_printf(" * %d Buchi states\n", Total);
+		spin_printf(" */\n");
 	}
 }
 

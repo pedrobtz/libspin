@@ -101,9 +101,9 @@ FirstTime(int n)
 static void
 illegal(Element *e, char *str)
 {
-	printf("illegal operator in 'd_step:' '");
-	comment(stdout, e->n, 0);
-	printf("'\n");
+	spin_printf("illegal operator in 'd_step:' '");
+	comment(spin_out, e->n, 0);
+	spin_printf("'\n");
 	fatal("'%s'", str);
 }
 

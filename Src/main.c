@@ -253,8 +253,8 @@ e_system(int v, const char *s)
 
 	if (v == 1)
 	{	if (verbose&(32|64))	/* -v or -w */
-		{	printf("cmd%02d: %s\n", count++, s);
-			fflush(stdout);
+		{	spin_printf("cmd%02d: %s\n", count++, s);
+			fflush(spin_out);
 		}
 		if (verbose&64)		/* only -w */
 		{	return 0;	/* suppress the call to system(s) */
@@ -279,15 +279,15 @@ alldone(int estatus)
 
 	if (!buzzed && seedy && !analyze && !export_ast
 	&& !s_trail && !preprocessonly && depth > 0)
-	{	printf("seed used: %d\n", SeedUsed);
+	{	spin_printf("seed used: %d\n", SeedUsed);
 	}
 
 	if (!buzzed && xspin && (analyze || s_trail))
 	{	if (estatus)
-		{	printf("spin: %d error(s) - aborting\n",
+		{	spin_printf("spin: %d error(s) - aborting\n",
 				estatus);
 		} else
-		{	printf("Exit-Status 0\n");
+		{	spin_printf("Exit-Status 0\n");
 	}	}
 
 	if (buzzed && replay && !has_code && !estatus)
@@ -603,14 +603,14 @@ preprocess(char *a, char *b, int a_tmp)
 		strcat(precmd, PreArg[i]);
 	}
 	if (strlen(precmd) > sizeof(precmd))
-	{	fprintf(stdout, "spin: too many -D args, aborting\n");
+	{	fprintf(spin_out, "spin: too many -D args, aborting\n");
 		alldone(1);
 	}
 	sprintf(cmd, "%s \"%s\" > \"%s\"", precmd, a, b);
 	if (e_system(2, (const char *)cmd))	/* preprocessing step */
 	{	(void) unlink((const char *) b);
 		if (a_tmp) (void) unlink((const char *) a);
-		fprintf(stdout, "spin: preprocessing failed %s\n", cmd);
+		fprintf(spin_out, "spin: preprocessing failed %s\n", cmd);
 		alldone(1); /* no return, error exit */
 	}
 	if (a_tmp) (void) unlink((const char *) a);
@@ -619,94 +619,94 @@ preprocess(char *a, char *b, int a_tmp)
 void
 usage(void)
 {
-	printf("use: spin [-option] ... [-option] file\n");
-	printf("\tNote: file must always be the last argument\n");
-	printf("\t-A apply slicing algorithm\n");
-	printf("\t-a generate a verifier in pan.c\n");
-	printf("\t-B no final state details in simulations\n");
-	printf("\t-b don't execute printfs in simulation\n");
-	printf("\t-C print channel access info (combine with -g etc.)\n");
-	printf("\t-c columnated -s -r simulation output\n");
-	printf("\t-d produce symbol-table information\n");
-	printf("\t-Dyyy pass -Dyyy to the preprocessor\n");
-	printf("\t-Eyyy pass yyy to the preprocessor\n");
-	printf("\t-e compute synchronous product of multiple never claims (modified by -L)\n");
-	printf("\t-f \"..formula..\"  translate LTL ");
-	printf("into never claim\n");
-	printf("\t-F file  like -f, but with the LTL formula stored in a 1-line file\n");
-	printf("\t-g print all global variables\n");
-	printf("\t-h at end of run, print value of seed for random nr generator used\n");
-	printf("\t-i interactive (random simulation)\n");
-	printf("\t-I show result of inlining and preprocessing\n");
-	printf("\t-J reverse eval order of nested unlesses\n");
-	printf("\t-jN skip the first N steps ");
-	printf("in simulation trail\n");
-	printf("\t-k fname use the trailfile stored in file fname, see also -t\n");
-	printf("\t-L when using -e, use strict language intersection\n");
-	printf("\t-l print all local variables\n");
-	printf("\t-M generate msc-flow in tcl/tk format\n");
-	printf("\t-m lose msgs sent to full queues\n");
-	printf("\t-N fname use never claim stored in file fname\n");
-	printf("\t-nN seed for random nr generator\n");
-	printf("\t-O use old scope rules (pre 5.3.0)\n");
-	printf("\t-o1 turn off dataflow-optimizations in verifier\n");
-	printf("\t-o2 don't hide write-only variables in verifier\n");
-	printf("\t-o3 turn off statement merging in verifier\n");
-	printf("\t-o4 turn on rendezvous optiomizations in verifier\n");
-	printf("\t-o5 turn on case caching (reduces size of pan.m, but affects reachability reports)\n");
-	printf("\t-o6 revert to the old rules for interpreting priority tags (pre version 6.2)\n");
-	printf("\t-o7 revert to the old rules for semi-colon usage (pre version 6.3)\n");
-	printf("\t-Pxxx use xxx for preprocessing\n");
-	printf("\t-p print all statements\n");
-	printf("\t-pp pretty-print (reformat) stdin, write stdout\n");
-	printf("\t-qN suppress io for queue N in printouts\n");
-	printf("\t-r print receive events\n");
-	printf("\t-replay  replay an error trail-file found earlier\n");
-	printf("\t	if the model contains embedded c-code, the ./pan executable is used\n");
-	printf("\t	otherwise spin itself is used to replay the trailfile\n");
-	printf("\t	note that pan recognizes different runtime options than spin itself\n");
-	printf("\t-run  (or -search) generate a verifier, and compile and run it\n");
-	printf("\t      options before -search are interpreted by spin to parse the input\n");
-	printf("\t      options following a -search are used to compile and run the verifier pan\n");
-	printf("\t	    valid options that can follow a -search argument include:\n");
-	printf("\t	    -bfs	perform a breadth-first search\n");
-	printf("\t	    -bfspar	perform a parallel breadth-first search\n");
-	printf("\t	    -dfspar	perform a parallel depth-first search, same as -DNCORE=4\n");
-	printf("\t	    -bcs	use the bounded-context-switching algorithm\n");
-	printf("\t	    -bitstate	or -bit, use bitstate storage\n");
-	printf("\t	    -biterateN,M use bitstate with iterative search refinement (-w18..-w35)\n");
-	printf("\t			perform N randomized runs and increment -w every M runs\n");
-	printf("\t			default value for N is 10, default for M is 1\n");
-	printf("\t			(use N,N to keep -w fixed for all runs)\n");
-	printf("\t			(add -w to see which commands will be executed)\n");
-	printf("\t			(add -W if ./pan exists and need not be recompiled)\n");
-	printf("\t	    -swarmN,M like -biterate, but running all iterations in parallel\n");
-	printf("\t	    -link file.c  link executable pan to file.c\n");
-	printf("\t	    -collapse	use collapse state compression\n");
-	printf("\t	    -noreduce	do not use partial order reduction\n");
-	printf("\t	    -hc  	use hash-compact storage\n");
-	printf("\t	    -noclaim	ignore all ltl and never claims\n");
-	printf("\t	    -p_permute	use process scheduling order random permutation\n");
-	printf("\t	    -p_rotateN	use process scheduling order rotation by N\n");
-	printf("\t	    -p_reverse	use process scheduling order reversal\n");
-	printf("\t	    -rhash      randomly pick one of the -p_... options\n");
-	printf("\t	    -ltl p	verify the ltl property named p\n");
-	printf("\t	    -safety	compile for safety properties only\n");
-	printf("\t	    -i	    	use the dfs iterative shortening algorithm\n");
-	printf("\t	    -a	    	search for acceptance cycles\n");
-	printf("\t	    -l	    	search for non-progress cycles\n");
-	printf("\t	similarly, a -D... parameter can be specified to modify the compilation\n");
-	printf("\t	and any valid runtime pan argument can be specified for the verification\n");
-	printf("\t-S1 and -S2 separate pan source for claim and model\n");
-	printf("\t-s print send events\n");
-	printf("\t-T do not indent printf output\n");
-	printf("\t-t[N] follow [Nth] simulation trail, see also -k\n");
-	printf("\t-Uyyy pass -Uyyy to the preprocessor\n");
-	printf("\t-uN stop a simulation run after N steps\n");
-	printf("\t-v verbose, more warnings\n");
-	printf("\t-w very verbose (when combined with -l or -g)\n");
-	printf("\t-[XYZ] reserved for use by xspin interface\n");
-	printf("\t-V print version number and exit\n");
+	spin_printf("use: spin [-option] ... [-option] file\n");
+	spin_printf("\tNote: file must always be the last argument\n");
+	spin_printf("\t-A apply slicing algorithm\n");
+	spin_printf("\t-a generate a verifier in pan.c\n");
+	spin_printf("\t-B no final state details in simulations\n");
+	spin_printf("\t-b don't execute printfs in simulation\n");
+	spin_printf("\t-C print channel access info (combine with -g etc.)\n");
+	spin_printf("\t-c columnated -s -r simulation output\n");
+	spin_printf("\t-d produce symbol-table information\n");
+	spin_printf("\t-Dyyy pass -Dyyy to the preprocessor\n");
+	spin_printf("\t-Eyyy pass yyy to the preprocessor\n");
+	spin_printf("\t-e compute synchronous product of multiple never claims (modified by -L)\n");
+	spin_printf("\t-f \"..formula..\"  translate LTL ");
+	spin_printf("into never claim\n");
+	spin_printf("\t-F file  like -f, but with the LTL formula stored in a 1-line file\n");
+	spin_printf("\t-g print all global variables\n");
+	spin_printf("\t-h at end of run, print value of seed for random nr generator used\n");
+	spin_printf("\t-i interactive (random simulation)\n");
+	spin_printf("\t-I show result of inlining and preprocessing\n");
+	spin_printf("\t-J reverse eval order of nested unlesses\n");
+	spin_printf("\t-jN skip the first N steps ");
+	spin_printf("in simulation trail\n");
+	spin_printf("\t-k fname use the trailfile stored in file fname, see also -t\n");
+	spin_printf("\t-L when using -e, use strict language intersection\n");
+	spin_printf("\t-l print all local variables\n");
+	spin_printf("\t-M generate msc-flow in tcl/tk format\n");
+	spin_printf("\t-m lose msgs sent to full queues\n");
+	spin_printf("\t-N fname use never claim stored in file fname\n");
+	spin_printf("\t-nN seed for random nr generator\n");
+	spin_printf("\t-O use old scope rules (pre 5.3.0)\n");
+	spin_printf("\t-o1 turn off dataflow-optimizations in verifier\n");
+	spin_printf("\t-o2 don't hide write-only variables in verifier\n");
+	spin_printf("\t-o3 turn off statement merging in verifier\n");
+	spin_printf("\t-o4 turn on rendezvous optiomizations in verifier\n");
+	spin_printf("\t-o5 turn on case caching (reduces size of pan.m, but affects reachability reports)\n");
+	spin_printf("\t-o6 revert to the old rules for interpreting priority tags (pre version 6.2)\n");
+	spin_printf("\t-o7 revert to the old rules for semi-colon usage (pre version 6.3)\n");
+	spin_printf("\t-Pxxx use xxx for preprocessing\n");
+	spin_printf("\t-p print all statements\n");
+	spin_printf("\t-pp pretty-print (reformat) stdin, write stdout\n");
+	spin_printf("\t-qN suppress io for queue N in printouts\n");
+	spin_printf("\t-r print receive events\n");
+	spin_printf("\t-replay  replay an error trail-file found earlier\n");
+	spin_printf("\t	if the model contains embedded c-code, the ./pan executable is used\n");
+	spin_printf("\t	otherwise spin itself is used to replay the trailfile\n");
+	spin_printf("\t	note that pan recognizes different runtime options than spin itself\n");
+	spin_printf("\t-run  (or -search) generate a verifier, and compile and run it\n");
+	spin_printf("\t      options before -search are interpreted by spin to parse the input\n");
+	spin_printf("\t      options following a -search are used to compile and run the verifier pan\n");
+	spin_printf("\t	    valid options that can follow a -search argument include:\n");
+	spin_printf("\t	    -bfs	perform a breadth-first search\n");
+	spin_printf("\t	    -bfspar	perform a parallel breadth-first search\n");
+	spin_printf("\t	    -dfspar	perform a parallel depth-first search, same as -DNCORE=4\n");
+	spin_printf("\t	    -bcs	use the bounded-context-switching algorithm\n");
+	spin_printf("\t	    -bitstate	or -bit, use bitstate storage\n");
+	spin_printf("\t	    -biterateN,M use bitstate with iterative search refinement (-w18..-w35)\n");
+	spin_printf("\t			perform N randomized runs and increment -w every M runs\n");
+	spin_printf("\t			default value for N is 10, default for M is 1\n");
+	spin_printf("\t			(use N,N to keep -w fixed for all runs)\n");
+	spin_printf("\t			(add -w to see which commands will be executed)\n");
+	spin_printf("\t			(add -W if ./pan exists and need not be recompiled)\n");
+	spin_printf("\t	    -swarmN,M like -biterate, but running all iterations in parallel\n");
+	spin_printf("\t	    -link file.c  link executable pan to file.c\n");
+	spin_printf("\t	    -collapse	use collapse state compression\n");
+	spin_printf("\t	    -noreduce	do not use partial order reduction\n");
+	spin_printf("\t	    -hc  	use hash-compact storage\n");
+	spin_printf("\t	    -noclaim	ignore all ltl and never claims\n");
+	spin_printf("\t	    -p_permute	use process scheduling order random permutation\n");
+	spin_printf("\t	    -p_rotateN	use process scheduling order rotation by N\n");
+	spin_printf("\t	    -p_reverse	use process scheduling order reversal\n");
+	spin_printf("\t	    -rhash      randomly pick one of the -p_... options\n");
+	spin_printf("\t	    -ltl p	verify the ltl property named p\n");
+	spin_printf("\t	    -safety	compile for safety properties only\n");
+	spin_printf("\t	    -i	    	use the dfs iterative shortening algorithm\n");
+	spin_printf("\t	    -a	    	search for acceptance cycles\n");
+	spin_printf("\t	    -l	    	search for non-progress cycles\n");
+	spin_printf("\t	similarly, a -D... parameter can be specified to modify the compilation\n");
+	spin_printf("\t	and any valid runtime pan argument can be specified for the verification\n");
+	spin_printf("\t-S1 and -S2 separate pan source for claim and model\n");
+	spin_printf("\t-s print send events\n");
+	spin_printf("\t-T do not indent printf output\n");
+	spin_printf("\t-t[N] follow [Nth] simulation trail, see also -k\n");
+	spin_printf("\t-Uyyy pass -Uyyy to the preprocessor\n");
+	spin_printf("\t-uN stop a simulation run after N steps\n");
+	spin_printf("\t-v verbose, more warnings\n");
+	spin_printf("\t-w very verbose (when combined with -l or -g)\n");
+	spin_printf("\t-[XYZ] reserved for use by xspin interface\n");
+	spin_printf("\t-V print version number and exit\n");
 	alldone(1);
 }
 
@@ -717,21 +717,21 @@ optimizations(int nr)
 	case '1':
 		dataflow = 1 - dataflow; /* dataflow */
 		if (verbose&32)
-		printf("spin: dataflow optimizations turned %s\n",
+		spin_printf("spin: dataflow optimizations turned %s\n",
 			dataflow?"on":"off");
 		break;
 	case '2':
 		/* dead variable elimination */
 		deadvar = 1 - deadvar;
 		if (verbose&32)
-		printf("spin: dead variable elimination turned %s\n",
+		spin_printf("spin: dead variable elimination turned %s\n",
 			deadvar?"on":"off");
 		break;
 	case '3':
 		/* statement merging */
 		merger = 1 - merger;
 		if (verbose&32)
-		printf("spin: statement merging turned %s\n",
+		spin_printf("spin: statement merging turned %s\n",
 			merger?"on":"off");
 		break;
 
@@ -739,28 +739,28 @@ optimizations(int nr)
 		/* rv optimization */
 		rvopt = 1 - rvopt;
 		if (verbose&32)
-		printf("spin: rendezvous optimization turned %s\n",
+		spin_printf("spin: rendezvous optimization turned %s\n",
 			rvopt?"on":"off");
 		break;
 	case '5':
 		/* case caching */
 		ccache = 1 - ccache;
 		if (verbose&32)
-		printf("spin: case caching turned %s\n",
+		spin_printf("spin: case caching turned %s\n",
 			ccache?"on":"off");
 		break;
 	case '6':
 		old_priority_rules = 1;
 		if (verbose&32)
-		printf("spin: using old priority rules (pre version 6.2)\n");
+		spin_printf("spin: using old priority rules (pre version 6.2)\n");
 		return 0; /* no break */
 	case '7':
 		implied_semis = 0;
 		if (verbose&32)
-		printf("spin: no implied semi-colons (pre version 6.3)\n");
+		spin_printf("spin: no implied semi-colons (pre version 6.3)\n");
 		return 0; /* no break */
 	default:
-		printf("spin: bad or missing parameter on -o\n");
+		spin_printf("spin: bad or missing parameter on -o\n");
 		usage();
 		break;
 	}
@@ -892,9 +892,9 @@ spin_main_body(int argc, char *argv[])
 	int T = (int) time((time_t *)0);
 	int usedopts = 0;
 
-	yyin  = stdin;
-	yyout = stdout;
-	tl_out = stdout;
+	yyin  = spin_in;
+	yyout = spin_out;
+	tl_out = spin_out;
 	strcpy(CurScope, "_");
 
 	assert(strlen(CPP) < sizeof(PreProc));
@@ -1023,7 +1023,7 @@ samecase:			if (buzzed != 0)
 			  break;	/* undefine */
 		case 'u': cutoff = atoi(&argv[1][2]); break;
 		case 'v': verbose += 32; break;
-		case 'V': printf("%s\n", SpinVersion);
+		case 'V': spin_printf("%s\n", SpinVersion);
 			  alldone(0);
 			  break;
 		case 'w': verbose += 64; break;
@@ -1055,21 +1055,21 @@ samecase:			if (buzzed != 0)
 	}
 
 	if (usedopts && !analyze)
-		printf("spin: warning -o[1..5] option ignored in simulations\n");
+		spin_printf("spin: warning -o[1..5] option ignored in simulations\n");
 
 	if (ltl_file)
 	{	add_ltl = ltl_file-2; add_ltl[1][1] = 'f';
 		if (!(tl_out = spin_fopen(*ltl_file, "r")))
-		{	printf("spin: cannot open %s\n", *ltl_file);
+		{	spin_printf("spin: cannot open %s\n", *ltl_file);
 			alldone(1);
 		}
 		size_t linebuffsize = 0;
 		ssize_t length = getline(&formula, &linebuffsize, tl_out);
 		if (!formula || !length)
-		{	printf("spin: cannot read %s\n", *ltl_file);
+		{	spin_printf("spin: cannot read %s\n", *ltl_file);
 		}
 		spin_fclose(tl_out);
-		tl_out = stdout;
+		tl_out = spin_out;
 		if (formula)
 		{	/* getline() malloc'd it; move into the arena so
 			 * nothing outlives spin_cleanup() */
@@ -1081,7 +1081,7 @@ samecase:			if (buzzed != 0)
 		*ltl_file = formula;
 	}
 	if (argc > 1)
-	{	FILE *fd = stdout;
+	{	FILE *fd = spin_out;
 		char cmd[512], out2[512];
 
 		/* must remain in current dir */
@@ -1091,7 +1091,7 @@ samecase:			if (buzzed != 0)
 		{	assert(strlen(argv[1])+6 < sizeof(out2));
 			sprintf(out2, "%s.nvr", argv[1]);
 			if ((fd = spin_fopen(out2, MFLAGS)) == NULL)
-			{	printf("spin: cannot create tmp file %s\n",
+			{	spin_printf("spin: cannot create tmp file %s\n",
 					out2);
 				alldone(1);
 			}
@@ -1116,7 +1116,7 @@ samecase:			if (buzzed != 0)
 		}
 
 		if (!(yyin = spin_fopen(out1, "r")))
-		{	printf("spin: cannot open %s\n", out1);
+		{	spin_printf("spin: cannot open %s\n", out1);
 			alldone(1);
 		}
 
@@ -1139,17 +1139,17 @@ samecase:			if (buzzed != 0)
 		if (add_ltl)
 		{	if (argc > 0)
 				spin_bail(tl_main(2, add_ltl));
-			printf("spin: missing argument to -f\n");
+			spin_printf("spin: missing argument to -f\n");
 			alldone(1);
 		}
-		printf("%s\n", SpinVersion);
-		fprintf(stderr, "spin: error, no filename specified\n");
-		fflush(stdout);
+		spin_printf("%s\n", SpinVersion);
+		fprintf(spin_err, "spin: error, no filename specified\n");
+		fflush(spin_out);
 		alldone(1);
 	}
 	if (columns == 2)
 	{	if (xspin || (verbose & (1|4|8|16|32)))
-		{	printf("spin: -c precludes all flags except -t\n");
+		{	spin_printf("spin: -c precludes all flags except -t\n");
 			alldone(1);
 		}
 		putprelude();
@@ -1244,27 +1244,27 @@ void
 non_fatal(char *s1, char *s2)
 {	extern int yychar; extern char yytext[];
 
-	printf("spin: %s:%d, Error: ",
+	spin_printf("spin: %s:%d, Error: ",
 		Fname?Fname->name:(oFname?oFname->name:"nofilename"), lineno);
 #if 1
-	printf(s1, s2); /* avoids a gcc warning */
+	spin_printf(s1, s2); /* avoids a gcc warning */
 #else
 	if (s2)
-		printf(s1, s2);
+		spin_printf(s1, s2);
 	else
-		printf(s1);
+		spin_printf(s1);
 #endif
 	if (yychar > 0)
 	{	if (yychar == SEMI)
-		{	printf(" statement separator");
+		{	spin_printf(" statement separator");
 		} else
-		{	printf("	saw '");
+		{	spin_printf("	saw '");
 			explain(yychar);
-			printf("'");
+			spin_printf("'");
 	}	}
 	if (strlen(yytext)>1)
-		printf(" near '%s'", yytext);
-	printf("\n");
+		spin_printf(" near '%s'", yytext);
+	spin_printf("\n");
 	nr_errs++;
 }
 
@@ -1296,7 +1296,7 @@ emalloc(size_t n)
 		return NULL;	/* robert shelton 10/20/06 */
 
 	if (!(tmp = (char *) spin_arena_alloc(n)))
-	{	printf("spin: allocated %ld Gb, wanted %d bytes more\n",
+	{	spin_printf("spin: allocated %ld Gb, wanted %d bytes more\n",
 			cnt/(1024*1024*1024), (int) n);
 		fatal("not enough memory", (char *)0);
 	}
@@ -1388,7 +1388,7 @@ nn(Lextok *s, int t, Lextok *ll, Lextok *rl)
 	{	int forbidden = separate;
 		switch (t) {
 		case ASGN:
-			printf("spin: Warning, never claim has side-effect\n");
+			spin_printf("spin: Warning, never claim has side-effect\n");
 			break;
 		case 'r': case 's':
 			non_fatal("never claim contains i/o stmnts",(char *)0);
@@ -1405,8 +1405,8 @@ nn(Lextok *s, int t, Lextok *ll, Lextok *rl)
 			if (n->sym && !(n->sym->xu&XX))
 			{	n->sym->xu |= XX;
 				if (separate == 2) {
-				printf("spin: warning, make sure that the S1 model\n");
-				printf("      also polls channel '%s' in its claim\n",
+				spin_printf("spin: warning, make sure that the S1 model\n");
+				spin_printf("      also polls channel '%s' in its claim\n",
 				n->sym->name); 
 			}	}
 			forbidden = 0;
@@ -1419,11 +1419,11 @@ nn(Lextok *s, int t, Lextok *ll, Lextok *rl)
 			break;
 		}
 		if (forbidden)
-		{	printf("spin: never, saw "); explain(t); printf("\n");
+		{	spin_printf("spin: never, saw "); explain(t); spin_printf("\n");
 			fatal("incompatible with separate compilation",(char *)0);
 		}
 	} else if ((t == ENABLED || t == PC_VAL) && !(warn_nn&t))
-	{	printf("spin: Warning, using %s outside never claim\n",
+	{	spin_printf("spin: Warning, using %s outside never claim\n",
 			(t == ENABLED)?"enabled()":"pc_value()");
 		warn_nn |= t;
 	} else if (t == NONPROGRESS)
@@ -1483,7 +1483,7 @@ rem_var(Symbol *a, Lextok *b, Symbol *c, Lextok *ndx)
 
 void
 explain(int n)
-{	FILE *fd = stdout;
+{	FILE *fd = spin_out;
 	switch (n) {
 	default:	if (n > 0 && n < 256)
 				fprintf(fd, "'%c' = ", n);

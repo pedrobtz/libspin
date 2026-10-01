@@ -2898,10 +2898,10 @@ yyreduce:
 				  no_internals(yyvsp[-2]);
 				  if (!initialization_ok)
 				  {	if (yyvsp[-2]->sym->isarray)
-					{	fprintf(stderr, "warning: %s:%d initialization of %s[] ",
+					{	fprintf(spin_err, "warning: %s:%d initialization of %s[] ",
 							yyvsp[-2]->fn->name, yyvsp[-2]->ln,
 							yyvsp[-2]->sym->name);
-						fprintf(stderr, "could fail if placed here\n");
+						fprintf(spin_err, "could fail if placed here\n");
 					} else
 					{	Lextok *zx = nn(ZN, NAME, ZN, ZN);
 						zx->sym = yyvsp[-2]->sym;
@@ -2969,14 +2969,14 @@ yyreduce:
 #line 521 "spin.y"
                                 {	/* make an exception for an initialized scalars */
 					yyval = nn(ZN, CONST, ZN, ZN);
-					fprintf(stderr, "spin: %s:%d, warning: '%s' in array bound ",
+					fprintf(spin_err, "spin: %s:%d, warning: '%s' in array bound ",
 						yyvsp[-3]->fn->name, yyvsp[-3]->ln, yyvsp[-1]->sym->name);
 					if (yyvsp[-1]->sym->ini
 					&&  yyvsp[-1]->sym->ini->val > 0)
-					{	fprintf(stderr, "evaluated as %d\n", yyvsp[-1]->sym->ini->val);
+					{	fprintf(spin_err, "evaluated as %d\n", yyvsp[-1]->sym->ini->val);
 						yyval->val = yyvsp[-1]->sym->ini->val;
 					} else
-					{	fprintf(stderr, "evaluated as 1 by default (to avoid zero)\n");
+					{	fprintf(spin_err, "evaluated as 1 by default (to avoid zero)\n");
 						yyval->val = 1;
 					}
 					yyvsp[-3]->sym->nel = yyval->val;
@@ -4549,11 +4549,11 @@ ltl_to_string(Lextok *n)
 	(void) unlink(TMP_FILE1);
 
 	if (!retval)
-	{	printf("%ld\n", (long int) retval);
+	{	spin_printf("%ld\n", (long int) retval);
 		fatal("could not translate ltl ltl_formula", 0);
 	}
 
-	if (1) printf("ltl %s: %s\n", ltl_name, ltl_formula);
+	if (1) spin_printf("ltl %s: %s\n", ltl_name, ltl_formula);
 
 	m->sym = lookup(ltl_formula);
 #ifndef __MINGW32__
@@ -4588,13 +4588,13 @@ sanity_check(Lextok *t)	/* check proper embedding of ltl_expr */
 	{	if (!is_boolean(t->ntyp)
 		&&  (is_temporal(t->lft->ntyp)
 		||   is_temporal(t->rgt->ntyp)))
-		{	printf("spin: attempt to apply '");
+		{	spin_printf("spin: attempt to apply '");
 			explain(t->ntyp);
-			printf("' to '");
+			spin_printf("' to '");
 			explain(t->lft->ntyp);
-			printf("' and '");
+			spin_printf("' and '");
 			explain(t->rgt->ntyp);
-			printf("'\n");
+			spin_printf("'\n");
 	/*		non_fatal("missing parentheses?", (char *)0); */
 	}	}
 }

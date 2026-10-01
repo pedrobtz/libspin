@@ -21,7 +21,7 @@ void
 doindent(void)
 {	int i;
 	for (i = 0; i < indent; i++)
-		printf("   ");
+		spin_printf("   ");
 }
 
 void
@@ -30,13 +30,13 @@ repro_sub(Element *e)
 	doindent();
 	switch (e->n->ntyp) {
 	case D_STEP:
-		printf("d_step {\n");
+		spin_printf("d_step {\n");
 		break;
 	case ATOMIC:
-		printf("atomic {\n");
+		spin_printf("atomic {\n");
 		break;
 	case NON_ATOMIC:
-		printf(" {\n");
+		spin_printf(" {\n");
 		break;
 	}
 	indent++;
@@ -44,7 +44,7 @@ repro_sub(Element *e)
 	indent--;
 
 	doindent();
-	printf(" };\n");
+	spin_printf(" };\n");
 }
 
 static void
@@ -56,32 +56,32 @@ repro_seq(Sequence *s)
 	for (e = s->frst; e; e = e->nxt)
 	{
 		v = has_lab(e, 0);
-		if (v) printf("%s:\n", v->name);
+		if (v) spin_printf("%s:\n", v->name);
 
 		if (e->n->ntyp == UNLESS)
-		{	printf("/* normal */ {\n");
+		{	spin_printf("/* normal */ {\n");
 			repro_seq(e->n->sl->this);
 			doindent();
-			printf("} unless {\n");
+			spin_printf("} unless {\n");
 			repro_seq(e->n->sl->nxt->this);
 			doindent();
-			printf("}; /* end unless */\n");
+			spin_printf("}; /* end unless */\n");
 		} else if (e->sub)
 		{
 			switch (e->n->ntyp) {
-			case DO: doindent(); printf("do\n"); indent++; break;
-			case IF: doindent(); printf("if\n"); indent++; break;
+			case DO: doindent(); spin_printf("do\n"); indent++; break;
+			case IF: doindent(); spin_printf("if\n"); indent++; break;
 			}
 
 			for (h = e->sub; h; h = h->nxt)
-			{	indent--; doindent(); indent++; printf("::\n");
+			{	indent--; doindent(); indent++; spin_printf("::\n");
 				repro_seq(h->this);
-				printf("\n");
+				spin_printf("\n");
 			}
 
 			switch (e->n->ntyp) {
-			case DO: indent--; doindent(); printf("od;\n"); break;
-			case IF: indent--; doindent(); printf("fi;\n"); break;
+			case DO: indent--; doindent(); spin_printf("od;\n"); break;
+			case IF: indent--; doindent(); spin_printf("fi;\n"); break;
 			}
 		} else
 		{	if (e->n->ntyp == ATOMIC
@@ -94,16 +94,16 @@ repro_seq(Sequence *s)
 			{
 				doindent();
 				if (e->n->ntyp == C_CODE)
-				{	printf("c_code ");
-					plunk_inline(stdout, e->n->sym->name, 1, 1);
+				{	spin_printf("c_code ");
+					plunk_inline(spin_out, e->n->sym->name, 1, 1);
 				} else if (e->n->ntyp == 'c'
 				       &&  e->n->lft->ntyp == C_EXPR)
-				{	printf("c_expr { ");
-					plunk_expr(stdout, e->n->lft->sym->name);
-					printf("} ->\n");
+				{	spin_printf("c_expr { ");
+					plunk_expr(spin_out, e->n->lft->sym->name);
+					spin_printf("} ->\n");
 				} else
-				{	comment(stdout, e->n, 0);
-					printf(";\n");
+				{	comment(spin_out, e->n, 0);
+					spin_printf(";\n");
 			}	}
 		}
 		if (e == s->last)
@@ -117,15 +117,15 @@ repro_proc(ProcList *p)
 	if (!p) return;
 	if (p->nxt) repro_proc(p->nxt);
 
-	if (p->det) printf("D");	/* deterministic */
-	printf("proctype %s()", p->n->name);
+	if (p->det) spin_printf("D");	/* deterministic */
+	spin_printf("proctype %s()", p->n->name);
 	if (p->prov)
-	{	printf(" provided ");
-		comment(stdout, p->prov, 0);
+	{	spin_printf(" provided ");
+		comment(spin_out, p->prov, 0);
 	}
-	printf("\n{\n");
+	spin_printf("\n{\n");
 	repro_seq(p->s);
-	printf("}\n");
+	spin_printf("}\n");
 }
 
 void
@@ -298,7 +298,7 @@ purge(char *b)
 		{	doindent();
 		}
 	}
-	printf("%s\n", b);
+	spin_printf("%s\n", b);
 	strcpy(b, "");
 
 	in_decl = 0;

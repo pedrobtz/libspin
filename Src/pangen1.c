@@ -468,7 +468,7 @@ end_labs(Symbol *s, int i)
 					ln[j].s);
 		complain:	lineno = l->e->n->ln;
 				Fname  = l->e->n->fn;
-				printf("spin: %3d:%s, warning, %s - is invisible\n",
+				spin_printf("spin: %3d:%s, warning, %s - is invisible\n",
 					lineno, Fname?Fname->name:"-", foo);
 	}	}	}	
 	/* visible states -- through remote refs: */
@@ -497,12 +497,12 @@ void
 prehint(Symbol *s)
 {	Lextok *n;
 
-	printf("spin: warning, ");
+	spin_printf("spin: warning, ");
 	if (!s) return;
 
 	n = (s->context != ZS)?s->context->ini:s->ini;
 	if (n)
-	printf("line %s:%d, ", n->fn->name, n->ln);
+	spin_printf("line %s:%d, ", n->fn->name, n->ln);
 }
 
 void
@@ -538,10 +538,10 @@ checktype(Symbol *sp, char *s)
 		while (i > 0 && buf[--i] == ' ') buf[i] = '\0';
 		prehint(sp);
 		if (sp->context)
-			printf("proctype %s:", s);
+			spin_printf("proctype %s:", s);
 		else
-			printf("global");
-		printf(" '%s %s' could be declared 'bit %s'\n",
+			spin_printf("global");
+		spin_printf(" '%s %s' could be declared 'bit %s'\n",
 			buf, sp->name, sp->name);
 	} else if (sp->type != BYTE && !(sp->hidden&8))
 	{	if (!(verbose&32)) return;
@@ -550,10 +550,10 @@ checktype(Symbol *sp, char *s)
 		while (buf[--i] == ' ') buf[i] = '\0';
 		prehint(sp);
 		if (sp->context)
-			printf("proctype %s:", s);
+			spin_printf("proctype %s:", s);
 		else
-			printf("global");
-		printf(" '%s %s' could be declared 'byte %s'\n",
+			spin_printf("global");
+		spin_printf(" '%s %s' could be declared 'byte %s'\n",
 			buf, sp->name, sp->name);
 	}
 }
@@ -608,7 +608,7 @@ dolocal(FILE *ofd, char *pre, int dowhat, int p, char *s, enum btypes b)
 					break;
 				}
 				if (b == N_CLAIM)
-				{	printf("error: %s defines local %s\n",
+				{	spin_printf("error: %s defines local %s\n",
 						s, sp->name);
 					nr_errs++;
 	}	}	}	}
@@ -1300,7 +1300,7 @@ typ2c(Symbol *sp)
 			break;
 		} /* else fall through */
 		if (!(sp->hidden&1) && (verbose&32))
-		printf("spin: warning: bit-array %s[%d] mapped to byte-array\n",
+		spin_printf("spin: warning: bit-array %s[%d] mapped to byte-array\n",
 			sp->name, sp->nel);
 		nBits += 8*sp->nel; /* mapped onto array of uchars */
 		/* fall through */

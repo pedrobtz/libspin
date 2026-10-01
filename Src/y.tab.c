@@ -2948,7 +2948,7 @@ yyreduce:
   case 97: /* vardcl: NAME ':' CONST  */
 #line 511 "spin.y"
                                 { yyvsp[-2]->sym->nbits = yyvsp[0]->val;
-				  if (yyvsp[0]->val >= 8*sizeof(long))
+				  if (yyvsp[0]->val >= (int) (8*sizeof(long)))
 				  {	non_fatal("width-field %s too large",
 						yyvsp[-2]->sym->name);
 					yyvsp[0]->val = 8*sizeof(long)-1;

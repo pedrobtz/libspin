@@ -974,6 +974,7 @@ char *
 put_inline(FILE *fd, char *s)
 {	IType *tmp;
 
+	(void) fd;
 	tmp = find_inline(s);
 	check_inline(tmp);
 	return (char *) tmp->cn;
@@ -1439,7 +1440,7 @@ scan_to(int stop, int (*tst)(int), char *buf, int bufsz)
 {	int c, i = 0;
 
 	do {	c = Getchar();
-		if (tmp_has < sizeof(tmp_hold))
+		if (tmp_has < (int) sizeof(tmp_hold))
 		{	tmp_hold[tmp_has++] = c;
 		}
 		if (c == '\n')
@@ -1466,7 +1467,7 @@ scan_to(int stop, int (*tst)(int), char *buf, int bufsz)
 	{	if (0)
 		{	printf("saw: '%c', expected '%c'\n", c, stop);
 		}
-		if (tmp_has < sizeof(tmp_hold))
+		if (tmp_has < (int) sizeof(tmp_hold))
 		{	tmp_hold[tmp_has] = '\0';
 			push_back(tmp_hold);
 			if (0)
@@ -1706,7 +1707,7 @@ not_expanded:
 	case ';': c = SEMI; break;
 	case '.': c = follow('.', DOTDOT, '.'); break;
 	case '{':
-		assert(scope_level < sizeof(scope_seq)-1);
+		assert(scope_level < (int) (sizeof(scope_seq)-1));
 		scope_seq[scope_level++]++;
 		set_cur_scope();
 		break;

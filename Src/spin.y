@@ -509,7 +509,7 @@ ch_init : '[' const_expr ']' OF
 
 vardcl  : NAME  		{ $1->sym->nel = 1; $$ = $1; }
 	| NAME ':' CONST	{ $1->sym->nbits = $3->val;
-				  if ($3->val >= 8*sizeof(long))
+				  if ($3->val >= (int) (8*sizeof(long)))
 				  {	non_fatal("width-field %s too large",
 						$1->sym->name);
 					$3->val = 8*sizeof(long)-1;

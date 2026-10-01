@@ -87,6 +87,7 @@ psline(int x0, int y0, int x1, int y1, char *color)
 static void
 colbox(int ix, int iy, int w, int h_unused, char *color)
 {	int x = ix*WW;
+	(void) h_unused;
 	int y = iy*HH;
 
 	if (ix < 0 || ix > 255)

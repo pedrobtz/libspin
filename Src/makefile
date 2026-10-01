@@ -5,7 +5,10 @@
 # Tool documentation is available at http://spinroot.com
 
 CC?=gcc
-CFLAGS?=-O2 -DNXT -Wall -pedantic
+# libspin: gnu99 rather than c99 because main.c uses getline(), which glibc
+# hides under strict c99; -Wextra is part of the default because the tree
+# builds clean with it and CI treats any warning as a failure.
+CFLAGS?=-std=gnu99 -O2 -DNXT -Wall -Wextra -pedantic
 	# on some systems add: -I/usr/include
 	# on a PC:    make CFLAGS="-O2 -DNXT -DPC"
 	# on Solaris: make CFLAGS="-O2 -DNXT -DSOLARIS"

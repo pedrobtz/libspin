@@ -799,7 +799,7 @@ static struct {
 	{ "-safety",	"-DSAFETY",	0 },
 	{ "-i",		"-DREACH",	1 },
 	{ "-l",		"-DNP",		1 },
-	{ 0, 0 }
+	{ 0, 0, 0 }
 };
 
 static void

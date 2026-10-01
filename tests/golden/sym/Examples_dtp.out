@@ -1,10 +1,3 @@
-dtp.pml:107:17: warning: '/*' within block comment [-Wcomment]
-  107 | /*              :: goto s5              /* channel disconnected */
-      |                                         ^
-dtp.pml:242:34: warning: '/*' within block comment [-Wcomment]
-  242 |         /*      :: rtype == rvnak -> goto s4    /* too soon */
-      |                                                 ^
-2 warnings generated.
 mtype 	ack	9	<:global:>	<constant>	{scope _}
 mtype 	can	8	<:global:>	<constant>	{scope _}
 mtype 	crcck	7	<:global:>	<constant>	{scope _}

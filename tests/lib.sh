@@ -1,8 +1,13 @@
 # Shared by tests/run.sh and tests/record.sh. POSIX sh.
 #
 # A "case" is one spin invocation on one input; its result is a text file:
-# stdout and stderr merged, then the exit status, then for the generator case
-# a checksum per pan.* file. pan.c alone is ~330 KB per model, so the generated
+# stdout, then the exit status, then for the generator case a checksum per
+# pan.* file. stderr is discarded: spin's own diagnostics go to stdout, and
+# what reaches stderr is the C preprocessor spin spawns, whose warnings
+# differ between gcc and clang (Examples/dtp.pml has nested comments, which
+# clang reports and gcc does not). Carriage returns are stripped from both
+# the output and the pan.* files before comparing, so a text-mode stdout on
+# Windows compares equal to the goldens recorded on unix. pan.c alone is ~330 KB per model, so the generated
 # sources are compared by checksum rather than stored; a mismatch names the
 # file, and the reference binary (upstream `spin` built from the `upstream`
 # remote) regenerates it for a real diff.
@@ -23,9 +28,9 @@ root=$(cd "$here/.." && pwd)
 golden="$here/golden"
 
 if command -v sha256sum >/dev/null 2>&1; then
-  sha256() { sha256sum "$1" | cut -c1-64; }
+  sha256() { tr -d '\r' < "$1" | sha256sum | cut -c1-64; }
 else
-  sha256() { shasum -a 256 "$1" | cut -c1-64; }
+  sha256() { tr -d '\r' < "$1" | shasum -a 256 | cut -c1-64; }
 fi
 
 # Models under test, as paths relative to the scratch root. Book_1991 is left
@@ -50,6 +55,9 @@ make_scratch() {
 #   gen  verifier generation
 #   sym  symbol table dump
 run_case() {
+  run_case_raw "$@" | tr -d '\r'
+}
+run_case_raw() {
   spin=$1 kind=$2 model=$3
   dir=$scratch/$(dirname "$model")
   base=$(basename "$model")
@@ -57,12 +65,12 @@ run_case() {
     cd "$dir" || exit 97
     rm -f pan.* _spin_nvr.tmp ./*.trail
     case $kind in
-      sim) "$spin" -n1 -u200 -p -g -l -r -s "$base" < "$here/stdin.txt" 2>&1; echo "exit: $?" ;;
-      gen) "$spin" -a "$base" < "$here/stdin.txt" 2>&1; echo "exit: $?"
+      sim) "$spin" -n1 -u200 -p -g -l -r -s "$base" < "$here/stdin.txt" 2>/dev/null; echo "exit: $?" ;;
+      gen) "$spin" -a "$base" < "$here/stdin.txt" 2>/dev/null; echo "exit: $?"
            for f in pan.b pan.c pan.h pan.m pan.p pan.t; do
              [ -f "$f" ] && echo "sha256 $f $(sha256 "$f")"
            done ;;
-      sym) "$spin" -d "$base" < "$here/stdin.txt" 2>&1; echo "exit: $?" ;;
+      sym) "$spin" -d "$base" < "$here/stdin.txt" 2>/dev/null; echo "exit: $?" ;;
     esac
     rm -f pan.* _spin_nvr.tmp ./*.trail
     exit 0
@@ -71,7 +79,7 @@ run_case() {
 
 # run_ltl SPIN FORMULA -> result on stdout
 run_ltl() {
-  ( cd "$scratch" && "$1" -f "$2" < "$here/stdin.txt" 2>&1; echo "exit: $?" )
+  ( cd "$scratch" && "$1" -f "$2" < "$here/stdin.txt" 2>/dev/null; echo "exit: $?" ) | tr -d '\r'
 }
 
 # for_each_case CALLBACK: CALLBACK NAME KIND ARG, for every case

@@ -119,9 +119,10 @@ char	*eventmap = (char *) 0;
 
 static	char *ltl_name;
 static	int  Embedded = 0, inEventMap = 0, has_ini = 0;
+static	int  nltl = 0;	/* libspin: hoisted from the optname2 action so the generated reset can see it */
 
 
-#line 125 "y.tab.c"
+#line 126 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -999,35 +1000,35 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   102,   102,   105,   106,   109,   110,   111,   112,   113,
-     114,   115,   116,   117,   118,   119,   122,   125,   130,   138,
-     129,   166,   167,   170,   171,   172,   177,   191,   191,   201,
-     201,   207,   208,   211,   211,   226,   232,   235,   241,   244,
-     244,   261,   261,   274,   275,   281,   281,   287,   291,   294,
-     298,   302,   306,   312,   322,   334,   352,   353,   352,   362,
-     363,   366,   367,   368,   369,   370,   371,   371,   375,   378,
-     379,   380,   381,   384,   385,   386,   389,   390,   393,   398,
-     401,   413,   414,   418,   419,   422,   423,   426,   427,   430,
-     431,   434,   447,   460,   487,   495,   510,   511,   519,   520,
-     538,   541,   547,   547,   551,   551,   568,   569,   572,   573,
-     578,   578,   585,   586,   588,   588,   593,   593,   599,   599,
-     604,   604,   608,   612,   618,   618,   625,   628,   636,   644,
-     654,   659,   664,   672,   680,   681,   681,   683,   684,   685,
-     686,   687,   687,   693,   693,   699,   699,   705,   705,   712,
-     713,   715,   715,   722,   722,   732,   732,   738,   739,   738,
-     745,   746,   745,   751,   754,   755,   758,   758,   766,   767,
-     770,   771,   774,   775,   778,   779,   782,   783,   784,   785,
-     786,   787,   788,   794,   802,   803,   804,   805,   806,   807,
-     808,   809,   810,   811,   812,   813,   814,   815,   816,   817,
-     818,   819,   820,   821,   822,   823,   825,   830,   830,   840,
-     841,   842,   843,   843,   847,   847,   852,   853,   854,   859,
-     860,   863,   866,   868,   870,   871,   872,   875,   876,   879,
-     880,   883,   884,   885,   888,   891,   892,   893,   894,   898,
-     899,   900,   901,   902,   903,   904,   905,   908,   909,   910,
-     911,   914,   915,   922,   927,   928,   931,   941,   944,   947,
-     948,   951,   954,   955,   958,   959,   962,   963,   970,   975,
-     982,   984,   986,   991,   996,  1001,  1006,  1011,  1014,  1016,
-    1019
+       0,   103,   103,   106,   107,   110,   111,   112,   113,   114,
+     115,   116,   117,   118,   119,   120,   123,   126,   131,   139,
+     130,   167,   168,   171,   172,   173,   178,   192,   192,   202,
+     202,   208,   209,   212,   212,   227,   233,   236,   242,   245,
+     245,   262,   262,   275,   276,   282,   282,   288,   292,   295,
+     299,   303,   307,   313,   323,   335,   353,   354,   353,   363,
+     364,   367,   368,   369,   370,   371,   372,   372,   376,   379,
+     380,   381,   382,   385,   386,   387,   390,   391,   394,   399,
+     402,   414,   415,   419,   420,   423,   424,   427,   428,   431,
+     432,   435,   448,   461,   488,   496,   511,   512,   520,   521,
+     539,   542,   548,   548,   552,   552,   569,   570,   573,   574,
+     579,   579,   586,   587,   589,   589,   594,   594,   600,   600,
+     605,   605,   609,   613,   619,   619,   626,   629,   637,   645,
+     655,   660,   665,   673,   681,   682,   682,   684,   685,   686,
+     687,   688,   688,   694,   694,   700,   700,   706,   706,   713,
+     714,   716,   716,   723,   723,   733,   733,   739,   740,   739,
+     746,   747,   746,   752,   755,   756,   759,   759,   767,   768,
+     771,   772,   775,   776,   779,   780,   783,   784,   785,   786,
+     787,   788,   789,   795,   803,   804,   805,   806,   807,   808,
+     809,   810,   811,   812,   813,   814,   815,   816,   817,   818,
+     819,   820,   821,   822,   823,   824,   826,   831,   831,   841,
+     842,   843,   844,   844,   848,   848,   853,   854,   855,   860,
+     861,   864,   867,   869,   871,   872,   873,   876,   877,   880,
+     881,   884,   885,   886,   889,   892,   893,   894,   895,   899,
+     900,   901,   902,   903,   904,   905,   906,   909,   910,   911,
+     912,   915,   916,   923,   928,   929,   932,   942,   945,   948,
+     949,   952,   955,   956,   959,   960,   963,   964,   971,   976,
+     983,   985,   987,   992,   997,  1002,  1007,  1012,  1015,  1017,
+    1020
 };
 #endif
 
@@ -2230,25 +2231,25 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* program: units  */
-#line 102 "spin.y"
+#line 103 "spin.y"
                         { yytext[0] = '\0'; }
-#line 2236 "y.tab.c"
+#line 2237 "y.tab.c"
     break;
 
   case 16: /* l_par: '('  */
-#line 122 "spin.y"
+#line 123 "spin.y"
                         { par_cnt++; }
-#line 2242 "y.tab.c"
+#line 2243 "y.tab.c"
     break;
 
   case 17: /* r_par: ')'  */
-#line 125 "spin.y"
+#line 126 "spin.y"
                         { par_cnt--; }
-#line 2248 "y.tab.c"
+#line 2249 "y.tab.c"
     break;
 
   case 18: /* $@1: %empty  */
-#line 130 "spin.y"
+#line 131 "spin.y"
                         { 
 			  setptype(ZN, yyvsp[0], PROCTYPE, ZN);
 			  setpname(yyvsp[0]);
@@ -2257,20 +2258,20 @@ yyreduce:
 			  Expand_Ok++; /* expand struct names in decl */
 			  has_ini = 0;
 			}
-#line 2261 "y.tab.c"
+#line 2262 "y.tab.c"
     break;
 
   case 19: /* $@2: %empty  */
-#line 138 "spin.y"
+#line 139 "spin.y"
                                 { Expand_Ok--;
 			  if (has_ini)
 			  fatal("initializer in parameter list", (char *) 0);
 			}
-#line 2270 "y.tab.c"
+#line 2271 "y.tab.c"
     break;
 
   case 20: /* proc: inst proctype NAME $@1 l_par decl r_par $@2 Opt_priority Opt_enabler body  */
-#line 144 "spin.y"
+#line 145 "spin.y"
                         { ProcList *rl;
 			  if (yyvsp[-10] != ZN && yyvsp[-10]->val > 0)
 			  {	int j;
@@ -2291,45 +2292,45 @@ yyreduce:
 			  }
 			  context = ZS;
 			}
-#line 2295 "y.tab.c"
+#line 2296 "y.tab.c"
     break;
 
   case 21: /* proctype: PROCTYPE  */
-#line 166 "spin.y"
+#line 167 "spin.y"
                         { yyval = nn(ZN,CONST,ZN,ZN); yyval->val = 0; }
-#line 2301 "y.tab.c"
+#line 2302 "y.tab.c"
     break;
 
   case 22: /* proctype: D_PROCTYPE  */
-#line 167 "spin.y"
+#line 168 "spin.y"
                         { yyval = nn(ZN,CONST,ZN,ZN); yyval->val = 1; }
-#line 2307 "y.tab.c"
+#line 2308 "y.tab.c"
     break;
 
   case 23: /* inst: %empty  */
-#line 170 "spin.y"
+#line 171 "spin.y"
                         { yyval = ZN; }
-#line 2313 "y.tab.c"
+#line 2314 "y.tab.c"
     break;
 
   case 24: /* inst: ACTIVE  */
-#line 171 "spin.y"
+#line 172 "spin.y"
                         { yyval = nn(ZN,CONST,ZN,ZN); yyval->val = 1; }
-#line 2319 "y.tab.c"
+#line 2320 "y.tab.c"
     break;
 
   case 25: /* inst: ACTIVE '[' const_expr ']'  */
-#line 172 "spin.y"
+#line 173 "spin.y"
                                     {
 			  yyval = nn(ZN,CONST,ZN,ZN); yyval->val = yyvsp[-1]->val;
 			  if (yyvsp[-1]->val > 255)
 				non_fatal("max nr of processes is 255\n", "");
 			}
-#line 2329 "y.tab.c"
+#line 2330 "y.tab.c"
     break;
 
   case 26: /* inst: ACTIVE '[' NAME ']'  */
-#line 177 "spin.y"
+#line 178 "spin.y"
                               {
 			  yyval = nn(ZN,CONST,ZN,ZN);
 			  yyval->val = 0;
@@ -2342,54 +2343,54 @@ yyreduce:
 			  else
 				yyval->val = yyvsp[-1]->sym->ini->val;
 			}
-#line 2346 "y.tab.c"
+#line 2347 "y.tab.c"
     break;
 
   case 27: /* $@3: %empty  */
-#line 191 "spin.y"
+#line 192 "spin.y"
                         { context = yyvsp[0]->sym; }
-#line 2352 "y.tab.c"
+#line 2353 "y.tab.c"
     break;
 
   case 28: /* init: INIT $@3 Opt_priority body  */
-#line 193 "spin.y"
+#line 194 "spin.y"
                         { ProcList *rl;
 			  rl = mk_rdy(context, ZN, yyvsp[0]->sq, 0, ZN, I_PROC);
 			  runnable(rl, yyvsp[-1]?yyvsp[-1]->val:1, 1);
 			  announce(":root:");
 			  context = ZS;
         		}
-#line 2363 "y.tab.c"
+#line 2364 "y.tab.c"
     break;
 
   case 29: /* $@4: %empty  */
-#line 201 "spin.y"
+#line 202 "spin.y"
                         { ltl_mode = 1; ltl_name = yyvsp[0]->sym->name; }
-#line 2369 "y.tab.c"
+#line 2370 "y.tab.c"
     break;
 
   case 30: /* ltl: LTL optname2 $@4 ltl_body  */
-#line 202 "spin.y"
+#line 203 "spin.y"
                         { if (yyvsp[0]) ltl_list(yyvsp[-2]->sym->name, yyvsp[0]->sym->name);
 			  ltl_mode = 0; has_ltl = 1;
 			}
-#line 2377 "y.tab.c"
+#line 2378 "y.tab.c"
     break;
 
   case 31: /* ltl_body: '{' full_expr OS '}'  */
-#line 207 "spin.y"
+#line 208 "spin.y"
                                { yyval = ltl_to_string(yyvsp[-2]); }
-#line 2383 "y.tab.c"
+#line 2384 "y.tab.c"
     break;
 
   case 32: /* ltl_body: error  */
-#line 208 "spin.y"
+#line 209 "spin.y"
                         { yyval = NULL; }
-#line 2389 "y.tab.c"
+#line 2390 "y.tab.c"
     break;
 
   case 33: /* $@5: %empty  */
-#line 211 "spin.y"
+#line 212 "spin.y"
                         { if (yyvsp[0] != ZN)
 			  {	yyvsp[-1]->sym = yyvsp[0]->sym;	/* new 5.3.0 */
 			  }
@@ -2400,64 +2401,64 @@ yyreduce:
 			  }
 			  claimproc = yyvsp[-1]->sym->name;
 			}
-#line 2404 "y.tab.c"
+#line 2405 "y.tab.c"
     break;
 
   case 34: /* claim: CLAIM optname $@5 body  */
-#line 221 "spin.y"
+#line 222 "spin.y"
                         { (void) mk_rdy(yyvsp[-3]->sym, ZN, yyvsp[0]->sq, 0, ZN, N_CLAIM);
         		  context = ZS;
         		}
-#line 2412 "y.tab.c"
+#line 2413 "y.tab.c"
     break;
 
   case 35: /* optname: %empty  */
-#line 226 "spin.y"
+#line 227 "spin.y"
                         { char tb[32];
 			  memset(tb, 0, 32);
 			  sprintf(tb, "never_%d", nclaims);
 			  yyval = nn(ZN, NAME, ZN, ZN);
 			  yyval->sym = lookup(tb);
 			}
-#line 2423 "y.tab.c"
+#line 2424 "y.tab.c"
     break;
 
   case 36: /* optname: NAME  */
-#line 232 "spin.y"
+#line 233 "spin.y"
                         { yyval = yyvsp[0]; }
-#line 2429 "y.tab.c"
+#line 2430 "y.tab.c"
     break;
 
   case 37: /* optname2: %empty  */
-#line 235 "spin.y"
-                       { char tb[32]; static int nltl = 0;
+#line 236 "spin.y"
+                       { char tb[32];
 			  memset(tb, 0, 32);
 			  sprintf(tb, "ltl_%d", nltl++);
 			  yyval = nn(ZN, NAME, ZN, ZN);
 			  yyval->sym = lookup(tb);
 			}
-#line 2440 "y.tab.c"
+#line 2441 "y.tab.c"
     break;
 
   case 38: /* optname2: NAME  */
-#line 241 "spin.y"
+#line 242 "spin.y"
                         { yyval = yyvsp[0]; }
-#line 2446 "y.tab.c"
+#line 2447 "y.tab.c"
     break;
 
   case 39: /* $@6: %empty  */
-#line 244 "spin.y"
+#line 245 "spin.y"
                         { context = yyvsp[0]->sym;
 			  if (eventmap)
 				non_fatal("trace %s redefined", eventmap);
 			  eventmap = yyvsp[0]->sym->name;
 			  inEventMap++;
 			}
-#line 2457 "y.tab.c"
+#line 2458 "y.tab.c"
     break;
 
   case 40: /* events: TRACE $@6 body  */
-#line 250 "spin.y"
+#line 251 "spin.y"
                         {
 			  if (strcmp(yyvsp[-2]->sym->name, ":trace:") == 0)
 			  {	(void) mk_rdy(yyvsp[-2]->sym, ZN, yyvsp[0]->sq, 0, ZN, E_TRACE);
@@ -2467,11 +2468,11 @@ yyreduce:
         		  context = ZS;
 			  inEventMap--;
 			}
-#line 2471 "y.tab.c"
+#line 2472 "y.tab.c"
     break;
 
   case 41: /* $@7: %empty  */
-#line 261 "spin.y"
+#line 262 "spin.y"
                                 {  if (context)
 				   { fatal("typedef %s must be global",
 					yyvsp[-1]->sym->name);
@@ -2479,94 +2480,94 @@ yyreduce:
 				   owner = yyvsp[-1]->sym;
 				   in_seq = yyvsp[-2]->ln;
 				}
-#line 2483 "y.tab.c"
+#line 2484 "y.tab.c"
     break;
 
   case 42: /* utype: TYPEDEF NAME '{' $@7 decl_lst '}'  */
-#line 268 "spin.y"
+#line 269 "spin.y"
                                 { setuname(yyvsp[-1]);
 				  owner = ZS;
 				  in_seq = 0;
 				}
-#line 2492 "y.tab.c"
+#line 2493 "y.tab.c"
     break;
 
   case 43: /* nm: NAME  */
-#line 274 "spin.y"
+#line 275 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2498 "y.tab.c"
+#line 2499 "y.tab.c"
     break;
 
   case 44: /* nm: INAME  */
-#line 275 "spin.y"
+#line 276 "spin.y"
                                 { yyval = yyvsp[0];
 				  if (IArgs)
 				  fatal("invalid use of '%s'", yyvsp[0]->sym->name);
 				}
-#line 2507 "y.tab.c"
+#line 2508 "y.tab.c"
     break;
 
   case 45: /* $@8: %empty  */
-#line 281 "spin.y"
+#line 282 "spin.y"
                                         { NamesNotAdded++; }
-#line 2513 "y.tab.c"
+#line 2514 "y.tab.c"
     break;
 
   case 46: /* ns: INLINE nm l_par $@8 args r_par  */
-#line 282 "spin.y"
+#line 283 "spin.y"
                                 { prep_inline(yyvsp[-4]->sym, yyvsp[-1]);
 				  NamesNotAdded--;
 				}
-#line 2521 "y.tab.c"
+#line 2522 "y.tab.c"
     break;
 
   case 47: /* c_fcts: ccode  */
-#line 287 "spin.y"
+#line 288 "spin.y"
                                 { /* leaves pseudo-inlines with sym of
 				   * type CODE_FRAG or CODE_DECL in global context
 				   */
 				}
-#line 2530 "y.tab.c"
+#line 2531 "y.tab.c"
     break;
 
   case 49: /* cstate: C_STATE STRING STRING  */
-#line 294 "spin.y"
+#line 295 "spin.y"
                                 {
 				  c_state(yyvsp[-1]->sym, yyvsp[0]->sym, ZS);
 				  has_code = has_state = 1;
 				}
-#line 2539 "y.tab.c"
+#line 2540 "y.tab.c"
     break;
 
   case 50: /* cstate: C_TRACK STRING STRING  */
-#line 298 "spin.y"
+#line 299 "spin.y"
                                 {
 				  c_track(yyvsp[-1]->sym, yyvsp[0]->sym, ZS);
 				  has_code = has_state = 1;
 				}
-#line 2548 "y.tab.c"
+#line 2549 "y.tab.c"
     break;
 
   case 51: /* cstate: C_STATE STRING STRING STRING  */
-#line 302 "spin.y"
+#line 303 "spin.y"
                                        {
 				  c_state(yyvsp[-2]->sym, yyvsp[-1]->sym, yyvsp[0]->sym);
 				  has_code = has_state = 1;
 				}
-#line 2557 "y.tab.c"
+#line 2558 "y.tab.c"
     break;
 
   case 52: /* cstate: C_TRACK STRING STRING STRING  */
-#line 306 "spin.y"
+#line 307 "spin.y"
                                        {
 				  c_track(yyvsp[-2]->sym, yyvsp[-1]->sym, yyvsp[0]->sym);
 				  has_code = has_state = 1;
 				}
-#line 2566 "y.tab.c"
+#line 2567 "y.tab.c"
     break;
 
   case 53: /* ccode: C_CODE  */
-#line 312 "spin.y"
+#line 313 "spin.y"
                                 { Symbol *s;
 				  NamesNotAdded++;
 				  s = prep_inline(ZS, ZN);
@@ -2577,11 +2578,11 @@ yyreduce:
 				  yyval->fn = yyvsp[0]->fn;
 				  has_code = 1;
 				}
-#line 2581 "y.tab.c"
+#line 2582 "y.tab.c"
     break;
 
   case 54: /* ccode: C_DECL  */
-#line 322 "spin.y"
+#line 323 "spin.y"
                                 { Symbol *s;
 				  NamesNotAdded++;
 				  s = prep_inline(ZS, ZN);
@@ -2593,11 +2594,11 @@ yyreduce:
 				  yyval->fn = yyvsp[0]->fn;
 				  has_code = 1;
 				}
-#line 2597 "y.tab.c"
+#line 2598 "y.tab.c"
     break;
 
   case 55: /* cexpr: C_EXPR  */
-#line 334 "spin.y"
+#line 335 "spin.y"
                                 { Symbol *s;
 				  NamesNotAdded++;
 				  s = prep_inline(ZS, ZN);
@@ -2614,162 +2615,162 @@ yyreduce:
 				  no_side_effects(s->name);
 				  has_code = 1;
 				}
-#line 2618 "y.tab.c"
+#line 2619 "y.tab.c"
     break;
 
   case 56: /* $@9: %empty  */
-#line 352 "spin.y"
+#line 353 "spin.y"
                                 { open_seq(1); in_seq = yyvsp[0]->ln; }
-#line 2624 "y.tab.c"
+#line 2625 "y.tab.c"
     break;
 
   case 57: /* $@10: %empty  */
-#line 353 "spin.y"
+#line 354 "spin.y"
                                 { add_seq(Stop); }
-#line 2630 "y.tab.c"
+#line 2631 "y.tab.c"
     break;
 
   case 58: /* body: '{' $@9 sequence OS $@10 '}'  */
-#line 354 "spin.y"
+#line 355 "spin.y"
                                 { yyval->sq = close_seq(0); in_seq = 0;
 				  if (scope_level != 0)
 				  {	non_fatal("missing '}' ?", 0);
 					scope_level = 0;
 				  }
 				}
-#line 2641 "y.tab.c"
+#line 2642 "y.tab.c"
     break;
 
   case 59: /* sequence: step  */
-#line 362 "spin.y"
+#line 363 "spin.y"
                                 { if (yyvsp[0]) add_seq(yyvsp[0]); }
-#line 2647 "y.tab.c"
+#line 2648 "y.tab.c"
     break;
 
   case 60: /* sequence: sequence MS step  */
-#line 363 "spin.y"
+#line 364 "spin.y"
                                 { if (yyvsp[0]) add_seq(yyvsp[0]); }
-#line 2653 "y.tab.c"
+#line 2654 "y.tab.c"
     break;
 
   case 61: /* step: one_decl  */
-#line 366 "spin.y"
+#line 367 "spin.y"
                                 { yyval = ZN; }
-#line 2659 "y.tab.c"
+#line 2660 "y.tab.c"
     break;
 
   case 62: /* step: XU vref_lst  */
-#line 367 "spin.y"
+#line 368 "spin.y"
                                 { setxus(yyvsp[0], yyvsp[-1]->val); yyval = ZN; }
-#line 2665 "y.tab.c"
+#line 2666 "y.tab.c"
     break;
 
   case 63: /* step: NAME ':' one_decl  */
-#line 368 "spin.y"
+#line 369 "spin.y"
                                 { fatal("label preceding declaration,", (char *)0); }
-#line 2671 "y.tab.c"
+#line 2672 "y.tab.c"
     break;
 
   case 64: /* step: NAME ':' XU  */
-#line 369 "spin.y"
+#line 370 "spin.y"
                                 { fatal("label preceding xr/xs claim,", 0); }
-#line 2677 "y.tab.c"
+#line 2678 "y.tab.c"
     break;
 
   case 65: /* step: stmnt  */
-#line 370 "spin.y"
+#line 371 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2683 "y.tab.c"
+#line 2684 "y.tab.c"
     break;
 
   case 66: /* $@11: %empty  */
-#line 371 "spin.y"
+#line 372 "spin.y"
                                 { if (yyvsp[-1]->ntyp == DO) { safe_break(); } }
-#line 2689 "y.tab.c"
+#line 2690 "y.tab.c"
     break;
 
   case 67: /* step: stmnt UNLESS $@11 stmnt  */
-#line 372 "spin.y"
+#line 373 "spin.y"
                                 { if (yyvsp[-3]->ntyp == DO) { restore_break(); }
 				  yyval = do_unless(yyvsp[-3], yyvsp[0]);
 				}
-#line 2697 "y.tab.c"
+#line 2698 "y.tab.c"
     break;
 
   case 69: /* vis: %empty  */
-#line 378 "spin.y"
+#line 379 "spin.y"
                                 { yyval = ZN; }
-#line 2703 "y.tab.c"
+#line 2704 "y.tab.c"
     break;
 
   case 70: /* vis: HIDDEN  */
-#line 379 "spin.y"
+#line 380 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2709 "y.tab.c"
+#line 2710 "y.tab.c"
     break;
 
   case 71: /* vis: SHOW  */
-#line 380 "spin.y"
+#line 381 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2715 "y.tab.c"
+#line 2716 "y.tab.c"
     break;
 
   case 72: /* vis: ISLOCAL  */
-#line 381 "spin.y"
+#line 382 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2721 "y.tab.c"
+#line 2722 "y.tab.c"
     break;
 
   case 73: /* asgn: %empty  */
-#line 384 "spin.y"
+#line 385 "spin.y"
                                 { yyval = ZN; }
-#line 2727 "y.tab.c"
+#line 2728 "y.tab.c"
     break;
 
   case 74: /* asgn: ':' NAME ASGN  */
-#line 385 "spin.y"
+#line 386 "spin.y"
                                 { yyval = yyvsp[-1]; /* mtype decl */ }
-#line 2733 "y.tab.c"
+#line 2734 "y.tab.c"
     break;
 
   case 75: /* asgn: ASGN  */
-#line 386 "spin.y"
+#line 387 "spin.y"
                                 { yyval = ZN; /* mtype decl */ }
-#line 2739 "y.tab.c"
+#line 2740 "y.tab.c"
     break;
 
   case 76: /* osubt: %empty  */
-#line 389 "spin.y"
+#line 390 "spin.y"
                                 { yyval = ZN; }
-#line 2745 "y.tab.c"
+#line 2746 "y.tab.c"
     break;
 
   case 77: /* osubt: ':' NAME  */
-#line 390 "spin.y"
+#line 391 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2751 "y.tab.c"
+#line 2752 "y.tab.c"
     break;
 
   case 78: /* one_decl: vis TYPE osubt var_list  */
-#line 393 "spin.y"
+#line 394 "spin.y"
                                   {
 				  setptype(yyvsp[-1], yyvsp[0], yyvsp[-2]->val, yyvsp[-3]);
 				  yyvsp[0]->val = yyvsp[-2]->val;
 				  yyval = yyvsp[0];
 				}
-#line 2761 "y.tab.c"
+#line 2762 "y.tab.c"
     break;
 
   case 79: /* one_decl: vis UNAME var_list  */
-#line 398 "spin.y"
+#line 399 "spin.y"
                                 { setutype(yyvsp[0], yyvsp[-1]->sym, yyvsp[-2]);
 				  yyval = expand(yyvsp[0], Expand_Ok);
 				}
-#line 2769 "y.tab.c"
+#line 2770 "y.tab.c"
     break;
 
   case 80: /* one_decl: vis TYPE asgn '{' nlst '}'  */
-#line 401 "spin.y"
+#line 402 "spin.y"
                                      {
 				  if (yyvsp[-4]->val != MTYPE)
 					fatal("malformed declaration", 0);
@@ -2780,71 +2781,71 @@ yyreduce:
 				  if (context != ZS)
 					fatal("mtype declaration must be global", 0);
 				}
-#line 2784 "y.tab.c"
+#line 2785 "y.tab.c"
     break;
 
   case 81: /* decl_lst: one_decl  */
-#line 413 "spin.y"
+#line 414 "spin.y"
                                 { yyval = nn(ZN, ',', yyvsp[0], ZN); }
-#line 2790 "y.tab.c"
+#line 2791 "y.tab.c"
     break;
 
   case 82: /* decl_lst: one_decl SEMI decl_lst  */
-#line 415 "spin.y"
+#line 416 "spin.y"
                                 { yyval = nn(ZN, ',', yyvsp[-2], yyvsp[0]); }
-#line 2796 "y.tab.c"
+#line 2797 "y.tab.c"
     break;
 
   case 83: /* decl: %empty  */
-#line 418 "spin.y"
+#line 419 "spin.y"
                                 { yyval = ZN; }
-#line 2802 "y.tab.c"
+#line 2803 "y.tab.c"
     break;
 
   case 84: /* decl: decl_lst  */
-#line 419 "spin.y"
+#line 420 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 2808 "y.tab.c"
+#line 2809 "y.tab.c"
     break;
 
   case 85: /* vref_lst: varref  */
-#line 422 "spin.y"
+#line 423 "spin.y"
                                 { yyval = nn(yyvsp[0], XU, yyvsp[0], ZN); }
-#line 2814 "y.tab.c"
+#line 2815 "y.tab.c"
     break;
 
   case 86: /* vref_lst: varref ',' vref_lst  */
-#line 423 "spin.y"
+#line 424 "spin.y"
                                 { yyval = nn(yyvsp[-2], XU, yyvsp[-2], yyvsp[0]); }
-#line 2820 "y.tab.c"
+#line 2821 "y.tab.c"
     break;
 
   case 87: /* var_list: ivar  */
-#line 426 "spin.y"
+#line 427 "spin.y"
                                 { yyval = nn(yyvsp[0], TYPE, ZN, ZN); }
-#line 2826 "y.tab.c"
+#line 2827 "y.tab.c"
     break;
 
   case 88: /* var_list: ivar ',' var_list  */
-#line 427 "spin.y"
+#line 428 "spin.y"
                                 { yyval = nn(yyvsp[-2], TYPE, ZN, yyvsp[0]); }
-#line 2832 "y.tab.c"
+#line 2833 "y.tab.c"
     break;
 
   case 89: /* c_list: CONST  */
-#line 430 "spin.y"
+#line 431 "spin.y"
                                 { yyvsp[0]->ntyp = CONST; yyval = yyvsp[0]; }
-#line 2838 "y.tab.c"
+#line 2839 "y.tab.c"
     break;
 
   case 90: /* c_list: CONST ',' c_list  */
-#line 431 "spin.y"
+#line 432 "spin.y"
                                 { yyvsp[-2]->ntyp = CONST; yyval = nn(yyvsp[-2], ',', yyvsp[-2], yyvsp[0]); }
-#line 2844 "y.tab.c"
+#line 2845 "y.tab.c"
     break;
 
   case 91: /* ivar: vardcl  */
-#line 434 "spin.y"
+#line 435 "spin.y"
                                 { yyval = yyvsp[0];
 				  yyvsp[0]->sym->ini = nn(ZN,CONST,ZN,ZN);
 				  yyvsp[0]->sym->ini->val = 0;
@@ -2858,11 +2859,11 @@ yyreduce:
 					add_seq(xz);
 				  }
 				}
-#line 2862 "y.tab.c"
+#line 2863 "y.tab.c"
     break;
 
   case 92: /* ivar: vardcl ASGN '{' c_list '}'  */
-#line 447 "spin.y"
+#line 448 "spin.y"
                                         {	/* array initialization */
 				  if (!yyvsp[-4]->sym->isarray)
 					fatal("%s must be an array", yyvsp[-4]->sym->name);
@@ -2876,11 +2877,11 @@ yyreduce:
 					add_seq(nn(zx, ASGN, zx, yyvsp[-1]));
 				  }
 				}
-#line 2880 "y.tab.c"
+#line 2881 "y.tab.c"
     break;
 
   case 93: /* ivar: vardcl ASGN expr  */
-#line 460 "spin.y"
+#line 461 "spin.y"
                                 { yyval = yyvsp[-2];	/* initialized scalar */
 				  yyvsp[-2]->sym->ini = yyvsp[0];
 				  if (yyvsp[0]->ntyp == CONST
@@ -2908,22 +2909,22 @@ yyreduce:
 						yyvsp[-2]->sym->ini = 0;	/* Patrick Trentlin */
 				  }	}
 				}
-#line 2912 "y.tab.c"
+#line 2913 "y.tab.c"
     break;
 
   case 94: /* ivar: vardcl ASGN ch_init  */
-#line 487 "spin.y"
+#line 488 "spin.y"
                                 { yyvsp[-2]->sym->ini = yyvsp[0];	/* channel declaration */
 				  yyval = yyvsp[-2]; has_ini = 1;
 				  if (!initialization_ok)
 				  {	non_fatal(PART1 "'%s'" PART2, yyvsp[-2]->sym->name);
 				  }
 				}
-#line 2923 "y.tab.c"
+#line 2924 "y.tab.c"
     break;
 
   case 95: /* ch_init: '[' const_expr ']' OF '{' typ_list '}'  */
-#line 496 "spin.y"
+#line 497 "spin.y"
                                 { if (yyvsp[-5]->val)
 					u_async++;
 				  else
@@ -2936,17 +2937,17 @@ yyreduce:
 				  yyval->ln = yyvsp[-6]->ln;
 				  yyval->fn = yyvsp[-6]->fn;
         			}
-#line 2940 "y.tab.c"
+#line 2941 "y.tab.c"
     break;
 
   case 96: /* vardcl: NAME  */
-#line 510 "spin.y"
+#line 511 "spin.y"
                                 { yyvsp[0]->sym->nel = 1; yyval = yyvsp[0]; }
-#line 2946 "y.tab.c"
+#line 2947 "y.tab.c"
     break;
 
   case 97: /* vardcl: NAME ':' CONST  */
-#line 511 "spin.y"
+#line 512 "spin.y"
                                 { yyvsp[-2]->sym->nbits = yyvsp[0]->val;
 				  if (yyvsp[0]->val >= (int) (8*sizeof(long)))
 				  {	non_fatal("width-field %s too large",
@@ -2955,17 +2956,17 @@ yyreduce:
 				  }
 				  yyvsp[-2]->sym->nel = 1; yyval = yyvsp[-2];
 				}
-#line 2959 "y.tab.c"
+#line 2960 "y.tab.c"
     break;
 
   case 98: /* vardcl: NAME '[' const_expr ']'  */
-#line 519 "spin.y"
+#line 520 "spin.y"
                                         { yyvsp[-3]->sym->nel = yyvsp[-1]->val; yyvsp[-3]->sym->isarray = 1; yyval = yyvsp[-3]; }
-#line 2965 "y.tab.c"
+#line 2966 "y.tab.c"
     break;
 
   case 99: /* vardcl: NAME '[' NAME ']'  */
-#line 520 "spin.y"
+#line 521 "spin.y"
                                 {	/* make an exception for an initialized scalars */
 					yyval = nn(ZN, CONST, ZN, ZN);
 					fprintf(stderr, "spin: %s:%d, warning: '%s' in array bound ",
@@ -2982,49 +2983,49 @@ yyreduce:
 					yyvsp[-3]->sym->isarray = 1;
 					yyval = yyvsp[-3];
 				}
-#line 2986 "y.tab.c"
+#line 2987 "y.tab.c"
     break;
 
   case 100: /* varref: cmpnd  */
-#line 538 "spin.y"
+#line 539 "spin.y"
                                 { yyval = mk_explicit(yyvsp[0], Expand_Ok, NAME); }
-#line 2992 "y.tab.c"
+#line 2993 "y.tab.c"
     break;
 
   case 101: /* pfld: NAME  */
-#line 541 "spin.y"
+#line 542 "spin.y"
                                 { yyval = nn(yyvsp[0], NAME, ZN, ZN);
 				  if (yyvsp[0]->sym->isarray && !in_for && !IArgs)
 				  {	non_fatal("missing array index for '%s'",
 						yyvsp[0]->sym->name);
 				  }
 				}
-#line 3003 "y.tab.c"
+#line 3004 "y.tab.c"
     break;
 
   case 102: /* $@12: %empty  */
-#line 547 "spin.y"
+#line 548 "spin.y"
                                 { owner = ZS; }
-#line 3009 "y.tab.c"
+#line 3010 "y.tab.c"
     break;
 
   case 103: /* pfld: NAME $@12 '[' expr ']'  */
-#line 548 "spin.y"
+#line 549 "spin.y"
                                 { yyval = nn(yyvsp[-4], NAME, yyvsp[-1], ZN); }
-#line 3015 "y.tab.c"
+#line 3016 "y.tab.c"
     break;
 
   case 104: /* $@13: %empty  */
-#line 551 "spin.y"
+#line 552 "spin.y"
                                 { Embedded++;
 				  if (yyvsp[0]->sym->type == STRUCT)
 					owner = yyvsp[0]->sym->Snm;
 				}
-#line 3024 "y.tab.c"
+#line 3025 "y.tab.c"
     break;
 
   case 105: /* cmpnd: pfld $@13 sfld  */
-#line 555 "spin.y"
+#line 556 "spin.y"
                                 { yyval = yyvsp[-2]; yyval->rgt = yyvsp[0];
 				  if (yyvsp[0] && yyvsp[-2]->sym->type != STRUCT)
 					yyvsp[-2]->sym->type = STRUCT;
@@ -3036,157 +3037,157 @@ yyreduce:
 				  if (yyvsp[0]) validref(yyvsp[-2], yyvsp[0]->lft);
 				  owner = ZS;
 				}
-#line 3040 "y.tab.c"
+#line 3041 "y.tab.c"
     break;
 
   case 106: /* sfld: %empty  */
-#line 568 "spin.y"
+#line 569 "spin.y"
                                 { yyval = ZN; }
-#line 3046 "y.tab.c"
+#line 3047 "y.tab.c"
     break;
 
   case 107: /* sfld: '.' cmpnd  */
-#line 569 "spin.y"
+#line 570 "spin.y"
                                 { yyval = nn(ZN, '.', yyvsp[0], ZN); }
-#line 3052 "y.tab.c"
+#line 3053 "y.tab.c"
     break;
 
   case 108: /* stmnt: Special  */
-#line 572 "spin.y"
+#line 573 "spin.y"
                                 { yyval = yyvsp[0]; initialization_ok = 0; }
-#line 3058 "y.tab.c"
+#line 3059 "y.tab.c"
     break;
 
   case 109: /* stmnt: Stmnt  */
-#line 573 "spin.y"
+#line 574 "spin.y"
                                 { yyval = yyvsp[0]; initialization_ok = 0;
 				  if (inEventMap) non_fatal("not an event", (char *)0);
 				}
-#line 3066 "y.tab.c"
+#line 3067 "y.tab.c"
     break;
 
   case 110: /* $@14: %empty  */
-#line 578 "spin.y"
+#line 579 "spin.y"
                                 { in_for = 1; }
-#line 3072 "y.tab.c"
+#line 3073 "y.tab.c"
     break;
 
   case 111: /* for_pre: FOR l_par $@14 varref  */
-#line 579 "spin.y"
+#line 580 "spin.y"
                                 { trapwonly(yyvsp[0] /*, "for" */);
 				  pushbreak(); /* moved up */
 				  yyval = yyvsp[0];
 				}
-#line 3081 "y.tab.c"
+#line 3082 "y.tab.c"
     break;
 
   case 114: /* $@15: %empty  */
-#line 588 "spin.y"
+#line 589 "spin.y"
                                 { Expand_Ok++; }
-#line 3087 "y.tab.c"
+#line 3088 "y.tab.c"
     break;
 
   case 115: /* Special: varref RCV $@15 rargs  */
-#line 589 "spin.y"
+#line 590 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-3],  'r', yyvsp[-3], yyvsp[0]);
 				  trackchanuse(yyvsp[0], ZN, 'R');
 				}
-#line 3096 "y.tab.c"
+#line 3097 "y.tab.c"
     break;
 
   case 116: /* $@16: %empty  */
-#line 593 "spin.y"
+#line 594 "spin.y"
                                 { Expand_Ok++; }
-#line 3102 "y.tab.c"
+#line 3103 "y.tab.c"
     break;
 
   case 117: /* Special: varref SND $@16 margs  */
-#line 594 "spin.y"
+#line 595 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-3], 's', yyvsp[-3], yyvsp[0]);
 				  yyval->val=0; trackchanuse(yyvsp[0], ZN, 'S');
 				  any_runs(yyvsp[0]);
 				}
-#line 3112 "y.tab.c"
+#line 3113 "y.tab.c"
     break;
 
   case 118: /* $@17: %empty  */
-#line 599 "spin.y"
+#line 600 "spin.y"
                                                 {
 				  for_setup(yyvsp[-5], yyvsp[-3], yyvsp[-1]); in_for = 0;
 				}
-#line 3120 "y.tab.c"
+#line 3121 "y.tab.c"
     break;
 
   case 119: /* Special: for_pre ':' expr DOTDOT expr r_par $@17 for_post  */
-#line 602 "spin.y"
+#line 603 "spin.y"
                                 { yyval = for_body(yyvsp[-7], 1);
 				}
-#line 3127 "y.tab.c"
+#line 3128 "y.tab.c"
     break;
 
   case 120: /* @18: %empty  */
-#line 604 "spin.y"
+#line 605 "spin.y"
                                         { yyval = for_index(yyvsp[-3], yyvsp[-1]); in_for = 0;
 				}
-#line 3134 "y.tab.c"
+#line 3135 "y.tab.c"
     break;
 
   case 121: /* Special: for_pre IN varref r_par @18 for_post  */
-#line 606 "spin.y"
+#line 607 "spin.y"
                                 { yyval = for_body(yyvsp[-1], 1);
 				}
-#line 3141 "y.tab.c"
+#line 3142 "y.tab.c"
     break;
 
   case 122: /* Special: SELECT l_par varref ':' expr DOTDOT expr r_par  */
-#line 608 "spin.y"
+#line 609 "spin.y"
                                                          {
 				  trapwonly(yyvsp[-5] /*, "select" */);
 				  yyval = sel_index(yyvsp[-5], yyvsp[-3], yyvsp[-1]);
 				}
-#line 3150 "y.tab.c"
+#line 3151 "y.tab.c"
     break;
 
   case 123: /* Special: IF options FI  */
-#line 612 "spin.y"
+#line 613 "spin.y"
                                 { yyval = nn(yyvsp[-2], IF, ZN, ZN);
         			  yyval->sl = yyvsp[-1]->sl;
 				  yyval->ln = yyvsp[-2]->ln;
 				  yyval->fn = yyvsp[-2]->fn;
 				  prune_opts(yyval);
         			}
-#line 3161 "y.tab.c"
+#line 3162 "y.tab.c"
     break;
 
   case 124: /* $@19: %empty  */
-#line 618 "spin.y"
+#line 619 "spin.y"
                                 { pushbreak(); }
-#line 3167 "y.tab.c"
+#line 3168 "y.tab.c"
     break;
 
   case 125: /* Special: DO $@19 options OD  */
-#line 619 "spin.y"
+#line 620 "spin.y"
                                 { yyval = nn(yyvsp[-3], DO, ZN, ZN);
         			  yyval->sl = yyvsp[-1]->sl;
 				  yyval->ln = yyvsp[-3]->ln;
 				  yyval->fn = yyvsp[-3]->fn;
 				  prune_opts(yyval);
         			}
-#line 3178 "y.tab.c"
+#line 3179 "y.tab.c"
     break;
 
   case 126: /* Special: BREAK  */
-#line 625 "spin.y"
+#line 626 "spin.y"
                                 { yyval = nn(ZN, GOTO, ZN, ZN);
 				  yyval->sym = break_dest();
 				}
-#line 3186 "y.tab.c"
+#line 3187 "y.tab.c"
     break;
 
   case 127: /* Special: GOTO NAME  */
-#line 628 "spin.y"
+#line 629 "spin.y"
                                 { yyval = nn(yyvsp[0], GOTO, ZN, ZN);
 				  if (yyvsp[0]->sym->type != 0
 				  &&  yyvsp[0]->sym->type != LABEL) {
@@ -3195,11 +3196,11 @@ yyreduce:
 				  }
 				  yyvsp[0]->sym->type = LABEL;
 				}
-#line 3199 "y.tab.c"
+#line 3200 "y.tab.c"
     break;
 
   case 128: /* Special: NAME ':' stmnt  */
-#line 636 "spin.y"
+#line 637 "spin.y"
                                 { yyval = nn(yyvsp[-2], ':',yyvsp[0], ZN);
 				  if (yyvsp[-2]->sym->type != 0
 				  &&  yyvsp[-2]->sym->type != LABEL) {
@@ -3208,11 +3209,11 @@ yyreduce:
 				  }
 				  yyvsp[-2]->sym->type = LABEL;
 				}
-#line 3212 "y.tab.c"
+#line 3213 "y.tab.c"
     break;
 
   case 129: /* Special: NAME ':'  */
-#line 644 "spin.y"
+#line 645 "spin.y"
                                 { yyval = nn(yyvsp[-1], ':',ZN,ZN);
 				  if (yyvsp[-1]->sym->type != 0
 				  &&  yyvsp[-1]->sym->type != LABEL) {
@@ -3223,29 +3224,29 @@ yyreduce:
 				  yyval->lft->lft->val = 1; /* skip */
 				  yyvsp[-1]->sym->type = LABEL;
 				}
-#line 3227 "y.tab.c"
+#line 3228 "y.tab.c"
     break;
 
   case 130: /* Special: error  */
-#line 654 "spin.y"
+#line 655 "spin.y"
                                 { yyval = nn(ZN, 'c', nn(ZN,CONST,ZN,ZN), ZN);
 				  yyval->lft->val = 1; /* skip */
 				}
-#line 3235 "y.tab.c"
+#line 3236 "y.tab.c"
     break;
 
   case 131: /* Stmnt: varref ASGN full_expr  */
-#line 659 "spin.y"
+#line 660 "spin.y"
                                 { yyval = nn(yyvsp[-2], ASGN, yyvsp[-2], yyvsp[0]);	/* assignment */
 				  trackvar(yyvsp[-2], yyvsp[0]);
 				  nochan_manip(yyvsp[-2], yyvsp[0], 0);
 				  no_internals(yyvsp[-2]);
 				}
-#line 3245 "y.tab.c"
+#line 3246 "y.tab.c"
     break;
 
   case 132: /* Stmnt: varref INCR  */
-#line 664 "spin.y"
+#line 665 "spin.y"
                                 { yyval = nn(ZN,CONST, ZN, ZN); yyval->val = 1;
 				  yyval = nn(ZN,  '+', yyvsp[-1], yyval);
 				  yyval = nn(yyvsp[-1], ASGN, yyvsp[-1], yyval);
@@ -3254,11 +3255,11 @@ yyreduce:
 				  if (yyvsp[-1]->sym->type == CHAN)
 				   fatal("arithmetic on chan", (char *)0);
 				}
-#line 3258 "y.tab.c"
+#line 3259 "y.tab.c"
     break;
 
   case 133: /* Stmnt: varref DECR  */
-#line 672 "spin.y"
+#line 673 "spin.y"
                                 { yyval = nn(ZN,CONST, ZN, ZN); yyval->val = 1;
 				  yyval = nn(ZN,  '-', yyvsp[-1], yyval);
 				  yyval = nn(yyvsp[-1], ASGN, yyvsp[-1], yyval);
@@ -3267,156 +3268,156 @@ yyreduce:
 				  if (yyvsp[-1]->sym->type == CHAN)
 				   fatal("arithmetic on chan id's", (char *)0);
 				}
-#line 3271 "y.tab.c"
+#line 3272 "y.tab.c"
     break;
 
   case 134: /* Stmnt: SET_P l_par two_args r_par  */
-#line 680 "spin.y"
+#line 681 "spin.y"
                                         { yyval = nn(ZN, SET_P, yyvsp[-1], ZN); has_priority++; }
-#line 3277 "y.tab.c"
+#line 3278 "y.tab.c"
     break;
 
   case 135: /* $@20: %empty  */
-#line 681 "spin.y"
+#line 682 "spin.y"
                                 { realread = 0; }
-#line 3283 "y.tab.c"
+#line 3284 "y.tab.c"
     break;
 
   case 136: /* Stmnt: PRINT l_par STRING $@20 prargs r_par  */
-#line 682 "spin.y"
+#line 683 "spin.y"
                                 { yyval = nn(yyvsp[-3], PRINT, yyvsp[-1], ZN); realread = 1; }
-#line 3289 "y.tab.c"
+#line 3290 "y.tab.c"
     break;
 
   case 137: /* Stmnt: PRINTM l_par varref r_par  */
-#line 683 "spin.y"
+#line 684 "spin.y"
                                         { yyval = nn(ZN, PRINTM, yyvsp[-1], ZN); }
-#line 3295 "y.tab.c"
+#line 3296 "y.tab.c"
     break;
 
   case 138: /* Stmnt: PRINTM l_par CONST r_par  */
-#line 684 "spin.y"
+#line 685 "spin.y"
                                         { yyval = nn(ZN, PRINTM, yyvsp[-1], ZN); }
-#line 3301 "y.tab.c"
+#line 3302 "y.tab.c"
     break;
 
   case 139: /* Stmnt: ASSERT full_expr  */
-#line 685 "spin.y"
+#line 686 "spin.y"
                                 { yyval = nn(ZN, ASSERT, yyvsp[0], ZN); AST_track(yyvsp[0], 0); }
-#line 3307 "y.tab.c"
+#line 3308 "y.tab.c"
     break;
 
   case 140: /* Stmnt: ccode  */
-#line 686 "spin.y"
+#line 687 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3313 "y.tab.c"
+#line 3314 "y.tab.c"
     break;
 
   case 141: /* $@21: %empty  */
-#line 687 "spin.y"
+#line 688 "spin.y"
                                 { Expand_Ok++; }
-#line 3319 "y.tab.c"
+#line 3320 "y.tab.c"
     break;
 
   case 142: /* Stmnt: varref R_RCV $@21 rargs  */
-#line 688 "spin.y"
+#line 689 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-3],  'r', yyvsp[-3], yyvsp[0]);
 				  yyval->val = has_random = 1;
 				  trackchanuse(yyvsp[0], ZN, 'R');
 				}
-#line 3329 "y.tab.c"
+#line 3330 "y.tab.c"
     break;
 
   case 143: /* $@22: %empty  */
-#line 693 "spin.y"
+#line 694 "spin.y"
                                 { Expand_Ok++; }
-#line 3335 "y.tab.c"
+#line 3336 "y.tab.c"
     break;
 
   case 144: /* Stmnt: varref RCV $@22 LT rargs GT  */
-#line 694 "spin.y"
+#line 695 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-5], 'r', yyvsp[-5], yyvsp[-1]);
 				  yyval->val = 2;	/* fifo poll */
 				  trackchanuse(yyvsp[-1], ZN, 'R');
 				}
-#line 3345 "y.tab.c"
+#line 3346 "y.tab.c"
     break;
 
   case 145: /* $@23: %empty  */
-#line 699 "spin.y"
+#line 700 "spin.y"
                                 { Expand_Ok++; }
-#line 3351 "y.tab.c"
+#line 3352 "y.tab.c"
     break;
 
   case 146: /* Stmnt: varref R_RCV $@23 LT rargs GT  */
-#line 700 "spin.y"
+#line 701 "spin.y"
                                 { Expand_Ok--; has_io++;	/* rrcv poll */
 				  yyval = nn(yyvsp[-5], 'r', yyvsp[-5], yyvsp[-1]);
 				  yyval->val = 3; has_random = 1;
 				  trackchanuse(yyvsp[-1], ZN, 'R');
 				}
-#line 3361 "y.tab.c"
+#line 3362 "y.tab.c"
     break;
 
   case 147: /* $@24: %empty  */
-#line 705 "spin.y"
+#line 706 "spin.y"
                                 { Expand_Ok++; }
-#line 3367 "y.tab.c"
+#line 3368 "y.tab.c"
     break;
 
   case 148: /* Stmnt: varref O_SND $@24 margs  */
-#line 706 "spin.y"
+#line 707 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-3], 's', yyvsp[-3], yyvsp[0]);
 				  yyval->val = has_sorted = 1;
 				  trackchanuse(yyvsp[0], ZN, 'S');
 				  any_runs(yyvsp[0]);
 				}
-#line 3378 "y.tab.c"
+#line 3379 "y.tab.c"
     break;
 
   case 149: /* Stmnt: full_expr  */
-#line 712 "spin.y"
+#line 713 "spin.y"
                                 { yyval = nn(ZN, 'c', yyvsp[0], ZN); count_runs(yyval); }
-#line 3384 "y.tab.c"
+#line 3385 "y.tab.c"
     break;
 
   case 150: /* Stmnt: ELSE  */
-#line 713 "spin.y"
+#line 714 "spin.y"
                                 { yyval = nn(ZN,ELSE,ZN,ZN);
 				}
-#line 3391 "y.tab.c"
+#line 3392 "y.tab.c"
     break;
 
   case 151: /* $@25: %empty  */
-#line 715 "spin.y"
+#line 716 "spin.y"
                                 { open_seq(0); }
-#line 3397 "y.tab.c"
+#line 3398 "y.tab.c"
     break;
 
   case 152: /* Stmnt: ATOMIC '{' $@25 sequence OS '}'  */
-#line 716 "spin.y"
+#line 717 "spin.y"
                                 { yyval = nn(yyvsp[-5], ATOMIC, ZN, ZN);
         			  yyval->sl = seqlist(close_seq(3), 0);
 				  yyval->ln = yyvsp[-5]->ln;
 				  yyval->fn = yyvsp[-5]->fn;
 				  make_atomic(yyval->sl->this, 0);
         			}
-#line 3408 "y.tab.c"
+#line 3409 "y.tab.c"
     break;
 
   case 153: /* $@26: %empty  */
-#line 722 "spin.y"
+#line 723 "spin.y"
                                 { open_seq(0);
 				  rem_Seq();
 				}
-#line 3416 "y.tab.c"
+#line 3417 "y.tab.c"
     break;
 
   case 154: /* Stmnt: D_STEP '{' $@26 sequence OS '}'  */
-#line 725 "spin.y"
+#line 726 "spin.y"
                                 { yyval = nn(yyvsp[-5], D_STEP, ZN, ZN);
         			  yyval->sl = seqlist(close_seq(4), 0);
 				  yyval->ln = yyvsp[-5]->ln;
@@ -3424,626 +3425,626 @@ yyreduce:
         			  make_atomic(yyval->sl->this, D_ATOM);
 				  unrem_Seq();
         			}
-#line 3428 "y.tab.c"
+#line 3429 "y.tab.c"
     break;
 
   case 155: /* $@27: %empty  */
-#line 732 "spin.y"
+#line 733 "spin.y"
                                 { open_seq(0); }
-#line 3434 "y.tab.c"
+#line 3435 "y.tab.c"
     break;
 
   case 156: /* Stmnt: '{' $@27 sequence OS '}'  */
-#line 733 "spin.y"
+#line 734 "spin.y"
                                 { yyval = nn(ZN, NON_ATOMIC, ZN, ZN);
         			  yyval->sl = seqlist(close_seq(5), 0);
 				  yyval->ln = yyvsp[-4]->ln;
 				  yyval->fn = yyvsp[-4]->fn;
         			}
-#line 3444 "y.tab.c"
+#line 3445 "y.tab.c"
     break;
 
   case 157: /* $@28: %empty  */
-#line 738 "spin.y"
+#line 739 "spin.y"
                                 { IArgs++; }
-#line 3450 "y.tab.c"
+#line 3451 "y.tab.c"
     break;
 
   case 158: /* $@29: %empty  */
-#line 739 "spin.y"
+#line 740 "spin.y"
                                 { initialization_ok = 0;
 				  pickup_inline(yyvsp[-4]->sym, yyvsp[-1], ZN);
 				  IArgs--;
 				}
-#line 3459 "y.tab.c"
+#line 3460 "y.tab.c"
     break;
 
   case 159: /* Stmnt: INAME $@28 l_par args r_par $@29 Stmnt  */
-#line 743 "spin.y"
+#line 744 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3465 "y.tab.c"
+#line 3466 "y.tab.c"
     break;
 
   case 160: /* $@30: %empty  */
-#line 745 "spin.y"
+#line 746 "spin.y"
                                 { IArgs++; /* inline call */ }
-#line 3471 "y.tab.c"
+#line 3472 "y.tab.c"
     break;
 
   case 161: /* $@31: %empty  */
-#line 746 "spin.y"
+#line 747 "spin.y"
                                 { initialization_ok = 0;
 				  pickup_inline(yyvsp[-4]->sym, yyvsp[-1], yyvsp[-6]);
 				  IArgs--;
 				}
-#line 3480 "y.tab.c"
+#line 3481 "y.tab.c"
     break;
 
   case 162: /* Stmnt: varref ASGN INAME $@30 l_par args r_par $@31 Stmnt  */
-#line 750 "spin.y"
+#line 751 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3486 "y.tab.c"
+#line 3487 "y.tab.c"
     break;
 
   case 163: /* Stmnt: RETURN full_expr  */
-#line 751 "spin.y"
+#line 752 "spin.y"
                                 { yyval = return_statement(yyvsp[0]); }
-#line 3492 "y.tab.c"
+#line 3493 "y.tab.c"
     break;
 
   case 164: /* options: option  */
-#line 754 "spin.y"
+#line 755 "spin.y"
                                 { yyval->sl = seqlist(yyvsp[0]->sq, 0); }
-#line 3498 "y.tab.c"
+#line 3499 "y.tab.c"
     break;
 
   case 165: /* options: option options  */
-#line 755 "spin.y"
+#line 756 "spin.y"
                                 { yyval->sl = seqlist(yyvsp[-1]->sq, yyvsp[0]->sl); }
-#line 3504 "y.tab.c"
+#line 3505 "y.tab.c"
     break;
 
   case 166: /* $@32: %empty  */
-#line 758 "spin.y"
+#line 759 "spin.y"
                                 { open_seq(0); }
-#line 3510 "y.tab.c"
+#line 3511 "y.tab.c"
     break;
 
   case 167: /* option: SEP $@32 sequence OS  */
-#line 759 "spin.y"
+#line 760 "spin.y"
                                 { yyval = nn(ZN,0,ZN,ZN);
 				  yyval->sq = close_seq(6);
 				  yyval->ln = yyvsp[-3]->ln;
 				  yyval->fn = yyvsp[-3]->fn;
 				}
-#line 3520 "y.tab.c"
+#line 3521 "y.tab.c"
     break;
 
   case 169: /* OS: semi  */
-#line 767 "spin.y"
+#line 768 "spin.y"
                                 { /* redundant semi at end of sequence */ }
-#line 3526 "y.tab.c"
+#line 3527 "y.tab.c"
     break;
 
   case 172: /* MS: semi  */
-#line 774 "spin.y"
+#line 775 "spin.y"
                                 { /* at least one semi-colon */ }
-#line 3532 "y.tab.c"
+#line 3533 "y.tab.c"
     break;
 
   case 173: /* MS: MS semi  */
-#line 775 "spin.y"
+#line 776 "spin.y"
                                 { /* but more are okay too   */ }
-#line 3538 "y.tab.c"
+#line 3539 "y.tab.c"
     break;
 
   case 174: /* aname: NAME  */
-#line 778 "spin.y"
+#line 779 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3544 "y.tab.c"
+#line 3545 "y.tab.c"
     break;
 
   case 175: /* aname: PNAME  */
-#line 779 "spin.y"
+#line 780 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3550 "y.tab.c"
+#line 3551 "y.tab.c"
     break;
 
   case 176: /* const_expr: CONST  */
-#line 782 "spin.y"
+#line 783 "spin.y"
                                         { yyval = yyvsp[0]; }
-#line 3556 "y.tab.c"
+#line 3557 "y.tab.c"
     break;
 
   case 177: /* const_expr: '-' const_expr  */
-#line 783 "spin.y"
+#line 784 "spin.y"
                                         { yyval = yyvsp[0]; yyval->val = -(yyvsp[0]->val); }
-#line 3562 "y.tab.c"
+#line 3563 "y.tab.c"
     break;
 
   case 178: /* const_expr: l_par const_expr r_par  */
-#line 784 "spin.y"
+#line 785 "spin.y"
                                                 { yyval = yyvsp[-1]; }
-#line 3568 "y.tab.c"
+#line 3569 "y.tab.c"
     break;
 
   case 179: /* const_expr: const_expr '+' const_expr  */
-#line 785 "spin.y"
+#line 786 "spin.y"
                                         { yyval = yyvsp[-2]; yyval->val = yyvsp[-2]->val + yyvsp[0]->val; }
-#line 3574 "y.tab.c"
+#line 3575 "y.tab.c"
     break;
 
   case 180: /* const_expr: const_expr '-' const_expr  */
-#line 786 "spin.y"
+#line 787 "spin.y"
                                         { yyval = yyvsp[-2]; yyval->val = yyvsp[-2]->val - yyvsp[0]->val; }
-#line 3580 "y.tab.c"
+#line 3581 "y.tab.c"
     break;
 
   case 181: /* const_expr: const_expr '*' const_expr  */
-#line 787 "spin.y"
+#line 788 "spin.y"
                                         { yyval = yyvsp[-2]; yyval->val = yyvsp[-2]->val * yyvsp[0]->val; }
-#line 3586 "y.tab.c"
+#line 3587 "y.tab.c"
     break;
 
   case 182: /* const_expr: const_expr '/' const_expr  */
-#line 788 "spin.y"
+#line 789 "spin.y"
                                         { yyval = yyvsp[-2];
 					  if (yyvsp[0]->val == 0)
 					  { fatal("division by zero", (char *) 0);
 					  }
 					  yyval->val = yyvsp[-2]->val / yyvsp[0]->val;
 					}
-#line 3597 "y.tab.c"
+#line 3598 "y.tab.c"
     break;
 
   case 183: /* const_expr: const_expr '%' const_expr  */
-#line 794 "spin.y"
+#line 795 "spin.y"
                                         { yyval = yyvsp[-2];
 					  if (yyvsp[0]->val == 0)
 					  { fatal("attempt to take modulo of zero", (char *) 0);
 					  }
 					  yyval->val = yyvsp[-2]->val % yyvsp[0]->val;
 					}
-#line 3608 "y.tab.c"
+#line 3609 "y.tab.c"
     break;
 
   case 184: /* expr: l_par expr r_par  */
-#line 802 "spin.y"
+#line 803 "spin.y"
                                         { yyval = yyvsp[-1]; }
-#line 3614 "y.tab.c"
+#line 3615 "y.tab.c"
     break;
 
   case 185: /* expr: expr '+' expr  */
-#line 803 "spin.y"
+#line 804 "spin.y"
                                 { yyval = nn(ZN, '+', yyvsp[-2], yyvsp[0]); }
-#line 3620 "y.tab.c"
+#line 3621 "y.tab.c"
     break;
 
   case 186: /* expr: expr '-' expr  */
-#line 804 "spin.y"
+#line 805 "spin.y"
                                 { yyval = nn(ZN, '-', yyvsp[-2], yyvsp[0]); }
-#line 3626 "y.tab.c"
+#line 3627 "y.tab.c"
     break;
 
   case 187: /* expr: expr '*' expr  */
-#line 805 "spin.y"
+#line 806 "spin.y"
                                 { yyval = nn(ZN, '*', yyvsp[-2], yyvsp[0]); }
-#line 3632 "y.tab.c"
+#line 3633 "y.tab.c"
     break;
 
   case 188: /* expr: expr '/' expr  */
-#line 806 "spin.y"
+#line 807 "spin.y"
                                 { yyval = nn(ZN, '/', yyvsp[-2], yyvsp[0]); }
-#line 3638 "y.tab.c"
+#line 3639 "y.tab.c"
     break;
 
   case 189: /* expr: expr '%' expr  */
-#line 807 "spin.y"
+#line 808 "spin.y"
                                 { yyval = nn(ZN, '%', yyvsp[-2], yyvsp[0]); }
-#line 3644 "y.tab.c"
+#line 3645 "y.tab.c"
     break;
 
   case 190: /* expr: expr '&' expr  */
-#line 808 "spin.y"
+#line 809 "spin.y"
                                 { yyval = nn(ZN, '&', yyvsp[-2], yyvsp[0]); }
-#line 3650 "y.tab.c"
+#line 3651 "y.tab.c"
     break;
 
   case 191: /* expr: expr '^' expr  */
-#line 809 "spin.y"
+#line 810 "spin.y"
                                 { yyval = nn(ZN, '^', yyvsp[-2], yyvsp[0]); }
-#line 3656 "y.tab.c"
+#line 3657 "y.tab.c"
     break;
 
   case 192: /* expr: expr '|' expr  */
-#line 810 "spin.y"
+#line 811 "spin.y"
                                 { yyval = nn(ZN, '|', yyvsp[-2], yyvsp[0]); }
-#line 3662 "y.tab.c"
+#line 3663 "y.tab.c"
     break;
 
   case 193: /* expr: expr GT expr  */
-#line 811 "spin.y"
+#line 812 "spin.y"
                                 { yyval = nn(ZN,  GT, yyvsp[-2], yyvsp[0]); }
-#line 3668 "y.tab.c"
+#line 3669 "y.tab.c"
     break;
 
   case 194: /* expr: expr LT expr  */
-#line 812 "spin.y"
+#line 813 "spin.y"
                                 { yyval = nn(ZN,  LT, yyvsp[-2], yyvsp[0]); }
-#line 3674 "y.tab.c"
+#line 3675 "y.tab.c"
     break;
 
   case 195: /* expr: expr GE expr  */
-#line 813 "spin.y"
+#line 814 "spin.y"
                                 { yyval = nn(ZN,  GE, yyvsp[-2], yyvsp[0]); }
-#line 3680 "y.tab.c"
+#line 3681 "y.tab.c"
     break;
 
   case 196: /* expr: expr LE expr  */
-#line 814 "spin.y"
+#line 815 "spin.y"
                                 { yyval = nn(ZN,  LE, yyvsp[-2], yyvsp[0]); }
-#line 3686 "y.tab.c"
+#line 3687 "y.tab.c"
     break;
 
   case 197: /* expr: expr EQ expr  */
-#line 815 "spin.y"
+#line 816 "spin.y"
                                 { yyval = nn(ZN,  EQ, yyvsp[-2], yyvsp[0]); }
-#line 3692 "y.tab.c"
+#line 3693 "y.tab.c"
     break;
 
   case 198: /* expr: expr NE expr  */
-#line 816 "spin.y"
+#line 817 "spin.y"
                                 { yyval = nn(ZN,  NE, yyvsp[-2], yyvsp[0]); }
-#line 3698 "y.tab.c"
+#line 3699 "y.tab.c"
     break;
 
   case 199: /* expr: expr AND expr  */
-#line 817 "spin.y"
+#line 818 "spin.y"
                                 { yyval = nn(ZN, AND, yyvsp[-2], yyvsp[0]); }
-#line 3704 "y.tab.c"
+#line 3705 "y.tab.c"
     break;
 
   case 200: /* expr: expr OR expr  */
-#line 818 "spin.y"
+#line 819 "spin.y"
                                 { yyval = nn(ZN,  OR, yyvsp[-2], yyvsp[0]); }
-#line 3710 "y.tab.c"
+#line 3711 "y.tab.c"
     break;
 
   case 201: /* expr: expr LSHIFT expr  */
-#line 819 "spin.y"
+#line 820 "spin.y"
                                 { yyval = nn(ZN, LSHIFT,yyvsp[-2], yyvsp[0]); }
-#line 3716 "y.tab.c"
+#line 3717 "y.tab.c"
     break;
 
   case 202: /* expr: expr RSHIFT expr  */
-#line 820 "spin.y"
+#line 821 "spin.y"
                                 { yyval = nn(ZN, RSHIFT,yyvsp[-2], yyvsp[0]); }
-#line 3722 "y.tab.c"
+#line 3723 "y.tab.c"
     break;
 
   case 203: /* expr: '~' expr  */
-#line 821 "spin.y"
+#line 822 "spin.y"
                                 { yyval = nn(ZN, '~', yyvsp[0], ZN); }
-#line 3728 "y.tab.c"
+#line 3729 "y.tab.c"
     break;
 
   case 204: /* expr: '-' expr  */
-#line 822 "spin.y"
+#line 823 "spin.y"
                                 { yyval = nn(ZN, UMIN, yyvsp[0], ZN); }
-#line 3734 "y.tab.c"
+#line 3735 "y.tab.c"
     break;
 
   case 205: /* expr: SND expr  */
-#line 823 "spin.y"
+#line 824 "spin.y"
                                 { yyval = nn(ZN, '!', yyvsp[0], ZN); }
-#line 3740 "y.tab.c"
+#line 3741 "y.tab.c"
     break;
 
   case 206: /* expr: l_par expr ARROW expr ':' expr r_par  */
-#line 825 "spin.y"
+#line 826 "spin.y"
                                                {
 				  yyval = nn(ZN,  OR, yyvsp[-3], yyvsp[-1]);
 				  yyval = nn(ZN, '?', yyvsp[-5], yyval);
 				}
-#line 3749 "y.tab.c"
+#line 3750 "y.tab.c"
     break;
 
   case 207: /* $@33: %empty  */
-#line 830 "spin.y"
+#line 831 "spin.y"
                                 { Expand_Ok++;
 				  if (!context)
 				   fatal("used 'run' outside proctype", (char *) 0);
 				}
-#line 3758 "y.tab.c"
+#line 3759 "y.tab.c"
     break;
 
   case 208: /* expr: RUN aname $@33 l_par args r_par Opt_priority  */
-#line 835 "spin.y"
+#line 836 "spin.y"
                                 { Expand_Ok--;
 				  yyval = nn(yyvsp[-5], RUN, yyvsp[-2], ZN);
 				  yyval->val = (yyvsp[0]) ? yyvsp[0]->val : 0;
 				  trackchanuse(yyvsp[-2], yyvsp[-5], 'A'); trackrun(yyval);
 				}
-#line 3768 "y.tab.c"
+#line 3769 "y.tab.c"
     break;
 
   case 209: /* expr: LEN l_par varref r_par  */
-#line 840 "spin.y"
+#line 841 "spin.y"
                                         { yyval = nn(yyvsp[-1], LEN, yyvsp[-1], ZN); }
-#line 3774 "y.tab.c"
+#line 3775 "y.tab.c"
     break;
 
   case 210: /* expr: ENABLED l_par expr r_par  */
-#line 841 "spin.y"
+#line 842 "spin.y"
                                         { yyval = nn(ZN, ENABLED, yyvsp[-1], ZN); has_enabled++; }
-#line 3780 "y.tab.c"
+#line 3781 "y.tab.c"
     break;
 
   case 211: /* expr: GET_P l_par expr r_par  */
-#line 842 "spin.y"
+#line 843 "spin.y"
                                         { yyval = nn(ZN, GET_P, yyvsp[-1], ZN); has_priority++; }
-#line 3786 "y.tab.c"
+#line 3787 "y.tab.c"
     break;
 
   case 212: /* $@34: %empty  */
-#line 843 "spin.y"
+#line 844 "spin.y"
                                 { Expand_Ok++; }
-#line 3792 "y.tab.c"
+#line 3793 "y.tab.c"
     break;
 
   case 213: /* expr: varref RCV $@34 '[' rargs ']'  */
-#line 844 "spin.y"
+#line 845 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-5], 'R', yyvsp[-5], yyvsp[-1]);
 				}
-#line 3800 "y.tab.c"
+#line 3801 "y.tab.c"
     break;
 
   case 214: /* $@35: %empty  */
-#line 847 "spin.y"
+#line 848 "spin.y"
                                 { Expand_Ok++; }
-#line 3806 "y.tab.c"
+#line 3807 "y.tab.c"
     break;
 
   case 215: /* expr: varref R_RCV $@35 '[' rargs ']'  */
-#line 848 "spin.y"
+#line 849 "spin.y"
                                 { Expand_Ok--; has_io++;
 				  yyval = nn(yyvsp[-5], 'R', yyvsp[-5], yyvsp[-1]);
 				  yyval->val = has_random = 1;
 				}
-#line 3815 "y.tab.c"
+#line 3816 "y.tab.c"
     break;
 
   case 216: /* expr: varref  */
-#line 852 "spin.y"
+#line 853 "spin.y"
                                 { yyval = yyvsp[0]; trapwonly(yyvsp[0] /*, "varref" */); }
-#line 3821 "y.tab.c"
+#line 3822 "y.tab.c"
     break;
 
   case 217: /* expr: cexpr  */
-#line 853 "spin.y"
+#line 854 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3827 "y.tab.c"
+#line 3828 "y.tab.c"
     break;
 
   case 218: /* expr: CONST  */
-#line 854 "spin.y"
+#line 855 "spin.y"
                                 { yyval = nn(ZN,CONST,ZN,ZN);
 				  yyval->ismtyp = yyvsp[0]->ismtyp;
 				  yyval->sym = yyvsp[0]->sym;
 				  yyval->val = yyvsp[0]->val;
 				}
-#line 3837 "y.tab.c"
+#line 3838 "y.tab.c"
     break;
 
   case 219: /* expr: TIMEOUT  */
-#line 859 "spin.y"
+#line 860 "spin.y"
                                 { yyval = nn(ZN,TIMEOUT, ZN, ZN); }
-#line 3843 "y.tab.c"
+#line 3844 "y.tab.c"
     break;
 
   case 220: /* expr: NONPROGRESS  */
-#line 860 "spin.y"
+#line 861 "spin.y"
                                 { yyval = nn(ZN,NONPROGRESS, ZN, ZN);
 				  has_np++;
 				}
-#line 3851 "y.tab.c"
+#line 3852 "y.tab.c"
     break;
 
   case 221: /* expr: PC_VAL l_par expr r_par  */
-#line 863 "spin.y"
+#line 864 "spin.y"
                                         { yyval = nn(ZN, PC_VAL, yyvsp[-1], ZN);
 				  has_pcvalue++;
 				}
-#line 3859 "y.tab.c"
+#line 3860 "y.tab.c"
     break;
 
   case 222: /* expr: PNAME '[' expr ']' '@' NAME  */
-#line 867 "spin.y"
+#line 868 "spin.y"
                                 { yyval = rem_lab(yyvsp[-5]->sym, yyvsp[-3], yyvsp[0]->sym); }
-#line 3865 "y.tab.c"
+#line 3866 "y.tab.c"
     break;
 
   case 223: /* expr: PNAME '[' expr ']' ':' pfld  */
-#line 869 "spin.y"
+#line 870 "spin.y"
                                 { yyval = rem_var(yyvsp[-5]->sym, yyvsp[-3], yyvsp[0]->sym, yyvsp[0]->lft); }
-#line 3871 "y.tab.c"
+#line 3872 "y.tab.c"
     break;
 
   case 224: /* expr: PNAME '@' NAME  */
-#line 870 "spin.y"
+#line 871 "spin.y"
                                 { yyval = rem_lab(yyvsp[-2]->sym, ZN, yyvsp[0]->sym); }
-#line 3877 "y.tab.c"
+#line 3878 "y.tab.c"
     break;
 
   case 225: /* expr: PNAME ':' pfld  */
-#line 871 "spin.y"
+#line 872 "spin.y"
                                 { yyval = rem_var(yyvsp[-2]->sym, ZN, yyvsp[0]->sym, yyvsp[0]->lft); }
-#line 3883 "y.tab.c"
+#line 3884 "y.tab.c"
     break;
 
   case 226: /* expr: ltl_expr  */
-#line 872 "spin.y"
+#line 873 "spin.y"
                                 { yyval = yyvsp[0]; /* sanity_check($1); */ }
-#line 3889 "y.tab.c"
+#line 3890 "y.tab.c"
     break;
 
   case 227: /* Opt_priority: %empty  */
-#line 875 "spin.y"
+#line 876 "spin.y"
                                 { yyval = ZN; }
-#line 3895 "y.tab.c"
+#line 3896 "y.tab.c"
     break;
 
   case 228: /* Opt_priority: PRIORITY CONST  */
-#line 876 "spin.y"
+#line 877 "spin.y"
                                 { yyval = yyvsp[0]; has_priority++; }
-#line 3901 "y.tab.c"
+#line 3902 "y.tab.c"
     break;
 
   case 229: /* full_expr: expr  */
-#line 879 "spin.y"
+#line 880 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3907 "y.tab.c"
+#line 3908 "y.tab.c"
     break;
 
   case 230: /* full_expr: Expr  */
-#line 880 "spin.y"
+#line 881 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3913 "y.tab.c"
+#line 3914 "y.tab.c"
     break;
 
   case 231: /* ltl_expr: expr UNTIL expr  */
-#line 883 "spin.y"
+#line 884 "spin.y"
                                 { yyval = nn(ZN, UNTIL,   yyvsp[-2], yyvsp[0]); }
-#line 3919 "y.tab.c"
+#line 3920 "y.tab.c"
     break;
 
   case 232: /* ltl_expr: expr RELEASE expr  */
-#line 884 "spin.y"
+#line 885 "spin.y"
                                 { yyval = nn(ZN, RELEASE, yyvsp[-2], yyvsp[0]); }
-#line 3925 "y.tab.c"
+#line 3926 "y.tab.c"
     break;
 
   case 233: /* ltl_expr: expr WEAK_UNTIL expr  */
-#line 885 "spin.y"
+#line 886 "spin.y"
                                 { yyval = nn(ZN, ALWAYS, yyvsp[-2], ZN);
 				  yyval = nn(ZN, OR, yyval, nn(ZN, UNTIL, yyvsp[-2], yyvsp[0]));
 				}
-#line 3933 "y.tab.c"
+#line 3934 "y.tab.c"
     break;
 
   case 234: /* ltl_expr: expr IMPLIES expr  */
-#line 888 "spin.y"
+#line 889 "spin.y"
                                 { yyval = nn(ZN, '!', yyvsp[-2], ZN);
 				  yyval = nn(ZN, OR,  yyval, yyvsp[0]);
 				}
-#line 3941 "y.tab.c"
+#line 3942 "y.tab.c"
     break;
 
   case 235: /* ltl_expr: expr EQUIV expr  */
-#line 891 "spin.y"
+#line 892 "spin.y"
                                 { yyval = nn(ZN, EQUIV,   yyvsp[-2], yyvsp[0]); }
-#line 3947 "y.tab.c"
+#line 3948 "y.tab.c"
     break;
 
   case 236: /* ltl_expr: NEXT expr  */
-#line 892 "spin.y"
+#line 893 "spin.y"
                                     { yyval = nn(ZN, NEXT,  yyvsp[0], ZN); }
-#line 3953 "y.tab.c"
+#line 3954 "y.tab.c"
     break;
 
   case 237: /* ltl_expr: ALWAYS expr  */
-#line 893 "spin.y"
+#line 894 "spin.y"
                                     { yyval = nn(ZN, ALWAYS,yyvsp[0], ZN); }
-#line 3959 "y.tab.c"
+#line 3960 "y.tab.c"
     break;
 
   case 238: /* ltl_expr: EVENTUALLY expr  */
-#line 894 "spin.y"
+#line 895 "spin.y"
                                     { yyval = nn(ZN, EVENTUALLY, yyvsp[0], ZN); }
-#line 3965 "y.tab.c"
+#line 3966 "y.tab.c"
     break;
 
   case 239: /* Expr: Probe  */
-#line 898 "spin.y"
+#line 899 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 3971 "y.tab.c"
+#line 3972 "y.tab.c"
     break;
 
   case 240: /* Expr: l_par Expr r_par  */
-#line 899 "spin.y"
+#line 900 "spin.y"
                                 { yyval = yyvsp[-1]; }
-#line 3977 "y.tab.c"
+#line 3978 "y.tab.c"
     break;
 
   case 241: /* Expr: Expr AND Expr  */
-#line 900 "spin.y"
+#line 901 "spin.y"
                                 { yyval = nn(ZN, AND, yyvsp[-2], yyvsp[0]); }
-#line 3983 "y.tab.c"
+#line 3984 "y.tab.c"
     break;
 
   case 242: /* Expr: Expr AND expr  */
-#line 901 "spin.y"
+#line 902 "spin.y"
                                 { yyval = nn(ZN, AND, yyvsp[-2], yyvsp[0]); }
-#line 3989 "y.tab.c"
+#line 3990 "y.tab.c"
     break;
 
   case 243: /* Expr: expr AND Expr  */
-#line 902 "spin.y"
+#line 903 "spin.y"
                                 { yyval = nn(ZN, AND, yyvsp[-2], yyvsp[0]); }
-#line 3995 "y.tab.c"
+#line 3996 "y.tab.c"
     break;
 
   case 244: /* Expr: Expr OR Expr  */
-#line 903 "spin.y"
+#line 904 "spin.y"
                                 { yyval = nn(ZN,  OR, yyvsp[-2], yyvsp[0]); }
-#line 4001 "y.tab.c"
+#line 4002 "y.tab.c"
     break;
 
   case 245: /* Expr: Expr OR expr  */
-#line 904 "spin.y"
+#line 905 "spin.y"
                                 { yyval = nn(ZN,  OR, yyvsp[-2], yyvsp[0]); }
-#line 4007 "y.tab.c"
+#line 4008 "y.tab.c"
     break;
 
   case 246: /* Expr: expr OR Expr  */
-#line 905 "spin.y"
+#line 906 "spin.y"
                                 { yyval = nn(ZN,  OR, yyvsp[-2], yyvsp[0]); }
-#line 4013 "y.tab.c"
+#line 4014 "y.tab.c"
     break;
 
   case 247: /* Probe: FULL l_par varref r_par  */
-#line 908 "spin.y"
+#line 909 "spin.y"
                                         { yyval = nn(yyvsp[-1],  FULL, yyvsp[-1], ZN); }
-#line 4019 "y.tab.c"
+#line 4020 "y.tab.c"
     break;
 
   case 248: /* Probe: NFULL l_par varref r_par  */
-#line 909 "spin.y"
+#line 910 "spin.y"
                                         { yyval = nn(yyvsp[-1], NFULL, yyvsp[-1], ZN); }
-#line 4025 "y.tab.c"
+#line 4026 "y.tab.c"
     break;
 
   case 249: /* Probe: EMPTY l_par varref r_par  */
-#line 910 "spin.y"
+#line 911 "spin.y"
                                         { yyval = nn(yyvsp[-1], EMPTY, yyvsp[-1], ZN); }
-#line 4031 "y.tab.c"
+#line 4032 "y.tab.c"
     break;
 
   case 250: /* Probe: NEMPTY l_par varref r_par  */
-#line 911 "spin.y"
+#line 912 "spin.y"
                                         { yyval = nn(yyvsp[-1],NEMPTY, yyvsp[-1], ZN); }
-#line 4037 "y.tab.c"
+#line 4038 "y.tab.c"
     break;
 
   case 251: /* Opt_enabler: %empty  */
-#line 914 "spin.y"
+#line 915 "spin.y"
                                 { yyval = ZN; }
-#line 4043 "y.tab.c"
+#line 4044 "y.tab.c"
     break;
 
   case 252: /* Opt_enabler: PROVIDED l_par full_expr r_par  */
-#line 915 "spin.y"
+#line 916 "spin.y"
                                          {
 				   if (!proper_enabler(yyvsp[-1]))
 				   { non_fatal("invalid PROVIDED clause", (char *)0);
@@ -4051,31 +4052,31 @@ yyreduce:
 				   } else
 				   { yyval = yyvsp[-1];
 				 } }
-#line 4055 "y.tab.c"
+#line 4056 "y.tab.c"
     break;
 
   case 253: /* Opt_enabler: PROVIDED error  */
-#line 922 "spin.y"
+#line 923 "spin.y"
                                  { yyval = ZN;
 				   non_fatal("usage: provided ( ..expr.. )", (char *)0);
 				 }
-#line 4063 "y.tab.c"
+#line 4064 "y.tab.c"
     break;
 
   case 254: /* oname: %empty  */
-#line 927 "spin.y"
+#line 928 "spin.y"
                                 { yyval = ZN; }
-#line 4069 "y.tab.c"
+#line 4070 "y.tab.c"
     break;
 
   case 255: /* oname: ':' NAME  */
-#line 928 "spin.y"
+#line 929 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 4075 "y.tab.c"
+#line 4076 "y.tab.c"
     break;
 
   case 256: /* basetype: TYPE oname  */
-#line 931 "spin.y"
+#line 932 "spin.y"
                                 { if (yyvsp[0])
 				  {	if (yyvsp[-1]->val != MTYPE)
 					{	explain(yyvsp[-1]->val);
@@ -4086,186 +4087,186 @@ yyreduce:
 				  if (yyval->val == UNSIGNED)
 				  fatal("unsigned cannot be used as mesg type", 0);
 				}
-#line 4090 "y.tab.c"
+#line 4091 "y.tab.c"
     break;
 
   case 257: /* basetype: UNAME  */
-#line 941 "spin.y"
+#line 942 "spin.y"
                                 { yyval->sym = yyvsp[0]->sym;
 				  yyval->val = STRUCT;
 				}
-#line 4098 "y.tab.c"
+#line 4099 "y.tab.c"
     break;
 
   case 259: /* typ_list: basetype  */
-#line 947 "spin.y"
+#line 948 "spin.y"
                                 { yyval = nn(yyvsp[0], yyvsp[0]->val, ZN, ZN); }
-#line 4104 "y.tab.c"
+#line 4105 "y.tab.c"
     break;
 
   case 260: /* typ_list: basetype ',' typ_list  */
-#line 948 "spin.y"
+#line 949 "spin.y"
                                 { yyval = nn(yyvsp[-2], yyvsp[-2]->val, ZN, yyvsp[0]); }
-#line 4110 "y.tab.c"
+#line 4111 "y.tab.c"
     break;
 
   case 261: /* two_args: expr ',' expr  */
-#line 951 "spin.y"
+#line 952 "spin.y"
                                 { yyval = nn(ZN, ',', yyvsp[-2], yyvsp[0]); }
-#line 4116 "y.tab.c"
+#line 4117 "y.tab.c"
     break;
 
   case 262: /* args: %empty  */
-#line 954 "spin.y"
+#line 955 "spin.y"
                                 { yyval = ZN; }
-#line 4122 "y.tab.c"
+#line 4123 "y.tab.c"
     break;
 
   case 263: /* args: arg  */
-#line 955 "spin.y"
+#line 956 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 4128 "y.tab.c"
+#line 4129 "y.tab.c"
     break;
 
   case 264: /* prargs: %empty  */
-#line 958 "spin.y"
+#line 959 "spin.y"
                                 { yyval = ZN; }
-#line 4134 "y.tab.c"
+#line 4135 "y.tab.c"
     break;
 
   case 265: /* prargs: ',' arg  */
-#line 959 "spin.y"
+#line 960 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 4140 "y.tab.c"
+#line 4141 "y.tab.c"
     break;
 
   case 266: /* margs: arg  */
-#line 962 "spin.y"
+#line 963 "spin.y"
                                 { yyval = yyvsp[0]; }
-#line 4146 "y.tab.c"
+#line 4147 "y.tab.c"
     break;
 
   case 267: /* margs: expr l_par arg r_par  */
-#line 963 "spin.y"
+#line 964 "spin.y"
                                 { if (yyvsp[-3]->ntyp == ',')
 					yyval = tail_add(yyvsp[-3], yyvsp[-1]);
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[-3], yyvsp[-1]);
 				}
-#line 4156 "y.tab.c"
+#line 4157 "y.tab.c"
     break;
 
   case 268: /* arg: expr  */
-#line 970 "spin.y"
+#line 971 "spin.y"
                                 { if (yyvsp[0]->ntyp == ',')
 					yyval = yyvsp[0];
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[0], ZN);
 				}
-#line 4166 "y.tab.c"
+#line 4167 "y.tab.c"
     break;
 
   case 269: /* arg: expr ',' arg  */
-#line 975 "spin.y"
+#line 976 "spin.y"
                                 { if (yyvsp[-2]->ntyp == ',')
 					yyval = tail_add(yyvsp[-2], yyvsp[0]);
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[-2], yyvsp[0]);
 				}
-#line 4176 "y.tab.c"
+#line 4177 "y.tab.c"
     break;
 
   case 270: /* rarg: varref  */
-#line 982 "spin.y"
+#line 983 "spin.y"
                                 { yyval = yyvsp[0]; trackvar(yyvsp[0], yyvsp[0]);
 				  trapwonly(yyvsp[0] /*, "rarg" */); }
-#line 4183 "y.tab.c"
+#line 4184 "y.tab.c"
     break;
 
   case 271: /* rarg: EVAL l_par expr r_par  */
-#line 984 "spin.y"
+#line 985 "spin.y"
                                 { yyval = nn(ZN,EVAL,yyvsp[-1],ZN);
 				  trapwonly(yyvsp[-3] /*, "eval rarg" */); }
-#line 4190 "y.tab.c"
+#line 4191 "y.tab.c"
     break;
 
   case 272: /* rarg: CONST  */
-#line 986 "spin.y"
+#line 987 "spin.y"
                                 { yyval = nn(ZN,CONST,ZN,ZN);
 				  yyval->ismtyp = yyvsp[0]->ismtyp;
 				  yyval->sym = yyvsp[0]->sym;
 				  yyval->val = yyvsp[0]->val;
 				}
-#line 4200 "y.tab.c"
+#line 4201 "y.tab.c"
     break;
 
   case 273: /* rarg: '-' CONST  */
-#line 991 "spin.y"
+#line 992 "spin.y"
                                 { yyval = nn(ZN,CONST,ZN,ZN);
 				  yyval->val = - (yyvsp[0]->val);
 				}
-#line 4208 "y.tab.c"
+#line 4209 "y.tab.c"
     break;
 
   case 274: /* rargs: rarg  */
-#line 996 "spin.y"
+#line 997 "spin.y"
                                 { if (yyvsp[0]->ntyp == ',')
 					yyval = yyvsp[0];
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[0], ZN);
 				}
-#line 4218 "y.tab.c"
+#line 4219 "y.tab.c"
     break;
 
   case 275: /* rargs: rarg ',' rargs  */
-#line 1001 "spin.y"
+#line 1002 "spin.y"
                                 { if (yyvsp[-2]->ntyp == ',')
 					yyval = tail_add(yyvsp[-2], yyvsp[0]);
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[-2], yyvsp[0]);
 				}
-#line 4228 "y.tab.c"
+#line 4229 "y.tab.c"
     break;
 
   case 276: /* rargs: rarg l_par rargs r_par  */
-#line 1006 "spin.y"
+#line 1007 "spin.y"
                                         { if (yyvsp[-3]->ntyp == ',')
 					yyval = tail_add(yyvsp[-3], yyvsp[-1]);
 				  else
 				  	yyval = nn(ZN, ',', yyvsp[-3], yyvsp[-1]);
 				}
-#line 4238 "y.tab.c"
+#line 4239 "y.tab.c"
     break;
 
   case 277: /* rargs: l_par rargs r_par  */
-#line 1011 "spin.y"
+#line 1012 "spin.y"
                                         { yyval = yyvsp[-1]; }
-#line 4244 "y.tab.c"
+#line 4245 "y.tab.c"
     break;
 
   case 278: /* nlst: NAME  */
-#line 1014 "spin.y"
+#line 1015 "spin.y"
                                 { yyval = nn(yyvsp[0], NAME, ZN, ZN);
 				  yyval = nn(ZN, ',', yyval, ZN); }
-#line 4251 "y.tab.c"
+#line 4252 "y.tab.c"
     break;
 
   case 279: /* nlst: nlst NAME  */
-#line 1016 "spin.y"
+#line 1017 "spin.y"
                                 { yyval = nn(yyvsp[0], NAME, ZN, ZN);
 				  yyval = nn(ZN, ',', yyval, yyvsp[-1]);
 				}
-#line 4259 "y.tab.c"
+#line 4260 "y.tab.c"
     break;
 
   case 280: /* nlst: nlst ','  */
-#line 1019 "spin.y"
+#line 1020 "spin.y"
                                 { yyval = yyvsp[-1]; /* commas optional */ }
-#line 4265 "y.tab.c"
+#line 4266 "y.tab.c"
     break;
 
 
-#line 4269 "y.tab.c"
+#line 4270 "y.tab.c"
 
       default: break;
     }
@@ -4458,7 +4459,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 1021 "spin.y"
+#line 1022 "spin.y"
 
 
 #define binop(n, sop)	fprintf(fd, "("); recursive(fd, n->lft); \

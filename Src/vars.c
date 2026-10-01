@@ -240,15 +240,17 @@ dumpclaims(FILE *fd, int pid, char *s)
 	Pid_nr = oPid;
 }
 
+/* libspin: hoisted from dumpglobals() so the generated reset can see it */
+
+static Lextok *dg_dummy = ZN;
 void
 dumpglobals(void)
 {	Ordered *walk;
-	static Lextok *dummy = ZN;
 	Symbol *sp;
 	int j;
 
-	if (!dummy)
-		dummy = nn(ZN, NAME, nn(ZN,CONST,ZN,ZN), ZN);
+	if (!dg_dummy)
+		dg_dummy = nn(ZN, NAME, nn(ZN,CONST,ZN,ZN), ZN);
 
 	for (walk = all_names; walk; walk = walk->next)
 	{	sp = walk->entry;
@@ -280,10 +282,10 @@ dumpglobals(void)
 			{	continue;
 			}
 
-			dummy->sym = sp;
-			dummy->lft->val = j;
+			dg_dummy->sym = sp;
+			dg_dummy->lft->val = j;
 			/* in case of cast_val warnings, do this first: */
-			prefetch = getglobal(dummy);
+			prefetch = getglobal(dg_dummy);
 			printf("\t\t%s", sp->name);
 			if (sp->nel > 1 || sp->isarray) printf("[%d]", j);
 			printf(" = ");
@@ -326,9 +328,12 @@ dumpglobals(void)
 	}	}	}
 }
 
+/* libspin: hoisted from dumplocal() so the generated reset can see it */
+
+static Lextok *dl_dummy = ZN;
 void
 dumplocal(RunList *r, int final)
-{	static Lextok *dummy = ZN;
+{
 	Symbol *z, *s;
 	int i;
 
@@ -336,8 +341,8 @@ dumplocal(RunList *r, int final)
 
 	s = r->symtab;
 
-	if (!dummy)
-	{	dummy = nn(ZN, NAME, nn(ZN,CONST,ZN,ZN), ZN);
+	if (!dl_dummy)
+	{	dl_dummy = nn(ZN, NAME, nn(ZN,CONST,ZN,ZN), ZN);
 	}
 
 	for (z = s; z; z = z->next)
@@ -359,8 +364,8 @@ dumplocal(RunList *r, int final)
 			{	continue;
 			}
 
-			dummy->sym = z;
-			dummy->lft->val = i;
+			dl_dummy->sym = z;
+			dl_dummy->lft->val = i;
 
 			printf("\t\t%s(%d):%s",
 				r->n->name, r->pid - Have_claim, z->name);
@@ -371,7 +376,7 @@ dumplocal(RunList *r, int final)
 			&&  z->mtype_name)
 			{	t = z->mtype_name->name;
 			}
-			sr_mesg(stdout, getval(dummy), z->type == MTYPE, t);
+			sr_mesg(stdout, getval(dl_dummy), z->type == MTYPE, t);
 			printf("\n");
 			if (limited_vis && (z->hidden&2))
 			{	int colpos;
@@ -384,7 +389,7 @@ dumplocal(RunList *r, int final)
 					sprintf(GBuf, "%s(%d):%s = ",
 					r->n->name, r->pid, z->name);
 				}
-				sr_buf(getval(dummy), z->type==MTYPE, t);
+				sr_buf(getval(dl_dummy), z->type==MTYPE, t);
 				if (z->colnr == 0)
 				{	z->colnr = (unsigned char) maxcolnr;
 					maxcolnr = 1+(maxcolnr%10);

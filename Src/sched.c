@@ -1064,10 +1064,13 @@ talk(RunList *r)
 	}
 }
 
+/* libspin: hoisted from p_talk() so the generated reset can see it */
+
+static int lastnever = -1;
+static char nbuf[128];
 void
 p_talk(Element *e, int lnr)
-{	static int lastnever = -1;
-	static char nbuf[128];
+{
 	int newnever = -1;
 
 	if (e && e->n)

@@ -196,11 +196,13 @@ dumpskip(int n, int m)
 	skip = (SRC *) 0;
 }
 
+/* libspin: hoisted from dumpsrc() so the generated reset can see it */
+
+static int did_claim = 0;
 void
 dumpsrc(int n, int m)
 {	SRC *tmp, *lst;
 	int j;
-	static int did_claim = 0;
 	FILE *tz = fd_tc;	/* was fd_th */
 
 	fprintf(tz, "\nshort src_ln%d [] = {\n\t", m);

@@ -201,10 +201,12 @@ CollectGuards(FILE *fd, Element *e, int inh)
 	return inh;
 }
 
+/* libspin: hoisted from putcode() so the generated reset can see it */
+
+static char buf[64];
 int
 putcode(FILE *fd, Sequence *s, Element *nxt, int justguards, int ln, int seqno)
 {	int isg=0;
-	static char buf[64];
 
 	NextLab[0] = "continue";
 	filterbad(s->frst);
@@ -311,12 +313,14 @@ putcode(FILE *fd, Sequence *s, Element *nxt, int justguards, int ln, int seqno)
 	return LastGoto;
 }
 
+/* libspin: hoisted from putCode() so the generated reset can see it */
+
+static int bno = 0;
 static void
 putCode(FILE *fd, Element *f, Element *last, Element *next, int isguard)
 {	Element *e, *N;
 	SeqList *h; int i;
 	char NextOpt[64];
-	static int bno = 0;
 
 	for (e = f; e; e = e->nxt)
 	{	if (e->status & DONE2)

@@ -57,6 +57,7 @@ char	*eventmap = (char *) 0;
 
 static	char *ltl_name;
 static	int  Embedded = 0, inEventMap = 0, has_ini = 0;
+static	int  nltl = 0;	/* libspin: hoisted from the optname2 action so the generated reset can see it */
 
 %}
 
@@ -232,7 +233,7 @@ optname : /* empty */	{ char tb[32];
 	| NAME		{ $$ = $1; }
 	;
 
-optname2 : /* empty */ { char tb[32]; static int nltl = 0;
+optname2 : /* empty */ { char tb[32];
 			  memset(tb, 0, 32);
 			  sprintf(tb, "ltl_%d", nltl++);
 			  $$ = nn(ZN, NAME, ZN, ZN);

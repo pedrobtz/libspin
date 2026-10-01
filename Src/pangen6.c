@@ -2203,10 +2203,13 @@ init_dom(AST *a)
 	}	}	}	}
 }
 
+/* libspin: hoisted from dom_perculate() so the generated reset can see it */
+
+static ulong *ndom = (ulong *) 0;
+static int on = 0;
 static int
 dom_perculate(AST *a, FSM_state *f)
-{	static ulong *ndom = (ulong *) 0;
-	static int on = 0;
+{
 	int i, j, cnt = 0;
 	FSM_state *g;
 	FSM_trans *t;
@@ -2257,13 +2260,15 @@ dom_forward(AST *a)
 	dom_perculate(a, fsm_tbl[a->i_st]);
 }
 
+/* libspin: hoisted from AST_dominant() so the generated reset can see it */
+
+static FSM_state no_state;
 static void
 AST_dominant(void)
 {	FSM_state *f;
 	FSM_trans *t;
 	AST *a;
 	int oi;
-	static FSM_state no_state;
 #if 0
 	find dominators
 	Aho, Sethi, & Ullman, Compilers - principles, techniques, and tools

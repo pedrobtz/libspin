@@ -2263,10 +2263,12 @@ proc_is_safe(const Lextok *n)
 	return 0;
 }
 
+/* libspin: hoisted from has_global() so the generated reset can see it */
+
+static Symbol *n_seen = (Symbol *) 0;
 int
 has_global(Lextok *n)
 {	Lextok *v;
-	static Symbol *n_seen = (Symbol *) 0;
 
 	if (!n) return 0;
 	if (AllGlobal) return 1;	/* global provided clause */

@@ -184,6 +184,11 @@ qsend(Lextok *n)
  }
 #endif
 
+#ifndef PC
+/* libspin: hoisted from qrecv() so the generated reset can see it */
+
+static int did_once = 0;
+#endif
 int
 qrecv(Lextok *n, int full)
 {	int whichq = eval(n->lft)-1;
@@ -192,7 +197,6 @@ qrecv(Lextok *n, int full)
 	{	if (n->sym && !strcmp(n->sym->name, "STDIN"))
 		{	Lextok *m;
 #ifndef PC
-			static int did_once = 0;
 			if (!did_once) /* 6.2.4 */
 			{	peek_ch_init();
 				did_once = 1;

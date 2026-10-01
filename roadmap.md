@@ -159,7 +159,7 @@ nothing.
 - macOS has no LeakSanitizer; `leaks --atExit` confirmed zero leaks on the five paths above,
   and the `sanitize` target sets `detect_leaks` from `uname`.
 
-## Stage 2 — Globals: reset first, then instance state
+## Stage 2 — Globals: reset first, then instance state — **step 1 done**
 
 (Swapped with output redirection after Stage 1: the "callable twice" test needs a reset, not
 redirected output, and a stale symbol table pointing into a released arena is a use-after-free
@@ -183,8 +183,40 @@ Decision: do **not** hand-move 362 variables into a struct. Two steps, the secon
    claimed: Spin's lexer and parser share `yylval` and friends, and a mutex around each
    `spin_*` call is the documented contract.
 
-Exit: `tests/lib/reset.c` runs model A, then model B, then A again and gets byte-identical
-output each time; the golden suite passes with every test executed in a single process.
+Exit: `tests/lib/multi.c` runs model A, then model B, then A again and gets byte-identical
+output each time, including a fatal parse error between two good runs, and `pan.c` from a
+second generation in one process hashes like a fresh one.
+
+### What step 1 established
+
+- **The list is the compiler's, not ours.** `tools/globals.py` builds every TU at `-O0` in a
+  scratch copy, asks `nm` for writable symbols (432 across 29 TUs), and refuses to proceed if
+  any is a function-local static (dotted name). `-O0` matters: clang at `-O2` splits
+  `static int EPT[2]` into `EPT.0`/`EPT.1`, which looks exactly like a function-local static.
+- **26 function-local statics were hoisted by hand** to file scope, same name, same
+  initialiser, just before their function. That is the only hand edit the reset needs, and it
+  is what makes a reset possible at all.
+- **No type parsing.** A zero-initialised symbol is `memset`; an initialised one gets a copy
+  of `static const __typeof__(x) spin_init_x = <initialiser text verbatim>`. The initialiser
+  text comes from a small statement scanner over the TU and its quoted includes (the
+  `pangen*.h` code tables are definitions in headers). The scanner had to learn Spin's habits:
+  multi-line `#define`s, prose inside `#if 0`, the `#else` of `#if 1`, conditionals *inside*
+  table initialisers (kept verbatim so both copies compile the same elements), and the
+  upstream `"" "void"` adjacency that only exists in dead code.
+- **The multi-run test earned its keep on day one.** The first generation missed every
+  uninitialised external (`Fname`, `verbose`, `fsm_tbl`, 97 symbols): Mach-O reports those as
+  `(common)` with a different `nm -m` line format. Single runs and the whole golden suite
+  passed anyway; the second run in one process was a use-after-free into the released arena.
+- **Guards travel with the symbol.** A declaration under `#ifndef PC` resets under
+  `#ifndef PC`, so the mingw64 build, where the symbol does not exist, compiles.
+- **One include line per TU**, at the end of the file (and of `spin.y`'s epilogue), is the
+  whole footprint in upstream code. `make globals-check` in CI fails when a new upstream
+  global appears without regenerating.
+- `spin_main_once()` resets before every run, so the first run is also a reset run and the
+  golden suite exercises the reset code on every case.
+
+Step 2 (instance state via `struct spin_globals` and macro aliases) remains deferred until a
+consumer needs independent instances.
 
 ## Stage 3 — Output and input redirection
 

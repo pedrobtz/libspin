@@ -1,0 +1,50 @@
+# Build and run the golden suite on every toolchain libspin has to support.
+#
+# windows runs under msys2 mingw64 because that is the Rtools toolchain the
+# R package zuspin compiles this tree with; a plain MSVC or cygwin build
+# would prove the wrong thing.
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  unix:
+    name: ${{ matrix.os }} / ${{ matrix.cc }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest, cc: gcc }
+          - { os: ubuntu-latest, cc: clang }
+          - { os: macos-latest,  cc: cc }
+    steps:
+      - uses: actions/checkout@v4
+      - name: build (warnings are errors)
+        run: make CC=${{ matrix.cc }} 2>&1 | tee build.log; ! grep -q 'warning:' build.log
+      - name: golden suite
+        run: make check
+      - name: sanitizers
+        if: matrix.cc == 'clang'
+        run: make sanitize CC=clang
+
+  mingw:
+    name: windows / msys2 mingw64
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: make diffutils mingw-w64-x86_64-gcc
+      - name: build (warnings are errors)
+        run: make CC=gcc 2>&1 | tee build.log; ! grep -q 'warning:' build.log
+      - name: golden suite
+        run: make check
